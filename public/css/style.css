@@ -168,7 +168,7 @@ article
     
 }
 
-.descuento{
+.cuotas{
 
     padding: 5px;
     text-align: center;
@@ -233,6 +233,235 @@ footer{
     padding: 5px;
 }
 
+/*Inicio CSS productDetail*/
+
+.categoria{
+
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+
+
+.wrap-enlace{
+
+    padding: 5px;
+    font-size: 12px;
+
+}
+
+.cont-prod{
+
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+    
+}
+
+.cont-prod article{
+
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+.cont-prod img{
+
+    border-top: solid 1px silver;
+    
+
+}
+
+.wrap-prod{
+
+    width: 100%;
+}
+
+
+
+.wrap-prod .boton{
+
+    display: flex;
+    width: 100%;
+    padding-bottom: 10px;
+    
+
+    
+}
+
+.wrap-prod .cuotas{
+
+    border-top: solid 1px silver;
+}
+
+.wrap-prod .boton .comprar{
+
+    font-size: 18px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.wrap-prod .boton .agregar{
+
+    
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.agregar button{
+
+    height: 40px;
+    background-color: blueviolet;
+    border: blueviolet;
+    font-size: 16px;
+}
+
+.comprar button{
+
+    height: 40px;
+    font-size: 16px;
+}
+
+.envio{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    
+
+}
+
+.envio i{
+
+    padding-left: 10px;
+    padding-right: 10px;
+    color: slategray;
+}
+
+.envio h4{
+
+    font-size: 14px;
+    color: slategray;
+}
+
+
+.stock{
+
+    display: flex;
+    
+    padding: 10px;
+    justify-content: center;
+    padding-right: 10px;
+   
+}
+
+.stock input{
+
+    width: 12%;
+    background-color: silver;
+    border:1px silver solid;
+    border-radius: 4px;
+    opacity: 70%;
+}
+
+.stock .boton-desc{
+
+    font-size: 18px;
+    height: 24px;
+    width: 24px;
+    background-color: gray;
+    border:1px gray solid;
+    border-radius: 4px;
+   
+}
+
+.stock .boton-sum{
+
+    font-size: 18px;
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+    background-color: gray;
+    border:1px gray solid;
+    border-radius: 4px;
+   
+}
+
+.garantia{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    
+
+}
+
+.garantia i{
+
+    padding-left: 10px;
+    padding-right: 10px;
+    color: purple;
+}
+
+.garantia h4{
+
+    font-size: 14px;
+    color: slategray;
+}
+
+.cont-desc-pro{
+
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    
+    
+
+}
+
+.wrap-desc-pro{
+
+    padding-left: 5vw;
+    padding-right: 5vw;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.wrap-desc-pro h2{
+
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid silver;
+}
+
+.wrap-desc-pro-det{
+
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+
+
+
+/*Fin CSS productDetail*/
 
 
 
