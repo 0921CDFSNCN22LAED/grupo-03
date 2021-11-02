@@ -240,4 +240,21 @@
 
         text-align: center;
     }
+
+
+    /*inicio CSS Register*/
+
+    .main-form{
+
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+
+    .cont-form .titulo-form h2{
+
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    /*Fin CSS Register*/
 }

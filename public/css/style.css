@@ -735,6 +735,79 @@ footer{
 
 /*Fin CSS productCart*/
 
+/*Inicio CSS register*/
+
+.main-form form{
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    background-color: #f6f6f6;
+    border: 1px solid white;
+    border-radius: 6px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+   
+    }
+
+.main-form{
+
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+.cont-form{
+
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    
+}
+
+.cont-form .titulo-form{
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.cont-form .titulo-form h2{
+
+    font-size: 12px;
+    padding: 10px;
+}
+
+.wrap-form{
+
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+.wrap-form input{
+
+    width: 90%;
+    border: 1px solid silver;
+    padding: 7px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.wrap-form button{
+
+    background-color: slateblue;
+    color: white;
+    font-size: 18px;
+    border:1px solid slateblue;
+    border-radius: 5px;
+    padding: 10px;
+    width: 90%;
+}
+
+
+
+/*Fin CSS register*/
+
 
 
 
