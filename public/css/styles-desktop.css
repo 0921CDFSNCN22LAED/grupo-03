@@ -1,0 +1,16 @@
+@media (min-width: 1200px){
+
+
+    nav li:hover>ul{
+    
+        display:block;
+        position:absolute;
+        top:5px;
+        right: -70px;
+        padding: 20px;
+        
+    }
+   
+
+
+}

@@ -14,6 +14,17 @@ header{
     background-color: black;
     opacity:90%;
 }
+.cont-art{
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cont-art article{
+
+    margin: 10px;
+}
+
 
 .cont-menu{
 
@@ -104,6 +115,8 @@ h1{
     justify-content: center;
     padding-left: 10px;
 }
+
+
 
 .lupa
 {
@@ -196,8 +209,7 @@ main article{
 article
 {
     width: 100%;
-    justify-content: center;
-    align-self:center;
+    
 }
 
 .cont-art .wrap-art{
@@ -242,8 +254,36 @@ article
     background-color:#EF30F3 ;
     border-radius: 10px;
     width: 80%;
+    transition: all 450ms;
 
 }
+
+.boton button:hover{
+
+    background-color: blue;
+}
+
+.wrap-footer{
+
+    display: none;
+}
+
+.cont-footer .wrap-footer-redes{
+
+    width: 33%;
+    color: white;
+}
+
+.wrap-footer-redes .titulo-seguinos{
+
+    width: 100%;
+    font-size: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+
 
 footer{
 
@@ -253,13 +293,31 @@ footer{
 
 }
 
-.seguinos{
+.cont-footer{
 
-    color: white;
-    text-align: center;
-    font-size: 18px;
-    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-self:center;
 }
+
+.wrap-footer-redes{
+
+    width:100%;
+
+    
+}
+
+.wrap-footer-redes .list-redes{
+
+    
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+
+
 .redes{
 
     text-align: center;
@@ -520,6 +578,8 @@ footer{
     padding-right: 5vw;
     padding-bottom: 10px;
     padding-top: 10px;
+    margin-bottom: 20px;
+    
     
 
 
@@ -546,8 +606,8 @@ footer{
 
 .wrap-compra .precio {
 
-    font-size: 20px;
-    border-bottom: 1px silver solid;
+    font-size: 18px;
+    
     
 }
 

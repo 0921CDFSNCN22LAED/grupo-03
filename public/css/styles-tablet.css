@@ -49,6 +49,7 @@
         color:inherit;
         font-size:14px;
         
+        
         }
     
     nav li{
@@ -60,6 +61,9 @@
             text-align:center;
             color:#fff;
             position:relative;
+            transition: all 500ms;
+            
+            
            
             
       }
@@ -67,13 +71,15 @@
     nav li .sub li{
 
        
-       padding-bottom: 10px;
+       padding:20px;
     }
     
     nav li:hover{
         
         background-color:#312D2D;
         color:#EF30F3;
+        border-radius: 5px;
+        
         
     }
     
@@ -87,13 +93,151 @@
         display:block;
         position:absolute;
         top:5px;
-        left:0px;
-        
+        left: -70px;
         padding: 20px;
         
     }
+
+    .cont-art{
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .cont-art article{
+
+        width: 45%;
+    }
+
+    .cont-compra{
+
+       
+
+    }
     
-    
+    .wrap-compra{
+
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        border-bottom: 1px solid silver;
+        margin: 5px;
+    }
+
+    .wrap-compra .imagen-prod{
+
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    .wrap-compra .imagen-prod img{
+
+        width: 50%;
+        
+    }
+
+    .wrap-compra .descrip{
+
+        width: 40%;
+        display: flex;
+        justify-content: left;
+        align-self: center;
+    }
+
+    .wrap-compra .descrip h3{
+
+        font-size: 12px;
+    }
+
+    .wrap-compra .cantidad{
+
+        width: 20%;
+        display: flex;
+        align-self: center;
+    }
+
+    .wrap-compra .precio{
+
+        width: 20%;
+        display: flex;
+        align-self: center;
+        justify-content: end;
+    }
+
+    .list-art{
+
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /*footer*/
+
+    .cont-footer{
+
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .cont-footer .wrap-footer{
+
+        width: 33%;
+        color: white;
+        display: block;
+    }
+
+    .cont-footer .wrap-footer-redes{
+
+        width: 33%;
+        color: white;
+    }
+
+    .wrap-footer .titulo-footer{
+
+        width: 100%;
+        font-size: 14px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: left;
+
+    }
+
+    .wrap-footer .list-categoria ul{
+
+        padding-bottom: 20px;
+    }
+
+    .wrap-footer .list-categoria ul li{
+
+        text-decoration: none;
+        text-align: left;
+        list-style: none;
+    }
 
 
+    .wrap-footer .list-categoria ul li a {
+
+        text-decoration: none;
+        color: white;
+        font-size: 10px;
+        
+    }
+
+    .wrap-footer-redes .titulo-seguinos{
+
+        width: 100%;
+        font-size: 14px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+
+    .wrap-footer-redes .list-redes{
+
+        text-align: center;
+    }
 }
