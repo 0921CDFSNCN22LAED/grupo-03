@@ -778,7 +778,7 @@ footer{
 
 .cont-form .titulo-form h2{
 
-    font-size: 12px;
+    font-size: 16px;
     padding: 10px;
 }
 
@@ -790,11 +790,47 @@ footer{
     
 }
 
+.wrap-res{
+
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.wrap-res .registrarme{
+
+    text-align: left;
+    width: 50%;
+}
+
+.wrap-res .registrarme a{
+
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.wrap-res .restaurar{
+
+    text-align: right;
+    width: 50%;
+}
+
+.wrap-res .restaurar a{
+
+    text-decoration: none;
+    font-size: 12px;
+}
+
+
 .wrap-form input{
 
-    width: 90%;
+    width: 100%;
     border: 1px solid silver;
-    padding: 7px;
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-size: 12px;
     border-radius: 4px;
 }
@@ -808,6 +844,61 @@ footer{
     border-radius: 5px;
     padding: 10px;
     width: 90%;
+}
+
+.wrap-boton-log{
+
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
+
+}
+
+.wrap-boton-log button{
+
+    background-color: slateblue;
+    color: white;
+    font-size: 18px;
+    border:1px solid slateblue;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+
+}
+
+.titulo-gmail{
+
+    font-size: 12px;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+
+}
+
+.wrap-boton-gmail{
+
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
+
+}
+
+.wrap-boton-gmail button{
+
+    background-color: red;
+    color: white;
+    font-size: 18px;
+    border:1px solid red;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+
 }
 
 
