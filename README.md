@@ -55,3 +55,6 @@ Soy Tecnico Electricista con orientacion a Electromecanica Industrial. Me estoy 
  - Déborah Niesz
  - Nicolás Miño
  - Nicolás García
+
+Direecion del Tablero de Trello de QMC
+https://trello.com/invite/b/SpwOGA8C/2d99146bc3c30a91cb106931f2961528/trabajo-integrador
