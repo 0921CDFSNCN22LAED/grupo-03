@@ -34,3 +34,7 @@ app.get("/login",(req,res)=>{
 app.get("/armaTuPc",(req,res)=>{
     res.sendFile(path.join(__dirname,"/views/armaTuPc.html"))
 })
+
+app.get("/recupero",(req,res)=>{
+    res.sendFile(path.join(__dirname,"/views/recupero.html"))
+})
