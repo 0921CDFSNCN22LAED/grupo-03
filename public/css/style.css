@@ -538,8 +538,8 @@ footer {
 
 .wrap-boton-res .probar {
     padding: 10px;
-    height: 40px; 
-    margin: 4px; 
+    height: 40px;
+    margin: 4px;
     margin-left: 2px;
     padding-left: 15px;
     padding-right: 15px;
@@ -581,6 +581,7 @@ footer {
     padding-bottom: 8px;
     text-align: right;
 }
+
 .wrap-total-cupon-code input {
     font-family: inherit;
     width: 100%;
@@ -593,18 +594,19 @@ footer {
     background: transparent;
     transition: border-color 0.2s;
     text-align: right;
-  }
+}
 
-  .wrap-total-cupon-code:focus, input :focus {
-    padding-bottom: 6px;  
+.wrap-total-cupon-code:focus,
+input :focus {
+    padding-bottom: 6px;
     font-weight: 700;
     border-width: 3px;
     color: black;
     border-image: linear-gradient(to right, violet, purple);
     border-image-slice: 1;
-  }
-  
- .discount-container {
+}
+
+.discount-container {
     background: transparent;
     border: 0;
     border-radius: 0;
@@ -620,9 +622,9 @@ footer {
     text-align: center;
     text-decoration: none;
     user-select: none;
-  }
+}
 
-  .discount-badge {
+.discount-badge {
     align-items: center;
     background: #cc23cf;
     border: 2px solid #fff;
@@ -638,17 +640,15 @@ footer {
     position: absolute;
     right: -2px;
     top: -2px;
+}
 
-  }
-
-
-  .gradient-divider {
+.gradient-divider {
     box-sizing: content-box;
     border-width: 4px;
     border-style: solid;
     border-image: linear-gradient(to right, violet, purple);
     border-image-slice: 1;
-  }
+}
 
 .wrap-total-cupon label {
     padding-top: 2px;
@@ -711,6 +711,13 @@ footer {
 .wrap-res .registrarme {
     text-align: left;
     width: 50%;
+}
+
+.history {
+    justify-content: space-evenly;
+    justify-self: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .wrap-res .registrarme a {
@@ -919,10 +926,10 @@ footer {
 
 /*Fin CSS armaTuPc*/
 
+
 /*Inicio CSS recupero*/
 
-.cont-recu{
-
+.cont-recu {
     display: flex;
     flex-wrap: wrap;
     margin: 5vw;
@@ -932,22 +939,17 @@ footer {
     box-shadow: 0px 10px 10px silver;
     padding-bottom: 50px;
     margin-bottom: 350px;
-
-    
 }
 
-.wrap-recu{
-
+.wrap-recu {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin:10px
-    
+    margin: 10px
 }
 
-.titulo-recu{
-
+.titulo-recu {
     width: 100%;
     text-align: center;
     background-color: slateblue;
@@ -957,27 +959,23 @@ footer {
     padding-bottom: 5px;
 }
 
-.wrap-recu h3{
-
+.wrap-recu h3 {
     padding-top: 10px;
     padding-bottom: 10px;
-    
 }
 
-.wrap-recu input{
-
+.wrap-recu input {
     width: 80%;
     padding-top: 5px;
     padding-bottom: 5px;
-    border:1px solid silver;
+    border: 1px solid silver;
     border-radius: 5px;
 }
 
-.wrap-recu button{
-
+.wrap-recu button {
     width: 80%;
     background-color: slateblue;
-    border:1px solid slateblue;
+    border: 1px solid slateblue;
     border-radius: 5px;
     color: white;
     font-size: 20px;
