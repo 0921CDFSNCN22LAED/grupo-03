@@ -31,19 +31,20 @@ app.get("/login", (req, res) => {
     res.sendFile(path.join(__dirname, "/views/login.html"))
 })
 
-<<<<<<< HEAD
+
 app.get("/armaTuPc",(req,res)=>{
     res.sendFile(path.join(__dirname,"/views/armaTuPc.html"))
 })
 
 app.get("/recupero",(req,res)=>{
     res.sendFile(path.join(__dirname,"/views/recupero.html"))
-=======
+})
+
 app.get("/armaTuPc", (req, res) => {
     res.sendFile(path.join(__dirname, "/views/armaTuPc.html"))
 })
 
 app.get("/history", (req, res) => {
     res.sendFile(path.join(__dirname, "/views/history.html"))
->>>>>>> 7628709cdd53f6fb94f04c478217a670a7b63de8
+
 })
