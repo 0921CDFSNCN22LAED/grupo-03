@@ -78,6 +78,8 @@
         width: 100%;
         height: auto;
         padding: 10px;
+        padding-top: 0px;
+        padding-bottom: 0px;
         border-bottom: 1px solid silver;
         margin: 5px;
     }
@@ -90,7 +92,7 @@
         width: 50%;
     }
     .wrap-compra .descrip {
-        width: 40%;
+        width: 35%;
         display: flex;
         justify-content: left;
         align-self: center;
