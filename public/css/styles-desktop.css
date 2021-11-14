@@ -14,8 +14,13 @@
     .cont-art article{
 
         width: 20%;
+        
     }
    
+    .wrap-art h4,h3{
+
+        font-size: 14px;
+    }
 
     .main-form{
 
