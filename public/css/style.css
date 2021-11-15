@@ -10,7 +10,26 @@ body {
 
 header {
     background-color: black;
-    opacity: 90%;
+    
+}
+
+.logo {
+    text-align: left;
+    padding-left: 20px;
+    display: flex;
+    align-self: center;
+    margin-top: 5px;
+    
+}
+
+.logo a img{
+
+    
+    width: 45px;
+    height: 45px;
+    filter: brightness(200%);
+    
+    
 }
 
 .cont-art {
@@ -33,7 +52,7 @@ header {
     width: 100%;
     flex-wrap: wrap;
     padding-top: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
 }
 
 .wrap-barra-logo {
@@ -60,19 +79,10 @@ header {
     display: none;
 }
 
-.logo {
-    text-align: left;
-    color: #EF30F3;
-    padding-left: 20px;
-    display: flex;
-    align-self: center;
-}
 
-.logo-qmc  {
-    font-family: 'Bungee Shade', cursive;
-    color: #EF30F3;
-    font-size: 24px;
-}
+
+
+
 
 .menu {
     width: 30%;
@@ -104,6 +114,16 @@ header {
     font-size: 16px;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.usuario a{
+
+    color: blueviolet;
+}
+
+.carrito a{
+
+    color: blueviolet;
 }
 
 .carrito {

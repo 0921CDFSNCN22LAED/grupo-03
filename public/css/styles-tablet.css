@@ -15,11 +15,50 @@
         justify-content: center;
         align-self: center;
         width: 100%;
+        display: flex;
+        flex-wrap: wrap;
     }
-    .buscador input {
-        width: 50%;
+    .buscador .barra-buscador {
+        width: 70%;
         border: 1px solid white;
-        border-radius: 2px;
+        border-radius: 10px 0px 0px 10px;
+        font-size: 14px;
+       
+        
+    }
+
+    .btn-buscar{
+
+        background-color: blueviolet;
+        border-radius: 0px 10px 10px 0px;
+        border:1px solid blueviolet;
+
+    }
+
+    .btn-buscar .fa-search{
+
+        color: white;
+        font-size: 14px;
+        align-self: center;
+        padding-left: 2px;
+        color: white;
+        padding: 5px;
+        
+        
+        
+        
+        
+
+    }
+
+
+    .logo a img{
+
+        margin-top: 30px;
+        width: 70px;
+        height: 70px;
+        filter: brightness(200%);
+        
     }
     .lupa {
         display: none;
