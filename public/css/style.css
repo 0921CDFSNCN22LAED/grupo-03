@@ -555,7 +555,11 @@ footer {
  .marginproductdetail{
      margin-top: 30px !important; 
  }
-
+.tamañoCarrusel{
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+}
 
 
 
