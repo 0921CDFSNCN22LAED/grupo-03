@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QMC Login</title>
+
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/styles-tablet.css">
     <link rel="stylesheet" href="/css/styles-desktop.css">
@@ -18,42 +19,46 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet" />
+
 </head>
 
 <body>
-
-
     <header>
-        <section class="cont-barra">
+        <section class="cont-barra">  
             <div class="wrap-barra-logo">
-                <div class="menu">
+                <div class="menu"> 
                     <i class="fas fa-bars"></i>
                 </div>
                 <div class="logo">
-                    <a href="/">
-                        <h1 class="logo-qmc">QMC</h1>
+                    <a href="/" >
+                        <img src="./img/logo.svg" alt="logo">
                     </a>
                 </div>
-            </div>
+
+                
+            </div> 
             <div class="wrap-barra-busc">
                 <div class="buscador">
-                    <input type="text">
+                    <input type="text" class="barra-buscador" placeholder="  Buscar...">
+                    <button type="button" class="btn-buscar">
+                         <i class="fas fa-search"></i>
+                    </button>
                 </div>
             </div>
-            <div class="wrap-barra-opc">
-                <div class="lupa">
-                    <i class="fas fa-search"></i>
-                </div>
-                <div class="usuario">
-                    <a href="/login"><i class="fas fa-user"></i></a>
-                </div>
-                <div class="carrito">
-                    <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
-                </div>
-                <div class="carrito">
-                    <a href="/"><i class="fas fa-shopping-cart"></i></a>
-                </div>
-        </section>
+             <div class="wrap-barra-opc">
+                    <div class="lupa">
+                        <i class="fas fa-search"></i> 
+                    </div>
+                    <div class="usuario"> 
+                        <a href="/login"><i class="fas fa-user"></i></a>
+                    </div>
+                    <div class="carrito">
+                        <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
+                    </div> 
+              
+    </section>
 
         <section>
             <nav class="cont-menu">
