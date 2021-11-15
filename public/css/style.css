@@ -117,12 +117,54 @@ header {
     padding-right: 30px;
 }
 
-.borde {
+/*.bordeEliminado {  se elimina borde para implementar barra rgb lo dejo por las dudas ATT : Nicolas Garcia :D
     background-color: purple;
     width: 100%;
     height: 5px;
     opacity: 100%;
+}*/
+
+.glow-on-hover {
+    width: 100%;
+    height: 1px;
+    border: none;
+    outline: none;
+    color: #fff;    
+    border:  2px black;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
 }
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    /*filter: blur(1px);*/
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+  
+}
+
+.glow-on-hover:before {
+    opacity: 1;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+/* fin barra rgb*/
 
 main {
     padding-left: 5vw;
@@ -434,6 +476,71 @@ footer {
 
 
 /*Fin CSS productDetail*/
+
+/*inicio CSS productDetail 2.0 -----------------------------------------------------------------------------------------------------*/
+
+/* barra rgb*/
+.sectionProductDetail{
+    margin-top: 50px;
+
+}
+.nombreProductDetail{
+    text-align: center;
+}
+
+.precioTachado{
+    text-decoration: line-through;
+    color: #999;
+}
+.descuento{
+    background-color: #91C612;
+    color: white;
+    border-radius: 6px;
+    text-align: center;
+}
+.camionProductDetail{
+    color: green;
+    font-size: 2.3em;
+}
+.escudoProductDetail{
+    color: green;
+    font-size: 2.65em;
+}
+.stockProductDetail{
+    color: green;
+    font-size: 3.3em;
+}
+.favoritos{
+    color: #cd62ff;
+    font-size: 3.5em;
+}
+.favoritos:hover{
+    color: #ae00ff;
+    font-size: 4em;
+ }
+ /*clase provisoria*/
+ .marginPrecio{
+     margin-bottom: 35%;
+ }
+
+ .marginEspTecnicas{
+     margin: 30px !important;
+ }
+ .espTecnicas{
+     border: #e4e4e4 1px solid;
+ }
+ .bg1{
+     background-color: #F9F9F9;
+ }
+ .marginproductdetail{
+     margin-top: 30px !important; 
+ }
+
+
+
+
+
+/*Fin CSS productDetail 2.0 --------------------------------------------------------------------------------------------------------*/
 
 
 /*Inicio CSS productCart*/
