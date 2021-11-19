@@ -13,18 +13,8 @@ app.listen(3000, () => {
     console.log("Servidor encendido");
 })
 
+app.set('view engine', 'ejs');
+
 app.use("/", routers);
 
-app.use("/login", routers);
 
-app.use("/register", routers);
-
-app.use("/productDetail", routers);
-
-app.use("/productCart", routers);
-
-app.use("/armaTuPc", routers);
-
-app.use("/recupero", routers);
-
-app.use("/history", routers);

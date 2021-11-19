@@ -24,63 +24,12 @@
 <body>
 
     <header>
-        <section class="cont-barra">  
-                <div class="wrap-barra-logo">
-                    <div class="menu"> 
-                        <i class="fas fa-bars"></i>
-                    </div>
-                    <div class="logo">
-                        <a href="/" >
-                            <img src="./img/logo.svg" alt="">
-                        </a>  
-                    </div>
-                </div> 
-                <div class="wrap-barra-busc">
-                    <div class="buscador">
-                        <input type="text" class="barra-buscador" placeholder="  Buscar...">
-                        <button type="button" class="btn-buscar">
-                             <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-                 <div class="wrap-barra-opc">
-                        <div class="lupa">
-                            <i class="fas fa-search"></i> 
-                        </div>
-                        <div class="usuario"> 
-                            <a href="/login"><i class="fas fa-user"></i></a>
-                        </div>
-                        <div class="carrito">
-                            <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
-                        </div>
-                </div> 
-                  
-        </section>
-
-        <section >
-            <nav class="cont-menu" >
-                <li class="wrap-menu"><a href="">Productos</a>
-                    <ul class="sub">
-                        <li><a href="">Placas de video</a></li>
-                        <li><a href="">Motherboards</a></li>
-                        <li><a href="">Microprocesadores</a></li>
-                        <li><a href="">Gabinetes</a></li>
-                        <li><a href="">Accesorios</a></li>
-                        <li><a href="">Almacenamiento</a></li>
-                        <li><a href="">Memorias</a></li>
-                    </ul>
-                </li>
-                <li class="wrap-menu"><a href="/armaTuPc">Arma tu PC</a></li>
-                <li class="wrap-menu"><a href="">Cotiza tu PC</a></li>
-
-            </nav>
-        </section>
-        <section class="borde">
+        
+        <%- include("./parcials/header") %> 
 
 
-        </section>
-
-
+        <%- include("./parcials/nav") %>   
+    
     </header>
     
 
