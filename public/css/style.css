@@ -81,6 +81,11 @@ header {
     padding-left: 10px;
 }
 
+.zindex{
+
+  z-index: 1;
+}
+
 .lupa {
     color: white;
     width: 10%;
