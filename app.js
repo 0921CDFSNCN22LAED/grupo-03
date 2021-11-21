@@ -16,5 +16,3 @@ app.listen(3000, () => {
 app.set('view engine', 'ejs');
 
 app.use("/", routers);
-
-
