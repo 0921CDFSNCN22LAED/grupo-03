@@ -20,7 +20,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 </head>
 
@@ -43,9 +44,12 @@
 
                     <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -55,7 +59,7 @@
                                     <%=product.imagen1%> class="d-block w-100" alt="..." />
                                         <% } %>
                                             <% } %>
-                                                />
+                                                <!-- elimine "/>" porque se veia en la foto-->
                             </div>
                             <div class="carousel-item">
                                 <img <%for(product of products) { %>
@@ -76,11 +80,13 @@
                                                 />
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
@@ -108,7 +114,8 @@
                                             <%= product.precio %>
                                         </p>
                                         <p class="fs-6 col-3 descuento">
-                                            <%= product.disc %> % Off</p>
+                                            <%= product.disc %> % Off
+                                        </p>
                                     </div>
                                     <% }else if (product.disc<0) { %>
                                         <p class="fs-6 text-center text-danger">
@@ -150,35 +157,57 @@
 
                                                     <div class="row">
                                                         <!--Botones-->
-                                                        <button type="button" class="btn btn-outline-success col-12">Comprar</button>
-                                                        <button type="button" class="btn btn-outline-primary col-12">Agregar <i
-                                    class="fas fa-shopping-cart"></i></button>
+                                                        <button type="button"
+                                                            class="btn btn-outline-success col-12">Comprar</button>
+                                                        <button type="button"
+                                                            class="btn btn-outline-primary col-12">Agregar <i
+                                                                class="fas fa-shopping-cart"></i></button>
 
                                                         <!-- Button trigger modal -->
-                                                        <button type="button" class="btn btn-outline-success col-12" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Consultas <i class="far fa-comment-dots"></i>
-                            </button>
+                                                        <button type="button" class="btn btn-outline-success col-12"
+                                                            data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                            Consultas <i class="far fa-comment-dots"></i>
+                                                        </button>
 
                                                         <!-- Modal -->
-                                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                        <div class="modal fade" id="exampleModal" tabindex="-1"
+                                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                             <div class="modal-dialog">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
-                                                                        <h5 class="modal-title fs-3 text-center" id="exampleModalLabel">Medios De Comunicacion
+                                                                        <h5 class="modal-title fs-3 text-center"
+                                                                            id="exampleModalLabel">Medios De
+                                                                            Comunicacion
                                                                         </h5>
-                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                        <button type="button" class="btn-close"
+                                                                            data-bs-dismiss="modal"
+                                                                            aria-label="Close"></button>
                                                                     </div>
                                                                     <div class="modal-body">
-                                                                        <a href="https://www.instagram.com/nico_agga/"> <button type="button" class="btn btn-outline-primary ">Instagram <i
-                                                        class="fab fa-instagram"></i></button> </a>
-                                                                        <a href="https://www.instagram.com/nico_agga/"> <button type="button" class="btn btn-success ">Whatsapp <i
-                                                        class="fab fa-whatsapp"></i></button> </a>
-                                                                        <a href="https://www.instagram.com/nico_agga/"> <button type="button" class="btn btn-info ">Telegram <i
-                                                        class="fab fa-telegram-plane"></i></button> </a>
-                                                                        <a href="https://www.instagram.com/nico_agga/"> <button type="button" class="btn btn-danger ">E-Mail <i class="fas fa-at"></i></button> </a>
+                                                                        <a href="https://www.instagram.com/nico_agga/">
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-primary ">Instagram
+                                                                                <i
+                                                                                    class="fab fa-instagram"></i></button>
+                                                                        </a>
+                                                                        <a href="https://www.instagram.com/nico_agga/">
+                                                                            <button type="button"
+                                                                                class="btn btn-success ">Whatsapp <i
+                                                                                    class="fab fa-whatsapp"></i></button>
+                                                                        </a>
+                                                                        <a href="https://www.instagram.com/nico_agga/">
+                                                                            <button type="button"
+                                                                                class="btn btn-info ">Telegram <i
+                                                                                    class="fab fa-telegram-plane"></i></button>
+                                                                        </a>
+                                                                        <a href="https://www.instagram.com/nico_agga/">
+                                                                            <button type="button"
+                                                                                class="btn btn-danger ">E-Mail <i
+                                                                                    class="fas fa-at"></i></button> </a>
                                                                     </div>
                                                                     <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                        <button type="button" class="btn btn-secondary"
+                                                                            data-bs-dismiss="modal">Close</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -193,7 +222,7 @@
 
         </article>
 
-        <article class="marginEspTecnicas">
+        <article class="marginEspTecnicas shadowdesc">
             <% for(product of products) { %>
                 <% if(product.id==idProduct) { %>
                     <div class="espTecnicas bg1 row">
@@ -226,6 +255,12 @@
                     </div>
                     <% } %>
                         <% } %>
+        </article>
+
+        </article>
+
+        <div class="separador"></div>
+
         </article>
         </section>
         <div class="gradient-divider"></div>
@@ -302,72 +337,6 @@
         </section>
 
 
-        <!-- prueba
-        <div id="carouselExampleControlsNoTouching" class="carousel slide tamañoCarrusel" data-bs-touch="false" data-bs-interval="false">
-            <div class="carousel-inner">
-
-                <div class="carousel-item active">
-                    <article class="discount-container">
-                        <img src="/img/gabinete-2.jpg" alt="gabinete-2">
-                        <div class="discount-badge">
-                            <h6>30%</h6>
-                        </div>
-                        <div class="wrap-art">
-                            <h4 class="cuotas">18 cuotas sin interes</h4>
-                            <h4 class="descrip">Gabinete Kolink Void ARGB ATX</h4>
-                            <h3 class="precio">$204.999</h3>
-                            <div class="boton">
-                                <button type="button"><a href="/productDetail">Ver producto</a></button>
-
-                            </div>
-                        </div>
-
-                    </article>
-                </div>
-                <div class="carousel-item">
-                    <article class="discount-container">
-                        <img src="/img/fuente-2.jpg" alt="fuente-2">
-                        <div class="discount-badge">
-                            <h6>5%</h6>
-                        </div>
-                        <div class="wrap-art">
-                            <h4 class="cuotas">18 cuotas sin interes</h4>
-                            <h4 class="descrip">Fuente ASUS TUF 650B 80 Plus Bronze 650W </h4>
-                            <h3 class="precio">$135.909</h3>
-                            <div class="boton">
-                                <button type="button"><a href="/productDetail">Ver producto</a></button>
-                            </div>
-                        </div>
-
-                    </article>
-                </div>
-                <div class="carousel-item">
-                    <article class="discount-container">
-                        <img src="/img/disco-ssd-2.jpg" alt="disco-ssd-2">
-                        <div class="discount-badge">
-                            <h6>15%</h6>
-                        </div>
-                        <div class="wrap-art">
-                            <h4 class="cuotas">18 cuotas sin interes</h4>
-                            <h4 class="descrip">Disco Sólido SSD M.2 ADATA 256GB XPG Spectrix S40G</h4>
-                            <h3 class="precio">$27.900</h3>
-                            <div class="boton">
-                                <button type="button"><a href="/productDetail">Ver producto</a></button>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-        </div>
--->
 
 
 
@@ -375,8 +344,12 @@
 
     <%- include("parcials/footer") %>
 
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+            integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+            crossorigin="anonymous"></script>
 
 </body>
 
