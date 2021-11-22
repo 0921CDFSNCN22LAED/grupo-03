@@ -332,6 +332,9 @@ const controller = {
     error: (req, res) => {
         res.render("error");
     },
+    createUpdateProd: (req, res) => {
+        res.render("createUpdateProd");
+    },
     productTotals: (req, res) => {
         res.render("productTotals", { products: products });
     },

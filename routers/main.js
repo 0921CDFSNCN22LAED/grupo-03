@@ -24,4 +24,6 @@ router.get("/productTotals", controller.productTotals);
 
 router.get("/error", controller.error);
 
+router.get("/createUpdateProd", controller.createUpdateProd);
+
 module.exports = router;
