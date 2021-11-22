@@ -1,3 +1,5 @@
+const path = require('path');
+
 const products = [{
         id: 1,
         name: "Disco Duro Interno Western Digital WD5000LPCX 500GB",
@@ -315,11 +317,6 @@ const controller = {
     register: (req, res) => {
         res.render("register");
     },
-    productDetail: (req, res) => {
-        const idProduct = req.params.id;
-        res.render("productDetail", { products: products, idProduct: idProduct });
-
-    },
     productCart: (req, res) => {
         res.render("productCart");
     },
@@ -332,8 +329,25 @@ const controller = {
     history: (req, res) => {
         res.render("history");
     },
+    error: (req, res) => {
+        res.render("error");
+    },
     productTotals: (req, res) => {
         res.render("productTotals", { products: products });
+    },
+    productDetail: (req, res) => {
+        const idProduct = req.params.id;
+        const product = products.find((product) => {
+            return idProduct == product.id;
+        });
+        if (product) {
+            res.render('productDetail', {
+                product: product,
+                idProduct: idProduct,
+            });
+        } else {
+            res.render("error")
+        }
     },
 }
 

@@ -22,4 +22,6 @@ router.get("/history", controller.history);
 
 router.get("/productTotals", controller.productTotals);
 
+router.get("/error", controller.error);
+
 module.exports = router;
