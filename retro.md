@@ -11,3 +11,6 @@ No dejamos plasmado el logo y los colores y tipografia en la carpeta desing aunq
 Sprint 2
 Se mencionó que se hara en cada parte solicitada, para lo cual se menciono utilizar trello para realizar un seguimiento y conocer como esta el avance del sprint
 
+Sprint 3
+
+Se hablo del buen trabajo en equipo, se trato como se creia que seria lo mejor para el trabajo integrador, como haria segun lo solictado en el sprint 2.
