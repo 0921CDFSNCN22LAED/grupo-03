@@ -380,5 +380,11 @@
         
     }
 
+    .caract-prod-totals p{
+
+        height: 100px;
+        
+    }
+
     /*Fin CSS productTotals*/
 }
