@@ -1162,3 +1162,93 @@ input :focus {
 
 
 /*Fin CSS History*/
+
+/*Inicio CSS productTotals*/
+
+
+.tit-prod-tot{
+
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+.main-prod-tot{
+
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+.cont-prod-totals{
+
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.cont-prod-totals .wrap-prod-totals{
+
+    width: 100%;
+    margin: 10px;
+}
+
+
+.car-prod-tot .carousel-item img{
+
+    height: 400px;
+} 
+
+.name-prod-totals h3{
+
+    font-size: 16px;
+    text-align: center;
+    height: 30px;
+}
+
+.caract-prod-totals{
+
+    padding-left: 10px;
+    padding-right: 10px ;
+    
+}
+.caract-prod-totals p{
+
+    text-align: justify;
+    font-size: 11px;
+    height: 50px;
+}
+
+.precio-prod-totals h3{
+
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-self: center;
+    color: blueviolet;
+    font:bold;
+}
+
+.btn-prod-totals{
+
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    
+}
+
+.wrap-btn-prod-totals{
+
+    justify-content: center;
+    align-self: center;
+    
+}
+
+
+
+
+/*Fin CSS productTotals*/

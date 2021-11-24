@@ -364,4 +364,21 @@
         margin-left: 30vw;
         margin-right: 30vw;
     }
+
+    
+    /*inicio CSS productTotals*/
+
+    .cont-prod-totals{
+
+        justify-content: space-between;
+    }
+    
+    .cont-prod-totals .wrap-prod-totals{
+
+        width: 24%;
+        margin: 5px;
+        
+    }
+
+    /*Fin CSS productTotals*/
 }

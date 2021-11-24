@@ -41,7 +41,7 @@ const products = [{
     {
         id: 3,
         name: "Disco duro interno Toshiba MQ01ABD Series MQ01ABD032 320GB",
-        desc: "Disco duro para mejorar el rendimiento del equipo. Toshiba MQ01ABD032 es lo que necesitás.Al ser HDD,            su practicidad y valor económico respecto a otros tipos de discos marcan la diferencia.",
+        desc: "Disco duro para mejorar el rendimiento del equipo. Toshiba MQ01ABD032 es lo que necesitás.Al ser HDD,su practicidad y valor económico respecto a otros tipos de discos marcan la diferencia.",
         caract: "Disco Duro Interno - Marca: Toshiba - MQ01ABD032 - Capacidad:320 GB - Tecnología de almacenamiento:HDD - Interfaces: SATA III",
         size: "Tamaño de 2.5. Ancho: 69.85 mm - Altura: 100.45 mm - Peso: 107 g",
         color: "-",

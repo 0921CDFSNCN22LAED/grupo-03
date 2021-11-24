@@ -44,10 +44,6 @@
         color: white;
         padding: 5px;
         
-        
-        
-        
-        
 
     }
 
@@ -209,4 +205,16 @@
         padding: 10px;
     }
     /*Fin CSS Register*/
+
+    /*inicio CSS productTotals*/
+    
+    .cont-prod-totals .wrap-prod-totals{
+
+        width: 48%;
+        margin: 5px;
+        
+    }
+    
+
+    /*Fin CSS productTotals*/
 }
