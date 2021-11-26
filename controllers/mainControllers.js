@@ -352,6 +352,11 @@ const controller = {
             res.render("error")
         }
     },
+
+    budget: (req,res) =>{
+
+        res.render("cotizaTuPc", {products:products});
+    }
 }
 
 module.exports = controller;

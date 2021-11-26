@@ -387,4 +387,68 @@
     }
 
     /*Fin CSS productTotals*/
+
+
+
+    /*inicio CSS CotizaTuPc*/
+
+    .cont-coti{
+
+        justify-content: space-evenly;
+    
+    }
+    
+        
+    .cont-coti .wrap-form-coti{
+    
+        width: 45%;
+        
+    
+    }
+    
+    .wrap-form-precio{
+    
+        width: 45%;
+    }
+    
+    .cont-coti p{
+    
+        width: 5%;
+    }
+    
+    .precio-coti{
+    
+        justify-content: right;
+        
+    }
+    
+    .cont-coti p{
+    
+        justify-content: right;
+    }
+    
+    .input-min{
+    
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-self: center;
+    }
+    
+    .input-max{
+    
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-self: center;
+    }
+
+
+    .btn-buscar-coti .btn-primary{
+
+        width: 20%;
+        font-size: 20px;
+    }
+
+    /*Fin CSS CotizaTuPc*/
 }

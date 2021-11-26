@@ -26,4 +26,6 @@ router.get("/error", controller.error);
 
 router.get("/createUpdateProd", controller.createUpdateProd);
 
+router.get("/cotizaTuPc", controller.budget);
+
 module.exports = router;
