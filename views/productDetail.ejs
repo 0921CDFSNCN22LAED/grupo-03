@@ -85,21 +85,29 @@
                         <% if(product.disc>0) { %>
                             <div class="row">
                                 <p class="fs-6 col-7 precioTachado">
+                                    $
                                     <%= product.precio %>
                                 </p>
                                 <p class="fs-6 col-3 descuento">
                                     <%= product.disc %> % Off
                                 </p>
                             </div>
-                            <% }else if (product.disc<0) { %>
+                            <div class="marginPrecio">
+                                <p class="fs-2">
+                                    $
+                                    <%= (1 - (product.disc/100)) * product.precio %>
+                                </p>
+                            </div>
+                            <% }else  { %>
+                                <div class="marginPrecio">
+                                    <p class="fs-2">
+                                        <%= product.precio %>
+                                    </p>
+                                </div>
                                 <p class="fs-6 text-center text-danger">
                                     Producto en promoción</p>
                                 <% } %>
-                                    <div class="marginPrecio">
-                                        <p class="fs-2">
-                                            <%= product.preciodesc %>
-                                        </p>
-                                    </div>
+
                                     <div class="row">
                                         <i class="fas fa-shipping-fast camionProductDetail col-1"></i>
                                         <p class="fs-5 col-11"> Envios a todo el pais </p>
