@@ -28,4 +28,6 @@ router.get("/createUpdateProd", controller.createUpdateProd);
 
 router.get("/cotizaTuPc", controller.budget);
 
+router.post("/cotizaTuPc",controller.budget);
+
 module.exports = router;

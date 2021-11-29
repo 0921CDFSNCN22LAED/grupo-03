@@ -36,42 +36,51 @@
 
     </header>
 
+   
+
     <main>
         <h1 class="titulo-coti">Cotiza tu PC de las siguientes maneras</h1>
 
         <section class="cont-coti">
         
             <div class="wrap-form-coti">
-                <form action="" method="">
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Categorías</option>
-                        <option value="gaming">Gaming</option>
-                        <option value="desktop">Escritorio</option>
-                        <option value="office">Oficina</option>
+                
+             <form  method="post" action="/cotizaTuPc" >
+                    <select class="form-select" aria-label="Default select example" name="category">
+                        <option selected value="category">Categorías</option>
+                        <option value="gaming">PC Gaming</option>
+                        <option value="desktop">PC Escritorio</option>
+                        <option value="office">PC Oficina</option>
                     </select>
-                </form>
-            </div>
-            <p>o</p>
-            <div class="wrap-form-precio">
-                <div class="precio-coti">
-                    <label for="">Precio:</label>
-                </div>
-                <div class="input-min">
-                    <input type="text" placeholder="Minimo">
-                </div>
-                <div class="input-max">
-                    <input type="text" placeholder="Maximo">
-                </div>        
+                
+                    </div>
+                    <p>o</p>
+                    <div class="wrap-form-precio">
+                        <div class="precio-coti">
+                            <label for="">Precio:</label>
+                        </div>
+                        <div class="input-min">
+                            <input type="text" placeholder="Minimo" name="min">
+                        </div>
+                        <div class="input-max">
+                            <input type="text" placeholder="Maximo" name="max">
+                        </div>        
 
-            </div> 
-            <div class="btn-buscar-coti">
-                <button type="button" class="btn btn-primary">Buscar</button>
-            </div>  
+                    </div> 
+                    <div class="btn-buscar-coti">
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                    </div>  
+    
+        </form>
 
         </section>
+
+       
+
+       
         <section class="cont-prod-totals">
 
-            <% for(product of products) { %>
+            <% for(product of prodMostrar) { %>
             <article class="wrap-prod-totals">
     
             <div class="car-prod-tot">    
@@ -124,8 +133,8 @@
                 </div>  
             </article>
             <% } %>        
-        </section>    
-
+        </section> 
+        
     </main>
 
 <%- include("./parcials/footer") %> 
