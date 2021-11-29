@@ -10,7 +10,8 @@
         "codigo": "IDPRODUCTO000101",
         "imagen1": "/img/discoduro500-1.webp",
         "imagen2": "/img/discoduro500-2.webp",
-        "imagen3": "/img/oferta2.jpg"
+        "imagen3": "/img/oferta2.jpg",
+        "category": "gaming"
     },
     {
         "id": 2,
@@ -24,7 +25,8 @@
         "codigo": "IDPRODUCTO000102",
         "imagen1": "/img/discoduro320-img1.webp",
         "imagen2": "/img/discoduro320-img2.webp",
-        "imagen3": "/img/oferta2.jpg"
+        "imagen3": "/img/oferta2.jpg",
+        "category": "gaming"
     },
     {
         "id": 3,

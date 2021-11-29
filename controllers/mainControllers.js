@@ -57,8 +57,29 @@ const controller = {
 
     budget: (req, res) => {
 
-        res.render("cotizaTuPc", { products: products });
-    }
+      
+
+       const prodSearch = {
+
+            ...req.body
+        }
+
+        let prodShow = null;
+
+        if(prodSearch != null){
+
+            prodShow = products.filter((prod)=>{
+
+                return prod.category == prodSearch.category && (prod.precio >= prodSearch.min && prod.precio <= prodSearch.max)
+            })
+        }
+
+          
+       
+
+        res.render("cotizaTuPc", { products: prodShow,prodSearch});
+    },
+
 }
 
 module.exports = controller;
