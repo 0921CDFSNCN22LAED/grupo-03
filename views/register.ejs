@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,18 +19,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
 
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
 </head>
+
 <body>
 
     <header>
-        
-        <%- include("./parcials/header") %> 
+
+        <%- include("./parcials/header") %>
 
 
-        <%- include("./parcials/nav") %>   
-    
+            <%- include("./parcials/nav") %>
+
     </header>
 
     <main class="main-form">
@@ -73,6 +74,15 @@
                     <input type="text" name="direccion" placeholder="Ingresa tu direccion">
                 </label>
             </div>
+            <div class="titulo-form"></div>
+            <h3>Ingresá tu avatar</h3>
+            </div>
+            <div class="wrap-form">
+                <label for="avatar" class="avatar">
+                     <input type="file" name="avatar" accept=".jpg, .bmp, .webp">
+                </label>
+            </div>
+            <div class="separador"></div>
             <div class="wrap-form">
                 <button type="submit">Registrarse</button>
             </div>
@@ -82,7 +92,8 @@
 
     </main>
 
-    <%- include("parcials/footer") %> 
-    
+    <%- include("parcials/footer") %>
+
 </body>
+
 </html>
