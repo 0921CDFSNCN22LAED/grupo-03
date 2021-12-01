@@ -36,4 +36,6 @@ router.get("/cotizaTuPc", controller.budget);
 
 router.post("/cotizaTuPc", controller.budget);
 
+router.get("/tabla-usuarios", controller.tablet_prod);
+
 module.exports = router;

@@ -109,6 +109,13 @@ const controller = {
         res.render("cotizaTuPc", { products: prodShow, prodSearch });
     },
 
+    tablet_prod:(req,res)=>{
+
+        res.render('tables_prod',{products});
+
+
+    }
+
 }
 
 module.exports = controller;
