@@ -231,8 +231,7 @@
     .desc-prod{
 
         display: flex;
-        flex-wrap:wrap;
-        text-align: justify;
+        height: 150px;
     }
 
     .tit-desc{
@@ -240,6 +239,13 @@
         display: block;
         
     }
+
+   
+
+
+    
+
+   
     
     
     /*Fin CSS */
