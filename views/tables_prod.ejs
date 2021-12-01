@@ -35,14 +35,16 @@
     </header>
 
     <main>
+        <div class="btn-crear">
+            <button type="submit" class="btn btn-success">Crear</button>
+        </div>
 
-        <button type="submit" class="btn btn-success">Crear</button>
     <table class="table">
         <thead>
           <tr>
             <th scope="col">ID</th>
             <th scope="col">Nombre</th>
-            <th scope="col">Descripcion</th>
+            <th scope="col" class="tit-desc">Descripcion</th>
             <th scope="col">Categoria</th>
             <th scope="col">Acciones</th>
           </tr>
@@ -52,11 +54,15 @@
           <tr>
             <th scope="row"><%= prod.id %> </th>
             <td><%= prod.name %></td>
-            <td><%= prod.desc %></td>
+            <td class="desc-prod"><%= prod.desc %></td>
             <td><%= prod.category %></td>
             <td>
-                <button type="submit" class="btn btn-primary">Editar</button>
-                <button type="submit" class="btn btn-danger">Eliminar</button>
+                <a href="">
+                    <button type="submit" class="btn btn-primary">Editar</button>
+                </a>
+                <a href="">
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </a>
             </td>
           </tr>
           <% }  %> 

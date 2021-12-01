@@ -224,4 +224,23 @@
     
 
     /*Fin CSS productTotals*/
+
+    /*Inicio CSS tables_prod*/
+
+   
+    .desc-prod{
+
+        display: flex;
+        flex-wrap:wrap;
+        text-align: justify;
+    }
+
+    .tit-desc{
+
+        display: block;
+        
+    }
+    
+    
+    /*Fin CSS */
 }

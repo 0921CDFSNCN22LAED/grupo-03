@@ -1335,3 +1335,54 @@ input :focus {
 
 
 /*Fin CSS cotizaTuPc*/
+
+
+/*Inicio CSS tables_prod*/
+
+.desc-prod{
+
+    display: none;
+}
+
+.tit-desc{
+
+    display: none;
+    
+}
+
+.btn-crear{
+
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    
+}
+
+
+
+.btn-crear .btn-success{
+
+    width: 100px;
+    font-size: 18px;
+    
+}
+
+.btn-primary{
+
+    width: 100px;
+    font-size: 18px;
+    margin: 5px;
+
+}
+
+.btn-danger{
+
+    width: 100px;
+    font-size: 18px;
+    margin: 5px;
+
+}
+
+/*Fin CSS tables_prod*/
+
