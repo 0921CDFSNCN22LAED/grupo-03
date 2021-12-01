@@ -26,8 +26,14 @@ router.get("/error", controller.error);
 
 router.get("/createUpdateProd", controller.createUpdateProd);
 
+router.get("/allUsers", controller.allUsers);
+
+router.get("/userEdit/:id", controller.userEdit);
+
+router.get("/userDelete/:id", controller.userDelete);
+
 router.get("/cotizaTuPc", controller.budget);
 
-router.post("/cotizaTuPc",controller.budget);
+router.post("/cotizaTuPc", controller.budget);
 
 module.exports = router;

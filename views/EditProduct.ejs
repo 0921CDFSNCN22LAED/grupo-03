@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QMC</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/styles-tablet.css">
+    <link rel="stylesheet" href="/css/styles-desktop.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <header>
+
+        <%- include("./parcials/header") %>
+
+
+            <%- include("./parcials/nav") %>
+
+    </header>
+
+    <main class="main-form">
+
+        <form mothod="POST" action="/usersEdit?_method=PUT" class="cont-form" class="cont-form">
+            <div class="titulo">
+                <h2>Edita el Producto</h2>
+            </div>
+            <div class="separador"></div>
+
+            <div class="wrap-form">
+                <label for="id">
+                    <input type="text" name="id" placeholder="Ingresa su id">
+                </label>
+            </div>
+            <div class="wrap-form">
+                <label for="name">
+                    <input type="text" name="name" placeholder="Ingresa nombre del producto">
+                </label>
+            </div>
+            <div class="wrap-form">
+                <label for="description">
+                    <input type="text" name="description" placeholder="Indicar su descricion">
+                </label>
+            </div>
+            <div class="wrap-form">
+                <label for="characteristic">
+                    <input type="text" name="characteristic" placeholder="Ingresa su caracteristica">
+                </label>
+            </div>
+            <div class="wrap-form">
+                <label for="color">
+                    <input type="text" name="color" placeholder="Ingresa su color">
+                </label>
+            </div>
+            <div class="wrap-form">
+                <label for="price">
+                    <input type="text" name="price" placeholder="Ingresa su precio">
+                </label>
+            </div>
+            <div class="wrap-form">
+                <label for="discount">
+                    <input type="number" name="discount" placeholder="Ingresa su descuento">
+                </label>
+            </div>
+            <div class="wrap-form">
+                <label for="priceDiscount">
+                    <input type="text" name="priceDiscount" placeholder="Ingresa su precio con descuento">
+                </label>
+            </div>
+            <div class="wrap-form">
+                <label for="code">
+                    <input type="text" name="code" placeholder="Ingresa codigo del producto">
+                </label>
+            </div>
+            <div class="titulo-form">
+                <h3>Ingrese la primer imagen del producto</h3>
+            </div>
+            <div class="wrap-form">
+                <label for="img1" class="img1">
+                    <input type="file" name="img1" accept=".jpg, .bmp, .webp">
+                </label>
+            </div>
+            <div class="titulo-form">
+                <h3>Ingrese la segunda imagen del producto</h3>
+            </div>
+            <div class="wrap-form">
+                <label for="img2" class="img2">
+                    <input type="file" name="img2" accept=".jpg, .bmp, .webp">
+                </label>
+            </div>
+            <div class="titulo-form">
+                <h3>Ingrese la tercera imagen del producto</h3>
+            </div>
+            <div class="wrap-form">
+                <label for="img3" class="img3">
+                    <input type="file" name="img3" accept=".jpg, .bmp, .webp">
+                </label>
+            </div>
+            <div class="wrap-form">
+                <button type="reset">Borrar</button>
+            </div>
+
+
+            <div class="wrap-form">
+                <button type="submit">Aceptar modificacion</button>
+            </div>
+
+
+        </form>
+
+    </main>
+
+    <%- include("parcials/footer") %>
+
+</body>
+
+</html>

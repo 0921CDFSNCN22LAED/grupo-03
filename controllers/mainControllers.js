@@ -40,6 +40,37 @@ const controller = {
     productTotals: (req, res) => {
         res.render("productTotals", { products: products });
     },
+    allUsers: (req, res) => {
+        res.render("allUsers", { users: users });
+    },
+    userEdit: (req, res) => {
+        const idUser = req.params.id;
+        const user = users.find((user) => {
+            return idUser == user.id;
+        });
+        if (user) {
+            res.render('userEdit', {
+                user,
+                idUser,
+            });
+        } else {
+            res.render("error")
+        }
+    },
+    userDelete: (req, res) => {
+        const idUser = req.params.id;
+        const user = users.find((user) => {
+            return idUser == user.id;
+        });
+        if (user) {
+            res.render('userDelete', {
+                user,
+                idUser,
+            });
+        } else {
+            res.render("error")
+        }
+    },
     productDetail: (req, res) => {
         const idProduct = req.params.id;
         const product = products.find((product) => {
@@ -64,18 +95,18 @@ const controller = {
 
         let prodShow = null;
 
-        if(prodSearch != null){
+        if (prodSearch != null) {
 
-            prodShow = products.filter((prod)=>{
+            prodShow = products.filter((prod) => {
 
                 return prod.category == prodSearch.category && (prod.precio >= prodSearch.min && prod.precio <= prodSearch.max)
             })
         }
 
-          
-       
 
-        res.render("cotizaTuPc", { products: prodShow,prodSearch});
+
+
+        res.render("cotizaTuPc", { products: prodShow, prodSearch });
     },
 
 }

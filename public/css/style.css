@@ -583,7 +583,7 @@ footer {
 }
 
 .carousel-item img {
-   /*object-fit: scale-down;*/
+    /*object-fit: scale-down;*/
     /*height: 100vh;*/
     width: 100%;
 }
@@ -856,7 +856,7 @@ input :focus {
 
 .wrap-form {
     width: 100%;
-    padding: 20px;
+    padding: 2px;
     text-align: center;
 }
 
@@ -1163,24 +1163,21 @@ input :focus {
 
 /*Fin CSS History*/
 
+
 /*Inicio CSS productTotals*/
 
-
-.tit-prod-tot{
-
+.tit-prod-tot {
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
-
 }
-.main-prod-tot{
 
+.main-prod-tot {
     padding-left: 5vw;
     padding-right: 5vw;
 }
 
-.cont-prod-totals{
-
+.cont-prod-totals {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -1189,123 +1186,100 @@ input :focus {
     margin-bottom: 10px;
 }
 
-.cont-prod-totals .wrap-prod-totals{
-
+.cont-prod-totals .wrap-prod-totals {
     width: 100%;
     margin: 10px;
 }
 
-
-.car-prod-tot .carousel-item img{
-
+.car-prod-tot .carousel-item img {
     height: 400px;
-} 
-.name-prod-totals{
+}
 
+.name-prod-totals {
     padding-left: 5px;
     padding-right: 5px;
 }
 
-.name-prod-totals h3{
-
+.name-prod-totals h3 {
     font-size: 16px;
     text-align: center;
-    
-   
 }
 
-.caract-prod-totals{
-
+.caract-prod-totals {
     padding-left: 10px;
-    padding-right: 10px ;
-    
+    padding-right: 10px;
 }
-.caract-prod-totals p{
 
+.caract-prod-totals p {
     text-align: justify;
     font-size: 11px;
-    
-    
 }
 
-.precio-prod-totals h3{
-
+.precio-prod-totals h3 {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
     align-self: center;
     color: blueviolet;
-    font:bold;
+    font: bold;
 }
 
-.btn-prod-totals{
-
+.btn-prod-totals {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
-    
 }
 
-.wrap-btn-prod-totals{
-
+.wrap-btn-prod-totals {
     justify-content: center;
     align-self: center;
-    
 }
 
 .car-prod-tot .carousel-item img {
     object-fit: scale-down;
-    
- }
+}
 
 
 /*Fin CSS productTotals*/
 
+
 /*Inicio CSS cotizaTuPc*/
 
-.cont-coti{
-
+.cont-coti {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
 }
 
-.titulo-coti{
-
+.titulo-coti {
     text-align: center;
     font-size: 18px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-.cont-coti .wrap-form-coti{
-
+.cont-coti .wrap-form-coti {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     margin-top: 20px;
     margin-bottom: 20px;
-
 }
 
-
-.cont-coti .wrap-form-coti form{
-
+.cont-coti .wrap-form-coti form {
     width: 100%;
 }
 
-.wrap-form-precio{
-
+.wrap-form-precio {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    justify-content:space-between;
+    justify-content: space-between;
 }
 
-.cont-coti p{
-
+.cont-coti p {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -1314,8 +1288,7 @@ input :focus {
     font-size: 20px;
 }
 
-.precio-coti{
-
+.precio-coti {
     width: 20%;
     display: flex;
     flex-wrap: wrap;
@@ -1323,34 +1296,29 @@ input :focus {
     align-self: center;
 }
 
-.input-min{
-
+.input-min {
     width: 40%;
 }
 
-.input-min input{
-
+.input-min input {
     width: 70%;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
     padding: .375rem 2.25rem .375rem .75rem;
 }
 
-.input-max{
-
+.input-max {
     width: 40%;
 }
 
-.input-max input{
-
+.input-max input {
     width: 70%;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
     padding: .375rem 2.25rem .375rem .75rem;
 }
 
-.btn-buscar-coti{
-
+.btn-buscar-coti {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -1360,9 +1328,10 @@ input :focus {
     margin-bottom: 20px;
 }
 
-.btn-buscar-coti .btn-primary{
-
+.btn-buscar-coti .btn-primary {
     width: 100%;
     font-size: 20px;
 }
+
+
 /*Fin CSS cotizaTuPc*/
