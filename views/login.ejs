@@ -19,19 +19,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
 
 </head>
 
 <body>
     <header>
-        
-        <%- include("./parcials/header") %> 
+
+        <%- include("./parcials/header") %>
 
 
-        <%- include("./parcials/nav") %>   
-    
+            <%- include("./parcials/nav") %>
+
     </header>
 
     <main class="main-form">
@@ -70,13 +69,15 @@
                 <button>Continue with Gmail</button>
             </div>
             <div class="history">
+                <button type="button" class="volver">
                 <a href="/history">Historial de compra</a>
+                </button>
             </div>
         </form>
 
     </main>
 
-    <%- include("parcials/footer") %> 
+    <%- include("parcials/footer") %>
 
 </body>
 
