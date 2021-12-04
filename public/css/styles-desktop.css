@@ -9,6 +9,13 @@
     .cont-art article {
         width: 20%;
     }
+
+    .cont-menu{
+
+        padding-left: 25%;
+        padding-right: 25%;
+        justify-content:space-around;
+    }
     .wrap-art h4,
     h3 {
         font-size: 14px;

@@ -6,8 +6,7 @@
         display: flex;
         flex-wrap: wrap;
         width: 100%;
-        padding-left: 25%;
-        padding-right: 25%;
+        justify-content:space-around;
     }
     .buscador {
         margin: 10px;
@@ -22,9 +21,7 @@
         width: 70%;
         border: 1px solid white;
         border-radius: 10px 0px 0px 10px;
-        font-size: 14px;
-       
-        
+
     }
 
     .btn-buscar{
@@ -62,13 +59,23 @@
     .wrap-menu {
         width: 33%;
         display: inline;
+       
     }
-    nav a {
+
+    .nav-wrap{
+
+        margin-bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+    .nav-wrap a {
         text-decoration: none;
         color: inherit;
-        font-size: 14px;
+        font-size: 17px;
+       
     }
-    nav li {
+    .nav-wrap li {
         display: inline-block;
         width: 200px;
         /*150*/
@@ -80,23 +87,28 @@
         position: relative;
         transition: all 500ms;
     }
-    nav li .sub li {
-        padding: 20px;
-    }
-    nav li:hover {
+    
+    .nav-wrap li:hover {
         background-color: #312D2D;
         color: #EF30F3;
         border-radius: 5px;
     }
-    nav li>ul {
+    .nav-wrap li>ul {
         display: none;
     }
-    nav li:hover>ul {
+
+    .nav-wrap ul{
+
+        background-color: black;
+        width: 250px;
+        opacity: 80%;
+    }
+    .nav-wrap li:hover>ul {
         display: block;
         position: absolute;
-        top: 5px;
-        left: -70px;
-        padding: 20px;
+        top: 28px;
+        left: -33px;
+        
     }
     .cont-art {
         display: flex;
@@ -154,14 +166,17 @@
     .cont-footer {
         display: flex;
         flex-wrap: wrap;
+        
     }
     .cont-footer .wrap-footer {
-        width: 33%;
+        width: 50%;
         color: white;
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
+        
     }
     .cont-footer .wrap-footer-redes {
-        width: 33%;
+        width: 50%;
         color: white;
     }
     .wrap-footer .titulo-footer {

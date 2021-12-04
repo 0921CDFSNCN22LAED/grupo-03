@@ -249,23 +249,24 @@ article {
     padding: 5px;
 }
 
-.boton button {
+.boton a .btn-prod {
     border: 1px #cc23cf solid;
-    padding: 5px;
+    padding: 10px;
     background-color: #cc23cf;
     border-radius: 10px;
-    width: 80%;
+    width: 100%;
     transition: all 450ms
 }
 
-.boton button a {
+.boton a .btn-prod  {
     text-decoration: none;
     color: white;
     font-size: 16px;
 }
 
 .boton button:hover {
-    background-color: blue;
+    background-color: #7200ff;
+    border: 1px solid #7200ff;
 }
 
 .wrap-footer {
@@ -829,6 +830,7 @@ input :focus {
     padding-bottom: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
+    
 }
 
 .main-form {
@@ -1247,6 +1249,12 @@ input :focus {
 
 /*Inicio CSS cotizaTuPc*/
 
+
+
+.main-coti{
+
+   min-height: 80vh;
+}
 .cont-coti {
     display: flex;
     flex-wrap: wrap;
