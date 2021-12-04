@@ -72,60 +72,57 @@
         <h2 class="titulo">Productos mas buscados</h2>
 
         <section class="cont-art">
-
-            <article>
-                <img src="/img/rtx3070.jpg" alt="rtx-3070" >
-                <div class="wrap-art">
-                    <h4 class="cuotas">18 cuotas sin interes</h4>
-                    <h4 class="descrip">Placa de video RTX 3070 MSI </h4>
-                    <h3 class="precio">$204.999</h3>
-                    <div class="boton">
-                        <button type="button" ><a href="/productDetail">Ver producto</a></button>
-                        
-                    </div>
-                </div>
-
-            </article>
-
         
-            <article>
-                <img src="/img/rx5600xt.jpg" alt="rtx-3070" >
-                <div class="wrap-art">
-                    <h4 class="cuotas">18 cuotas sin interes</h4>
-                    <h4 class="descrip">Placa de video RX 5600XT MSI </h4>
-                    <h3 class="precio">$135.909</h3>
-                    <div class="boton">
-                        <button type="button" ><a href="/productDetail">Ver producto</a></button>
-                    </div>
-                </div>
+                <% for(prod of productShowVisited.slice(0,8)){  %> 
+                    <% if(prod.type == "visited") { %> 
+                    <article>
+                        <div class="car-prod-tot">    
+                            <div id="carousel-product" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                  <button type="button" data-bs-target="#carousel-product" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                  <button type="button" data-bs-target="#carousel-product" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                  <button type="button" data-bs-target="#carousel-product" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                  <div class="carousel-item active">
+                                    <a href="<%=prod.image1%> "><img src="<%=prod.image1%>" class="d-block w-100" alt="..."></a>
+                                  </div>
+                                  <div class="carousel-item">
+                                    <a href="<%=prod.image2%> "><img src="<%=prod.image1%>" class="d-block w-100" alt="..."></a>
+                                    
+                                  </div>
+                                  <div class="carousel-item">
+                                    <a href="<%=prod.image3%> "><img src="<%=prod.image1%>" class="d-block w-100" alt="..."></a>
+                                  </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-product" data-bs-slide="prev">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                  <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-product" data-bs-slide="next">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                  <span class="visually-hidden">Next</span>
+                                </button>
+                              </div>
+                            </div>
+                        <div class="wrap-art">
+                            <h4 class="cuotas">18 cuotas sin interes</h4>
+                            <h4 class="descrip"><%= prod.name %> </h4>
+                            <h3 class="precio">$<%= prod.precio %></h3>
+                            <div class="boton">
+                                <a href="/productDetail/<%=prod.id%> ">
+                                    <button type="button" class="btn-prod" >
+                                        Ver producto
+                                    </button>
+                                </a>
+                                
+                            </div>
+                        </div>
 
-            </article>
-
-            <article>
-                <img src="/img/mother-asus.jpg" alt="asus-rog" >
-                <div class="wrap-art">
-                    <h4 class="cuotas">18 cuotas sin interes</h4>
-                    <h4 class="descrip">Motherboard ASUS ROG STRIX B550-F</h4>
-                    <h3 class="precio">$27.900</h3>
-                    <div class="boton">
-                        <button type="button" ><a href="/productDetail">Ver producto</a></button>
-                    </div>
-                </div>
-
-            </article>
-
-            <article>
-                <img src="/img/gabinete-asus.jpg" alt="-gabinete-asus-rog" >
-                <div class="wrap-art">
-                    <h4 class="cuotas">18 cuotas sin interes</h4>
-                    <h4 class="descrip">Gabinete ASUS TUF GT301</h4>
-                    <h3 class="precio">$22.900</h3>
-                    <div class="boton">
-                        <button type="button" ><a href="/productDetail">Ver producto</a></button>
-                    </div>
-                </div>
-
-            </article>
+                    </article>
+                    <% } %> 
+                <% } %> 
+            
 
         </section>
 
@@ -134,72 +131,58 @@
 
         <section class="cont-art">
 
-            <article class="discount-container">
-                <img src="/img/gabinete-2.jpg" alt="gabinete-2" >
-                <div class="discount-badge">
-                    <h6>30%</h6>
-                </div>
-                <div class="wrap-art">
-                    <h4 class="cuotas">18 cuotas sin interes</h4>
-                    <h4 class="descrip">Gabinete Kolink Void ARGB ATX</h4>
-                    <h3 class="precio">$204.999</h3>
-                    <div class="boton">
-                        <button type="button" ><a href="/productDetail">Ver producto</a></button>
-                        
-                    </div>
-                </div>
+            <% for(prod of productShowOffer.slice(0,8)){  %> 
+                <% if(prod.type == "offer") { %> 
+                    <article class="discount-container">
+                        <div class="car-prod-tot">    
+                            <div id="carousel-product" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                  <button type="button" data-bs-target="#carousel-product" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                  <button type="button" data-bs-target="#carousel-product" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                  <button type="button" data-bs-target="#carousel-product" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                  <div class="carousel-item active">
+                                    <a href="<%=prod.image1%> "><img src="<%=prod.image1%>" class="d-block w-100" alt="..."></a>
+                                  </div>
+                                  <div class="carousel-item">
+                                    <a href="<%=prod.image2%> "><img src="<%=prod.image1%>" class="d-block w-100" alt="..."></a>
+                                    
+                                  </div>
+                                  <div class="carousel-item">
+                                    <a href="<%=prod.image3%> "><img src="<%=prod.image1%>" class="d-block w-100" alt="..."></a>
+                                  </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-product" data-bs-slide="prev">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                  <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-product" data-bs-slide="next">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                  <span class="visually-hidden">Next</span>
+                                </button>
+                              </div>
+                            </div>
+                        <div class="discount-badge">
+                            <h6>30%</h6>
+                        </div>
+                        <div class="wrap-art">
+                            <h4 class="cuotas">18 cuotas sin interes</h4>
+                            <h4 class="descrip"><%= prod.name %></h4>
+                            <h3 class="precio">$<%= prod.precio %></h3>
+                            <div class="boton">
+                                <a href="/productDetail/<%=prod.id%>" >
+                                    <button type="button" class="btn-prod" >
+                                        Ver producto
+                                    </button>
+                                </a>
+                                
+                            </div>
+                        </div>
 
-            </article>
-            
-
-            <article class="discount-container">
-                <img src="/img/disco-ssd-2.jpg" alt="disco-ssd-2" >
-                    <div class="discount-badge">
-                        <h6>15%</h6>
-                    </div>
-                <div class="wrap-art">
-                    <h4 class="cuotas">18 cuotas sin interes</h4>
-                    <h4 class="descrip">Disco Sólido SSD M.2 ADATA 256GB XPG Spectrix S40G</h4>
-                    <h3 class="precio">$27.900</h3>
-                    <div class="boton">
-                        <button type="button" ><a href="/productDetail">Ver producto</a></button>
-                    </div>
-                </div>
-
-            </article>
-
-        
-            <article class="discount-container">
-                <img src="/img/fuente-2.jpg" alt="fuente-2" >
-                <div class="discount-badge">
-                    <h6>5%</h6>
-                </div>
-                <div class="wrap-art">
-                    <h4 class="cuotas">18 cuotas sin interes</h4>
-                    <h4 class="descrip">Fuente ASUS TUF 650B 80 Plus Bronze 650W </h4>
-                    <h3 class="precio">$135.909</h3>
-                    <div class="boton">
-                        <button type="button" ><a href="/productDetail">Ver producto</a></button>
-                    </div>
-                </div>
-
-            </article>
-
-            <article class="discount-container">
-                <img src="/img/memoria-2.jpg" alt="memoria-2" >
-                <div class="discount-badge">
-                    <h6>10%</h6>
-                </div>
-                <div class="wrap-art">
-                    <h4 class="cuotas">18 cuotas sin interes</h4>
-                    <h4 class="descrip">Memoria GeiL DDR4 8GB 3000MHz Super Luce RGB</h4>
-                    <h3 class="precio">$22.900</h3>
-                    <div class="boton">
-                        <button type="button" ><a href="/productDetail">Ver producto</a></button>
-                    </div>
-                </div>
-
-            </article>
+                    </article>
+                <% } %> 
+            <% } %> 
 
         </section>
 
