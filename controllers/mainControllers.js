@@ -11,7 +11,16 @@ const users = JSON.parse(usersFileText); //ARRAY de PRODUCTOS
 
 const controller = {
     home: (req, res) => {
-        res.render("index");
+
+        const productShowVisited = products.filter((prod)=>{
+            return prod.type == "visited";
+        })
+
+        const productShowOffer = products.filter((prod)=>{
+            return prod.type == "offer";
+        })
+
+        res.render("index",{productShowVisited,productShowOffer});
     },
     login: (req, res) => {
         res.render("login");
