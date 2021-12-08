@@ -24,7 +24,9 @@ router.get("/productTotals", controller.productTotals);
 
 router.get("/error", controller.error);
 
-router.get("/createUpdateProd", controller.createUpdateProd);
+router.get("/createProd", controller.createProd);
+
+router.post("/createProd",controller.storage)
 
 router.get("/allUsers", controller.allUsers);
 

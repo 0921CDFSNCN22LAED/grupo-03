@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QMC</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/styles-tablet.css">
+    <link rel="stylesheet" href="/css/styles-desktop.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    
+</head>
+
+<body>
+
+    <header>
+
+        <%- include("./parcials/header") %>
+
+
+            <%- include("./parcials/nav") %>
+
+    </header>
+
+    <main class="main-form">
+
+        <form action="/createProd" method="post" class="cont-form">
+            <div class="cont-create">
+            <div class="titulo-form">
+                <h1>Crear Productos</h1>
+            </div>
+            <div class="wrap-form-create">
+                <label for="name">Nombre del producto</label>
+                <input type="text" name="name">
+            </div>
+            <div class="wrap-form-create">
+                <label for="description">Descripcion</label>
+                <input type="text" name="desc">
+            </div>
+            <div class="wrap-form-create">
+                <label for="characteristic">Caracteristicas</label>
+                <input type="text" name="caract">
+            </div>
+            <div class="wrap-form-create">
+                <label for="color">Color</label>
+                <input type="text" name="color">
+                
+            </div>
+            <div class="wrap-form-create">
+                <label for="price">Precio</label>
+                    <input type="text" name="precio">
+            </div>
+            <div class="wrap-form-create">
+                <label for="discount">Descuento</label>
+                <input type="number" name="disc">  
+            </div>
+            <div class="wrap-form-create">
+                <label for="code">Codigo del producto</label>
+                <input type="text" name="codigo">
+            </div>
+            <div class="wrap-form-create">
+                <label for="img1" >Imagen uno</label>
+                <input type="file" name="image1" accept=".jpg, .bmp, .webp" class="img-create">
+            </div>
+            <div class="wrap-form-create">
+                <label for="img2" >Imagen dos</label>
+                <input type="file" name="image2" accept=".jpg, .bmp, .webp" class="img-create">
+            </div>
+            <div class="wrap-form-create">
+                <label for="img3">Imagen tres</label>
+                <input type="file" name="image3" accept=".jpg, .bmp, .webp" class="img-create">
+            </div>
+            <div class="wrap-form-create">
+                <button type="submit">Crear</button>
+            </div>
+
+        </div>    
+        </form>
+
+    </main>
+
+    <%- include("parcials/footer") %>
+
+   
+</body>
+
+</html>

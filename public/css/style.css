@@ -862,6 +862,58 @@ input :focus {
     text-align: center;
 }
 
+form .cont-create{
+
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+
+}
+
+.cont-create .wrap-form-create{
+
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    
+}
+
+.cont-create .wrap-form-create label{
+
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font: bold;
+    
+}
+
+.cont-create .wrap-form-create input{
+
+    width: 90%;
+    padding: 10px;
+    
+}
+
+.cont-create .wrap-form-create button{
+
+    padding: 10px 20px 10px 20px;
+    font-size: 20px;
+    background-color: blueviolet;
+    border: 1px solid blueviolet;
+    border-radius: 5px;
+    color: white;
+    margin: 10px;
+}
+
+.cont-create .wrap-form-create .img-create{
+
+    border: 1px solid silver;
+
+
+}
+
 .wrap-res {
     width: 100%;
     padding: 20px;
