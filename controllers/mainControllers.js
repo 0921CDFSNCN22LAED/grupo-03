@@ -43,8 +43,8 @@ const controller = {
     error: (req, res) => {
         res.render("error");
     },
-    createUpdateProd: (req, res) => {
-        res.render("createUpdateProd");
+    createProd: (req, res) => {
+        res.render("createProd");
     },
     productTotals: (req, res) => {
         res.render("productTotals", { products: products });
@@ -122,6 +122,24 @@ const controller = {
 
         res.render('tables_prod',{products});
 
+
+    },
+
+    storage:(req,res)=>{
+
+        const newProd = {
+
+            id: Date.now(),
+            ...req.body
+        };
+
+        products.push(newProd);
+
+        const prodJson = JSON.stringify(products,null,4);
+        
+        fs.writeFileSync(productsFilePath,prodJson,"utf-8");
+
+        res.redirect("/createProd");
 
     }
 
