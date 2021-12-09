@@ -139,7 +139,7 @@ const controller = {
         
         fs.writeFileSync(productsFilePath,prodJson,"utf-8");
 
-        res.redirect("/createProd");
+        res.redirect("/tabla-prod");
 
     }
 

@@ -38,6 +38,6 @@ router.get("/cotizaTuPc", controller.budget);
 
 router.post("/cotizaTuPc", controller.budget);
 
-router.get("/tabla-usuarios", controller.tablet_prod);
+router.get("/tabla-prod", controller.tablet_prod);
 
 module.exports = router;
