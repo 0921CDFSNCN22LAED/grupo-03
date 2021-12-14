@@ -6,6 +6,10 @@ const path = require("path");
 
 const routers = require('./routers/main');
 
+const methodOverride = require('method-override');
+
+app.use(methodOverride('_method'));
+
 app.use(express.static(path.join(__dirname, "/public")))
 
 app.listen(3000, () => {

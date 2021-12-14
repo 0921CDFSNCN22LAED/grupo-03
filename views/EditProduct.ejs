@@ -35,88 +35,100 @@
 
     <main class="main-form">
 
-        <form mothod="POST" action="/usersEdit?_method=PUT" class="cont-form" class="cont-form">
-            <div class="titulo">
-                <h2>Edita el Producto</h2>
+        <form action="/updateProduct/<%=prod.id%>?_method=PUT" method="POST" enctype="multipart/form-data" class="cont-form">
+            <div class="titulo-form">
+                <h3>Editar el Producto</h3>
             </div>
             <div class="separador"></div>
 
             <div class="wrap-form">
-                <label for="id">
-                    <input type="text" name="id" placeholder="Ingresa su id">
-                </label>
-            </div>
-            <div class="wrap-form">
-                <label for="name">
-                    <input type="text" name="name" placeholder="Ingresa nombre del producto">
-                </label>
-            </div>
-            <div class="wrap-form">
-                <label for="description">
-                    <input type="text" name="description" placeholder="Indicar su descricion">
-                </label>
-            </div>
-            <div class="wrap-form">
-                <label for="characteristic">
-                    <input type="text" name="characteristic" placeholder="Ingresa su caracteristica">
-                </label>
-            </div>
-            <div class="wrap-form">
-                <label for="color">
-                    <input type="text" name="color" placeholder="Ingresa su color">
-                </label>
-            </div>
-            <div class="wrap-form">
-                <label for="price">
-                    <input type="text" name="price" placeholder="Ingresa su precio">
-                </label>
-            </div>
-            <div class="wrap-form">
-                <label for="discount">
-                    <input type="number" name="discount" placeholder="Ingresa su descuento">
-                </label>
-            </div>
-            <div class="wrap-form">
-                <label for="priceDiscount">
-                    <input type="text" name="priceDiscount" placeholder="Ingresa su precio con descuento">
-                </label>
-            </div>
-            <div class="wrap-form">
-                <label for="code">
-                    <input type="text" name="code" placeholder="Ingresa codigo del producto">
-                </label>
-            </div>
-            <div class="titulo-form">
-                <h3>Ingrese la primer imagen del producto</h3>
-            </div>
-            <div class="wrap-form">
-                <label for="img1" class="img1">
-                    <input type="file" name="img1" accept=".jpg, .bmp, .webp">
-                </label>
-            </div>
-            <div class="titulo-form">
-                <h3>Ingrese la segunda imagen del producto</h3>
-            </div>
-            <div class="wrap-form">
-                <label for="img2" class="img2">
-                    <input type="file" name="img2" accept=".jpg, .bmp, .webp">
-                </label>
-            </div>
-            <div class="titulo-form">
-                <h3>Ingrese la tercera imagen del producto</h3>
-            </div>
-            <div class="wrap-form">
-                <label for="img3" class="img3">
-                    <input type="file" name="img3" accept=".jpg, .bmp, .webp">
-                </label>
-            </div>
-            <div class="wrap-form">
-                <button type="reset">Borrar</button>
-            </div>
+                <label for="name"><b>Nombre</b></label>
+                <input type="text" name="name" value=<%=prod.name%>>
 
-
+            </div>
             <div class="wrap-form">
-                <button type="submit">Aceptar modificacion</button>
+                <label for="desc"><b>Descripcion</b></label>
+                <input type="text" name="desc" value=<%=prod.desc%>>
+
+            </div>
+            <div class="wrap-form">
+                <label for="charact"><b>Caracteristicas</b></label>
+                <input type="text" name="charact" value=<%=prod.caract%>>
+            </div>
+            <div class="wrap-form">
+                <label for="size"><b>Especificaciones</b></label>
+                <input type="text" name="size" value=<%=prod.size%>>
+            </div>
+            <div class="wrap-form">
+                <label for="color"><b>Color</b></label>
+                <input type="text" name="color" value=<%=prod.color%>>
+
+            </div>
+            <div class="wrap-form">
+                <label for="precio"><b>Precio</b></label>
+                <input type="text" name="precio" value=<%=prod.precio%>>
+
+            </div>
+            <div class="wrap-form">
+                <label for="disc"><b>Descuento</b></label>
+                <input type="number" name="disc" value=<%=prod.disc%>>
+            </div>
+            <div class="wrap-form">
+                <label for="codigo"><b>Codigo</b></label>
+                <input type="text" name="codigo" value=<%=prod.codigo%>>
+                </label>
+            </div>
+            <div class="separador"></div>
+            <div class="wrap-form">
+                <label for="category"><b>Categoria</b></label>
+                <select name="category" id="category">
+            <option value="">Elegí</option>
+            <option value="gaming" <%=prod.category=="gaming" ? "selected" : "" %>>Gaming</option>
+            <option value="desktop" <%=prod.category=="desktop" ? "selected" : "" %>>Desktop</option>
+            <option value="office" <%=prod.category=="office" ? "selected" : "" %>>Office</option>
+        </select>
+            </div>
+            <div class="separador"></div>
+            <div class="wrap-form">
+                <label for="type"><b>Tipo</b></label>
+                <select name="type" id="type">
+            <option value="">Elegí</option>
+            <option value="visited" <%=prod.type=="visited" ? "selected" : "" %>>Visitada</option>
+            <option value="offer" <%=prod.type=="offer" ? "selected" : "" %>>En Oferta</option>
+        </select>
+            </div>
+            <div class="separador"></div>
+            <div class="titulo-form">
+                <h3>La Primer imagen es </h3>
+            </div>
+            <img src=<%=prod.image1%> style="width:80px; height:80px"/>
+            <div class="wrap-form">
+                <label for="image1" class="image1">
+            <input type="file" name="image1" accept=".jpg, .bmp, .webp">
+        </label>
+            </div>
+            <div class="titulo-form">
+                <h3>La segunda imagen es </h3>
+            </div>
+            <img src=<%=prod.image2%> style="width:80px; height:80px"/>
+            <div class="wrap-form">
+                <label for="image2 " class="iameg2">
+            <input type="file" name="image2" accept=".jpg, .bmp, .webp">
+        </label>
+            </div>
+            <div class="titulo-form">
+                <h3>La tercera imagen es</h3>
+            </div>
+            <img src=<%=prod.image3%> style="width:80px; height:80px" />
+            <div class="wrap-form ">
+                <label for="image3" class="iamge3">
+            <input type="file" name="image3" accept=".jpg, .bmp, .webp">
+        </label>
+            </div>
+            <div class="separador "></div>
+
+            <div>
+                <button class="btn btn-primary" type="submit">Aceptar modificacion</button>
             </div>
 
 

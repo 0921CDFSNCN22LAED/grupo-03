@@ -7,20 +7,20 @@ const products = JSON.parse(productsFileText); //ARRAY de PRODUCTOS
 
 const usersFilePath = path.join(__dirname, "../data/users.json");
 const usersFileText = fs.readFileSync(usersFilePath, "utf-8");
-const users = JSON.parse(usersFileText); //ARRAY de PRODUCTOS
+const users = JSON.parse(usersFileText); //ARRAY de USUARIOS
 
 const controller = {
     home: (req, res) => {
 
-        const productShowVisited = products.filter((prod)=>{
+        const productShowVisited = products.filter((prod) => {
             return prod.type == "visited";
         })
 
-        const productShowOffer = products.filter((prod)=>{
+        const productShowOffer = products.filter((prod) => {
             return prod.type == "offer";
         })
 
-        res.render("index",{productShowVisited,productShowOffer});
+        res.render("index", { productShowVisited, productShowOffer });
     },
     login: (req, res) => {
         res.render("login");
@@ -97,7 +97,7 @@ const controller = {
 
     budget: (req, res) => {
 
-       const prodSearch = {
+        const prodSearch = {
 
             ...req.body
         }
@@ -118,14 +118,14 @@ const controller = {
         res.render("cotizaTuPc", { products: prodShow, prodSearch });
     },
 
-    tablet_prod:(req,res)=>{
+    tablet_prod: (req, res) => {
 
-        res.render('tables_prod',{products});
+        res.render('tables_prod', { products });
 
 
     },
 
-    storage:(req,res)=>{
+    storage: (req, res) => {
 
         const newProd = {
 
@@ -135,14 +135,72 @@ const controller = {
 
         products.push(newProd);
 
-        const prodJson = JSON.stringify(products,null,4);
-        
-        fs.writeFileSync(productsFilePath,prodJson,"utf-8");
+        const prodJson = JSON.stringify(products, null, 4);
+
+        fs.writeFileSync(productsFilePath, prodJson, "utf-8");
 
         res.redirect("/tabla-prod");
 
-    }
+    },
 
+    editProduct: (req, res) => {
+        const idProd = req.params.id;
+        const prod = products.find((prod) => {
+            return idProd == prod.id;
+        });
+
+        if (prod) {
+            res.render('editProduct', {
+                prod,
+                idProd
+            });
+        } else {
+            res.render("error")
+        };
+
+    },
+    updateProduct: (req, res) => {
+        const idProd = req.params.id;
+        const prod = products.find((prod) => {
+            return idProd == prod.id;
+        });
+        //console.log(req);
+        console.log(req.files);
+        let prodToUpdate = {
+            ...req.body
+        }
+        console.log(req.files);
+        if (req.files) {
+
+            if (req.files.image1) {
+                prodToUpdate.image1 = req.files.image1.filename
+            } else {
+                prodToUpdate.image1 = prod.image1
+            };
+            if (req.files.image2) {
+                prodToUpdate.image2 = req.files.image2.filename
+            } else {
+                prodToUpdate.image2 = prod.image2
+            };
+            if (req.files.image3) {
+                prodToUpdate.image3 = req.files.image3.filename
+            } else {
+                prodToUpdate.image3 = prod.image1
+            }
+            /*            let updatedprod = products.find(oneProd => {
+                            if (oneProd.id == prod.id) {
+                                return prod;
+                            }
+                        }); */
+            const prodJson = JSON.stringify(products, null, 4);
+
+            fs.writeFileSync(productsFilePath, prodJson, "utf-8");
+
+            res.redirect('/productDetail/' + idProd);
+        }
+    },
 }
+
+
 
 module.exports = controller;
