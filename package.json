@@ -4,7 +4,7 @@
     "description": "[Aquí dejammos el Link al Prototipo realizado con Figma.](https://www.figma.com/file/UPGmJF9hHCwC3E7UkNN9Me/View-QMC-Copy?node-id=0%3A1)",
     "main": "app.js",
     "scripts": {
-        "start": "node app.js",
+        "start": "nodemon app.js -e js",
         "startdev": "nodemon app.js -e js"
     },
     "repository": {

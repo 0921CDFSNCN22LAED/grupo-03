@@ -868,6 +868,8 @@ form .cont-create{
     flex-wrap: wrap;
     height: 100%;
     width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
 
 }
 
@@ -883,16 +885,18 @@ form .cont-create{
 .cont-create .wrap-form-create label{
 
     width: 100%;
-    text-align: center;
-    padding: 10px;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font: bold;
     
 }
 
 .cont-create .wrap-form-create input{
 
-    width: 90%;
-    padding: 10px;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
     
 }
 
@@ -904,7 +908,8 @@ form .cont-create{
     border: 1px solid blueviolet;
     border-radius: 5px;
     color: white;
-    margin: 10px;
+    margin-top:30px;
+    margin-bottom: 30px;
 }
 
 .cont-create .wrap-form-create .img-create{
@@ -1446,4 +1451,22 @@ form .cont-create{
 
 
 /*Fin CSS tables_prod*/
+
+/*Inicio CSS profile*/
+
+
+.wrap-form-create img{
+
+    border: 1px solid silver;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    margin: 20px;
+}
+
+
+
+/*Fin CSS profile*/
 

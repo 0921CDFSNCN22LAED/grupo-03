@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QMC</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/styles-tablet.css">
+    <link rel="stylesheet" href="/css/styles-desktop.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <header>
+
+        <%- include("./parcials/header") %>
+
+
+            <%- include("./parcials/nav") %>
+
+    </header>
+
+    <main class="main-form">
+
+        <form action="/createProd" method="post" class="cont-form" >
+            <div class="cont-create">
+            <div class="titulo-form">
+                <h1>Perfil</h1>
+            </div>
+            <div class="wrap-form-create">
+                <img src="./img/default.png" alt="">
+            </div>
+            <div class="wrap-form-create">
+                <label for="mail">Email</label>
+                <input type="mail" name="mail">
+            </div>
+            <div class="wrap-form-create">
+                <label for="name">Nombre</label>
+                <input type="text" name="name">
+            </div>
+            <div class="wrap-form-create">
+                <label for="lastName">Apellido</label>
+                <input type="text" name="lastName">
+            </div>
+            <div class="wrap-form-create">
+                <label for="phone">Telefono</label>
+                <input type="text" name="phone">
+            </div>
+            <div class="wrap-form-create">
+                <label for="adress">Direccion</label>
+                    <input type="text" name="adress">
+            </div>
+            <div class="wrap-form-create">
+                <button type="submit">Editar</button>
+            </div>
+        </div>    
+       
+        </form>
+
+    </main>
+
+    <%- include("parcials/footer") %>
+
+    
+</body>
+</html>
