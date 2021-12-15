@@ -53,27 +53,27 @@
                 </tr>
             </thead>
             <tbody>
-                <% for(prod of products){  %>
+             <% for(prod of products){ %>
                     <tr>
-                        <th scope="row">
-                            <%= prod.id %>
-                        </th>
-                        <td>
-                            <%= prod.name %>
-                        </td>
-                        <td class="desc-prod">
-                            <%= prod.desc %>
-                        </td>
-                        <td>
-                            <%= prod.category %>
-                        </td>
+                        <th scope="row"><%= prod.id %> </th>
+
+                        <td> <%= prod.name %> </td>
+
+                        <td class="desc-prod"> <%= prod.desc %> </td>
+
+                        <td> <%= prod.category %> </td>
+
                         <td class="accion">
                             <a href="/editProduct/<%=prod.id%>">
                                 <button type="submit" class="btn btn-primary">Editar</button>
                             </a>
-                            <a href="">
+
+                            <a href="/tabla-prod/<%= prod.id %>">
+                            <form action="/tabla-prod/<%= prod.id %>?_method=DELETE " method="POST">
                                 <button type="submit" class="btn btn-danger">Eliminar</button>
+                            </form>
                             </a>
+
                         </td>
                     </tr>
                     <% }  %>

@@ -1,22 +1,21 @@
-const path = require('path');
 const fs = require("fs");
+const path = require("path");
 
-const productsFilePath = path.join(__dirname, "../data/products.json");
-const productsFileText = fs.readFileSync(productsFilePath, "utf-8");
-const products = JSON.parse(productsFileText); //ARRAY de PRODUCTOS
+//const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");  revisar funcionamiento
 
-const usersFilePath = path.join(__dirname, "../data/users.json");
-const usersFileText = fs.readFileSync(usersFilePath, "utf-8");
-const users = JSON.parse(usersFileText); //ARRAY de USUARIOS
+const productsService = require("../services/products");
+
+
+
 
 const controller = {
     home: (req, res) => {
 
-        const productShowVisited = products.filter((prod) => {
+        const productShowVisited = productsService.products.filter((prod) => {
             return prod.type == "visited";
         })
 
-        const productShowOffer = products.filter((prod) => {
+        const productShowOffer = productsService.products.filter((prod) => {
             return prod.type == "offer";
         })
 
@@ -47,14 +46,14 @@ const controller = {
         res.render("createProd");
     },
     productTotals: (req, res) => {
-        res.render("productTotals", { products: products });
+        res.render("productTotals", { products: productsService.products });
     },
     allUsers: (req, res) => {
-        res.render("allUsers", { users: users });
+        res.render("allUsers", { users: productsService.users });
     },
     userEdit: (req, res) => {
         const idUser = req.params.id;
-        const user = users.find((user) => {
+        const user = productsService.users.find((user) => {
             return idUser == user.id;
         });
         if (user) {
@@ -68,7 +67,7 @@ const controller = {
     },
     userDelete: (req, res) => {
         const idUser = req.params.id;
-        const user = users.find((user) => {
+        const user = productsService.users.find((user) => {
             return idUser == user.id;
         });
         if (user) {
@@ -82,7 +81,7 @@ const controller = {
     },
     productDetail: (req, res) => {
         const idProduct = req.params.id;
-        const product = products.find((product) => {
+        const product = productsService.products.find((product) => {
             return idProduct == product.id;
         });
         if (product) {
@@ -106,7 +105,7 @@ const controller = {
 
         if (prodSearch != null) {
 
-            prodShow = products.filter((prod) => {
+            prodShow = productsService.products.filter((prod) => {
 
                 return prod.category == prodSearch.category && (prod.precio >= prodSearch.min && prod.precio <= prodSearch.max)
             })
@@ -118,12 +117,23 @@ const controller = {
         res.render("cotizaTuPc", { products: prodShow, prodSearch });
     },
 
-    tablet_prod: (req, res) => {
+    tablet_prod:(req,res)=>{
 
-        res.render('tables_prod', { products });
+        res.render('tables_prod',{
+            products : productsService.products,
+        });
 
 
     },
+
+    destroy: (req, res) => { 
+        const id = req.params.id;
+        productsService.deleteOne(id);
+    
+
+        res.redirect("/tabla-prod");
+    },
+
 
     storage: (req, res) => {
 
@@ -133,11 +143,11 @@ const controller = {
             ...req.body
         };
 
-        products.push(newProd);
+        productsService.products.push(newProd);
 
-        const prodJson = JSON.stringify(products, null, 4);
+        const prodJson = JSON.stringify(productsService.products, null, 4);
 
-        fs.writeFileSync(productsFilePath, prodJson, "utf-8");
+        fs.writeFileSync(productsService.productsFilePath, prodJson, "utf-8");
 
         res.redirect("/tabla-prod");
 
@@ -145,7 +155,7 @@ const controller = {
 
     editProduct: (req, res) => {
         const idProd = req.params.id;
-        const prod = products.find((prod) => {
+        const prod = productsService.products.find((prod) => {
             return idProd == prod.id;
         });
 
@@ -161,7 +171,7 @@ const controller = {
     },
     updateProduct: (req, res) => {
         const idProd = req.params.id;
-        const prod = products.find((prod) => {
+        const prod = productsService.products.find((prod) => {
             return idProd == prod.id;
         });
         //console.log(req);
@@ -187,14 +197,9 @@ const controller = {
             } else {
                 prodToUpdate.image3 = prod.image1
             }
-            /*            let updatedprod = products.find(oneProd => {
-                            if (oneProd.id == prod.id) {
-                                return prod;
-                            }
-                        }); */
-            const prodJson = JSON.stringify(products, null, 4);
 
-            fs.writeFileSync(productsFilePath, prodJson, "utf-8");
+            productsService.products.push(prodToUpdate);
+            productsService.saveProducts;
 
             res.redirect('/productDetail/' + idProd);
         }
