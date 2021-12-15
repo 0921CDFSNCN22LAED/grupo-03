@@ -48,4 +48,6 @@ router.get("/editProduct/:id", controller.editProduct);
 
 router.put("/updateProduct/:id", upload.fields([{ name: "image1" }, { name: "image2" }, { name: "image3" }]), controller.updateProduct);
 
+router.get("/profile",controller.profile)
+
 module.exports = router;

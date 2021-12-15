@@ -204,6 +204,10 @@ const controller = {
             res.redirect('/productDetail/' + idProd);
         }
     },
+    profile:(req,res)=>{
+
+        res.render("profile");
+    }
 }
 
 
