@@ -1,4 +1,19 @@
-[
+[{
+        "id": 1,
+        "name": "Disco Duro Interno Western Digital WD5000LPCX 500GB",
+        "desc": "Western Digital es una marca de renombre mundial en almacenamiento de datos con la cual podés crear, experimentar y guardar contenidos a través de una amplia gama de dispositivos. La alta seguridad y rendimiento que brindan sus unidades la convierten en una de las empresas más elegidas del mercado. El WD5000LPCX se caracteriza por su eficiencia y buen funcionamiento, que sumado a su reducido consumo energético lo vuelven un disco indispensable para funciones estándar.",
+        "caract": "Disco Duro Interno - Marca: Western Digital - Modelo WD3200LPVX - Capacidad:500 GB - Tecnología de almacenamiento:HDD - Caché de datos: 8 MB - Interfaces: SATA III - Sistemas de archivos soportados: Windows",
+        "size": "Ancho: 69.85 mm - Altura: 100.2  - Profundidad: 7 mm - Peso: 0.09 k",
+        "color": "azul",
+        "precio": "3700",
+        "disc": 5,
+        "codigo": "IDPRODUCTO000101",
+        "imagen1": "/img/discoduro500-1.webp",
+        "imagen2": "/img/discoduro500-2.webp",
+        "imagen3": "/img/oferta2.jpg",
+        "category": "gaming",
+        "tipe": "offer"
+    },
     {
         "id": 2,
         "name": "Disco Duro Interno Western Digital WD5000LPCX 320GB",
@@ -15950,9 +15965,6 @@
         "image3": "http://dummyimage.com/202x100.png/cc0000/ffffff",
         "category": "office",
         "type": "visited"
-    },
-    {
-        "id": 1638996932220
     },
     {
         "id": 1638996977709,
