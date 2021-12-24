@@ -28,7 +28,7 @@ router.get("/error", controller.error);
 
 router.get("/createProd", controller.createProd);
 
-router.post("/createProd", controller.storage)
+router.post("/createProd", upload.fields([{ name: "image1" }, { name: "image2" }, { name: "image3" }]), controller.storage)
 
 router.get("/allUsers", controller.allUsers);
 
@@ -48,6 +48,6 @@ router.get("/editProduct/:id", controller.editProduct);
 
 router.put("/updateProduct/:id", upload.fields([{ name: "image1" }, { name: "image2" }, { name: "image3" }]), controller.updateProduct);
 
-router.get("/profile",controller.profile)
+router.get("/profile", controller.profile)
 
 module.exports = router;

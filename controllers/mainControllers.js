@@ -117,19 +117,19 @@ const controller = {
         res.render("cotizaTuPc", { products: prodShow, prodSearch });
     },
 
-    tablet_prod:(req,res)=>{
+    tablet_prod: (req, res) => {
 
-        res.render('tables_prod',{
-            products : productsService.products,
+        res.render('tables_prod', {
+            products: productsService.products,
         });
 
 
     },
 
-    destroy: (req, res) => { 
+    destroy: (req, res) => {
         const id = req.params.id;
         productsService.deleteOne(id);
-    
+
 
         res.redirect("/tabla-prod");
     },
@@ -142,12 +142,12 @@ const controller = {
             id: Date.now(),
             ...req.body
         };
-
+        console.log(newProd);
         productsService.products.push(newProd);
+        productsService.saveProducts;
+        // const prodJson = JSON.stringify(productsService.products, null, 4);
 
-        const prodJson = JSON.stringify(productsService.products, null, 4);
-
-        fs.writeFileSync(productsService.productsFilePath, prodJson, "utf-8");
+        // fs.writeFileSync(productsService.productsFilePath, prodJson, "utf-8");
 
         res.redirect("/tabla-prod");
 
@@ -204,7 +204,7 @@ const controller = {
             res.redirect('/productDetail/' + idProd);
         }
     },
-    profile:(req,res)=>{
+    profile: (req, res) => {
 
         res.render("profile");
     }
