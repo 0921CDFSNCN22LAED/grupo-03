@@ -5,8 +5,7 @@ const path = require("path");
 
 const productsService = require("../services/products");
 
-
-
+const { validationResult } = require('express-validator');
 
 const controller = {
     home: (req, res) => {
@@ -95,7 +94,14 @@ const controller = {
     },
 
     budget: (req, res) => {
+        const resultValidation = validationResult(req);
 
+        if (resultValidation.errors.length > 0) {
+            return res.render('userRegisterForm', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        }
         const prodSearch = {
 
             ...req.body

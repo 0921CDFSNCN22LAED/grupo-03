@@ -5,6 +5,7 @@ const router = express.Router();
 const controller = require("../Controllers/mainControllers");
 
 const upload = require('../middlewares/multer_middlewares.js');
+const validations = require('../middlewares/validate_product_middlewares');
 
 router.get("/", controller.home);
 
@@ -28,7 +29,7 @@ router.get("/error", controller.error);
 
 router.get("/createProd", controller.createProd);
 
-router.post("/createProd", upload.fields([{ name: "image1" }, { name: "image2" }, { name: "image3" }]), controller.storage)
+router.post("/createProd", upload.fields([{ name: "image1" }, { name: "image2" }, { name: "image3" }]), validations, controller.storage)
 
 router.get("/allUsers", controller.allUsers);
 
