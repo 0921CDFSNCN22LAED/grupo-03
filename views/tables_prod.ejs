@@ -37,7 +37,7 @@
 
     <main>
         <div class="btn-crear">
-            <a href="/createProd">
+            <a href="/products/createProd">
                 <button type="submit" class="btn btn-success">Crear</button>
             </a>
         </div>
@@ -53,23 +53,31 @@
                 </tr>
             </thead>
             <tbody>
-             <% for(prod of products){ %>
+                <% for(prod of products){ %>
                     <tr>
-                        <th scope="row"><%= prod.id %> </th>
+                        <th scope="row">
+                            <%= prod.id %>
+                        </th>
 
-                        <td> <%= prod.name %> </td>
+                        <td>
+                            <%= prod.name %>
+                        </td>
 
-                        <td class="desc-prod"> <%= prod.desc %> </td>
+                        <td class="desc-prod">
+                            <%= prod.desc %>
+                        </td>
 
-                        <td> <%= prod.category %> </td>
+                        <td>
+                            <%= prod.category %>
+                        </td>
 
                         <td class="accion">
-                            <a href="/editProduct/<%=prod.id%>">
+                            <a href="/products/editProduct/<%=prod.id%>">
                                 <button type="submit" class="btn btn-primary">Editar</button>
                             </a>
 
-                            <a href="/tabla-prod/<%= prod.id %>">
-                            <form action="/tabla-prod/<%= prod.id %>?_method=DELETE " method="POST">
+                            <a href="/products/tabla-prod/<%= prod.id %>">
+                            <form action="/products/tabla-prod/<%= prod.id %>?_method=DELETE " method="POST">
                                 <button type="submit" class="btn btn-danger">Eliminar</button>
                             </form>
                             </a>
