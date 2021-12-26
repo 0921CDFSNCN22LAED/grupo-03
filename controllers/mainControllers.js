@@ -95,12 +95,13 @@ const controller = {
 
     budget: (req, res) => {
         const resultValidation = validationResult(req);
-
+        console.log(resultValidation.errors.length);
         if (resultValidation.errors.length > 0) {
-            return res.render('userRegisterForm', {
+            return res.render('createProd', {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             });
+
         }
         const prodSearch = {
 

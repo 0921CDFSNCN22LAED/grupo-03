@@ -39,36 +39,99 @@
         <form action="/createProd" method="post" enctype="multipart/form-data" class="cont-form">
             <div class="cont-create">
                 <div class="titulo-form">
-                    <h1>Crear Productos</h1>
+                    <h1>Crear Producto</h1>
                 </div>
                 <div class="wrap-form-create">
                     <label for="name">Nombre del producto</label>
                     <input type="text" name="name">
+                    <% if (locals.errors && errors.name) { %>
+                        <div class="text-danger">
+                            <%= errors.name.msg %>
+                        </div>
+                        <% } %>
                 </div>
                 <div class="wrap-form-create">
                     <label for="description">Descripcion</label>
                     <input type="text" name="desc">
+                    <% if (locals.errors && errors.desc) { %>
+                        <div class="text-danger">
+                            <%= errors.desc.msg %>
+                        </div>
+                        <% } %>
                 </div>
                 <div class="wrap-form-create">
                     <label for="characteristic">Caracteristicas</label>
                     <input type="text" name="caract">
+                    <% if (locals.errors && errors.caract) { %>
+                        <div class="text-danger">
+                            <%= errors.caract.msg %>
+                        </div>
+                        <% } %>
                 </div>
                 <div class="wrap-form-create">
                     <label for="color">Color</label>
                     <input type="text" name="color">
-
+                    <% if (locals.errors && errors.color) { %>
+                        <div class="text-danger">
+                            <%= errors.color.msg %>
+                        </div>
+                        <% } %>
                 </div>
                 <div class="wrap-form-create">
                     <label for="price">Precio</label>
                     <input type="text" name="precio">
+                    <% if (locals.errors && errors.precio) { %>
+                        <div class="text-danger">
+                            <%= errors.precio.msg %>
+                        </div>
+                        <% } %>
                 </div>
                 <div class="wrap-form-create">
                     <label for="discount">Descuento</label>
                     <input type="number" name="disc">
+                    <% if (locals.errors && errors.disc) { %>
+                        <div class="text-danger">
+                            <%= errors.disc.msg %>
+                        </div>
+                        <% } %>
                 </div>
                 <div class="wrap-form-create">
                     <label for="code">Codigo del producto</label>
-                    <input type="text" name="codigo">
+                    <input type="text" name="code">
+                    <% if (locals.errors && errors.code) { %>
+                        <div class="text-danger">
+                            <%= errors.code.msg %>
+                        </div>
+                        <% } %>
+                </div>
+                <div class="separador"></div>
+                <div class="wrap-form">
+                    <label for="category"><b>Categoria</b></label>
+                    <select name="category" id="category">
+                                    <option value="">Elegí</option>
+                                    <option value="gaming" >Gaming</option>
+                                    <option value="desktop" >Desktop</option>
+                        <option value="office" >Office</option>
+                    </select>
+                    <% if (locals.errors && errors.category) { %>
+                        <div class="text-danger">
+                            <%= errors.category.msg %>
+                        </div>
+                        <% } %>
+                </div>
+                <div class="separador"></div>
+                <div class="wrap-form">
+                    <label for="type"><b>Tipo</b></label>
+                    <select name="type" id="type">
+                        <option value="">Elegí</option>
+                        <option value="visited">Visitada</option>
+                        <option value="offer" >En Oferta</option>
+                    </select>
+                    <% if (locals.errors && errors.type) { %>
+                        <div class="text-danger">
+                            <%= errors.type.msg %>
+                        </div>
+                        <% } %>
                 </div>
                 <div class="wrap-form-create">
                     <label for="img1">Imagen uno</label>
