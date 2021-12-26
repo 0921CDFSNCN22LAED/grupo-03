@@ -94,15 +94,7 @@ const controller = {
     },
 
     budget: (req, res) => {
-        const resultValidation = validationResult(req);
-        console.log(resultValidation.errors.length);
-        if (resultValidation.errors.length > 0) {
-            return res.render('createProd', {
-                errors: resultValidation.mapped(),
-                oldData: req.body
-            });
 
-        }
         const prodSearch = {
 
             ...req.body
@@ -143,7 +135,15 @@ const controller = {
 
 
     storage: (req, res) => {
+        const resultValidation = validationResult(req);
+        console.log(resultValidation.errors.length);
+        if (resultValidation.errors.length > 0) {
+            return res.render('createProd', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
 
+        }
         const newProd = {
 
             id: Date.now(),

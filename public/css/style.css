@@ -258,7 +258,7 @@ article {
     transition: all 450ms
 }
 
-.boton a .btn-prod  {
+.boton a .btn-prod {
     text-decoration: none;
     color: white;
     font-size: 16px;
@@ -830,7 +830,6 @@ input :focus {
     padding-bottom: 10px;
     margin-top: 20px;
     margin-bottom: 20px;
-    
 }
 
 .main-form {
@@ -862,61 +861,49 @@ input :focus {
     text-align: center;
 }
 
-form .cont-create{
-
+form .cont-create {
     display: flex;
     flex-wrap: wrap;
     height: 100%;
     width: 100%;
     padding-left: 10px;
     padding-right: 10px;
-
 }
 
-.cont-create .wrap-form-create{
-
+.cont-create .wrap-form-create {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
-    
 }
 
-.cont-create .wrap-form-create label{
-
+.cont-create .wrap-form-create label {
     width: 100%;
     text-align: left;
     padding-top: 10px;
     padding-bottom: 10px;
     font: bold;
-    
 }
 
-.cont-create .wrap-form-create input{
-
+.cont-create .wrap-form-create input {
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
-    
 }
 
-.cont-create .wrap-form-create button{
-
+.cont-create .wrap-form-create button {
     padding: 10px 20px 10px 20px;
     font-size: 20px;
     background-color: blueviolet;
     border: 1px solid blueviolet;
     border-radius: 5px;
     color: white;
-    margin-top:30px;
+    margin-top: 30px;
     margin-bottom: 30px;
 }
 
-.cont-create .wrap-form-create .img-create{
-
+.cont-create .wrap-form-create .img-create {
     border: 1px solid silver;
-
-
 }
 
 .wrap-res {
@@ -1306,12 +1293,10 @@ form .cont-create{
 
 /*Inicio CSS cotizaTuPc*/
 
-
-
-.main-coti{
-
-   min-height: 80vh;
+.main-coti {
+    min-height: 80vh;
 }
+
 .cont-coti {
     display: flex;
     flex-wrap: wrap;
@@ -1404,59 +1389,45 @@ form .cont-create{
 
 /*Inicio CSS tables_prod*/
 
-.desc-prod{
-
+.desc-prod {
     display: none;
 }
 
-.tit-desc{
-
+.tit-desc {
     display: none;
-    
 }
 
-.btn-crear{
-
+.btn-crear {
     margin: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: right;
-    
 }
 
-
-
-.btn-crear .btn-success{
-
+.btn-crear .btn-success {
     width: 100px;
     font-size: 18px;
-    
 }
 
-.btn-primary{
-
+.btn-primary {
     width: 100px;
     font-size: 18px;
     margin: 5px;
-
 }
 
-.btn-danger{
-
+.btn-danger {
     width: 100px;
     font-size: 18px;
     margin: 5px;
-
 }
 
 
 /*Fin CSS tables_prod*/
 
+
 /*Inicio CSS profile*/
 
-
-.wrap-form-create img{
-
+.wrap-form-create img {
     border: 1px solid silver;
     width: 100px;
     height: 100px;
@@ -1467,6 +1438,8 @@ form .cont-create{
 }
 
 
-
 /*Fin CSS profile*/
 
+.text-danger {
+    color: #dc3545!important
+}
