@@ -1,9 +1,11 @@
 const fs = require("fs");
 const path = require("path");
 
-const productsService = require("../services/products");
+const productsService = require("../services/user");
 
-const { validationResult } = require('express-validator');
+const uploadFile = require("../middlewares/multer_middlewares");
+
+const { validationResult } = require("express-validator");
 
 const controller = {
     login: (req, res) => {
@@ -11,6 +13,31 @@ const controller = {
     },
     register: (req, res) => {
         res.render("register");
+    },
+    processRegister: (req, res) => {
+
+        let userInDB = User.findByField('email', req.body.email);
+
+        if (userInDB) {
+            return res.render('userRegisterForm', {
+                errors: {
+                    email: {
+                        msg: 'Este email ya está registrado'
+                    }
+                },
+                oldData: req.body
+            });
+        }
+
+        let userToCreate = {
+            ...req.body,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            avatar: req.file.filename
+        }
+
+        let userCreated = User.create(userToCreate);
+
+        return res.redirect('/users/login');
     },
     recupero: (req, res) => {
         res.render("recupero");

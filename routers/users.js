@@ -10,6 +10,8 @@ router.get("/login", controller.login);
 
 router.get("/register", controller.register);
 
+router.post("/register", uploadFile.single('image'), usersControllers.processRegister);
+
 router.get("/recupero", controller.recupero);
 
 router.get("/history", controller.history);
