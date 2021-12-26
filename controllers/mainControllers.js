@@ -153,6 +153,19 @@ const controller = {
 
     },
 
+    storageRegister:(req,res)=>{
+
+        const newUser = {
+
+            id: Date.now(),
+            ...req.body,
+
+        };
+
+        res.redirect("/register");
+
+    },
+
     editProduct: (req, res) => {
         const idProd = req.params.id;
         const prod = productsService.products.find((prod) => {

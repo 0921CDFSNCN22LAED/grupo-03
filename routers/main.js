@@ -6,11 +6,29 @@ const controller = require("../Controllers/mainControllers");
 
 const upload = require('../middlewares/multer_middlewares.js');
 
+const { body } = require("express-validator");
+
+const validations = [
+
+    body("email").notEmpty(),
+    body("password").notEmpty(),
+    body("repassword").notEmpty(),
+    body("name").notEmpty(),
+    body("lastName").notEmpty(),
+    body("phone").notEmpty(),
+    body("adress").notEmpty(),
+    
+
+
+];
+
 router.get("/", controller.home);
 
 router.get("/login", controller.login);
 
 router.get("/register", controller.register);
+
+router.post("/register",controller.storageRegister);
 
 router.get("/productDetail/:id", controller.productDetail);
 
