@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,6 +21,7 @@
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
 </head>
+
 <body>
 
     <header>
@@ -33,45 +35,46 @@
 
     <main class="main-form">
 
-        <form action="/createProd" method="post" class="cont-form" >
+        <form action="/users/profile" method="post" class="cont-form">
             <div class="cont-create">
-            <div class="titulo-form">
-                <h1>Perfil</h1>
-            </div>
-            <div class="wrap-form-create">
-                <img src="./img/default.png" alt="">
-            </div>
-            <div class="wrap-form-create">
-                <label for="mail">Email</label>
-                <input type="mail" name="mail">
-            </div>
-            <div class="wrap-form-create">
-                <label for="name">Nombre</label>
-                <input type="text" name="name">
-            </div>
-            <div class="wrap-form-create">
-                <label for="lastName">Apellido</label>
-                <input type="text" name="lastName">
-            </div>
-            <div class="wrap-form-create">
-                <label for="phone">Telefono</label>
-                <input type="text" name="phone">
-            </div>
-            <div class="wrap-form-create">
-                <label for="adress">Direccion</label>
+                <div class="titulo-form">
+                    <h1>Perfil</h1>
+                </div>
+                <div class="wrap-form-create">
+                    <img src="./img/default.png" alt="">
+                </div>
+                <div class="wrap-form-create">
+                    <label for="mail">Email</label>
+                    <input type="mail" name="mail">
+                </div>
+                <div class="wrap-form-create">
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name">
+                </div>
+                <div class="wrap-form-create">
+                    <label for="lastName">Apellido</label>
+                    <input type="text" name="lastName">
+                </div>
+                <div class="wrap-form-create">
+                    <label for="phone">Telefono</label>
+                    <input type="text" name="phone">
+                </div>
+                <div class="wrap-form-create">
+                    <label for="adress">Direccion</label>
                     <input type="text" name="adress">
+                </div>
+                <div class="wrap-form-create">
+                    <button type="submit">Editar</button>
+                </div>
             </div>
-            <div class="wrap-form-create">
-                <button type="submit">Editar</button>
-            </div>
-        </div>    
-       
+
         </form>
 
     </main>
 
     <%- include("parcials/footer") %>
 
-    
+
 </body>
+
 </html>

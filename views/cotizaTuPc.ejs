@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,131 +20,138 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
 
-    
 
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    rel="stylesheet" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
 
 </head>
+
 <body>
 
-    
+
 
     <header>
 
-        <%- include("./parcials/header") %> 
+        <%- include("./parcials/header") %>
 
-        <%- include("./parcials/nav") %>    
+            <%- include("./parcials/nav") %>
 
     </header>
 
-   
+
 
     <main class="main-coti">
         <h1 class="titulo-coti">Cotiza tu PC de las siguientes maneras</h1>
 
         <section class="cont-coti">
-        
+
             <div class="wrap-form-coti">
-                
-             <form  method="post" action="/cotizaTuPc" >
+
+                <form method="post" action="/products/cotizaTuPc">
                     <select class="form-select" aria-label="Default select example" name="category">
                         <option selected value="category">Categorías</option>
                         <option value="gaming">PC Gaming</option>
                         <option value="desktop">PC Escritorio</option>
                         <option value="office">PC Oficina</option>
                     </select>
-                
-                    </div>
-                    <p>o</p>
-                    <div class="wrap-form-precio">
-                        <div class="precio-coti">
-                            <label for="">Precio:</label>
-                        </div>
-                        <div class="input-min">
-                            <input type="text" placeholder="Minimo" name="min">
-                        </div>
-                        <div class="input-max">
-                            <input type="text" placeholder="Maximo" name="max">
-                        </div>        
 
-                    </div> 
-                    <div class="btn-buscar-coti">
-                        <button type="submit" class="btn btn-primary">Buscar</button>
-                    </div>  
-    
-        </form>
+            </div>
+            <p>o</p>
+            <div class="wrap-form-precio">
+                <div class="precio-coti">
+                    <label for="">Precio:</label>
+                </div>
+                <div class="input-min">
+                    <input type="text" placeholder="Minimo" name="min">
+                </div>
+                <div class="input-max">
+                    <input type="text" placeholder="Maximo" name="max">
+                </div>
+
+            </div>
+            <div class="btn-buscar-coti">
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </div>
+
+            </form>
 
         </section>
 
-       
+
         <section class="cont-prod-totals">
 
             <% for(product of products) { %>
-            <article class="wrap-prod-totals">
-    
-            <div class="car-prod-tot">    
-                <div id="carousel-product" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                      <button type="button" data-bs-target="#carousel-product" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                      <button type="button" data-bs-target="#carousel-product" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                      <button type="button" data-bs-target="#carousel-product" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="<%=product.imagen1%>" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="<%=product.imagen2%>" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="<%=product.imagen3%>" class="d-block w-100" alt="...">
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-product" data-bs-slide="prev">
+                <article class="wrap-prod-totals">
+
+                    <div class="car-prod-tot">
+                        <div id="carousel-product" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carousel-product" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carousel-product" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carousel-product" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="<%=product.imagen1%>" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="<%=product.imagen2%>" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="<%=product.imagen3%>" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-product" data-bs-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                       <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carousel-product" data-bs-slide="next">
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel-product" data-bs-slide="next">
                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
                       <span class="visually-hidden">Next</span>
                     </button>
-                  </div>
-                </div>
-    
-                <div class="name-prod-totals">
-                    <h3><%=product.name%></h3>
-                </div>
-                <div class="caract-prod-totals">
-                    <p><%= product.caract %></p>
-                </div>
-                <div class="precio-prod-totals">
-                    <h3><%= product.precio %></h3>
-                </div>
-    
-                <div class="btn-prod-totals">
-                    
-                        
-                            <button type="button" class="btn btn-primary">
+                        </div>
+                    </div>
+
+                    <div class="name-prod-totals">
+                        <h3>
+                            <%=product.name%>
+                        </h3>
+                    </div>
+                    <div class="caract-prod-totals">
+                        <p>
+                            <%= product.caract %>
+                        </p>
+                    </div>
+                    <div class="precio-prod-totals">
+                        <h3>
+                            <%= product.precio %>
+                        </h3>
+                    </div>
+
+                    <div class="btn-prod-totals">
+
+
+                        <button type="button" class="btn btn-primary">
                                 Ver producto
                             </button>
-                        
-                    
-                </div>  
-            </article>
-            <% } %>        
-        </section> 
-        
+
+
+                    </div>
+                </article>
+                <% } %>
+        </section>
+
     </main>
 
 
 
-<%- include("./parcials/footer") %> 
+    <%- include("./parcials/footer") %>
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </body>
+
 </html>
