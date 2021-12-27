@@ -66,11 +66,11 @@ const controller = {
         productsService.deleteOne(id);
 
 
-        res.redirect("/tabla-prod");
+        res.redirect("/products/tabla-prod");
     },
     storage: (req, res) => {
         const resultValidation = validationResult(req);
-        console.log(resultValidation.errors.length);
+        
         if (resultValidation.errors.length > 0) {
             return res.render('createProd', {
                 errors: resultValidation.mapped(),
@@ -85,12 +85,13 @@ const controller = {
         };
         console.log(newProd);
         productsService.products.push(newProd);
+        console.log(productsService.products);
         productsService.saveProducts;
         // const prodJson = JSON.stringify(productsService.products, null, 4);
 
         // fs.writeFileSync(productsService.productsFilePath, prodJson, "utf-8");
 
-        res.redirect("/tabla-prod");
+        res.redirect("/products/tabla-prod");
 
     },
 
@@ -116,11 +117,11 @@ const controller = {
             return idProd == prod.id;
         });
         //console.log(req);
-        console.log(req.files);
+        console.log(req.body);
         let prodToUpdate = {
             ...req.body
         }
-        console.log(req.files);
+        console.log(prodToUpdate);
         if (req.files) {
 
             if (req.files.image1) {
@@ -140,9 +141,10 @@ const controller = {
             }
 
             productsService.products.push(prodToUpdate);
+            console.log(productsService.products[1]);
             productsService.saveProducts;
 
-            res.redirect('/productDetail/' + idProd);
+            res.redirect('/products/productDetail/' + idProd);
         }
     },
 
