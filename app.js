@@ -2,6 +2,7 @@ const express = require("express");
 const session = require('express-session');
 const cookies = require('cookie-parser');
 const path = require("path");
+const methodOverride = require('method-override');
 
 const app = express();
 
@@ -14,13 +15,13 @@ app.use(session({
     saveUninitialized: false,
 }));
 
+app.use(methodOverride('_method'));
 app.use(cookies());
 
 app.use(userLoggedMiddleware);
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(methodOverride('_method'));
 
 // Template Engine
 app.set('view engine', 'ejs');
@@ -31,7 +32,7 @@ const mainRoutes = require('./routers/main');
 const userRoutes = require('./routers/users');
 const prodRoutes = require('./routers/products');
 
-const methodOverride = require('method-override');
+
 
 app.use(express.static(path.join(__dirname, "/public")))
 

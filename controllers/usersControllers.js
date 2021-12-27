@@ -1,11 +1,11 @@
 const fs = require("fs");
 const path = require("path");
 
-const productsService = require("../services/user");
-
-const uploadFile = require("../middlewares/multer_middlewares");
+const userService = require("../services/user");
 
 const { validationResult } = require("express-validator");
+
+const bcrypt = require("bcryptjs");
 
 const controller = {
     login: (req, res) => {
@@ -16,10 +16,17 @@ const controller = {
     },
     processRegister: (req, res) => {
 
-        let userInDB = User.findByField('email', req.body.email);
+        const resultValidation = validationResult(req);
+
+        if(resultValidation.length > 0){
+
+            res.render("register");
+        };
+
+        let userInDB = userService.findByField('email', req.body.email);
 
         if (userInDB) {
-            return res.render('userRegisterForm', {
+            return res.render('register', {
                 errors: {
                     email: {
                         msg: 'Este email ya está registrado'
@@ -31,11 +38,11 @@ const controller = {
 
         let userToCreate = {
             ...req.body,
-            password: bcryptjs.hashSync(req.body.password, 10),
+            password: bcrypt.hashSync(req.body.password, 10),
             avatar: req.file.filename
         }
 
-        let userCreated = User.create(userToCreate);
+        let userCreated = userService.create(userToCreate);
 
         return res.redirect('/users/login');
     },
@@ -51,7 +58,7 @@ const controller = {
     },
     userEdit: (req, res) => {
         const idUser = req.params.id;
-        const user = productsService.users.find((user) => {
+        const user = userService.getData().find((user) => {
             return idUser == user.id;
         });
         if (user) {
@@ -65,7 +72,7 @@ const controller = {
     },
     userDelete: (req, res) => {
         const idUser = req.params.id;
-        const user = productsService.users.find((user) => {
+        const user = userService.getData().find((user) => {
             return idUser == user.id;
         });
         if (user) {
