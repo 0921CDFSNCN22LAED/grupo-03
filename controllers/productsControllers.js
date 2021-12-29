@@ -3,7 +3,7 @@ const path = require("path");
 
 //const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");  revisar funcionamiento
 
-const productsService = require("../services/products");
+const productsService = require("../services/products.js");
 
 const { validationResult } = require('express-validator');
 
@@ -69,29 +69,29 @@ const controller = {
         res.redirect("/products/tabla-prod");
     },
     storage: (req, res) => {
+
+ 
         const resultValidation = validationResult(req);
+
+        console.log(resultValidation.errors);
         
-        if (resultValidation.errors.length > 0) {
+        if (resultValidation.length > 0) {
             return res.render('createProd', {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             });
 
         }
-        const newProd = {
+        
 
-            id: Date.now(),
-            ...req.body
-        };
-        console.log(newProd);
-        productsService.products.push(newProd);
-        console.log(productsService.products);
-        productsService.saveProducts;
-        // const prodJson = JSON.stringify(productsService.products, null, 4);
+            console.log("entra aca");
+            productsService.createOne(req.body);
+            // const prodJson = JSON.stringify(productsService.products, null, 4);
 
-        // fs.writeFileSync(productsService.productsFilePath, prodJson, "utf-8");
+            // fs.writeFileSync(productsService.productsFilePath, prodJson, "utf-8");
 
-        res.redirect("/products/tabla-prod");
+            res.redirect("/products/tabla-prod");
+         
 
     },
 

@@ -1,4 +1,5 @@
-[{
+[
+    {
         "id": 1,
         "name": "Disco Duro Interno Western Digital WD5000LPCX 500GB",
         "desc": "Western Digital es una marca de renombre mundial en almacenamiento de datos con la cual podés crear, experimentar y guardar contenidos a través de una amplia gama de dispositivos. La alta seguridad y rendimiento que brindan sus unidades la convierten en una de las empresas más elegidas del mercado. El WD5000LPCX se caracteriza por su eficiencia y buen funcionamiento, que sumado a su reducido consumo energético lo vuelven un disco indispensable para funciones estándar.",
@@ -15967,85 +15968,63 @@
         "type": "visited"
     },
     {
-        "id": 1638996977709,
+        "id": 1640817211950,
         "name": "Iphone 15",
-        "description": "Iphone caro",
-        "characteristic": "Iphone caro",
-        "color": "negro",
-        "price": "2000000000",
-        "discount": "0",
-        "priceDiscount": "",
-        "code": "1234654",
-        "img1": "",
-        "img2": "",
-        "img3": ""
-    },
-    {
-        "id": 1638997012607,
-        "name": "Iphone 15",
-        "description": "Iphone caro",
-        "characteristic": "Iphone caro",
-        "color": "negro",
-        "price": "2000000000",
-        "discount": "15",
-        "priceDiscount": "",
-        "code": "1234654",
-        "img1": "",
-        "img2": "",
-        "img3": ""
-    },
-    {
-        "id": 1638997035667,
-        "name": "Iphone 15",
-        "description": "Iphone caro",
-        "characteristic": "Iphone caro",
-        "color": "negro",
-        "price": "",
-        "discount": "0",
-        "priceDiscount": "",
-        "code": "1234654",
-        "img1": "",
-        "img2": "",
-        "img3": ""
-    },
-    {
-        "id": 1638997081712,
-        "name": "Iphone 15",
-        "description": "Iphone caro",
-        "characteristic": "Iphone caro",
-        "color": "negro",
-        "price": "2000000000",
-        "discount": "15",
-        "priceDiscount": "",
-        "code": "1234654",
-        "img1": "cooler.jpg",
-        "img2": "",
-        "img3": ""
-    },
-    {
-        "id": 1639000612763,
-        "name": "Iphone 13",
-        "description": "Iphone 13-256 gb-Apple",
-        "characteristic": "Super Retina XDR OLED de 6,1 pulgadas Resolución FullHD+ (2.532 x 1.170 píxeles) 460 ppp True-Tone HDR 800 nits",
-        "color": "Blanco",
-        "price": "325000",
-        "discount": "0",
-        "code": "PRO-0001",
-        "img1": "iphone13white_00000.jpg",
-        "img2": "iphone-13-mini-starlight-select-2021.jpg",
-        "img3": "iphone-13-mini-starlight-select-2021.jpg"
-    },
-    {
-        "id": 1639000840742,
-        "name": "Iphone 13",
         "desc": "Iphone 13-256gb",
         "caract": "Super Retina XDR OLED de 6,1 pulgadas Resolución FullHD+ (2.532 x 1.170 píxeles) 460 ppp True-Tone HDR 800 nits",
-        "color": "Blanco",
-        "precio": "325000",
+        "color": "negro",
+        "precio": "5000",
         "disc": "0",
-        "codigo": "PRO-001",
-        "image1": "iphone13white_00000.jpg",
-        "image2": "iphone-13-mini-starlight-select-2021.jpg",
-        "image3": "iphone-13-mini-starlight-select-2021.jpg"
+        "code": "123456",
+        "category": "gaming",
+        "type": "offer"
+    },
+    {
+        "id": 1640817232051,
+        "name": "",
+        "desc": "",
+        "caract": "",
+        "color": "",
+        "precio": "",
+        "disc": "",
+        "code": "",
+        "category": "",
+        "type": ""
+    },
+    {
+        "id": 1640817377933,
+        "name": "",
+        "desc": "",
+        "caract": "",
+        "color": "",
+        "precio": "",
+        "disc": "",
+        "code": "",
+        "category": "",
+        "type": ""
+    },
+    {
+        "id": 1640817715739,
+        "name": "Iphone 15",
+        "desc": "Iphone 13-256gb",
+        "caract": "Super Retina XDR OLED de 6,1 pulgadas Resolución FullHD+ (2.532 x 1.170 píxeles) 460 ppp True-Tone HDR 800 nits",
+        "color": "negro",
+        "precio": "5000",
+        "disc": "0",
+        "code": "123456465",
+        "category": "gaming",
+        "type": "visited"
+    },
+    {
+        "id": 1640817736632,
+        "name": "",
+        "desc": "",
+        "caract": "",
+        "color": "",
+        "precio": "",
+        "disc": "",
+        "code": "",
+        "category": "",
+        "type": ""
     }
 ]
