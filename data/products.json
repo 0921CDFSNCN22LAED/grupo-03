@@ -15968,7 +15968,7 @@
         "type": "visited"
     },
     {
-        "id": 1640817211950,
+        "id": 1641137936582,
         "name": "Iphone 15",
         "desc": "Iphone 13-256gb",
         "caract": "Super Retina XDR OLED de 6,1 pulgadas Resolución FullHD+ (2.532 x 1.170 píxeles) 460 ppp True-Tone HDR 800 nits",
@@ -15977,54 +15977,44 @@
         "disc": "0",
         "code": "123456",
         "category": "gaming",
-        "type": "offer"
-    },
-    {
-        "id": 1640817232051,
-        "name": "",
-        "desc": "",
-        "caract": "",
-        "color": "",
-        "precio": "",
-        "disc": "",
-        "code": "",
-        "category": "",
-        "type": ""
-    },
-    {
-        "id": 1640817377933,
-        "name": "",
-        "desc": "",
-        "caract": "",
-        "color": "",
-        "precio": "",
-        "disc": "",
-        "code": "",
-        "category": "",
-        "type": ""
-    },
-    {
-        "id": 1640817715739,
-        "name": "Iphone 15",
-        "desc": "Iphone 13-256gb",
-        "caract": "Super Retina XDR OLED de 6,1 pulgadas Resolución FullHD+ (2.532 x 1.170 píxeles) 460 ppp True-Tone HDR 800 nits",
-        "color": "negro",
-        "precio": "5000",
-        "disc": "0",
-        "code": "123456465",
-        "category": "gaming",
-        "type": "visited"
-    },
-    {
-        "id": 1640817736632,
-        "name": "",
-        "desc": "",
-        "caract": "",
-        "color": "",
-        "precio": "",
-        "disc": "",
-        "code": "",
-        "category": "",
-        "type": ""
+        "type": "visited",
+        "files": {
+            "image1": [
+                {
+                    "fieldname": "image1",
+                    "originalname": "img-iphone-11.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "C:\\Users\\Nico\\OneDrive\\Escritorio\\Nueva carpeta\\grupo-03\\public\\img",
+                    "filename": "1641137936571_img.jpg",
+                    "path": "C:\\Users\\Nico\\OneDrive\\Escritorio\\Nueva carpeta\\grupo-03\\public\\img\\1641137936571_img.jpg",
+                    "size": 89331
+                }
+            ],
+            "image2": [
+                {
+                    "fieldname": "image2",
+                    "originalname": "img-iphone-11.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "C:\\Users\\Nico\\OneDrive\\Escritorio\\Nueva carpeta\\grupo-03\\public\\img",
+                    "filename": "1641137936573_img.jpg",
+                    "path": "C:\\Users\\Nico\\OneDrive\\Escritorio\\Nueva carpeta\\grupo-03\\public\\img\\1641137936573_img.jpg",
+                    "size": 89331
+                }
+            ],
+            "image3": [
+                {
+                    "fieldname": "image3",
+                    "originalname": "img-iphone-11.jpg",
+                    "encoding": "7bit",
+                    "mimetype": "image/jpeg",
+                    "destination": "C:\\Users\\Nico\\OneDrive\\Escritorio\\Nueva carpeta\\grupo-03\\public\\img",
+                    "filename": "1641137936573_img.jpg",
+                    "path": "C:\\Users\\Nico\\OneDrive\\Escritorio\\Nueva carpeta\\grupo-03\\public\\img\\1641137936573_img.jpg",
+                    "size": 89331
+                }
+            ]
+        }
     }
 ]

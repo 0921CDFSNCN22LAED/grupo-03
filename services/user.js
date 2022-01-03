@@ -33,11 +33,12 @@ const user = {
         return userFound;
     },
 
-    create: function(userData) {
+    create: function(userData,file) {
         let allUsers = this.findAll();
         let newUser = {
             id: this.generateId(),
-            ...userData
+            ...userData,
+            file
         }
         allUsers.push(newUser);
         fs.writeFileSync(path.join(__dirname,"../data/users.json"), JSON.stringify(allUsers, null, ' '));

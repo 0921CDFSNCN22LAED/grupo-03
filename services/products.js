@@ -23,11 +23,15 @@ const users = JSON.parse(usersFileText); //ARRAY de USUARIOS
 
   module.exports = {
 
-    createOne(body) {
+    createOne(body,files) {
+      
       const product = {
         id: Date.now(), 
         ...body,
-      };
+        files
+        
+
+              };
   
       products.push(product);
   

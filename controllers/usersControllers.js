@@ -17,15 +17,18 @@ const controller = {
     processRegister: (req, res) => {
 
         const resultValidation = validationResult(req);
-
-        if(resultValidation.length > 0){
-
-            res.render("register");
-        };
-
+        
         let userInDB = userService.findByField('email', req.body.email);
 
-        if (userInDB) {
+        console.log(resultValidation.errors.length);
+        /*
+        if (resultValidation.errors.length > 0) {
+            return res.render('register', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+
+        }else if (userInDB) {
             return res.render('register', {
                 errors: {
                     email: {
@@ -35,6 +38,7 @@ const controller = {
                 oldData: req.body
             });
         }
+        */
 
         let userToCreate = {
             ...req.body,
@@ -42,7 +46,9 @@ const controller = {
             avatar: req.file.filename
         }
 
-        let userCreated = userService.create(userToCreate);
+        console.log(userToCreate);
+
+        userService.create(userToCreate);
 
         return res.redirect('/users/login');
     },

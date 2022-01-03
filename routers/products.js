@@ -15,7 +15,7 @@ router.get("/productTotals", controller.productTotals);
 
 router.get("/createProd", controller.createProd);
 
-router.post("/createProd", upload.fields([{ name: "image1" }, { name: "image2" }, { name: "image3" }]), validations, controller.storage);
+router.post("/createProd", upload.fields([{ name:"image1" }, { name:"image2" }, { name:"image3" }]), validations, controller.storage);
 
 router.get("/cotizaTuPc", controller.budget);
 

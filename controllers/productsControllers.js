@@ -72,20 +72,26 @@ const controller = {
 
  
         const resultValidation = validationResult(req);
-
-        console.log(resultValidation.errors);
         
-        if (resultValidation.length > 0) {
+        console.log(resultValidation.errors.length);
+        /*
+        console.log(resultValidation.errors);
+        console.log(req.body);
+        console.log(req.files);
+        */  
+       
+        if (resultValidation.errors.length > 0) {
             return res.render('createProd', {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             });
 
-        }
+        };
+        
         
 
-            console.log("entra aca");
-            productsService.createOne(req.body);
+            console.log("entra aca controller");
+            productsService.createOne(req.body,req.files);
             // const prodJson = JSON.stringify(productsService.products, null, 4);
 
             // fs.writeFileSync(productsService.productsFilePath, prodJson, "utf-8");

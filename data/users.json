@@ -918,5 +918,16 @@
   "lastName": "",
   "phone": "",
   "adress": ""
+ },
+ {
+  "id": 103,
+  "email": "nico89221@gmail.com",
+  "password": "$2a$10$igWqyWQpLlHHUS9veRtoZugfrizFJqiZ3IH7.hW95AQif/K3bmb6K",
+  "repassword": "123456",
+  "name": "Nicolas",
+  "lastName": "Miño           ",
+  "phone": "1111111",
+  "adress": "kasmdfkljasdf",
+  "avatar": "1641248377864_img.jpg"
  }
 ]
