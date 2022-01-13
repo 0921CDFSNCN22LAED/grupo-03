@@ -57,12 +57,12 @@
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#banner" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#banner" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
         </button>
     </div>
 
@@ -74,37 +74,15 @@
 
         <section class="cont-art">
 
-            <% for(prod of productShowVisited.slice(0,8)){  %>
-                <% if(prod.type == "visited") { %>
+            <% for(prod of productShowVisited.slice(0,8)){ %>
+                <% if(prod.type=="visited" ) { %>
                     <article>
                         <div class="car-prod-tot">
-                            <div id="carousel-product" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-indicators">
-                                    <button type="button" data-bs-target="#carousel-product" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                    <button type="button" data-bs-target="#carousel-product" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                    <button type="button" data-bs-target="#carousel-product" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                </div>
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <a href="<%=prod.image1%> "><img src="<%=prod.image1%>" class="d-block w-100" alt="..."></a>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <a href="<%=prod.image2%> "><img src="<%=prod.image1%>" class="d-block w-100" alt="..."></a>
-
-                                    </div>
-                                    <div class="carousel-item">
-                                        <a href="<%=prod.image3%> "><img src="<%=prod.image1%>" class="d-block w-100" alt="..."></a>
-                                    </div>
-                                </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-product" data-bs-slide="prev">
-                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                  <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-product" data-bs-slide="next">
-                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                  <span class="visually-hidden">Next</span>
-                                </button>
+                            <div>
+                                <a href="<%= prod.imagen1 %> "><img src="<%= prod.imagen1 %>" class="d-block w-100" style="width:250px; height:220px"
+                                                alt="<%= prod.name %>"></a>
                             </div>
+
                         </div>
                         <div class="wrap-art">
                             <h4 class="cuotas">18 cuotas sin interes</h4>
@@ -115,7 +93,7 @@
                                 <%= prod.precio %>
                             </h3>
                             <div class="boton">
-                                <a href="/products/productDetail/<%=prod.id%> ">
+                                <a href="/products/productDetail/<%= prod.id %> ">
                                     <button type="button" class="btn-prod">
                                         Ver producto
                                     </button>
@@ -136,37 +114,15 @@
 
         <section class="cont-art">
 
-            <% for(prod of productShowOffer.slice(0,8)){  %>
-                <% if(prod.type == "offer") { %>
+            <% for(prod of productShowOffer.slice(0,8)){ %>
+                <% if(prod.type=="offer" ) { %>
                     <article class="discount-container">
                         <div class="car-prod-tot">
-                            <div id="carousel-product" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-indicators">
-                                    <button type="button" data-bs-target="#carousel-product" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                    <button type="button" data-bs-target="#carousel-product" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                    <button type="button" data-bs-target="#carousel-product" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                </div>
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <a href="<%=prod.image1%> "><img src="<%=prod.image1%>" class="d-block w-100" alt="..."></a>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <a href="<%=prod.image2%> "><img src="<%=prod.image1%>" class="d-block w-100" alt="..."></a>
-
-                                    </div>
-                                    <div class="carousel-item">
-                                        <a href="<%=prod.image3%> "><img src="<%=prod.image1%>" class="d-block w-100" alt="..."></a>
-                                    </div>
-                                </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-product" data-bs-slide="prev">
-                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                  <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-product" data-bs-slide="next">
-                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                  <span class="visually-hidden">Next</span>
-                                </button>
+                            <div>
+                                <a href="<%= prod.imagen1 %>"><img src="<%= prod.imagen1 %>" class="d-block w-100" style="width:250px; height:220px"
+                                                alt="<%= prod.name %>"></a>
                             </div>
+
                         </div>
                         <div class="discount-badge">
                             <h6>30%</h6>

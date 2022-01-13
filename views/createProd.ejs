@@ -134,16 +134,13 @@
                         <% } %>
                 </div>
                 <div class="wrap-form-create">
-                    <label for="img1">Imagen uno</label>
-                    <input type="file" name="image1" accept=".jpg, .bmp, .webp" class="img-create">
-                </div>
-                <div class="wrap-form-create">
-                    <label for="img2">Imagen dos</label>
-                    <input type="file" name="image2" accept=".jpg, .bmp, .webp" class="img-create">
-                </div>
-                <div class="wrap-form-create">
-                    <label for="img3">Imagen tres</label>
-                    <input type="file" name="image3" accept=".jpg, .bmp, .webp" class="img-create">
+                    <label for="image1"><b>La imagen del producto</b></label>
+                    <input type="file" name="image1" accept=".jpg, .bmp, .webp, .png " class="img-create">
+                    <% if (locals.errors && errors.image1) { %>
+                        <div class="text-danger">
+                            <%= errors.image1.msg %>
+                        </div>
+                        <% } %>
                 </div>
                 <div class="wrap-form-create">
                     <button type="submit">Crear</button>

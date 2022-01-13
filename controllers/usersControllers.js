@@ -17,18 +17,18 @@ const controller = {
     processRegister: (req, res) => {
 
         const resultValidation = validationResult(req);
-        
+
         let userInDB = userService.findByField('email', req.body.email);
 
         console.log(resultValidation.errors.length);
-        /*
+
         if (resultValidation.errors.length > 0) {
             return res.render('register', {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             });
 
-        }else if (userInDB) {
+        } else if (userInDB) {
             return res.render('register', {
                 errors: {
                     email: {
@@ -38,7 +38,7 @@ const controller = {
                 oldData: req.body
             });
         }
-        */
+
 
         let userToCreate = {
             ...req.body,
@@ -55,6 +55,40 @@ const controller = {
     recupero: (req, res) => {
         res.render("recupero");
     },
+    recover: (req, res) => {
+
+        const resultValidation = validationResult(req);
+        console.log(resultValidation);
+
+        if (resultValidation.errors.length > 0) {
+            return res.render('recupero', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        }
+        const mail = userService.findByField("email", req.body.email);
+        if (!mail) {
+            return res.render('recupero', {
+                    errors: {
+                        value: '',
+                        msg: 'Este email ya está registrado',
+                        param: 'email',
+                        location: 'body'
+                    }
+                }
+
+            );
+        } else {
+
+            return res.redirect('/users/recup');
+        }
+        console.log(oldData);
+    },
+
+    recup: (req, res) => {
+        res.render("recup");
+    },
+
     history: (req, res) => {
         res.render("history");
     },

@@ -6,24 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QMC</title>
-
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/styles-tablet.css">
     <link rel="stylesheet" href="/css/styles-desktop.css">
-
-
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
-
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-
 </head>
 
 <body>
@@ -36,36 +28,27 @@
             <%- include("./parcials/nav") %>
 
     </header>
-    <main class="main-form">
-        <div class="separador "></div>
-        <div class="separador "></div>
-        <form method="POST" action="/users/recupero">
-            <div class="titulo-form">
-                <h2>Complete el Email </h2>
-            </div>
 
-            <div class="separador "></div>
-            <div class="separador "></div>
-            <div class="wrap-form">
-                <label for="email">
-                        <input type="email" name="email" placeholder="Ingresa tu e-mail"
-                            value="<%= locals.oldData ? oldData.email : null %>">
-                    </label>
-                <% if(locals.errors && errors.email){ %>
-                    <span>
-                            <%=errors.email.msg%>
-                        </span>
-                    <% } %>
-            </div>
-            <div class="separador "></div>
-            <div class="separador "></div>
-            <div class="wrap-recu">
-                <button type="submit">Enviar</button>
-            </div>
 
-            </div>
-        </form>
+    <main>
+        <div class="separador"></div>
+        <div class="separador"></div>
+        <h2 class="titulo-form">Recibiras un Email con un link, debera cliquear en el mismo para generar la nueva contraseña</h2>
+        <div class="separador"></div>
+        <div class="separador"></div>
+        </section>
+        <div class="wrap-form">
+            <a href="/">
+                <button type="button" class="volver">
+                Volver a Inicio
+                </button>
+            </a>
+        </div>
+        </section>
+        <div class="separador"></div>
+
     </main>
+
     <%- include("parcials/footer") %>
 
 </body>

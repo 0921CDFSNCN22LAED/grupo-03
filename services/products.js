@@ -1,5 +1,3 @@
-
-
 const fs = require("fs");
 const path = require("path");
 
@@ -14,43 +12,59 @@ const usersFileText = fs.readFileSync(usersFilePath, "utf-8");
 const users = JSON.parse(usersFileText); //ARRAY de USUARIOS
 */
 
-  function saveProducts() {
+function saveProducts() {
     const text = JSON.stringify(products, null, 4);
     fs.writeFileSync(productsFilePath, text, "utf-8");
-  };
+};
 
+module.exports = {
 
+    createOne(body, file) {
 
-  module.exports = {
+        const product = {
+            id: Date.now(),
+            ...body,
+            imagen1: file
+        };
 
-    createOne(body,files) {
-      
-      const product = {
-        id: Date.now(), 
-        ...body,
-        files
-        
+        products.push(product);
 
-              };
-  
-      products.push(product);
-  
-      saveProducts();
+        saveProducts();
     },
 
     products,
 
-    
+    getData() {
+        return products;
+    },
 
-      deleteOne(id) {
-      const index = products.findIndex((prod) => prod.id == id);
-      products.splice(index, 1);
-      saveProducts();
+    findAll: function() {
+        return this.getData()
+    },
+
+    deleteOne(id) {
+        const index = products.findIndex((prod) => prod.id == id);
+        products.splice(index, 1);
+        saveProducts();
+    },
+    change: function(id, prodChange) {
+        let allproducts = this.findAll();
+        console.log("pase por services");
+        console.log(id);
+        console.log(prodChange);
+        const index = allproducts.findIndex((producto) => {
+            return producto.id == id;
+        });
+
+        const productupdate = {
+            id: allproducts[index].id,
+            image: allproducts[index].image,
+            ...prodChange,
+        };
+
+        allproducts[index] = productupdate;
+
+        saveProducts();
     }
 
-  };
-
-
-
-  
-
+};

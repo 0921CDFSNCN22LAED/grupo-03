@@ -43,57 +43,57 @@
                 <label for="email">
                     <input type="email" name="email" placeholder="Ingresa tu e-mail" value= "<%= locals.oldData ? oldData.email : null %>" >
                 </label>
-                <% if(locals.errors && errors.email){ %> 
+                <% if(locals.errors && errors.email){ %>
                     <span><%=errors.email.msg%> </span>
-                <% } %>
+                    <% } %>
             </div>
             <div class="wrap-form">
                 <label for="contraseña">
                     <input type="password" name="password" placeholder="Ingresa tu clave" >
                 </label>
-                <% if(locals.errors && errors.password){  %> 
+                <% if(locals.errors && errors.password){  %>
                     <span><%= errors.password.msg %> </span>
-                <% } %>
+                    <% } %>
             </div>
             <div class="wrap-form">
                 <label for="recontraseña">
                     <input type="password" name="repassword" placeholder="Confirma tu clave">
                 </label>
-                <% if(locals.errors && errors.repassword){  %> 
+                <% if(locals.errors && errors.repassword){  %>
                     <span><%=errors.repassword.msg%> </span>
-                <% } %> 
+                    <% } %>
             </div>
             <div class="wrap-form">
                 <label for="nombre">
                     <input type="text" name="name" placeholder="Ingresa tu nombre" value="<%= locals.oldData ? oldData.name : null %>" >
                 </label>
-                <% if(locals.errors && errors.name){  %> 
+                <% if(locals.errors && errors.name){  %>
                     <span><%= errors.name.msg %> </span>
-                <% } %> 
+                    <% } %>
             </div>
             <div class="wrap-form">
                 <label for="apellido">
-                    <input type="text" name="lastName" placeholder="Ingresa tu apellido" value= "<%= locals.oldData ? oldData.lastName : null %> ">
+                    <input type="text" name="lastName" placeholder="Ingresa tu apellido" value="<%= locals.oldData ? oldData.lastName : null %>">
                 </label>
-                <% if(locals.errors && errors.lastName){ %> 
+                <% if(locals.errors && errors.lastName){ %>
                     <span><%= errors.lastName.msg %></span>
-                <% } %> 
+                    <% } %>
             </div>
             <div class="wrap-form">
                 <label for="telefono">
                     <input type="text" name="phone" placeholder="Ingresa tu telefono" value= "<%= locals.oldData ? oldData.phone : null %>" >
                 </label>
-                <% if(locals.errors && errors.phone){ %> 
+                <% if(locals.errors && errors.phone){ %>
                     <span><%= errors.phone.msg %> </span>
-                <% }  %> 
+                    <% }  %>
             </div>
             <div class="wrap-form">
                 <label for="direccion">
                     <input type="text" name="adress" placeholder="Ingresa tu direccion" value="<%= locals.oldData ? oldData.adress : null  %>">
                 </label>
-                <% if(locals.errors && errors.adress){ %> 
+                <% if(locals.errors && errors.adress){ %>
                     <span><%= errors.adress.msg %> </span>
-                <% } %> 
+                    <% } %>
             </div>
             <div class="titulo-form"></div>
             <h3>Ingresá tu avatar</h3>
@@ -102,9 +102,9 @@
                 <label for="avatar" class="avatar">
                      <input type="file" name="avatar" accept=".jpg, .bmp, .webp">
                 </label>
-                <% if(locals.errors && errors.avatar){  %> 
+                <% if(locals.errors && errors.avatar){  %>
                     <span><%= errors.avatar.msg %> </span>
-                <% }  %> 
+                    <% }  %>
 
             </div>
             <div class="separador"></div>

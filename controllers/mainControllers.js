@@ -11,13 +11,13 @@ const controller = {
     home: (req, res) => {
 
         const productShowVisited = productsService.products.filter((prod) => {
-            return prod.type == "visited";
-        })
-
+                return prod.type == "visited";
+            })
+            //console.log(productShowVisited);
         const productShowOffer = productsService.products.filter((prod) => {
-            return prod.type == "offer";
-        })
-
+                return prod.type == "offer";
+            })
+            //console.log(productShowOffer);
         res.render("index", { productShowVisited, productShowOffer });
     },
     error: (req, res) => {

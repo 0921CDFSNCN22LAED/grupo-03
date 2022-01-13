@@ -4,22 +4,23 @@ const router = express.Router();
 
 const controller = require("../Controllers/usersControllers");
 
-const upload = require('../middlewares/multer_middlewares.js');
+const upload = require('../middlewares/multer_user_middlewares.js');
 
 const { body } = require("express-validator");
 
 const validationUser = require("../middlewares/validate_user_middlewares");
 
-
-
-
 router.get("/login", controller.login);
 
 router.get("/register", controller.register);
 
-router.post("/register", upload.single('avatar'),validationUser, controller.processRegister);
+router.post("/register", upload.single('avatar'), validationUser, controller.processRegister);
 
 router.get("/recupero", controller.recupero);
+
+router.post("/recupero", validationUser, controller.recover);
+
+router.get("/recup", controller.recup);
 
 router.get("/history", controller.history);
 
