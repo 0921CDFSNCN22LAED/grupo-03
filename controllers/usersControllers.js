@@ -39,11 +39,11 @@ const controller = {
             });
         }
 
-
+        image = "/img/users/" + req.file.filename
         let userToCreate = {
             ...req.body,
             password: bcrypt.hashSync(req.body.password, 10),
-            avatar: req.file.filename
+            avatar: image
         }
 
         console.log(userToCreate);
@@ -69,15 +69,13 @@ const controller = {
         const mail = userService.findByField("email", req.body.email);
         if (!mail) {
             return res.render('recupero', {
-                    errors: {
-                        value: '',
-                        msg: 'Este email ya está registrado',
-                        param: 'email',
-                        location: 'body'
+                errors: {
+                    email: {
+                        msg: 'Este email no está registrado'
                     }
-                }
-
-            );
+                },
+                oldData: req.body
+            });
         } else {
 
             return res.redirect('/users/recup');
