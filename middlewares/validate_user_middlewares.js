@@ -5,7 +5,7 @@ module.exports = [
     body('name').notEmpty().withMessage('Tienes que escribir un nombre'),
     body('lastName').notEmpty().withMessage('Tienes que escribir un nombre'),
     body('email').notEmpty().withMessage('Tienes que ingresar un email').bail()
-    .isEmail().withMessage('Tienes que escribir un email valido'),
+    .isEmail().withMessage('Tienes que escribir un email valido').bail(),
     body('password').notEmpty().withMessage('Tienes que ingresar un password'),
     body('repassword').notEmpty().withMessage('Tienes que ingresar un password'),
     body('phone').notEmpty().withMessage('Tienes que ingresar un telefono').bail()
