@@ -4,7 +4,7 @@ const path = require("path");
 const userService = require("../services/user");
 
 const { validationResult } = require("express-validator");
-nico89221@hotmail.com
+
 const bcrypt = require("bcryptjs");
 
 const controller = {
