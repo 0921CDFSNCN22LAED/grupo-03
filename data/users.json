@@ -929,5 +929,16 @@
   "phone": "1111111",
   "adress": "kasmdfkljasdf",
   "avatar": "1641248377864_img.jpg"
+ },
+ {
+  "id": 104,
+  "email": "nico89221@outlook.com",
+  "password": "$2a$10$AlfLEIxtbWrUSuz5XqRfD.HHpPrUaUt7R65mnZtTpyCMjsQXYmuI.",
+  "repassword": "123456",
+  "name": "Jorge",
+  "lastName": "Jorge ",
+  "phone": "1111111",
+  "adress": "kasmdfkljasdf",
+  "avatar": "1641512372391_img.jpg"
  }
 ]

@@ -21,7 +21,7 @@ const controller = {
         let userInDB = userService.findByField('email', req.body.email);
 
         console.log(resultValidation.errors.length);
-        /*
+        
         if (resultValidation.errors.length > 0) {
             return res.render('register', {
                 errors: resultValidation.mapped(),
@@ -38,7 +38,7 @@ const controller = {
                 oldData: req.body
             });
         }
-        */
+        
 
         let userToCreate = {
             ...req.body,

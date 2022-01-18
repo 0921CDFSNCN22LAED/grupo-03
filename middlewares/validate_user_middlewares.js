@@ -12,11 +12,11 @@ module.exports = [
     .isNumeric().withMessage('Ingresa tu telefono sin guiones ni espacios'),
     body('adress').notEmpty().withMessage('Tienes que ingresar una direccion'),
     body('avatar').custom((value, { req }) => {
-        let file = req.files;
+        let file = req.file;
         
         let acceptedExtensions = ['.jpg', '.png', '.gif', '.webp'];
-        
-        if (file == null) {
+        console.log(!file);
+        if (!file) {
             throw new Error('Tienes que subir una imagen');
         } else {
             let fileExtension = path.extname(file.originalname);

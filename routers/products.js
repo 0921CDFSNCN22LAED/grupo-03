@@ -7,6 +7,8 @@ const controller = require("../Controllers/productsControllers");
 const upload = require('../middlewares/multer_middlewares.js');
 const validations = require('../middlewares/validate_product_middlewares');
 
+//upload.fields([{ name:"image1" }, { name:"image2"  }, { name:"image3" }])
+
 router.get("/productCart", controller.productCart);
 
 router.get("/armaTuPc", controller.armaTuPc);

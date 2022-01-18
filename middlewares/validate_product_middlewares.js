@@ -21,11 +21,9 @@ module.exports = [
         
         let acceptedExtensions = ['.jpg', '.png', '.gif', '.webp'];
 
+        console.log(file);
         
-
-      
-        
-        if (file == null) {
+        if (!file) {
             throw new Error('Tienes que subir una imagen');
         } else {
             let fileExtension = path.extname(file.originalname);
@@ -57,8 +55,8 @@ module.exports = [
         
         let acceptedExtensions = ['.jpg', '.png', '.gif', '.webp'];
 
-        if (file) {
-            console.log("entra aca");
+        if (!file) {
+            
             throw new Error('Tienes que subir una imagen');
               
         } else {
