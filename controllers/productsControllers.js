@@ -25,10 +25,14 @@ const controller = {
         const product = productsService.products.find((product) => {
             return idProduct == product.id;
         });
+        const productShowOffer = productsService.products.filter((prod) => {
+            return prod.type == "offer";
+        })
         if (product) {
             res.render('productDetail', {
                 product: product,
                 idProduct: idProduct,
+                productShowOffer
             });
         } else {
             res.render("error")
@@ -70,16 +74,17 @@ const controller = {
     },
     storage: (req, res) => {
 
- 
+
         const resultValidation = validationResult(req);
-        
-        console.log(resultValidation.errors.length);
+
+
         /*
         console.log(resultValidation.errors);
         console.log(req.body);
-        console.log(req.files);
-        */  
-       
+        console.log(req.file.image1);
+        console.log(resultValidation.errors.length);
+        */
+
         if (resultValidation.errors.length > 0) {
             return res.render('createProd', {
                 errors: resultValidation.mapped(),
@@ -87,20 +92,15 @@ const controller = {
             });
 
         };
-        
-        
+        const image = "/img/products/" + req.file.filename
 
-            console.log("entra aca controller");
-            productsService.createOne(req.body,req.files);
-            // const prodJson = JSON.stringify(productsService.products, null, 4);
+        console.log("entra aca controller");
+        productsService.createOne(req.body, image);
 
-            // fs.writeFileSync(productsService.productsFilePath, prodJson, "utf-8");
+        res.redirect("/products/tabla-prod");
 
-            res.redirect("/products/tabla-prod");
-         
 
     },
-
     editProduct: (req, res) => {
         const idProd = req.params.id;
         const prod = productsService.products.find((prod) => {
@@ -122,38 +122,19 @@ const controller = {
         const prod = productsService.products.find((prod) => {
             return idProd == prod.id;
         });
-        //console.log(req);
+        const img = (!req.file) ? prod.image1 : req.file.filename;
+        const image = "/img/products/" + img;
+        console.log(req.file);
         console.log(req.body);
         let prodToUpdate = {
-            ...req.body
+            ...req.body,
+            imagen1: image,
         }
-        console.log(prodToUpdate);
-        if (req.files) {
-
-            if (req.files.image1) {
-                prodToUpdate.image1 = req.files.image1.filename
-            } else {
-                prodToUpdate.image1 = prod.image1
-            };
-            if (req.files.image2) {
-                prodToUpdate.image2 = req.files.image2.filename
-            } else {
-                prodToUpdate.image2 = prod.image2
-            };
-            if (req.files.image3) {
-                prodToUpdate.image3 = req.files.image3.filename
-            } else {
-                prodToUpdate.image3 = prod.image1
-            }
-
-            productsService.products.push(prodToUpdate);
-            console.log(productsService.products[1]);
-            productsService.saveProducts;
-
-            res.redirect('/products/productDetail/' + idProd);
-        }
-    },
-
-}
-
+        console.log(prodToUpdate.image1);
+        productsService.change(req.params.id, prodToUpdate);
+        console.log("pase por controller");
+        console.log(req.file);
+        res.redirect('/products/productDetail/' + idProd);
+    }
+};
 module.exports = controller;

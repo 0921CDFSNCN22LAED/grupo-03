@@ -17,12 +17,10 @@ module.exports = [
     body('category').notEmpty().withMessage('Tienes que informar su categoria'),
     body('type').notEmpty().withMessage('Tienes que informar su tipo de producto'),
     body('image1').custom((value, { req }) => {
-        let file = req.files;
-        
+        let file = req.file;
+
         let acceptedExtensions = ['.jpg', '.png', '.gif', '.webp'];
 
-        console.log(file);
-        
         if (!file) {
             throw new Error('Tienes que subir una imagen');
         } else {
@@ -34,41 +32,4 @@ module.exports = [
 
         return true;
     }),
-    body('image2').custom((value, { req }) => {
-        let file = req.files;
-      
-       
-        let acceptedExtensions = ['.jpg', '.png', '.gif', '.webp'];
-
-        if (!file) {
-            throw new Error('Tienes que subir una imagen');
-        } else {
-            let fileExtension = path.extname(file.originalname);
-            if (!acceptedExtensions.includes(fileExtension)) {
-                throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
-            }
-        }
-
-        return true;
-    }), body('image3').custom((value, { req }) => {
-        let file = req.files;
-        
-        let acceptedExtensions = ['.jpg', '.png', '.gif', '.webp'];
-
-        if (!file) {
-            
-            throw new Error('Tienes que subir una imagen');
-              
-        } else {
-            
-            let fileExtension = path.extname(file.originalname);
-            if (!acceptedExtensions.includes(fileExtension)) {
-                throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
-            } 
-            
-        }
-
-        return true;
-    })
-    
 ]
