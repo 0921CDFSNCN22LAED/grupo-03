@@ -9,7 +9,43 @@ const bcrypt = require("bcryptjs");
 
 const controller = {
     login: (req, res) => {
+        
         res.render("login");
+    },
+    loginProcess:(req,res)=>{
+
+        let userToLogin = userService.findByField('email',req.body.email);
+        if(userToLogin){
+            let comparePassword = bcrypt.compareSync(req.body.password,userToLogin.password);
+            if(comparePassword){
+
+                delete userToLogin.password;
+                delete userToLogin.repassword;
+
+                req.session.userLogged = userToLogin;
+                return res.redirect("/");
+            }
+            return res.render("login",{
+
+                errors:{
+    
+                    email:{
+                        msg: "Las credenciales son invalidas"
+                    }
+                }
+            })
+
+        }
+        return res.render("login",{
+
+            errors:{
+
+                email:{
+                    msg: "Las credenciales son invalidas"
+                }
+            }
+        })
+
     },
     register: (req, res) => {
         res.render("register");
@@ -38,14 +74,14 @@ const controller = {
             });
         }
 
-        image = "/img/users/" + req.file.filename
+        image = "/img/users/" + req.file.filename;
+
         let userToCreate = {
             ...req.body,
             password: bcrypt.hashSync(req.body.password, 10),
-            avatar: image
+            repassword:bcrypt.hashSync(req.body.repassword,10),
+            avatar: req.file.filename
         }
-
-        console.log(userToCreate);
 
         userService.create(userToCreate);
 
@@ -124,7 +160,7 @@ const controller = {
 
     profile: (req, res) => {
 
-        res.render("profile");
+        res.render("profile",{user:req.session.userLogged});
     }
 }
 

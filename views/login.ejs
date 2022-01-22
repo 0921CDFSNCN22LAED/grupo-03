@@ -35,7 +35,7 @@
 
     <main class="main-form">
 
-        <form action="" class="cont-form">
+        <form method="POST" action="/users/login" class="cont-form">
             <div class="titulo-form">
                 <h2>Iniciar Sesion con mi mail</h2>
             </div>
@@ -43,6 +43,9 @@
                 <label for="email">
                     <input type="email" name="email" placeholder="Ingresa tu e-mail">
                 </label>
+                <% if(locals.errors && errors.email){ %> 
+                    <span class="text-danger"><%=errors.email.msg%> </span>
+                <% } %> 
             </div>
             <div class="wrap-form">
                 <label for="contraseña">

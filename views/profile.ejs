@@ -38,30 +38,30 @@
         <form action="/users/profile" method="post" class="cont-form">
             <div class="cont-create">
                 <div class="titulo-form">
-                    <h1>Perfil</h1>
+                    <h1>Perfil de <%= user.name %> </h1>
                 </div>
                 <div class="wrap-form-create">
-                    <img src="./img/default.png" alt="">
+                    <img src="/img/users/<%= user.avatar %>" alt="">
                 </div>
                 <div class="wrap-form-create">
                     <label for="mail">Email</label>
-                    <input type="mail" name="mail">
+                    <input type="mail" name="mail" value="<%= user.email %>">
                 </div>
                 <div class="wrap-form-create">
                     <label for="name">Nombre</label>
-                    <input type="text" name="name">
+                    <input type="text" name="name"  value="<%= user.name %>" >
                 </div>
                 <div class="wrap-form-create">
                     <label for="lastName">Apellido</label>
-                    <input type="text" name="lastName">
+                    <input type="text" name="lastName"  value="<%= user.lastName %>" >
                 </div>
                 <div class="wrap-form-create">
                     <label for="phone">Telefono</label>
-                    <input type="text" name="phone">
+                    <input type="text" name="phone"  value="<%= user.phone %>">
                 </div>
                 <div class="wrap-form-create">
                     <label for="adress">Direccion</label>
-                    <input type="text" name="adress">
+                    <input type="text" name="adress"  value="<%= user.adress %>">
                 </div>
                 <div class="wrap-form-create">
                     <button type="submit">Editar</button>

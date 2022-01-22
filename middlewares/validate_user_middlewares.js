@@ -12,7 +12,7 @@ module.exports = [
     .isNumeric().withMessage('Ingresa tu telefono sin guiones ni espacios'),
     body('adress').notEmpty().withMessage('Tienes que ingresar una direccion'),
     body('avatar').custom((value, { req }) => {
-        let file = req.files;
+        let file = req.file;
 
         let acceptedExtensions = ['.jpg', '.png', '.gif', '.webp'];
 

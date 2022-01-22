@@ -10,6 +10,7 @@ const { validationResult } = require('express-validator');
 const controller = {
     home: (req, res) => {
 
+
         const productShowVisited = productsService.products.filter((prod) => {
                 return prod.type == "visited";
             })
@@ -18,7 +19,7 @@ const controller = {
                 return prod.type == "offer";
             })
             //console.log(productShowOffer);
-        res.render("index", { productShowVisited, productShowOffer });
+        res.render("index", { productShowVisited, productShowOffer, user:req.session.userLogged });
     },
     error: (req, res) => {
         res.render("error");

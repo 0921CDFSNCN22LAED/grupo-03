@@ -13,6 +13,8 @@ const validationUser = require("../middlewares/validate_user_middlewares");
 
 router.get("/login", guest, controller.login);
 
+router.post("/login",controller.loginProcess);
+
 router.get("/register", guest, controller.register);
 
 router.post("/register", upload.single('avatar'), validationUser, controller.processRegister);
@@ -27,7 +29,7 @@ router.get("/history", auth, controller.history);
 
 router.get("/allUsers", controller.allUsers);
 
-router.get("/profile", auth, controller.profile)
+router.get("/profile", controller.profile);
 
 router.get("/userEdit/:id", controller.userEdit);
 

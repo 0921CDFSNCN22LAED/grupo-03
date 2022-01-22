@@ -901,44 +901,24 @@
  },
  {
   "id": 101,
-  "email": "",
-  "password": "$2a$10$2DA2pJqdN2xxEQlR1BwoluazW1cJ.s79q3xGg2K2Sd2qJXsaO9f4S",
-  "repassword": "",
-  "name": "",
-  "lastName": "",
-  "phone": "",
-  "adress": ""
+  "email": "nico89221@hotmail.com",
+  "password": "$2a$10$NMOJFUC9QeoWoSBr7Wu93e5j8pj9cWI9M71uVbPcH3FvV8sl.koEK",
+  "repassword": "$2a$10$jcpZahvzAK8g/aejYx9VGel5BbXyJ0V4V5KVoGd7BR5e1x/Xn0NdC",
+  "name": "Nicolas",
+  "lastName": "Miño",
+  "phone": "1111111",
+  "adress": "Juarezx 1234",
+  "avatar": "1642860348940_img.jpg"
  },
  {
   "id": 102,
-  "email": "nico89221@hotmail.com",
-  "password": "$2a$10$ap17vxtQHXsRKrx3iSmMIOrMM9YukjhVl5JDTbrFTVZR9J2HrD5/a",
-  "repassword": "",
-  "name": "",
-  "lastName": "",
-  "phone": "",
-  "adress": ""
- },
- {
-  "id": 103,
-  "email": "nico89221@gmail.com",
-  "password": "$2a$10$igWqyWQpLlHHUS9veRtoZugfrizFJqiZ3IH7.hW95AQif/K3bmb6K",
-  "repassword": "123456",
-  "name": "Nicolas",
-  "lastName": "Miño           ",
-  "phone": "1111111",
-  "adress": "kasmdfkljasdf",
-  "avatar": "1641248377864_img.jpg"
- },
- {
-  "id": 104,
-  "email": "nico89221@outlook.com",
-  "password": "$2a$10$AlfLEIxtbWrUSuz5XqRfD.HHpPrUaUt7R65mnZtTpyCMjsQXYmuI.",
-  "repassword": "123456",
-  "name": "Jorge",
-  "lastName": "Jorge ",
-  "phone": "1111111",
-  "adress": "kasmdfkljasdf",
-  "avatar": "1641512372391_img.jpg"
+  "email": "noemh_27@hotmail.com",
+  "password": "$2a$10$J54ednMj4vKjb3QqZ6x5IOq2NEKFZLtcvhPbAB46RFc2O3ppPFpGu",
+  "repassword": "$2a$10$EiYDLvBR.HqTZjL7qUaLs.a1p.AxdDJk0282j9evzCpkg3/vknc5C",
+  "name": "Noelia",
+  "lastName": "Hermida",
+  "phone": "222222222",
+  "adress": "aaaaaa",
+  "avatar": "1642866934123_img.jpg"
  }
 ]
