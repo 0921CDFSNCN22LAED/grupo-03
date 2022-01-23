@@ -23,8 +23,8 @@
     .main-form {
         padding-left: 30vw;
         padding-right: 30vw;
-        margin-bottom: 280px;
-        margin-top: 50px;
+        padding-top: 200px;
+        padding-bottom: 200px;
     }
     /* Inicio CSS armaTuPc.html*/
     .main-arma {
@@ -458,4 +458,36 @@
     }
 
     /*Fin CSS CotizaTuPc*/
+
+    /*login*/
+
+    .main-form .titulo-form h2{
+
+        font-size: 32px;
+    }
+
+    .main-form .wrap-form input{
+
+        padding-top: 16px;
+        padding-bottom: 16px;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        font-size: 18px;
+        padding-left: 15px;
+    }
+
+
+    .wrap-res .registrarme a{
+
+        font-size: 16px;
+    }
+
+    .wrap-res .restaurar a{
+        font-size: 16px;
+    }
+
+    .wrap-boton-log button{
+
+        font-size: 24px;
+    }
 }

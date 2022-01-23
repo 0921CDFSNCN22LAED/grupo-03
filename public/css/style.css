@@ -111,6 +111,12 @@ header {
     color: blueviolet;
 }
 
+.usuario .nombre-usuario{
+
+    color: blueviolet;
+    margin-bottom: 0px;
+}
+
 .carrito a {
     color: blueviolet;
 }
@@ -828,13 +834,16 @@ input :focus {
     border-radius: 6px;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    
 }
 
 .main-form {
-    padding-left: 5vw;
-    padding-right: 5vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
 }
 
 .cont-form {
@@ -851,13 +860,13 @@ input :focus {
 
 .cont-form .titulo-form h2 {
     text-align: center;
-    font-size: 16px;
+    font-size: 24px;
     padding: 10px;
 }
 
 .wrap-form {
     width: 100%;
-    padding: 2px;
+    padding: 10px;
     text-align: center;
 }
 
@@ -947,7 +956,7 @@ form .cont-create {
     padding-left: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 12px;
+    font-size: 16px;
     border-radius: 4px;
 }
 
@@ -980,31 +989,7 @@ form .cont-create {
     width: 100%;
 }
 
-.titulo-gmail {
-    font-size: 12px;
-    padding: 10px;
-    width: 100%;
-    text-align: center;
-}
 
-.wrap-boton-gmail {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
-    justify-content: center;
-}
-
-.wrap-boton-gmail button {
-    background-color: red;
-    color: white;
-    font-size: 18px;
-    border: 1px solid red;
-    border-radius: 5px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 100%;
-}
 
 
 /*Fin CSS register*/

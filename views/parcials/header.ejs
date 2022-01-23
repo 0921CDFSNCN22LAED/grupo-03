@@ -32,6 +32,11 @@
                 <a href="/users/logout"><i class="fas fa-times"></i></a>
             </div>
         <% } %> 
+        <% if(locals.user) { %> 
+            <div class="usuario">
+                <p class="nombre-usuario"><%= user.name %> </p>
+            </div>
+        <% } %> 
         <div class="usuario">
             <a href="/users/login"><i class="fas fa-user"></i></a>
         </div>

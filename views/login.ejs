@@ -37,11 +37,11 @@
 
         <form method="POST" action="/users/login" class="cont-form">
             <div class="titulo-form">
-                <h2>Iniciar Sesion con mi mail</h2>
+                <h2>Iniciar Sesion</h2>
             </div>
             <div class="wrap-form">
                 <label for="email">
-                    <input type="email" name="email" placeholder="Ingresa tu e-mail">
+                    <input type="email" name="email" placeholder="Email">
                 </label>
                 <% if(locals.errors && errors.email){ %> 
                     <span class="text-danger"><%=errors.email.msg%> </span>
@@ -49,32 +49,21 @@
             </div>
             <div class="wrap-form">
                 <label for="contraseña">
-                    <input type="password" name="password" placeholder="Ingresa tu clave">
+                    <input type="password" name="password" placeholder="Contraseña">
                 </label>
             </div>
 
             <div class="wrap-res">
                 <div class="registrarme">
-                    <a href="/users/register">Registrarme</a>
+                    <a href="/users/register">REGISTRARME</a>
                 </div>
                 <div class="restaurar">
-                    <a href="/users/recupero">Olvide mi clave</a>
+                    <a href="/users/recupero">OLVIDE MI CLAVE</a>
                 </div>
             </div>
 
             <div class="wrap-boton-log">
-                <button type="submit">Loguearse</button>
-            </div>
-            <div class="titulo-gmail">
-                <h3>Iniciar seesion con gmail</h3>
-            </div>
-            <div class="wrap-boton-gmail">
-                <button>Continue with Gmail</button>
-            </div>
-            <div class="history">
-                <button type="button" class="volver">
-                <a href="/users/history">Historial de compra</a>
-                </button>
+                <button type="submit">Ingresar</button>
             </div>
         </form>
 
