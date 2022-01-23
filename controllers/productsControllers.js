@@ -9,16 +9,16 @@ const { validationResult } = require('express-validator');
 
 const controller = {
     productCart: (req, res) => {
-        res.render("productCart");
+        res.render("productCart",{user:req.session.userLogged});
     },
     armaTuPc: (req, res) => {
-        res.render("armaTuPc");
+        res.render("armaTuPc",{user:req.session.userLogged});
     },
     createProd: (req, res) => {
         res.render("createProd");
     },
     productTotals: (req, res) => {
-        res.render("productTotals", { products: productsService.products });
+        res.render("productTotals", { products: productsService.products,user:req.session.userLogged });
     },
     productDetail: (req, res) => {
         const idProduct = req.params.id;
