@@ -920,5 +920,16 @@
   "phone": "222222222",
   "adress": "aaaaaa",
   "avatar": "1642866934123_img.jpg"
+ },
+ {
+  "id": 103,
+  "email": "nico89221@gmail.com",
+  "password": "$2a$10$6II7yAMoppm6/5uOzn72iuniuNAAck3QjXZv1aV1Os3mda01H5MTi",
+  "repassword": "$2a$10$MLFe/ZdToZ24ylBXLbaiWu9s2d5TqyqPYa5fe5Jy2tyQAt2xmyXYG",
+  "name": "Jorge",
+  "lastName": "Hernandez",
+  "phone": "123456",
+  "adress": "Juarezx 1234",
+  "avatar": "1642956905384_img.jpg"
  }
 ]

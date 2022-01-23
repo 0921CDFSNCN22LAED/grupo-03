@@ -74,16 +74,7 @@ const controller = {
     },
     storage: (req, res) => {
 
-
         const resultValidation = validationResult(req);
-
-
-        /*
-        console.log(resultValidation.errors);
-        console.log(req.body);
-        console.log(req.file.image1);
-        console.log(resultValidation.errors.length);
-        */
 
         if (resultValidation.errors.length > 0) {
             return res.render('createProd', {
@@ -94,7 +85,6 @@ const controller = {
         };
         const image = "/img/products/" + req.file.filename
 
-        console.log("entra aca controller");
         productsService.createOne(req.body, image);
 
         res.redirect("/products/tabla-prod");

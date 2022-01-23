@@ -1,4 +1,5 @@
-[{
+[
+    {
         "id": 1,
         "name": "Disco Duro Interno Western Digital WD5000LPCX 500GB",
         "desc": "Western Digital es una marca de renombre mundial en almacenamiento de datos con la cual podés crear, experimentar y guardar contenidos a través de una amplia gama de dispositivos. La alta seguridad y rendimiento que brindan sus unidades la convierten en una de las empresas más elegidas del mercado. El WD5000LPCX se caracteriza por su eficiencia y buen funcionamiento, que sumado a su reducido consumo energético lo vuelven un disco indispensable para funciones estándar.",
@@ -629,58 +630,16 @@
         "imagen1": "/img/products/cooler-master-2.webp"
     },
     {
-        "id": 1641137936582,
-        "name": "Iphone",
-        "desc": "Iphone",
-        "charact": "Super",
-        "size": "300x200",
+        "id": 1642957718100,
+        "name": "Iphone 15",
+        "desc": "Iphone 13-256gb",
+        "caract": "Super Retina XDR OLED de 6,1 pulgadas Resolución FullHD+ (2.532 x 1.170 píxeles) 460 ppp True-Tone HDR 800 nits",
         "color": "negro",
-        "precio": "5000",
+        "precio": "5001",
         "disc": "0",
-        "codigo": "98",
-        "category": "gaming",
-        "type": "visited",
-        "imagen1": "/img/products/1640819471571_img.jpg"
-    },
-    {
-        "id": 1641839915071,
-        "name": "un nombre",
-        "desc": "una descripcion",
-        "charact": "una caracteristica",
-        "size": "unas especificaciones",
-        "color": "un color",
-        "precio": "2000",
-        "disc": "1",
-        "codigo": "12332345",
-        "category": "gaming",
-        "type": "visited",
-        "imagen1": "/img/products/1641904939962_img.webp"
-    },
-    {
-        "id": 1641942873760,
-        "name": "otro nombre",
-        "desc": "una descripcion",
-        "caract": "unas caracteristicas",
-        "color": "un color",
-        "precio": "5000",
-        "disc": "5",
-        "code": "324234",
-        "category": "desktop",
-        "type": "visited",
-        "imagen1": "/img/products/1641942873730_img.jpg"
-    },
-    {
-        "id": 1641943899799,
-        "name": "un",
-        "desc": "una",
-        "charact": "unas",
-        "size": "",
-        "color": "un",
-        "precio": "1000",
-        "disc": "5",
-        "codigo": "",
-        "category": "desktop",
+        "code": "A2401",
+        "category": "office",
         "type": "offer",
-        "imagen1": "/img/products/1641943918654_img.webp"
+        "imagen1": "/img/products/1642957718091_img.jpg"
     }
 ]
