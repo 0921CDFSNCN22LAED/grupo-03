@@ -6,6 +6,7 @@ const userService = require("../services/user");
 const { validationResult } = require("express-validator");
 
 const bcrypt = require("bcryptjs");
+const res = require("express/lib/response");
 
 const controller = {
     login: (req, res) => {
@@ -161,6 +162,13 @@ const controller = {
     profile: (req, res) => {
 
         res.render("profile",{user:req.session.userLogged});
+    },
+
+    logout:(req,res)=>{
+
+        req.session.destroy();
+        return res.redirect("/");
+
     }
 }
 

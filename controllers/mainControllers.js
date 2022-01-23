@@ -10,7 +10,6 @@ const { validationResult } = require('express-validator');
 const controller = {
     home: (req, res) => {
 
-
         const productShowVisited = productsService.products.filter((prod) => {
                 return prod.type == "visited";
             })

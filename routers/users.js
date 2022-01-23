@@ -29,10 +29,12 @@ router.get("/history", auth, controller.history);
 
 router.get("/allUsers", controller.allUsers);
 
-router.get("/profile", controller.profile);
+router.get("/profile", auth, controller.profile);
 
 router.get("/userEdit/:id", controller.userEdit);
 
 router.get("/userDelete/:id", controller.userDelete);
+
+router.get("/logout/",controller.logout);
 
 module.exports = router;
