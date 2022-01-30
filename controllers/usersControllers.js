@@ -144,6 +144,22 @@ const controller = {
             res.render("error")
         }
     },
+    updateUser: (req, res) => {
+        const idUser = parseInt(req.params.id);
+        
+        const user = userService.findByPk(idUser);
+        
+        const img = (!req.file) ? user.avatar : req.file.filename;
+        const image = "/img/users/" + img;
+        
+        let userToUpdate = {
+            ...req.body,
+            avatar: image,
+        }
+
+        userService.change(req.params.id, userToUpdate);
+        res.redirect('/users/profile/:id');
+    },
     userDelete: (req, res) => {
         const idUser = req.params.id;
         const user = userService.getData().find((user) => {

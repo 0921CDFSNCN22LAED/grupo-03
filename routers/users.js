@@ -29,9 +29,11 @@ router.get("/history", auth, controller.history);
 
 router.get("/allUsers", controller.allUsers);
 
-router.get("/profile", auth, controller.profile);
+router.get("/profile/:id", auth, controller.profile);
 
-router.get("/userEdit/:id", controller.userEdit);
+router.post("/userEdit/:id", controller.userEdit);
+
+router.put("/userUpdate/:id", upload.single("avatar"), controller.updateUser);
 
 router.get("/userDelete/:id", controller.userDelete);
 

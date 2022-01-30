@@ -906,8 +906,8 @@
   "repassword": "$2a$10$jcpZahvzAK8g/aejYx9VGel5BbXyJ0V4V5KVoGd7BR5e1x/Xn0NdC",
   "name": "Nicolas",
   "lastName": "Miño",
-  "phone": "1111111",
-  "adress": "Juarezx 1234",
+  "phone": "111111",
+  "adress": "Juarezx",
   "avatar": "1642860348940_img.jpg"
  },
  {
@@ -931,5 +931,16 @@
   "phone": "123456",
   "adress": "Juarezx 1234",
   "avatar": "1642956905384_img.jpg"
+ },
+ {
+  "id": 104,
+  "email": "pablofutterer24@hotmail.com",
+  "password": "$2a$10$q8Dv3URL1Qr0TlYnZGN/ee/E4WbuchF5.Gj4JGdS5B24IkaaJ8kzC",
+  "repassword": "$2a$10$l6M0sHpfwtKSUXdkMlDIze/qfVONAhA1KRbJzmY68aVUgN01phKs2",
+  "name": "Pablo",
+  "lastName": "Futterer",
+  "phone": "1111111",
+  "adress": "diaz 1234",
+  "avatar": "1643061521920_img.jpg"
  }
 ]

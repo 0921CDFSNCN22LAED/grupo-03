@@ -35,7 +35,7 @@
 
     <main class="main-form">
 
-        <form action="/users/profile" method="post" class="cont-form">
+        <form action="/users/userEdit/<%=user.id%>" method="POST" class="cont-form" enctype="multipart/form-data">
             <div class="cont-create">
                 <div class="titulo-form">
                     <h1>Perfil de <%= user.name %> </h1>

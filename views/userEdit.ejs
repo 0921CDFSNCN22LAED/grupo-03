@@ -32,67 +32,39 @@
 
     <main class="main-form">
 
-        <form mothod="POST" action="/users/usersEdit?_method=PUT" class="cont-form">
+        <form method="POST" action="/users/userUpdate/<%=user.id%>?_method=PUT" class="cont-form" enctype="multipart/form-data">
             <div class="titulo-form">
                 <h2>Modifica el/los campo/s necesarios</h2>
             </div>
             <div class="wrap-form">
-                <label for="nombre">
-                        <input type="text" name="nombre" value=<%=user.first_name%>>
-                    </label>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="name" value=<%=user.name%>>     
             </div>
             <div class="wrap-form">
-                <label for="apellido">
-                        <input type="text" name="apellido" value=<%=user.last_name%>>
-                    </label>
+                <label for="apellido">Apellido</label>
+                <input type="text" name="lastName" value=<%=user.lastName%>>  
             </div>
-            <div class="wrap-form">
-                <label for="email">
-                        <input type="email" name="email" value=<%=user.email%>>
-                    </label>
-            </div>
-            <div class="wrap-form">
-                <label for="contraseña">
-                        <input type="password" name="password" value=<%=user.password%>>
-                    </label>
-            </div>
-            <div class="wrap-form">
-                <label for="recontraseña">
-                        <input type="password" name="repassword" value=<%=user.password%>>
-                    </label>
-            </div>
-
-            <div class="wrap-form">
+            <div class="wrap-form">Telefono</label>
                 <label for="telefono">
-                        <input type="text" name="telefono" value=<%=user.telephone%>>
-                    </label>
+                <input type="text" name="phone" value=<%=user.phone%>>   
             </div>
             <div class="wrap-form">
-                <label for="direccion">
-                        <input type="text" name="direccion" value=<%=user.adress%>>
-                    </label>
+                <label for="direccion">Direccion</label>
+                <input type="text" name="adress" value=<%=user.adress%>>       
             </div>
             <div class="titulo-form"></div>
-            <h3> tu avatar ingresado es
-                <%=user.image%>
-            </h3>
-            <img src=<%=user.image%> style="width:50px; height:50px;" alt="avatar usuario" />
+            <div class="wrap-form-create">
+            <img src="/img/users/<%= user.avatar %>" >
             </div>
             <div class="wrap-form">
-                <label for="avatar" class="avatar">
-                        <input type="file" name="avatar" accept=".jpg, .bmp, .webp">
-                    </label>
+                <label for="avatar" class="avatar">Tu imagen de perfil</label>
+                <input type="file" name="avatar" accept=".jpg, .bmp, .webp">
+                    
             </div>
             <div class="separador"></div>
             <div class="wrap-form">
                 <button type="submit">Actualizar</button>
             </div>
-            <div class="wrap-form">
-                <div class="separador"></div>
-
-
-
-
         </form>
 
     </main>
