@@ -1,14 +1,12 @@
+const res = require('express/lib/response');
 const fs = require('fs');
 const path = require("path");
-/*
-const usersFilePath = path.join(__dirname, "../data/users.json");
-const usersFileText = fs.readFileSync(usersFilePath, "utf-8");
-const users = JSON.parse(usersFileText); //ARRAY de USUARIOS
-*/
+
+const db = require("../database/models");
 
 
 const user = {
-    fileName :'../data/users.json',
+    //fileName :'../data/users.json',
     /*
     saveUser:function() {
         const text = JSON.stringify(users, null, 4);
@@ -17,36 +15,63 @@ const user = {
     */
 
     getData: function() {
-        return JSON.parse(fs.readFileSync(path.join(__dirname,"../data/users.json"), 'utf-8'));
+        
+        return db.users.findAll();
+            
+
+       // return JSON.parse(fs.readFileSync(path.join(__dirname,"../data/users.json"), 'utf-8'));
     },
 
     generateId: function() {
-        let allUsers = this.findAll();
+        let allUsers = this.findAllUsers();
         let lastUser = allUsers.pop();
         if (lastUser) {
             return lastUser.id + 1;
         }
         return 1;
     },
-
-    findAll: function() {
+    
+    findAllUsers: function() {
         return this.getData();
     },
 
-    findByPk: function(id) {
-        let allUsers = this.findAll();
-        let userFound = allUsers.find(oneUser => oneUser.id === id);
-        return userFound;
+    findByPkUsers: async function(id) {
+        
+
+        return db.users.findByPk(id);
     },
 
-    findByField: function(field, text) {
-        let allUsers = this.findAll();
+    findByFieldUsers: async function(field, text) {
+
+        await db.users.findAll({
+            where: {
+              email: text,
+            }
+          });
+        /*
+        let allUsers = this.findAllUsers();
+       
         let userFound = allUsers.find(oneUser => oneUser[field] === text);
         return userFound;
+        */
     },
 
-    create: function(userData,file) {
-        let allUsers = this.findAll();
+    createUser: async function(req) {
+
+       await db.users.create({
+            idUser: this.generateId(),
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            password: req.body.password,
+            idCategory: 1,
+            idAdress: 1,
+            avatarIMG: req.body.avatar 
+
+        });
+        /*
+        let allUsers = this.findAllUsers();
+        
         let newUser = {
             id: this.generateId(),
             ...userData,
@@ -55,9 +80,14 @@ const user = {
         allUsers.push(newUser);
         fs.writeFileSync(path.join(__dirname,"../data/users.json"), JSON.stringify(allUsers, null, ' '));
         return newUser;
+        */
     },
-    change: function(id, userChange) {
-        let allUser = this.findAll();
+    change: async function(id) {
+
+        await db.users.findByPk(id);
+
+        /*
+        let allUser = this.findAllUsers();
 
         const index = allUser.findIndex((user) => {
             return user.id == id;
@@ -85,14 +115,16 @@ const user = {
         fs.writeFileSync(path.join(__dirname,"../data/users.json"), JSON.stringify(allUser, null, ' '));
 
         return userUpdate;
+        */
     },
 
     delete: function(id) {
-        let allUsers = this.findAll();
+        let allUsers = this.findAllUsers();
         let finalUsers = allUsers.filter(oneUser => oneUser.id !== id);
         fs.writeFileSync(path.join(__dirname,"../data/users.json"), JSON.stringify(finalUsers, null, ' '));
         return true;
     }
+    
 }
 
 module.exports = user;

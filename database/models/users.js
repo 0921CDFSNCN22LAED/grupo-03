@@ -3,7 +3,7 @@ module.exports = function (sequelize , dataTypes){
     let alias = "users";
 
     let cols = {
-        id:{
+        idUser:{
             type:dataTypes.INTEGER ,
             primaryKey: true ,
             autoIncrement:true,
@@ -25,7 +25,7 @@ module.exports = function (sequelize , dataTypes){
             type:dataTypes.STRING(50),
             allowNull: false,
         },
-        category:{
+        idCategory:{
             type:dataTypes.INTEGER ,
             allowNull: false,
         },
@@ -46,23 +46,37 @@ module.exports = function (sequelize , dataTypes){
 
     let users = sequelize.define(alias, cols, config);
 
-    users.associate = function(models){      
+    users.associate = function(models){   
+        
+        users.hasMany(models.carts_buy,{
+            as: "users_carts_buy",
+            foreignKey: "idUsers"
+        });
 
+        users.belongsTo(models.categories_users,{
+            as:"users_categories",
+            foreignKey: "idCategory"
+        });
+
+        
+        /*
         users.belongsTo(models.carts_buy,{
             as: "users_carts_buy" ,  //revisar todos los "as"
             foreignKey:"idUsers" ,
         }); 
         users.hasMany(models.categories_users,{
             as: "users_categories_users" ,  //revisar todos los "as"
-            foreignKey:"id" ,
+            foreignKey:"idCategoryUsers" ,
         }); 
-        users.hasMany(models.adress,{
-            as: "users_adress" ,  //revisar todos los "as"
-            foreignKey:"id" ,
-        }); 
-
-
-
+        */
+       
+       
+       /*
+       users.belongsTo(models.adress,{
+           as:"users_adress",
+           foreignKey:"idAdress"
+       });
+       */
     }
 
     return users;

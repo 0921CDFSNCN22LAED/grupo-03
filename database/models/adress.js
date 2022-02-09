@@ -10,7 +10,7 @@ module.exports = function (sequelize , dataTypes){
             allowNull: false,
         },
         adressStreet:{
- // tipo de dato "DATE" cual poner?           type:dataTypes.INTEGER ,
+            type:dataTypes.STRING(50),
             allowNull: false,
         },
         location:{

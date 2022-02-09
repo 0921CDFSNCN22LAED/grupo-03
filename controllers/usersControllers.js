@@ -1,21 +1,30 @@
 const fs = require("fs");
 const path = require("path");
 
-const userService = require("../services/user");
+//const userService = require("../services/user");
 
 const { validationResult } = require("express-validator");
 
 const bcrypt = require("bcryptjs");
 const res = require("express/lib/response");
 
+const db = require("../database/models");
+
 const controller = {
-    login: (req, res) => {
+    login: function(req, res) {
         
         res.render("login");
     },
-    loginProcess:(req,res)=>{
+    loginProcess:async function(req,res){
 
-        let userToLogin = userService.findByField('email',req.body.email);
+        console.log("session");
+        console.log(req.session.userLogged);
+        const userToLogin = await db.users.findAll({
+            where: {
+              email: req.body.email,
+            }
+          });
+
         if(userToLogin){
             let comparePassword = bcrypt.compareSync(req.body.password,userToLogin.password);
             if(comparePassword){
@@ -46,18 +55,22 @@ const controller = {
                 }
             }
         })
+        
 
     },
-    register: (req, res) => {
+    register: function(req, res) {
         res.render("register");
     },
-    processRegister: (req, res) => {
+    processRegister: async function(req,res) {
 
         const resultValidation = validationResult(req);
 
-        let userInDB = userService.findByField('email', req.body.email);
+        let userInDB = await db.users.findAll({
+            where: {
+              email: req.body.email,
+            }
+          });
 
-        console.log(resultValidation.errors.length);
         if (resultValidation.errors.length > 0) {
             return res.render('register', {
                 errors: resultValidation.mapped(),
@@ -75,26 +88,30 @@ const controller = {
             });
         }
 
-        image = "/img/users/" + req.file.filename;
+        //image = "/img/users/" + req.file.filename;
 
-        let userToCreate = {
-            ...req.body,
-            password: bcrypt.hashSync(req.body.password, 10),
-            repassword:bcrypt.hashSync(req.body.repassword,10),
-            avatar: req.file.filename
-        }
+        await db.users.create({
+            idUser: this.generateId(),
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            password: req.body.password,
+            idCategory: 1,
+            idAdress: 1,
+            avatarIMG: req.file.filename 
 
-        userService.create(userToCreate);
+        });
 
         return res.redirect('/users/login');
     },
     recupero: (req, res) => {
+
         res.render("recupero");
     },
-    recover: (req, res) => {
+    recover: async function(req, res) {
 
         const resultValidation = validationResult(req);
-        console.log(resultValidation);
+
 
         if (resultValidation.errors.length > 0) {
             return res.render('recupero', {
@@ -102,7 +119,12 @@ const controller = {
                 oldData: req.body
             });
         }
-        const mail = userService.findByField("email", req.body.email);
+        const mail = await db.users.findAll({
+            where: {
+              email: req.body.email,
+            }
+          });
+
         if (!mail) {
             return res.render('recupero', {
                 errors: {
@@ -116,25 +138,28 @@ const controller = {
 
             return res.redirect('/users/recup');
         }
-        console.log(oldData);
+        
     },
 
-    recup: (req, res) => {
+    recup: function(req, res) {
+
         res.render("recup");
     },
 
-    history: (req, res) => {
+    history: function(req, res) {
+
         res.render("history");
     },
 
-    allUsers: (req, res) => {
-        res.render("allUsers", { users: productsService.users });
+    allUsers: async function(req, res) {
+
+        const usersAll = await db.users.findAll();
+        res.render("allUsers", { users: usersAll });
     },
-    userEdit: (req, res) => {
+    userEdit: async function(req, res) {
+
         const idUser = req.params.id;
-        const user = userService.getData().find((user) => {
-            return idUser == user.id;
-        });
+        const user = await db.users.findByPk(idUser);
         if (user) {
             res.render('userEdit', {
                 user,
@@ -144,12 +169,33 @@ const controller = {
             res.render("error")
         }
     },
-    updateUser: (req, res) => {
+    updateUser: async function(req, res){
+
+
         const idUser = parseInt(req.params.id);
         
-        const user = userService.findByPk(idUser);
-        
-        const img = (!req.file) ? user.avatar : req.file.filename;
+        const user = await db.users.findByPk(idUser);
+
+        await db.users.update({
+            idUser: this.generateId(),
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            password: req.body.password,
+            idCategory: 1,
+            idAdress: 1,
+            avatarIMG: req.file.filename
+
+        },{
+            where:{
+                id: idUser
+            }
+        });
+
+        res.redirect('/users/profile/:id');
+
+        /*
+        const img = (!req.file) ? user.avatar : req.file.filename;n
         const image = "/img/users/" + img;
         
         let userToUpdate = {
@@ -158,10 +204,22 @@ const controller = {
         }
 
         userService.change(req.params.id, userToUpdate);
-        res.redirect('/users/profile/:id');
+        */
     },
-    userDelete: (req, res) => {
-        const idUser = req.params.id;
+    userDelete: async function(req, res) {
+        const idUserDestroy = req.params.id;
+
+        const user = await db.users.findByPk(idUser);
+
+        db.user.destroy({
+            where:{
+                idUser: idUserDestroy
+            }
+        })
+
+        req.session.destroy();
+        res.redirect("/users/login");
+        /*
         const user = userService.getData().find((user) => {
             return idUser == user.id;
         });
@@ -173,14 +231,15 @@ const controller = {
         } else {
             res.render("error")
         }
+        */
     },
 
-    profile: (req, res) => {
+    profile: function(req, res) {
 
         res.render("profile",{user:req.session.userLogged});
     },
 
-    logout:(req,res)=>{
+    logout:function(req,res){
 
         req.session.destroy();
         return res.redirect("/");

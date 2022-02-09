@@ -18,7 +18,7 @@ module.exports = function (sequelize , dataTypes){
             allowNull: false,
         },
         dateBuy:{
-  // tipo de dato "DATE" cual poner?            type:dataTypes.DATE ,
+            type:dataTypes.DATE,
             allowNull: false,
         },
         idPaymentMethod:{
