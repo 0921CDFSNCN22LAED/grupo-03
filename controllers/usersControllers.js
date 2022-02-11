@@ -9,55 +9,73 @@ const bcrypt = require("bcryptjs");
 const res = require("express/lib/response");
 
 const db = require("../database/models");
+const { Console } = require("console");
 
 const controller = {
     login: function(req, res) {
-        
+    
         res.render("login");
     },
-    loginProcess:async function(req,res){
+    loginProcess:(req,res)=>{
 
-        console.log("session");
-        console.log(req.session.userLogged);
-        const userToLogin = await db.users.findAll({
+        const resultValidation = validationResult(req);
+
+         db.users.findAll({
             where: {
               email: req.body.email,
             }
+          })
+          .then(function(userToLogin){
+
+            if(resultValidation.errors.email || resultValidation.errors.password || userToLogin.length == 0){
+                return res.render("login",{
+    
+                    errors:{
+        
+                        email:{
+                            msg: "Las credenciales son invalidas"
+                        }
+                    }
+                });
+              };
+
+            if(userToLogin.length > 0){
+
+                
+                    //let comparePassword = bcrypt.compareSync(req.body.password,userToLogin.password);
+                    console.log(userToLogin);
+                    if(req.body.password == userToLogin[0].dataValues.password){
+      
+                        delete userToLogin[0].dataValues.password;
+                        
+      
+                        req.session.userLogged = userToLogin[0].dataValues.firstName;
+                        
+                        return res.redirect("/");
+                    }else{
+
+                        return res.render("login",{
+    
+                            errors:{
+                
+                                email:{
+                                    msg: "Las credenciales son invalidas"
+                                }
+                            }
+                        });
+
+                    }
+                    
+                  }
+                
+
+
+          })
+          .catch(function (err) {
+            console.log("El error es: " + err);
           });
 
-        if(userToLogin){
-            let comparePassword = bcrypt.compareSync(req.body.password,userToLogin.password);
-            if(comparePassword){
-
-                delete userToLogin.password;
-                delete userToLogin.repassword;
-
-                req.session.userLogged = userToLogin;
-                return res.redirect("/");
-            }
-            return res.render("login",{
-
-                errors:{
-    
-                    email:{
-                        msg: "Las credenciales son invalidas"
-                    }
-                }
-            })
-
-        }
-        return res.render("login",{
-
-            errors:{
-
-                email:{
-                    msg: "Las credenciales son invalidas"
-                }
-            }
-        })
-        
-
-    },
+  },
     register: function(req, res) {
         res.render("register");
     },
@@ -65,28 +83,35 @@ const controller = {
 
         const resultValidation = validationResult(req);
 
-        let userInDB = await db.users.findAll({
-            where: {
-              email: req.body.email,
-            }
-          });
-
         if (resultValidation.errors.length > 0) {
             return res.render('register', {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             });
 
-        } else if (userInDB) {
-            return res.render('register', {
-                errors: {
-                    email: {
-                        msg: 'Este email ya está registrado'
-                    }
-                },
-                oldData: req.body
-            });
-        }
+        }  
+
+        const userInDB = await db.users.findAll({
+            where: {
+              email: req.body.email,
+            }
+          });
+          await function(userInDB){
+
+            if (userInDB) {
+                return res.render('register', {
+                    errors: {
+                        email: {
+                            msg: 'Este email ya está registrado'
+                        }
+                    },
+                    oldData: req.body
+                });
+            }
+          };
+        
+        
+    
 
         //image = "/img/users/" + req.file.filename;
 

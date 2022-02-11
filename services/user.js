@@ -1,3 +1,4 @@
+
 const res = require('express/lib/response');
 const fs = require('fs');
 const path = require("path");
@@ -7,13 +8,12 @@ const db = require("../database/models");
 
 const user = {
     //fileName :'../data/users.json',
-    /*
+
     saveUser:function() {
         const text = JSON.stringify(users, null, 4);
         fs.writeFileSync(usersFilePath, text, "utf-8");
     },
-    */
-
+    
     getData: function() {
         
         return db.users.findAll();
@@ -48,12 +48,12 @@ const user = {
               email: text,
             }
           });
-        /*
+        
         let allUsers = this.findAllUsers();
        
         let userFound = allUsers.find(oneUser => oneUser[field] === text);
         return userFound;
-        */
+        
     },
 
     createUser: async function(req) {
@@ -69,7 +69,8 @@ const user = {
             avatarIMG: req.body.avatar 
 
         });
-        /*
+        
+        
         let allUsers = this.findAllUsers();
         
         let newUser = {
@@ -80,13 +81,13 @@ const user = {
         allUsers.push(newUser);
         fs.writeFileSync(path.join(__dirname,"../data/users.json"), JSON.stringify(allUsers, null, ' '));
         return newUser;
-        */
+        
     },
     change: async function(id) {
 
         await db.users.findByPk(id);
 
-        /*
+        
         let allUser = this.findAllUsers();
 
         const index = allUser.findIndex((user) => {
@@ -115,7 +116,7 @@ const user = {
         fs.writeFileSync(path.join(__dirname,"../data/users.json"), JSON.stringify(allUser, null, ' '));
 
         return userUpdate;
-        */
+        
     },
 
     delete: function(id) {

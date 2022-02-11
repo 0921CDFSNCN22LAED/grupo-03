@@ -3,23 +3,23 @@ module.exports = function (sequelize , dataTypes){
     let alias = "users";
 
     let cols = {
-        idUser:{
+        id:{
             type:dataTypes.INTEGER ,
             primaryKey: true ,
-            autoIncrement:true,
-            allowNull: false,
+            autoIncrement:true, 
+            allowNull: true,
         },
         firstName: {
             type:dataTypes.STRING(50),
-            allowNull: false,
+            allowNull: true,
         },
         lastName:{
             type:dataTypes.STRING(50),
-            allowNull: false,
+            allowNull: true,
         },
         email:{
-            type:dataTypes.STRING,
-            allowNull: false,
+            type:dataTypes.TEXT,
+            allowNull: true,
         },
         password:{
             type:dataTypes.STRING(50),
@@ -27,14 +27,14 @@ module.exports = function (sequelize , dataTypes){
         },
         idCategory:{
             type:dataTypes.INTEGER ,
-            allowNull: false,
+            allowNull: true,
         },
         idAdress:{
             type:dataTypes.INTEGER ,
-            allowNull: false,
+            allowNull: true,
         },
         avatarIMG:{
-            type: dataTypes.STRING,
+            type: dataTypes.TEXT,
         },
 
     }
