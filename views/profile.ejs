@@ -38,10 +38,10 @@
         <form action="/users/userEdit/<%=user.id%>" method="POST" class="cont-form" enctype="multipart/form-data">
             <div class="cont-create">
                 <div class="titulo-form">
-                    <h1>Perfil de <%= user.name %> </h1>
+                    <h1>Perfil de <%= user.firstName %> </h1>
                 </div>
                 <div class="wrap-form-create">
-                    <img src="/img/users/<%= user.avatar %>" alt="">
+                    <img src="/img/users/<%= user.avatarIMG %>" alt="">
                 </div>
                 <div class="wrap-form-create">
                     <label for="mail">Email</label>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="wrap-form-create">
                     <label for="name">Nombre</label>
-                    <input type="text" name="name"  value="<%= user.name %>" >
+                    <input type="text" name="name"  value="<%= user.firstName %>" >
                 </div>
                 <div class="wrap-form-create">
                     <label for="lastName">Apellido</label>

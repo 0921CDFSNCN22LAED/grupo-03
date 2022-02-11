@@ -36,6 +36,9 @@ module.exports = function (sequelize , dataTypes){
         avatarIMG:{
             type: dataTypes.TEXT,
         },
+        phone:{
+            type: dataTypes.STRING(10),
+        },
 
     }
 

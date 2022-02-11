@@ -20,14 +20,14 @@ const controller = {
 
         const resultValidation = validationResult(req);
 
-         db.users.findAll({
+         db.users.findOne({
             where: {
               email: req.body.email,
             }
           })
           .then(function(userToLogin){
 
-            if(resultValidation.errors.email || resultValidation.errors.password || userToLogin.length == 0){
+            if(resultValidation.errors.email || resultValidation.errors.password || !userToLogin){
                 return res.render("login",{
     
                     errors:{
@@ -39,17 +39,17 @@ const controller = {
                 });
               };
 
-            if(userToLogin.length > 0){
+            if(userToLogin){
 
                 
                     //let comparePassword = bcrypt.compareSync(req.body.password,userToLogin.password);
-                    console.log(userToLogin);
-                    if(req.body.password == userToLogin[0].dataValues.password){
+                    
+                    if(req.body.password == userToLogin.password){
       
-                        delete userToLogin[0].dataValues.password;
+                        delete userToLogin.password;
                         
       
-                        req.session.userLogged = userToLogin[0].dataValues.firstName;
+                        req.session.userLogged = userToLogin;
                         
                         return res.redirect("/");
                     }else{
@@ -184,6 +184,7 @@ const controller = {
     userEdit: async function(req, res) {
 
         const idUser = req.params.id;
+
         const user = await db.users.findByPk(idUser);
         if (user) {
             res.render('userEdit', {
@@ -194,31 +195,38 @@ const controller = {
             res.render("error")
         }
     },
-    updateUser: async function(req, res){
+    updateUser: function(req, res){
 
 
-        const idUser = parseInt(req.params.id);
+        //const idUser = parseInt(req.params.id);
+
+        const idUser = req.params.id;
         
-        const user = await db.users.findByPk(idUser);
+        db.users.findByPk(idUser)
+        .then(function(user){
 
-        await db.users.update({
-            idUser: this.generateId(),
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            email: req.body.email,
-            password: req.body.password,
-            idCategory: 1,
-            idAdress: 1,
-            avatarIMG: req.file.filename
+            db.users.update({
+            
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                email: req.body.email,
+                idCategory: 1,
+                idAdress: 1,
+                avatarIMG: (!req.file) ? user.avatar : req.file.filename
+    
+            },{
+                where:{
+                    id: idUser
+                }
+            });
 
-        },{
-            where:{
-                id: idUser
-            }
+            
+
+            return res.redirect('/users/profile/:id');
+
         });
 
-        res.redirect('/users/profile/:id');
-
+ 
         /*
         const img = (!req.file) ? user.avatar : req.file.filename;n
         const image = "/img/users/" + img;

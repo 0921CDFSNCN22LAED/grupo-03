@@ -38,7 +38,7 @@
             </div>
             <div class="wrap-form">
                 <label for="nombre">Nombre</label>
-                <input type="text" name="name" value=<%=user.name%>>     
+                <input type="text" name="firstName" value=<%=user.firstName%>>     
             </div>
             <div class="wrap-form">
                 <label for="apellido">Apellido</label>
@@ -54,11 +54,11 @@
             </div>
             <div class="titulo-form"></div>
             <div class="wrap-form-create">
-            <img src="/img/users/<%= user.avatar %>" >
+            <img src="/img/users/<%= user.avatarIMG %>" >
             </div>
             <div class="wrap-form">
                 <label for="avatar" class="avatar">Tu imagen de perfil</label>
-                <input type="file" name="avatar" accept=".jpg, .bmp, .webp">
+                <input type="file" name="avatarIMG" accept=".jpg, .bmp, .webp">
                     
             </div>
             <div class="separador"></div>
