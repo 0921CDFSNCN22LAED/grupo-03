@@ -1,8 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 
-//const userService = require("../services/user");
-
 const { validationResult } = require("express-validator");
 
 const bcrypt = require("bcryptjs");
@@ -16,7 +14,7 @@ const controller = {
     
         res.render("login");
     },
-    loginProcess:(req,res)=>{
+    loginProcess:function(req,res){
 
         const resultValidation = validationResult(req);
 
@@ -26,6 +24,8 @@ const controller = {
             }
           })
           .then(function(userToLogin){
+
+           console.log();
 
             if(resultValidation.errors.email || resultValidation.errors.password || !userToLogin){
                 return res.render("login",{
@@ -41,10 +41,13 @@ const controller = {
 
             if(userToLogin){
 
-                
-                    //let comparePassword = bcrypt.compareSync(req.body.password,userToLogin.password);
+            
+                    let comparePassword = bcrypt.compareSync(req.body.password,userToLogin.password);
+
+                    console.log(comparePassword);
                     
-                    if(req.body.password == userToLogin.password){
+                    
+                    if(comparePassword){
       
                         delete userToLogin.password;
                         
@@ -79,9 +82,11 @@ const controller = {
     register: function(req, res) {
         res.render("register");
     },
-    processRegister: async function(req,res) {
+    processRegister: function(req,res) {
 
         const resultValidation = validationResult(req);
+
+        console.log(resultValidation);
 
         if (resultValidation.errors.length > 0) {
             return res.render('register', {
@@ -89,14 +94,15 @@ const controller = {
                 oldData: req.body
             });
 
-        }  
+        } 
+         
 
-        const userInDB = await db.users.findAll({
+        db.users.findOne({
             where: {
               email: req.body.email,
             }
-          });
-          await function(userInDB){
+          })
+          .then(function(userInDB){
 
             if (userInDB) {
                 return res.render('register', {
@@ -108,26 +114,41 @@ const controller = {
                     oldData: req.body
                 });
             }
-          };
+          
+          })
+          .then(function(){
+
+            let passEncrypted = bcrypt.hashSync(req.body.password,10);
+
+            console.log(passEncrypted);
+
+            db.users.create({
+            
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                email: req.body.email,
+                password: passEncrypted,
+                idCategory: 1,
+                phone:req.body.phone,
+                adress: req.body.adress,
+                location:req.body.location,
+                state:req.body.state,
+                avatarIMG: req.file.filename 
+    
+            });
+    
+            return res.redirect('/users/login');
+
+          });
+
+            
         
         
     
 
         //image = "/img/users/" + req.file.filename;
 
-        await db.users.create({
-            idUser: this.generateId(),
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            email: req.body.email,
-            password: req.body.password,
-            idCategory: 1,
-            idAdress: 1,
-            avatarIMG: req.file.filename 
-
-        });
-
-        return res.redirect('/users/login');
+        
     },
     recupero: (req, res) => {
 

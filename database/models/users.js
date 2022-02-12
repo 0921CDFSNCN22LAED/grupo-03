@@ -22,14 +22,10 @@ module.exports = function (sequelize , dataTypes){
             allowNull: true,
         },
         password:{
-            type:dataTypes.STRING(50),
+            type:dataTypes.STRING(300),
             allowNull: false,
         },
         idCategory:{
-            type:dataTypes.INTEGER ,
-            allowNull: true,
-        },
-        idAdress:{
             type:dataTypes.INTEGER ,
             allowNull: true,
         },
@@ -38,6 +34,15 @@ module.exports = function (sequelize , dataTypes){
         },
         phone:{
             type: dataTypes.STRING(10),
+        },
+        adress:{
+            type: dataTypes.STRING(100),
+        },
+        location:{
+            type: dataTypes.STRING(20),
+        },
+        state:{
+            type: dataTypes.STRING(20),
         },
 
     }

@@ -56,20 +56,12 @@
                     <% } %>
             </div>
             <div class="wrap-form">
-                <label for="recontraseña">
-                    <input type="password" name="repassword" placeholder="Confirma tu clave">
-                </label>
-                <% if(locals.errors && errors.repassword){  %>
-                    <span><%=errors.repassword.msg%> </span>
-                    <% } %>
-            </div>
-            <div class="wrap-form">
                 <label for="nombre">
-                    <input type="text" name="name" placeholder="Ingresa tu nombre" value="<%= locals.oldData ? oldData.name : null %>" >
+                    <input type="text" name="firstName" placeholder="Ingresa tu nombre" value="<%= locals.oldData ? oldData.firstName : null %>" >
                 </label>
-                <% if(locals.errors && errors.name){  %>
-                    <span><%= errors.name.msg %> </span>
-                    <% } %>
+                <% if(locals.errors && errors.firstName){  %>
+                    <span><%= errors.firstName.msg %> </span>
+                <% } %>
             </div>
             <div class="wrap-form">
                 <label for="apellido">
@@ -93,6 +85,22 @@
                 </label>
                 <% if(locals.errors && errors.adress){ %>
                     <span><%= errors.adress.msg %> </span>
+                    <% } %>
+            </div>
+            <div class="wrap-form">
+                <label for="location">
+                    <input type="text" name="location" placeholder="Ingresa tu localidad" value="<%= locals.oldData ? oldData.location : null  %>">
+                </label>
+                <% if(locals.errors && errors.location){ %>
+                    <span><%= errors.location.msg %> </span>
+                    <% } %>
+            </div>
+            <div class="wrap-form">
+                <label for="state">
+                    <input type="text" name="state" placeholder="Ingresa tu provincia" value="<%= locals.oldData ? oldData.state : null  %>">
+                </label>
+                <% if(locals.errors && errors.state){ %>
+                    <span><%= errors.state.msg %> </span>
                     <% } %>
             </div>
             <div class="titulo-form"></div>
