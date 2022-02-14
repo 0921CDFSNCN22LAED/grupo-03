@@ -41,17 +41,17 @@
             <section class="row ">
                 <div class="col-sm-12 col-md-7 ">
 
-                    <img src="<%= product.imagen1 %>" class="d-block w-100" alt=" <%= product.name %>">
+                    <img src="<%= product.image %>" class="d-block w-100" alt=" <%= product.name %>">
 
                 </div>
 
                 <div class="col-md-5">
                     <div class="row">
-                        <div>
+                        <!-- <div>
                             <p class="fs-7 text-end">
                                 <%= product.codigo %>
                             </p>
-                        </div>
+                        </div> -->
                         <div>
                             <h1 class="nombreProductDetail">
                                 <%= product.name %>
@@ -61,7 +61,7 @@
                             <div class="row">
                                 <p class="fs-6 col-7 precioTachado">
                                     $
-                                    <%= product.precio %>
+                                    <%= product.price %>
                                 </p>
                                 <p class="fs-6 col-3 descuento">
                                     <%= product.disc %> % Off
@@ -70,14 +70,14 @@
                             <div class="marginPrecio">
                                 <p class="fs-2">
                                     $
-                                    <%= (1 - (product.disc/100)) * product.precio %>
+                                    <%= (1 - (product.disc/100)) * product.price %>
                                 </p>
                             </div>
                             <% }else  { %>
                                 <div class="marginPrecio">
                                     <p class="fs-2">
                                         $
-                                        <%= product.precio %>
+                                        <%= product.price %>
                                     </p>
                                 </div>
                                 <p class="fs-6 text-center text-danger">
@@ -169,31 +169,19 @@
             <div class="espTecnicas bg1 row">
                 <div class="col-12 fs-6">
                     <p>Características:
-                        <%= product.caract %>
+                        <%= product.description %>
                     </p>
                 </div>
             </div>
             <div class="espTecnicas row">
                 <div class="col-12 fs-6">
                     </p>Descripción:
-                    <%= product.desc %>
+                    <%= product.size %>
                         </p>
                 </div>
             </div>
-            <div class="espTecnicas bg1 row">
-                <div class="col-12 fs-6">
-                    <p> Especificaciones:
-                        <%= product.size %>
-                    </p>
-                </div>
-            </div>
-            <div class="espTecnicas  row">
-                <div class="col-12 fs-6">
-                    <p> Color:
-                        <%= product.color %>
-                    </p>
-                </div>
-            </div>
+
+    
         </article>
 
 
@@ -201,46 +189,7 @@
         <div class="separador"></div>
 
         <div class="gradient-divider"></div>
-        <h2 class="titulo">Productos en Descuento</h2>
 
-        <section class="cont-art">
-
-            <% for(prod of productShowOffer.slice(0,4)){ %>
-                <% if(prod.type=="offer" ) { %>
-                    <article class="discount-container">
-                        <div class="car-prod-tot">
-                            <div>
-                                <a href="<%= prod.imagen1 %>"><img src="<%= prod.imagen1 %>" class="d-block w-100"
-                                        style="width:250px; height:220px" alt="<%= prod.name %>"></a>
-                            </div>
-
-                        </div>
-                        <div class="discount-badge">
-                            <h6>30%</h6>
-                        </div>
-                        <div class="wrap-art">
-                            <h4 class="cuotas">18 cuotas sin interes</h4>
-                            <h4 class="descrip">
-                                <%= prod.name %>
-                            </h4>
-                            <h3 class="precio">$
-                                <%= prod.precio %>
-                            </h3>
-                            <div class="boton">
-                                <a href="/products/productDetail/<%=prod.id%>">
-                                    <button type="button" class="btn-prod">
-                                        Ver producto
-                                    </button>
-                                </a>
-
-                            </div>
-                        </div>
-
-                    </article>
-                    <% } %>
-                        <% } %>
-
-        </section>
 
 
 

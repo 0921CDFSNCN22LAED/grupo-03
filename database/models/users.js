@@ -58,12 +58,12 @@ module.exports = function (sequelize , dataTypes){
         
         users.hasMany(models.carts_buy,{
             as: "users_carts_buy",
-            foreignKey: "idUsers"
+            foreignKey: "id"
         });
 
         users.belongsTo(models.categories_users,{
             as:"users_categories",
-            foreignKey: "idCategory"
+            foreignKey: "id"
         });
 
         

@@ -28,7 +28,7 @@ module.exports = function (sequelize , dataTypes){
 
         payment_method.belongsTo(models.carts_buy,{
             as: "payment_method_carts_buy" ,  //revisar todos los "as"
-            foreignKey:"idPaymentMethod" ,
+            foreignKey:"id" ,
         }); 
 
     }
