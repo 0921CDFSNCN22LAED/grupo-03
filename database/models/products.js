@@ -71,7 +71,7 @@ module.exports = function (sequelize , dataTypes){
                 foreignKey:"id" ,
         });    
 
-        products.belongsTo(models.type,{
+        products.belongsTo(models.typeProduct,{
             as: "products_type" ,  //revisar todos los "as"
             foreignKey:"idType" ,
         }); 

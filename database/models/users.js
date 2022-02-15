@@ -66,25 +66,6 @@ module.exports = function (sequelize , dataTypes){
             foreignKey: "id"
         });
 
-        
-        /*
-        users.belongsTo(models.carts_buy,{
-            as: "users_carts_buy" ,  //revisar todos los "as"
-            foreignKey:"idUsers" ,
-        }); 
-        users.hasMany(models.categories_users,{
-            as: "users_categories_users" ,  //revisar todos los "as"
-            foreignKey:"idCategoryUsers" ,
-        }); 
-        */
-       
-       
-       /*
-       users.belongsTo(models.adress,{
-           as:"users_adress",
-           foreignKey:"idAdress"
-       });
-       */
     }
 
     return users;

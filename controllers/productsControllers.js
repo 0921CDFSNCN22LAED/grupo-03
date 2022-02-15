@@ -105,9 +105,6 @@ const controller = {
         // });
     },
 
-
-
-
     destroy: (req, res) => {
         db.products.destroy({ 
             where:{
@@ -120,46 +117,47 @@ const controller = {
         res.redirect("/products/tabla-prod");
     },
 
-
-
-
-
-
 //CREATE
-    storage: (req, res) => {
+    storage: function(req, res) {
 
-        console.log(req.body.idType);
-
-        const category = db.categories_prod.findOne({
+        
+        
+        const category =  db.categories_prod.findOne({
             where:{
-                    name: req.body.idCategory 
+                    name: "gaming" 
             }          
         })
- 
-        const type = db.type.findAll()
-
-console.log(type);
-
+            
+        const type =  db.typeProduct.findOne({
+            where:{
+                    name: req.body.idType 
+            }          
+        })
         Promise.all([ category , type])
-        .then(function(category, type){
+        .then(function(info){
+
+            console.log(req.file.filename);
+            
             db.products.create ({
              
                 name:req.body.name,
-                description:req.body.description,
+                description:req.body.desc,
                 size:req.body.size,
-                idCategory:category.id,
-                idType:type.id,
+                idCategory: info[0].dataValues.id,
+                idType: info[1].dataValues.id,
                 price:req.body.price,
                 disc:req.body.disc,
-                image:req.body.image
+                image:req.file.filename
     
             })
         })
-
         .then(function(){
             res.redirect("/products/tabla-prod");
-    })
+        })  
+        .catch(function(error){
 
+            console.log(error);
+        }) 
 
 
         // const resultValidation = validationResult(req);

@@ -1,13 +1,13 @@
 module.exports = function (sequelize , dataTypes){
 
-    let alias = "type";
+    let alias = "typeProduct";
 
     let cols = {
         id:{
             type:dataTypes.INTEGER ,
             primaryKey: true ,
             autoIncrement:true,
-            allowNull: false,
+            allowNull: true,
         },
         name: {
             type:dataTypes.STRING(10),
@@ -17,21 +17,21 @@ module.exports = function (sequelize , dataTypes){
     }
 
     let config = {
-        tableName:"type",
+        tableName:"typeProduct",
         timestamps: false
     }
 
-    let type = sequelize.define(alias, cols, config);
+    let typeProduct = sequelize.define(alias, cols, config);
 
-    type.associate = function(models){      
+    typeProduct.associate = function(models){      
 
-        type.hasMany(models.products,{
-            as: "type_products" ,  //revisar todos los "as"
+        typeProduct.hasMany(models.products,{
+            as: "type_products" ,  
             foreignKey:"idType" ,
         }); 
 
     }
 
-    return type;
+    return typeProduct;
     
 }
