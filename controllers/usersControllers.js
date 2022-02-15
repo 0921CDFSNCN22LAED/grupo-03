@@ -8,6 +8,7 @@ const res = require("express/lib/response");
 
 const db = require("../database/models");
 const { Console } = require("console");
+const { brotliDecompress } = require("zlib");
 
 const controller = {
     login: function(req, res) {
@@ -70,8 +71,6 @@ const controller = {
                     }
                     
                   }
-                
-
 
           })
           .catch(function (err) {
@@ -140,15 +139,7 @@ const controller = {
             return res.redirect('/users/login');
 
           });
-
-            
-        
-        
-    
-
-        //image = "/img/users/" + req.file.filename;
-
-        
+        //image = "/img/users/" + req.file.filename;   
     },
     recupero: (req, res) => {
 
@@ -218,13 +209,13 @@ const controller = {
     },
     updateUser: function(req, res){
 
-
-        //const idUser = parseInt(req.params.id);
-
         const idUser = req.params.id;
         
         db.users.findByPk(idUser)
         .then(function(user){
+
+            const img = (!req.file) ? user.avatarIMG : req.file.filename;
+            const image = "/img/users/" + img;
 
             db.users.update({
             
@@ -232,8 +223,10 @@ const controller = {
                 lastName: req.body.lastName,
                 email: req.body.email,
                 idCategory: 1,
-                idAdress: 1,
-                avatarIMG: (!req.file) ? user.avatar : req.file.filename
+                adress: req.body.adress,
+                location:req.body.location,
+                state:req.body.state,
+                avatarIMG: img
     
             },{
                 where:{
@@ -247,18 +240,6 @@ const controller = {
 
         });
 
- 
-        /*
-        const img = (!req.file) ? user.avatar : req.file.filename;n
-        const image = "/img/users/" + img;
-        
-        let userToUpdate = {
-            ...req.body,
-            avatar: image,
-        }
-
-        userService.change(req.params.id, userToUpdate);
-        */
     },
     userDelete: async function(req, res) {
         const idUserDestroy = req.params.id;

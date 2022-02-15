@@ -19,7 +19,7 @@ router.post("/login",controller.loginProcess);
 
 router.get("/register", guest, controller.register);
 
-router.post("/register", upload.single('avatar'), validationUser, controller.processRegister);
+router.post("/register", upload.single('avatarIMG'), validationUser, controller.processRegister);
 
 router.get("/recupero", guest, controller.recupero);
 
@@ -35,7 +35,7 @@ router.get("/profile/:id", auth, controller.profile);
 
 router.post("/userEdit/:id", controller.userEdit);
 
-router.put("/userUpdate/:id", upload.single("avatar"), controller.updateUser);
+router.put("/userUpdate/:id", upload.single("avatarIMG"), controller.updateUser);
 
 router.get("/userDelete/:id", controller.userDelete);
 

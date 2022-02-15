@@ -36,32 +36,37 @@
             <div class="titulo-form">
                 <h2>Modifica el/los campo/s necesarios</h2>
             </div>
-            <div class="wrap-form">
-                <label for="nombre">Nombre</label>
-                <input type="text" name="firstName" value=<%=user.firstName%>>     
-            </div>
-            <div class="wrap-form">
-                <label for="apellido">Apellido</label>
-                <input type="text" name="lastName" value=<%=user.lastName%>>  
-            </div>
-            <div class="wrap-form">Telefono</label>
-                <label for="telefono">
-                <input type="text" name="phone" value=<%=user.phone%>>   
-            </div>
-            <div class="wrap-form">
-                <label for="direccion">Direccion</label>
-                <input type="text" name="adress" value=<%=user.adress%>>       
-            </div>
-            <div class="titulo-form"></div>
             <div class="wrap-form-create">
-            <img src="/img/users/<%= user.avatarIMG %>" >
+                <img src="/img/users/<%= user.avatarIMG %>" >
             </div>
             <div class="wrap-form">
                 <label for="avatar" class="avatar">Tu imagen de perfil</label>
-                <input type="file" name="avatarIMG" accept=".jpg, .bmp, .webp">
-                    
+                <input type="file" name="avatarIMG" accept=".jpg, .bmp, .webp">  
             </div>
-            <div class="separador"></div>
+            <div class="wrap-form">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="firstName" value="<%=user.firstName%>">     
+            </div>
+            <div class="wrap-form">
+                <label for="apellido">Apellido</label>
+                <input type="text" name="lastName" value="<%=user.lastName%>">  
+            </div>
+            <div class="wrap-form">Telefono</label>
+                <label for="telefono">
+                <input type="text" name="phone" value="<%=user.phone%>">   
+            </div>
+            <div class="wrap-form">
+                <label for="direccion">Direccion</label>
+                <input type="text" name="adress" value="<%=user.adress%>">       
+            </div>
+            <div class="wrap-form">
+                <label for="location">Localidad</label> 
+                    <input type="text" name="location" placeholder="Ingresa tu localidad"  value="<%=user.location%>">
+            </div>
+            <div class="wrap-form">
+                <label for="state">Provincia</label>
+                    <input type="text" name="state" placeholder="Ingresa tu provincia" value="<%=user.state%>">
+            </div>
             <div class="wrap-form">
                 <button type="submit">Actualizar</button>
             </div>

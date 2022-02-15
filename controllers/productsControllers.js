@@ -3,7 +3,9 @@ const path = require("path");
 
 //const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");  revisar funcionamiento
 
-const productsService = require("../services/products.js");
+//const productsService = require("../services/products.js");
+
+const db = require("../database/models");
 
 const { validationResult } = require('express-validator');
 
@@ -18,7 +20,16 @@ const controller = {
         res.render("createProd");
     },
     productTotals: (req, res) => {
-        res.render("productTotals", { products: productsService.products,user:req.session.userLogged });
+
+        db.products.findAll()
+        .then(function(productsAll){
+
+            return res.render("productTotals", { products: productsAll ,user:req.session.userLogged });
+        })
+        .catch(function (err) {
+            console.log("El error es: " + err);
+          });
+        
     },
     productDetail: (req, res) => {
         const idProduct = req.params.id;

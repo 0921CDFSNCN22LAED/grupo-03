@@ -7,14 +7,14 @@ module.exports = function (sequelize , dataTypes){
             type:dataTypes.INTEGER ,
             primaryKey: true ,
             autoIncrement:true,
-            allowNull: false,
+            allowNull: true,
         },
         name: {
-            type:dataTypes.STRING(50),
+            type:dataTypes.STRING(100),
             allowNull: false,
         },
         description:{
-            type:dataTypes.STRING(50),
+            type:dataTypes.STRING(100),
             allowNull: false,
         },
         size:{
@@ -35,11 +35,11 @@ module.exports = function (sequelize , dataTypes){
             type:dataTypes.INTEGER ,
             allowNull: false,
         },
-        discount:{
+        disc:{
             type:dataTypes.INTEGER ,
             allowNull: false,
         },
-        avatarIMG:{
+        image:{
             type: dataTypes.STRING,
             allowNull: false,
 
@@ -62,18 +62,18 @@ module.exports = function (sequelize , dataTypes){
             as: "products",
             through:"carts_products",
             foreignKey:"idCartsBuy" ,
-            otherKey: "idProducts",
+            otherKey: "id",
             timestamps: false,
         });
 
         products.hasMany(models.carts_products,{
                 as: "products_carts_products" ,  //revisar todos los "as"
-                foreignKey:"idProducts" ,
+                foreignKey:"id" ,
         });    
 
         products.belongsTo(models.type,{
             as: "products_type" ,  //revisar todos los "as"
-            foreignKey:"idProducts" ,
+            foreignKey:"id" ,
         }); 
 
         products.hasMany(models.categories_prod,{
