@@ -18,7 +18,7 @@ module.exports = function (sequelize , dataTypes){
             allowNull: false,
         },
         size:{
-            type:dataTypes.STRING(10),
+            type:dataTypes.STRING(100),
             allowNull: false,
         },
         idCategory:{
@@ -73,7 +73,7 @@ module.exports = function (sequelize , dataTypes){
 
         products.belongsTo(models.type,{
             as: "products_type" ,  //revisar todos los "as"
-            foreignKey:"id" ,
+            foreignKey:"idType" ,
         }); 
 
         products.hasMany(models.categories_prod,{
@@ -86,4 +86,3 @@ module.exports = function (sequelize , dataTypes){
     return products;
     
 }
-

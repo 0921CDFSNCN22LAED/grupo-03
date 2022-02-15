@@ -3,13 +3,14 @@ const path = require("path");
 
 //const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");  revisar funcionamiento
 
-//const productsService = require("../services/products.js");
-
-const db = require("../database/models");
 
 const { validationResult } = require('express-validator');
+const db = require("../database/models");
 
 const controller = {
+
+
+
     productCart: (req, res) => {
         res.render("productCart",{user:req.session.userLogged});
     },
@@ -19,36 +20,55 @@ const controller = {
     createProd: (req, res) => {
         res.render("createProd");
     },
+
     productTotals: (req, res) => {
 
         db.products.findAll()
-        .then(function(productsAll){
+        .then(function(products){
+           // console.log(products);
+           return res.render("productTotals", { products:products,user:req.session.userLogged });
+        })
 
-            return res.render("productTotals", { products: productsAll ,user:req.session.userLogged });
-        })
-        .catch(function (err) {
-            console.log("El error es: " + err);
-          });
-        
+        //res.render("productTotals", { products: productsService.products,user:req.session.userLogged });
     },
-    productDetail: (req, res) => {
-        const idProduct = req.params.id;
-        const product = productsService.products.find((product) => {
-            return idProduct == product.id;
-        });
-        const productShowOffer = productsService.products.filter((prod) => {
-            return prod.type == "offer";
+
+
+     productDetail: (req, res) => {
+        db.products.findByPk(req.params.id,{ 
+            include: [           
+                { association: "products_type" },
+                { association: "products_categories_prod"}
+            ],   
         })
-        if (product) {
-            res.render('productDetail', {
-                product: product,
-                idProduct: idProduct,
-                productShowOffer
+        .then(function(product){
+            console.log(product);
+           return res.render("productDetail", {   
+            
+            product: product,
+
             });
-        } else {
-            res.render("error")
-        }
+        })
     },
+
+    //     const idProduct = req.params.id;
+    //     const product = productsService.products.find((product) => {
+    //         return idProduct == product.id;
+    //     });
+    //     const productShowOffer = productsService.products.filter((prod) => {
+    //         return prod.type == "offer";
+    //     })
+    //     if (product) {
+    //         res.render('productDetail', {
+    //             product: product,
+    //             idProduct: idProduct,
+    //             productShowOffer
+    //         });
+    //     } else {
+    //         res.render("error")
+    //     }
+   
+
+
     budget: (req, res) => {
 
         const prodSearch = {
@@ -68,74 +88,162 @@ const controller = {
 
         res.render("cotizaTuPc", { products: prodShow, prodSearch });
     },
+    
+    
     tablet_prod: (req, res) => {
 
-        res.render('tables_prod', {
-            products: productsService.products,
-        });
+        db.products.findAll()
+        .then(function(products){
+           // console.log(products);
+           return res.render("tables_prod", { products:products});
+        })
 
 
+
+        // res.render('tables_prod', {
+        //     products: productsService.products,
+        // });
     },
-    destroy: (req, res) => {
-        const id = req.params.id;
-        productsService.deleteOne(id);
 
+
+
+
+    destroy: (req, res) => {
+        db.products.destroy({ 
+            where:{
+                id:req.params.id
+            }
+        })
+        // const id = req.params.id;
+        // productsService.deleteOne(id);
 
         res.redirect("/products/tabla-prod");
     },
+
+
+
+
+
+
+//CREATE
     storage: (req, res) => {
 
-        const resultValidation = validationResult(req);
+        console.log(req.body.idType);
 
-        if (resultValidation.errors.length > 0) {
-            return res.render('createProd', {
-                errors: resultValidation.mapped(),
-                oldData: req.body
-            });
+        const category = db.categories_prod.findOne({
+            where:{
+                    name: req.body.idCategory 
+            }          
+        })
+ 
+        const type = db.type.findAll()
 
-        };
-        const image = "/img/products/" + req.file.filename
+console.log(type);
 
-        productsService.createOne(req.body, image);
+        Promise.all([ category , type])
+        .then(function(category, type){
+            db.products.create ({
+             
+                name:req.body.name,
+                description:req.body.description,
+                size:req.body.size,
+                idCategory:category.id,
+                idType:type.id,
+                price:req.body.price,
+                disc:req.body.disc,
+                image:req.body.image
+    
+            })
+        })
 
-        res.redirect("/products/tabla-prod");
+        .then(function(){
+            res.redirect("/products/tabla-prod");
+    })
+
+
+
+        // const resultValidation = validationResult(req);
+
+        // if (resultValidation.errors.length > 0) {
+        //     return res.render('createProd', {
+        //         errors: resultValidation.mapped(),
+        //         oldData: req.body
+        //     });
+
+        // };
+        // const image = "/img/products/" + req.file.filename
+
+        // productsService.createOne(req.body, image);
+
+        // res.redirect("/products/tabla-prod");
 
 
     },
-    editProduct: (req, res) => {
-        const idProd = req.params.id;
-        const prod = productsService.products.find((prod) => {
-            return idProd == prod.id;
-        });
+//
+//42min
 
+
+    editProduct: async function(req, res) {
+
+        const idProd = req.params.id;
+
+        const prod = await db.products.findByPk(idProd);
         if (prod) {
             res.render('editProduct', {
-                prod,
-                idProd
+                 prod,
+                 idProd
             });
         } else {
             res.render("error")
         };
-
     },
+
+
+
+
+
+
+
     updateProduct: (req, res) => {
-        const idProd = req.params.id;
-        const prod = productsService.products.find((prod) => {
-            return idProd == prod.id;
-        });
-        const img = (!req.file) ? prod.image1 : req.file.filename;
-        const image = "/img/products/" + img;
-        console.log(req.file);
-        console.log(req.body);
-        let prodToUpdate = {
-            ...req.body,
-            imagen1: image,
-        }
-        console.log(prodToUpdate.image1);
-        productsService.change(req.params.id, prodToUpdate);
-        console.log("pase por controller");
-        console.log(req.file);
-        res.redirect('/products/productDetail/' + idProd);
+
+            db.products.update ({
+                name:req.body.name,
+                description:req.body.description,
+                size:req.body.size,
+                idCategory:category.id,
+                idType:type.id,
+                price:req.body.price,
+                disc:req.body.disc,
+                image:req.body.image
+            }, {
+                where: {
+                    id:req.params.id
+                }
+            });
+
+            res.redirect("/products/tabla-prod");
     }
-};
+}
+
+
+//     updateProduct: (req, res) => {
+//         const idProd = req.params.id;
+//         const prod = productsService.products.find((prod) => {
+//             return idProd == prod.id;
+//         });
+//         const img = (!req.file) ? prod.image1 : req.file.filename;
+//         const image = "/img/products/" + img;
+//         console.log(req.file);
+//         console.log(req.body);
+//         let prodToUpdate = {
+//             ...req.body,
+//             imagen1: image,
+//         }
+//         console.log(prodToUpdate.image1);
+//         productsService.change(req.params.id, prodToUpdate);
+//         console.log("pase por controller");
+//         console.log(req.file);
+//         res.redirect('/products/productDetail/' + idProd);
+//     }
+// };
 module.exports = controller;

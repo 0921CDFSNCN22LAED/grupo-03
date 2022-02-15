@@ -3,7 +3,7 @@ module.exports = function (sequelize , dataTypes){
     let alias = "categories_users";
 
     let cols = {
-        idCategoryUsers:{
+        id:{
             type:dataTypes.INTEGER ,
             primaryKey: true ,
             autoIncrement:true,
@@ -27,7 +27,7 @@ module.exports = function (sequelize , dataTypes){
 
         categories_users.belongsTo(models.users,{
             as: "categories_users_users" ,  //revisar todos los "as"
-            foreignKey:"category" ,
+            foreignKey:"id" ,
         }); 
 
     }

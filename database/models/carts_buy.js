@@ -3,7 +3,7 @@ module.exports = function (sequelize , dataTypes){
     let alias = "carts_buy";
 
     let cols = {
-        idCartsBuy:{
+        id:{
             type:dataTypes.INTEGER ,
             primaryKey: true ,
             autoIncrement:true,
@@ -41,14 +41,14 @@ module.exports = function (sequelize , dataTypes){
         carts_buy.belongsToMany(models.products,{
             as: "carts_buy",
             through:"carts_products",
-            foreignKey: "idProducts",
-            otherKey:"idCartsBuy" ,
+            foreignKey: "id",
+            otherKey:"id" ,
             timestamps: false,
         });
 
         carts_buy.hasMany(models.carts_products,{
                 as: "carts_buy_carts_products" ,  //revisar todos los "as"
-                foreignKey:"idCartsBuy" ,
+                foreignKey:"id" ,
         }); 
 
         carts_buy.hasMany(models.payment_method,{

@@ -60,34 +60,26 @@
                         <% } %>
                 </div>
                 <div class="wrap-form-create">
-                    <label for="characteristic">Caracteristicas</label>
-                    <input type="text" name="caract">
-                    <% if (locals.errors && errors.caract) { %>
+                    <label for="size">Tamaño</label>
+                    <input type="text" name="size">
+                    <% if (locals.errors && errors.size) { %>
                         <div class="text-danger">
-                            <%= errors.caract.msg %>
+                            <%= errors.size.msg %>
                         </div>
                         <% } %>
                 </div>
-                <div class="wrap-form-create">
-                    <label for="color">Color</label>
-                    <input type="text" name="color">
-                    <% if (locals.errors && errors.color) { %>
-                        <div class="text-danger">
-                            <%= errors.color.msg %>
-                        </div>
-                        <% } %>
-                </div>
+
                 <div class="wrap-form-create">
                     <label for="price">Precio</label>
-                    <input type="text" name="precio">
-                    <% if (locals.errors && errors.precio) { %>
+                    <input type="text" name="price">
+                    <% if (locals.errors && errors.price) { %>
                         <div class="text-danger">
-                            <%= errors.precio.msg %>
+                            <%= errors.price.msg %>
                         </div>
                         <% } %>
                 </div>
                 <div class="wrap-form-create">
-                    <label for="discount">Descuento</label>
+                    <label for="disc">Descuento</label>
                     <input type="number" name="disc">
                     <% if (locals.errors && errors.disc) { %>
                         <div class="text-danger">
@@ -95,50 +87,42 @@
                         </div>
                         <% } %>
                 </div>
-                <div class="wrap-form-create">
-                    <label for="code">Codigo del producto</label>
-                    <input type="text" name="code">
-                    <% if (locals.errors && errors.code) { %>
-                        <div class="text-danger">
-                            <%= errors.code.msg %>
-                        </div>
-                        <% } %>
-                </div>
+               
                 <div class="separador"></div>
                 <div class="wrap-form">
-                    <label for="category"><b>Categoria</b></label>
-                    <select name="category" id="category">
+                    <label for="idCategory"><b>Categoria</b></label>
+                    <select name="idCategory" id="idCategory">
                                     <option value="">Elegí</option>
                                     <option value="gaming" >Gaming</option>
                                     <option value="desktop" >Desktop</option>
                         <option value="office" >Office</option>
                     </select>
-                    <% if (locals.errors && errors.category) { %>
+                    <% if (locals.errors && errors.idCategory) { %>
                         <div class="text-danger">
-                            <%= errors.category.msg %>
+                            <%= errors.idCategory.msg %>
                         </div>
                         <% } %>
                 </div>
                 <div class="separador"></div>
                 <div class="wrap-form">
-                    <label for="type"><b>Tipo</b></label>
-                    <select name="type" id="type">
+                    <label for="idType"><b>Tipo</b></label>
+                    <select name="idType" id="idType">
                         <option value="">Elegí</option>
                         <option value="visited">Visitada</option>
                         <option value="offer" >En Oferta</option>
                     </select>
-                    <% if (locals.errors && errors.type) { %>
+                    <% if (locals.errors && errors.idType) { %>
                         <div class="text-danger">
-                            <%= errors.type.msg %>
+                            <%= errors.idType.msg %>
                         </div>
                         <% } %>
                 </div>
                 <div class="wrap-form-create">
-                    <label for="image1"><b>La imagen del producto</b></label>
-                    <input type="file" name="image1" accept=".jpg, .bmp, .webp, .png " class="img-create">
-                    <% if (locals.errors && errors.image1) { %>
+                    <label for="image"><b>La imagen del producto</b></label>
+                    <input type="file" name="image" accept=".jpg, .bmp, .webp, .png " class="img-create">
+                    <% if (locals.errors && errors.image) { %>
                         <div class="text-danger">
-                            <%= errors.image1.msg %>
+                            <%= errors.image.msg %>
                         </div>
                         <% } %>
                 </div>
