@@ -25,11 +25,11 @@ const controller = {
 
         db.products.findAll()
         .then(function(products){
-           // console.log(products);
+         
            return res.render("productTotals", { products:products,user:req.session.userLogged });
         })
 
-        //res.render("productTotals", { products: productsService.products,user:req.session.userLogged });
+        
     },
 
 
@@ -50,25 +50,7 @@ const controller = {
         })
     },
 
-    //     const idProduct = req.params.id;
-    //     const product = productsService.products.find((product) => {
-    //         return idProduct == product.id;
-    //     });
-    //     const productShowOffer = productsService.products.filter((prod) => {
-    //         return prod.type == "offer";
-    //     })
-    //     if (product) {
-    //         res.render('productDetail', {
-    //             product: product,
-    //             idProduct: idProduct,
-    //             productShowOffer
-    //         });
-    //     } else {
-    //         res.render("error")
-    //     }
    
-
-
     budget: (req, res) => {
 
         const prodSearch = {
@@ -111,20 +93,27 @@ const controller = {
                 id:req.params.id
             }
         })
-        // const id = req.params.id;
-        // productsService.deleteOne(id);
+
 
         res.redirect("/products/tabla-prod");
     },
 
-//CREATE
+
     storage: function(req, res) {
 
-        
-        
+        const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length > 0) {
+            return res.render('createProd', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+
+        } 
+
         const category =  db.categories_prod.findOne({
             where:{
-                    name: "gaming" 
+                    name: req.body.idCategory
             }          
         })
             
@@ -147,7 +136,7 @@ const controller = {
                 idType: info[1].dataValues.id,
                 price:req.body.price,
                 disc:req.body.disc,
-                image:req.file.filename
+                image:"/img/products/" + req.file.filename
     
             })
         })
@@ -160,26 +149,7 @@ const controller = {
         }) 
 
 
-        // const resultValidation = validationResult(req);
-
-        // if (resultValidation.errors.length > 0) {
-        //     return res.render('createProd', {
-        //         errors: resultValidation.mapped(),
-        //         oldData: req.body
-        //     });
-
-        // };
-        // const image = "/img/products/" + req.file.filename
-
-        // productsService.createOne(req.body, image);
-
-        // res.redirect("/products/tabla-prod");
-
-
     },
-//
-//42min
-
 
     editProduct: async function(req, res) {
 
@@ -196,27 +166,31 @@ const controller = {
         };
     },
 
-
-
-
     updateProduct: function(req, res) {
-
-     const idProd = req.params.id;
         
+        const idProd = req.params.id;
+
+        const prod = db.products.findByPk(idProd);
+
+
         const category =  db.categories_prod.findOne({
             where:{
-                    name: "gaming" 
+                    name: req.body.category
             }          
         })
             
         const type =  db.typeProduct.findOne({
             where:{
-                    name: req.body.idType 
+                    name: req.body.type 
             }          
         })
-        Promise.all([ category , type])
+            
+        Promise.all([ category , type, prod])
         .then(function(info){
-    
+
+            console.log("el array es:");
+            console.log(info);
+            
 
             db.products.update ({
              
@@ -227,7 +201,7 @@ const controller = {
                 idType: info[1].dataValues.id,
                 price:req.body.price,
                 disc:req.body.disc,
-                image:req.file.filename
+                image: (!req.file) ? info[2].image : "/img/products/" + req.file.filename
 
             } , {
                 where: {
@@ -240,30 +214,6 @@ const controller = {
             res.redirect("/products/tabla-prod");
         })  
 
-
-
-
-
+    }
 }
-}
-//     updateProduct: (req, res) => {
-//         const idProd = req.params.id;
-//         const prod = productsService.products.find((prod) => {
-//             return idProd == prod.id;
-//         });
-//         const img = (!req.file) ? prod.image1 : req.file.filename;
-//         const image = "/img/products/" + img;
-//         console.log(req.file);
-//         console.log(req.body);
-//         let prodToUpdate = {
-//             ...req.body,
-//             imagen1: image,
-//         }
-//         console.log(prodToUpdate.image1);
-//         productsService.change(req.params.id, prodToUpdate);
-//         console.log("pase por controller");
-//         console.log(req.file);
-//         res.redirect('/products/productDetail/' + idProd);
-//     }
-// };
 module.exports = controller;

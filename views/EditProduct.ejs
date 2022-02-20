@@ -44,26 +44,15 @@
             <div class="wrap-form">
                 <label for="name"><b>Nombre</b></label>
                 <input type="text" name="name" value=<%=prod.name%>>
-
             </div>
             <div class="wrap-form">
                 <label for="description"><b>Descripcion</b></label>
-                <input type="text" name="description" value=<%=prod.description%>>
-
+                <input type="text" name="desc" value=<%=prod.description%>>
             </div>
             <div class="wrap-form">
                 <label for="sixe"><b>Tamaño</b></label>
                 <input type="text" name="size" value=<%=prod.size%>>
             </div>
-            <!-- <div class="wrap-form">
-                <label for="size"><b>Especificaciones</b></label>
-                <input type="text" name="size" value=<%=prod.size%>>
-            </div>
-            <div class="wrap-form">
-                <label for="color"><b>Color</b></label>
-                <input type="text" name="color" value=<%=prod.color%>>
-
-            </div> -->
             <div class="wrap-form">
                 <label for="price"><b>Precio</b></label>
                 <input type="text" name="price" value=<%=prod.price%>>
@@ -73,19 +62,15 @@
                 <label for="disc"><b>Descuento</b></label>
                 <input type="number" name="disc" value=<%=prod.disc%>>
             </div>
-            <!-- <div class="wrap-form">
-                <label for="codigo"><b>Codigo</b></label>
-                <input type="text" name="codigo" value=<%=prod.codigo%>>
-                </label>
-            </div> -->
             <div class="separador"></div>
             <div class="wrap-form">
                 <label for="category"><b>Categoria</b></label>
                 <select name="category" id="category">
             <option value="">Elegí</option>
-            <option value="gaming" <%=prod.category=="gaming" ? "selected" : "" %>>Gaming</option>
-            <option value="desktop" <%=prod.category=="desktop" ? "selected" : "" %>>Desktop</option>
-            <option value="office" <%=prod.category=="office" ? "selected" : "" %>>Office</option>
+            <option value="desktop" <%=prod.idCategory== 1 ? "selected" : "" %>>Desktop</option>
+            <option value="office" <%=prod.idCategory== 2 ? "selected" : "" %>>Office</option>
+            <option value="gaming" <%=prod.idCategory== 3 ? "selected" : "" %>>Gaming</option>
+            <option value="tablet" <%=prod.idCategory== 4 ? "selected" : "" %>>Tablet</option>
         </select>
             </div>
             <div class="separador"></div>
@@ -93,24 +78,24 @@
                 <label for="type"><b>Tipo</b></label>
                 <select name="type" id="type">
             <option value="">Elegí</option>
-            <option value="visited" <%=prod.type=="visited" ? "selected" : "" %>>Visitada</option>
-            <option value="offer" <%=prod.type=="offer" ? "selected" : "" %>>En Oferta</option>
+            <option value="visited" <%=prod.idType == 1 ? "selected" : ""%>>Visitada</option>
+            <option value="offer" <%=prod.idType == 2 ? "selected" : ""%>>En Oferta</option>
+            <option value="likes" <%=prod.idType == 3 ? "selected" : ""%>>Excelencia</option>
         </select>
             </div>
             <div class="separador"></div>
             <div class="titulo-form">
                 <h3>La imagen es </h3>
             </div>
-            <img src=<%=prod.image%> style="width:80px; height:80px"/>
+            <img src="<%=prod.image%>" style="width:150px; height:150px"/>
             <div class="wrap-form">
-                <label for="image" class="image">
-            <input type="file" name="image" accept=".jpg, .bmp, .webp">
-            </label>
+                <label for="image" class="image" ></label>
+                <input type="file" name="image" accept=".jpg, .bmp, .webp">
             </div>
             <div class="separador "></div>
 
             <div class="wrap-recu">
-                <button type="submit">Aceptar modificacion</button>
+                <button type="submit">Modificar</button>
             </div>
 
 

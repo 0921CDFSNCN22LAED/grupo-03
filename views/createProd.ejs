@@ -48,16 +48,16 @@
                         <div class="text-danger">
                             <%= errors.name.msg %>
                         </div>
-                        <% } %>
+                    <% } %>
                 </div>
                 <div class="wrap-form-create">
                     <label for="description">Descripcion</label>
                     <input type="text" name="desc">
-                    <% if (locals.errors && errors.desc) { %>
+                    <% if (locals.errors && errors.description) { %>
                         <div class="text-danger">
-                            <%= errors.desc.msg %>
+                            <%= errors.description.msg %>
                         </div>
-                        <% } %>
+                    <% } %>
                 </div>
                 <div class="wrap-form-create">
                     <label for="size">Tamaño</label>
