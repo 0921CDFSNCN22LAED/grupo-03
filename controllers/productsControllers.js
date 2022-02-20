@@ -199,31 +199,53 @@ const controller = {
 
 
 
+    updateProduct: function(req, res) {
 
-
-
-    updateProduct: (req, res) => {
+     const idProd = req.params.id;
+        
+        const category =  db.categories_prod.findOne({
+            where:{
+                    name: "gaming" 
+            }          
+        })
+            
+        const type =  db.typeProduct.findOne({
+            where:{
+                    name: req.body.idType 
+            }          
+        })
+        Promise.all([ category , type])
+        .then(function(info){
+    
 
             db.products.update ({
+             
                 name:req.body.name,
-                description:req.body.description,
+                description:req.body.desc,
                 size:req.body.size,
-                idCategory:category.id,
-                idType:type.id,
+                idCategory: info[0].dataValues.id,
+                idType: info[1].dataValues.id,
                 price:req.body.price,
                 disc:req.body.disc,
-                image:req.body.image
-            }, {
+                image:req.file.filename
+
+            } , {
                 where: {
-                    id:req.params.id
+                    id: idProd
                 }
-            });
+            })
 
+        })
+        .then(function(){
             res.redirect("/products/tabla-prod");
-    }
+        })  
+
+
+
+
+
 }
-
-
+}
 //     updateProduct: (req, res) => {
 //         const idProd = req.params.id;
 //         const prod = productsService.products.find((prod) => {
