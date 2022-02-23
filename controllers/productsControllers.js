@@ -6,6 +6,8 @@ const path = require("path");
 
 const { validationResult } = require('express-validator');
 const db = require("../database/models");
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op
 
 const controller = {
 
@@ -50,25 +52,69 @@ const controller = {
         })
     },
 
-   
     budget: (req, res) => {
 
-        const prodSearch = {
+        res.render("cotizaTuPc");
 
-            ...req.body
-        }
+    },
 
-        let prodShow = null;
+    budgetSearch: async function(req, res) {
 
-        if (prodSearch != null) {
+        
 
-            prodShow = productsService.products.filter((prod) => {
+        const prodSearchCategory = req.body.category;
+        const min = req.body.min;
+        const max = req.body.max;
+        
 
-                return prod.category == prodSearch.category && (prod.precio >= prodSearch.min && prod.precio <= prodSearch.max)
-            })
-        }
+        
+       
 
-        res.render("cotizaTuPc", { products: prodShow, prodSearch });
+        
+        if(prodSearchCategory != "category"){
+
+
+            const category = await db.categories_prod.findOne({
+                    where:{
+                            name: prodSearchCategory 
+                    }          
+                })
+    
+                const products = await db.products.findAll({
+    
+                    where:{
+                        idCategory : category.id
+                    }
+                })
+    
+    
+                return await res.render("cotizaTuPc", { products });  
+
+            }
+
+            if(max && min && prodSearchCategory == "category"){
+
+                const products = await db.products.findAll({
+
+                    where:{
+                        price : {
+                            [Op.and]: 
+                                {
+                                    [Op.gte]: min,
+                                    [Op.lte]: max
+                                }
+                        }
+                        
+                    }
+                })
+
+
+                return await res.render("cotizaTuPc", { products });  
+
+
+            }
+
+        
     },
     
     
@@ -188,10 +234,6 @@ const controller = {
         Promise.all([ category , type, prod])
         .then(function(info){
 
-            console.log("el array es:");
-            console.log(info);
-            
-
             db.products.update ({
              
                 name:req.body.name,
@@ -211,7 +253,7 @@ const controller = {
 
         })
         .then(function(){
-            res.redirect("/products/tabla-prod");
+            return res.redirect("/products/tabla-prod");
         })  
 
     }

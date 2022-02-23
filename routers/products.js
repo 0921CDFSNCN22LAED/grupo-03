@@ -9,7 +9,6 @@ const upload = require('../middlewares/multer_middlewares.js');
 
 const validations = require('../middlewares/validate_product_middlewares.js');
 
-//upload.fields([{ name:"image1" }, { name:"image2"  }, { name:"image3" }])
 
 router.get("/productCart", controller.productCart);
 
@@ -23,7 +22,7 @@ router.post("/createProd", upload.single("image"), validations, controller.stora
 
 router.get("/cotizaTuPc", controller.budget);
 
-router.post("/cotizaTuPc", controller.budget);
+router.post("/cotizaTuPc", controller.budgetSearch);
 
 router.get("/tabla-prod", controller.tablet_prod);
 
@@ -36,3 +35,4 @@ router.put("/updateProduct/:id", upload.single("image"), controller.updateProduc
 router.get("/productDetail/:id", controller.productDetail);
 
 module.exports = router;
+//upload.fields([{ name:"image1" }, { name:"image2"  }, { name:"image3" }])
