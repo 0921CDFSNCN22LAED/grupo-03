@@ -1,73 +1,73 @@
-module.exports = function (sequelize , dataTypes){
+module.exports = function(sequelize, dataTypes) {
 
     let alias = "users";
 
     let cols = {
-        id:{
-            type:dataTypes.INTEGER ,
-            primaryKey: true ,
-            autoIncrement:true, 
+        id: {
+            type: dataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
             allowNull: true,
         },
         firstName: {
-            type:dataTypes.STRING(50),
+            type: dataTypes.STRING(50),
             allowNull: true,
         },
-        lastName:{
-            type:dataTypes.STRING(50),
+        lastName: {
+            type: dataTypes.STRING(50),
             allowNull: true,
         },
-        email:{
-            type:dataTypes.TEXT,
+        email: {
+            type: dataTypes.TEXT,
             allowNull: true,
         },
-        password:{
-            type:dataTypes.STRING(300),
+        password: {
+            type: dataTypes.STRING(300),
             allowNull: false,
         },
-        idCategory:{
-            type:dataTypes.INTEGER ,
+        idCategory: {
+            type: dataTypes.INTEGER,
             allowNull: true,
         },
-        avatarIMG:{
+        avatarIMG: {
             type: dataTypes.TEXT,
         },
-        phone:{
+        phone: {
             type: dataTypes.STRING(10),
         },
-        adress:{
+        adress: {
             type: dataTypes.STRING(100),
         },
-        location:{
+        location: {
             type: dataTypes.STRING(20),
         },
-        state:{
+        state: {
             type: dataTypes.STRING(20),
         },
 
     }
 
     let config = {
-        tableName:"users",
+        tableName: "users",
         timestamps: false
     }
 
     let users = sequelize.define(alias, cols, config);
 
-    users.associate = function(models){   
-        
-        users.hasMany(models.carts_buy,{
+    users.associate = function(models) {
+
+        users.hasMany(models.carts_buy, {
             as: "users_carts_buy",
             foreignKey: "id"
         });
 
-        users.belongsTo(models.categories_users,{
-            as:"users_categories",
+        users.belongsTo(models.categories_users, {
+            as: "users_categories",
             foreignKey: "id"
         });
 
     }
 
     return users;
-    
+
 }

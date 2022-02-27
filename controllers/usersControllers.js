@@ -11,76 +11,76 @@ const { brotliDecompress } = require("zlib");
 
 const controller = {
     login: function(req, res) {
-    
+
         res.render("login");
     },
-    loginProcess:function(req,res){
+    loginProcess: function(req, res) {
 
         const resultValidation = validationResult(req);
 
-         db.users.findOne({
-            where: {
-              email: req.body.email,
-            }
-          })
-          .then(function(userToLogin){
+        db.users.findOne({
+                where: {
+                    email: req.body.email,
+                }
+            })
+            .then(function(userToLogin) {
 
-           console.log();
+                console.log();
 
-            if(resultValidation.errors.email || resultValidation.errors.password || !userToLogin){
-                return res.render("login",{
-    
-                    errors:{
-        
-                        email:{
-                            msg: "Las credenciales son invalidas"
+                if (resultValidation.errors.email || resultValidation.errors.password || !userToLogin) {
+                    return res.render("login", {
+
+                        errors: {
+
+                            email: {
+                                msg: "Las credenciales son invalidas"
+                            }
                         }
-                    }
-                });
-              };
+                    });
+                };
 
-            if(userToLogin){
+                if (userToLogin) {
 
-            
-                    let comparePassword = bcrypt.compareSync(req.body.password,userToLogin.password);
+
+                    let comparePassword = bcrypt.compareSync(req.body.password, userToLogin.password);
 
                     console.log(comparePassword);
-                    
-                    
-                    if(comparePassword){
-      
-                        delete userToLogin.password;
-                        
-      
-                        req.session.userLogged = userToLogin;
-                        
-                        return res.redirect("/");
-                    }else{
 
-                        return res.render("login",{
-    
-                            errors:{
-                
-                                email:{
+
+                    if (comparePassword) {
+
+                        delete userToLogin.password;
+
+
+                        req.session.userLogged = userToLogin;
+
+                        return res.redirect("/");
+                    } else {
+
+                        return res.render("login", {
+
+                            errors: {
+
+                                email: {
                                     msg: "Las credenciales son invalidas"
                                 }
                             }
                         });
 
                     }
-                    
-                  }
 
-          })
-          .catch(function (err) {
-            console.log("El error es: " + err);
-          });
+                }
 
-  },
+            })
+            .catch(function(err) {
+                console.log("El error es: " + err);
+            });
+
+    },
     register: function(req, res) {
         res.render("register");
     },
-    processRegister: function(req,res) {
+    processRegister: function(req, res) {
 
         const resultValidation = validationResult(req);
 
@@ -92,52 +92,52 @@ const controller = {
                 oldData: req.body
             });
 
-        } 
-         
+        }
+
 
         db.users.findOne({
-            where: {
-              email: req.body.email,
-            }
-          })
-          .then(function(userInDB){
+                where: {
+                    email: req.body.email,
+                }
+            })
+            .then(function(userInDB) {
 
-            if (userInDB) {
-                return res.render('register', {
-                    errors: {
-                        email: {
-                            msg: 'Este email ya está registrado'
-                        }
-                    },
-                    oldData: req.body
+                if (userInDB) {
+                    return res.render('register', {
+                        errors: {
+                            email: {
+                                msg: 'Este email ya está registrado'
+                            }
+                        },
+                        oldData: req.body
+                    });
+                }
+
+            })
+            .then(function() {
+
+                let passEncrypted = bcrypt.hashSync(req.body.password, 10);
+
+                console.log(passEncrypted);
+
+                db.users.create({
+
+                    firstName: req.body.firstName,
+                    lastName: req.body.lastName,
+                    email: req.body.email,
+                    password: passEncrypted,
+                    idCategory: 1,
+                    phone: req.body.phone,
+                    adress: req.body.adress,
+                    location: req.body.location,
+                    state: req.body.state,
+                    avatarIMG: req.file.filename
+
                 });
-            }
-          
-          })
-          .then(function(){
 
-            let passEncrypted = bcrypt.hashSync(req.body.password,10);
+                return res.redirect('/users/login');
 
-            console.log(passEncrypted);
-
-            db.users.create({
-            
-                firstName: req.body.firstName,
-                lastName: req.body.lastName,
-                email: req.body.email,
-                password: passEncrypted,
-                idCategory: 1,
-                phone:req.body.phone,
-                adress: req.body.adress,
-                location:req.body.location,
-                state:req.body.state,
-                avatarIMG: req.file.filename 
-    
             });
-    
-            return res.redirect('/users/login');
-
-          });
         //image = "/img/users/" + req.file.filename;   
     },
     recupero: (req, res) => {
@@ -157,9 +157,9 @@ const controller = {
         }
         const mail = await db.users.findAll({
             where: {
-              email: req.body.email,
+                email: req.body.email,
             }
-          });
+        });
 
         if (!mail) {
             return res.render('recupero', {
@@ -174,7 +174,7 @@ const controller = {
 
             return res.redirect('/users/recup');
         }
-        
+
     },
 
     recup: function(req, res) {
@@ -206,38 +206,38 @@ const controller = {
             res.render("error")
         }
     },
-    updateUser: function(req, res){
+    updateUser: function(req, res) {
 
         const idUser = req.params.id;
-        
+
         db.users.findByPk(idUser)
-        .then(function(user){
+            .then(function(user) {
 
-            const img = (!req.file) ? user.avatarIMG : req.file.filename;
-            const image = "/img/users/" + img;
+                const img = (!req.file) ? user.avatarIMG : req.file.filename;
+                const image = "/img/users/" + img;
 
-            db.users.update({
-            
-                firstName: req.body.firstName,
-                lastName: req.body.lastName,
-                email: req.body.email,
-                idCategory: 1,
-                adress: req.body.adress,
-                location:req.body.location,
-                state:req.body.state,
-                avatarIMG: img
-    
-            },{
-                where:{
-                    id: idUser
-                }
+                db.users.update({
+
+                    firstName: req.body.firstName,
+                    lastName: req.body.lastName,
+                    email: req.body.email,
+                    idCategory: 1,
+                    adress: req.body.adress,
+                    location: req.body.location,
+                    state: req.body.state,
+                    avatarIMG: image
+
+                }, {
+                    where: {
+                        id: idUser
+                    }
+                });
+
+
+
+                return res.redirect('/users/profile/:id');
+
             });
-
-            
-
-            return res.redirect('/users/profile/:id');
-
-        });
 
     },
     userDelete: async function(req, res) {
@@ -246,7 +246,7 @@ const controller = {
         const user = await db.users.findByPk(idUser);
 
         db.user.destroy({
-            where:{
+            where: {
                 idUser: idUserDestroy
             }
         })
@@ -270,10 +270,10 @@ const controller = {
 
     profile: function(req, res) {
 
-        res.render("profile",{user:req.session.userLogged});
+        res.render("profile", { user: req.session.userLogged });
     },
 
-    logout:function(req,res){
+    logout: function(req, res) {
 
         req.session.destroy();
         return res.redirect("/");

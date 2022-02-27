@@ -31,7 +31,7 @@ app.set('view engine', 'ejs');
 const mainRoutes = require('./routers/main');
 const userRoutes = require('./routers/users');
 const prodRoutes = require('./routers/products');
-
+const userApiRoutes = require('./routers/api/apiUsers');
 
 
 app.use(express.static(path.join(__dirname, "/public")))
@@ -46,3 +46,4 @@ app.listen(3000, () => {
 app.use("/", mainRoutes);
 app.use('/products', prodRoutes);
 app.use('/users', userRoutes);
+app.use('/api/apiUsers', userApiRoutes);
