@@ -34,6 +34,7 @@
     </header>
 
     <main class="main-form">
+     
 
         <form action="/users/userEdit/<%=user.id%>" method="POST" class="cont-form" enctype="multipart/form-data">
             <div class="cont-create">
@@ -41,35 +42,35 @@
                     <h1>Perfil de <%= user.firstName %> </h1>
                 </div>
                 <div class="wrap-form-create">
-                    <img src="/img/users/<%= user.avatarIMG %>" alt="">
+                    <img src="<%= user.avatarIMG %>" alt="">
                 </div>
                 <div class="wrap-form-create">
                     <label for="mail">Email</label>
-                    <input type="mail" name="mail" value="<%= user.email %>">
+                    <input type="mail" name="mail" value="<%= user.email %>" disabled >
                 </div>
                 <div class="wrap-form-create">
                     <label for="name">Nombre</label>
-                    <input type="text" name="name"  value="<%= user.firstName %>" >
+                    <input type="text" name="name"  value="<%= user.firstName %>" disabled>
                 </div>
                 <div class="wrap-form-create">
                     <label for="lastName">Apellido</label>
-                    <input type="text" name="lastName"  value="<%= user.lastName %>" >
+                    <input type="text" name="lastName"  value="<%= user.lastName %>" disabled>
                 </div>
                 <div class="wrap-form-create">
                     <label for="phone">Telefono</label>
-                    <input type="text" name="phone"  value="<%= user.phone %>">
+                    <input type="text" name="phone"  value="<%= user.phone %>" disabled>
                 </div>
                 <div class="wrap-form-create">
                     <label for="adress">Direccion</label>
-                    <input type="text" name="adress"  value="<%= user.adress %>">
+                    <input type="text" name="adress"  value="<%= user.adress %>" disabled>
                 </div>
                 <div class="wrap-form-create">
                     <label for="location">Localidad</label> 
-                        <input type="text" name="location" placeholder="Ingresa tu localidad"  value="<%=user.location%>">
+                        <input type="text" name="location" placeholder="Ingresa tu localidad"  value="<%=user.location%>" disabled>
                 </div>
                 <div class="wrap-form-create">
                     <label for="state">Provincia</label>
-                        <input type="text" name="state" placeholder="Ingresa tu provincia" value="<%=user.state%>">
+                        <input type="text" name="state" placeholder="Ingresa tu provincia" value="<%=user.state%>" disabled>
                 </div>
                 <div class="wrap-form-create">
                     <button type="submit">Editar</button>

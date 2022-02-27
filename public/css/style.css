@@ -1428,3 +1428,41 @@ form .cont-create {
 .text-danger {
     color: #dc3545!important
 }
+
+
+
+.successRegister {
+
+    background-color: #d4edda;
+    width: 100%;
+    border: 1px solid #d4edda;
+    border-radius: 5px;
+    color: 	#155724;
+    list-style:none
+    
+
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f8d7da; 
+    color: #721c24;
+    margin-bottom: 15px;
+  }
+  
+  /* The close button */
+  .closebtn {
+    margin-left: 15px;
+    color: red;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* When moving the mouse over the close button */
+  .closebtn:hover {
+    color: black;
+  }

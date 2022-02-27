@@ -13,13 +13,14 @@ const validationUser = require("../middlewares/validate_user_middlewares");
 
 
 
+
 router.get("/login", guest, controller.login);
 
 router.post("/login",controller.loginProcess);
 
 router.get("/register", guest, controller.register);
 
-router.post("/register", upload.single('avatarIMG'), validationUser, controller.processRegister);
+router.post("/register", upload.single('avatar'), validationUser, controller.processRegister);
 
 router.get("/recupero", guest, controller.recupero);
 

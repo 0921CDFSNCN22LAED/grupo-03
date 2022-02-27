@@ -16,6 +16,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+
+    <script src="/js/userEdit.js"></script>
+
 </head>
 
 <body>
@@ -29,6 +32,12 @@
 
     </header>
 
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <ul>
+        </ul>
+    </div>
+
 
     <main class="main-form">
 
@@ -37,35 +46,40 @@
                 <h2>Modifica el/los campo/s necesarios</h2>
             </div>
             <div class="wrap-form-create">
-                <img src="/img/users/<%= user.avatarIMG %>" >
+                
+
+                <img src="<%= user.avatarIMG %>" >
             </div>
             <div class="wrap-form">
                 <label for="avatar" class="avatar">Tu imagen de perfil</label>
-                <input type="file" name="avatarIMG" accept=".jpg, .bmp, .webp">  
+                <input type="file" name="avatarIMG" accept=".jpg, .bmp, .webp" id="avatar">  
             </div>
             <div class="wrap-form">
-                <label for="nombre">Nombre</label>
-                <input type="text" name="firstName" value="<%=user.firstName%>">     
+                <label for="nombre" >Nombre</label>
+                <input type="text" name="firstName" value="<%= user.firstName %>" id="firstName">  
+                <% if(locals.errors && errors.firstName){ %>
+                    <span><%=errors.firstName.msg%> </span>
+                <% } %>   
             </div>
             <div class="wrap-form">
                 <label for="apellido">Apellido</label>
-                <input type="text" name="lastName" value="<%=user.lastName%>">  
+                <input type="text" name="lastName" value="<%= user.lastName %>" id="lastName">  
             </div>
             <div class="wrap-form">Telefono</label>
                 <label for="telefono">
-                <input type="text" name="phone" value="<%=user.phone%>">   
+                <input type="text" name="phone" value="<%= user.phone %>" id="phone">   
             </div>
             <div class="wrap-form">
                 <label for="direccion">Direccion</label>
-                <input type="text" name="adress" value="<%=user.adress%>">       
+                <input type="text" name="adress" value="<%= user.adress %>" id="adress">       
             </div>
             <div class="wrap-form">
                 <label for="location">Localidad</label> 
-                    <input type="text" name="location" placeholder="Ingresa tu localidad"  value="<%=user.location%>">
+                    <input type="text" name="location" placeholder="Ingresa tu localidad"  value="<%=  user.location %>" id="location">
             </div>
             <div class="wrap-form">
                 <label for="state">Provincia</label>
-                    <input type="text" name="state" placeholder="Ingresa tu provincia" value="<%=user.state%>">
+                    <input type="text" name="state" placeholder="Ingresa tu provincia" value="<%=user.state %>" id="state">
             </div>
             <div class="wrap-form">
                 <button type="submit">Actualizar</button>

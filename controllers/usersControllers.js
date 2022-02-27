@@ -25,7 +25,7 @@ const controller = {
             })
             .then(function(userToLogin) {
 
-                console.log();
+                
 
                 if (resultValidation.errors.email || resultValidation.errors.password || !userToLogin) {
                     return res.render("login", {
@@ -44,7 +44,7 @@ const controller = {
 
                     let comparePassword = bcrypt.compareSync(req.body.password, userToLogin.password);
 
-                    console.log(comparePassword);
+                    
 
 
                     if (comparePassword) {
@@ -84,7 +84,7 @@ const controller = {
 
         const resultValidation = validationResult(req);
 
-        console.log(resultValidation);
+       
 
         if (resultValidation.errors.length > 0) {
             return res.render('register', {
@@ -118,7 +118,7 @@ const controller = {
 
                 let passEncrypted = bcrypt.hashSync(req.body.password, 10);
 
-                console.log(passEncrypted);
+               
 
                 db.users.create({
 
@@ -131,7 +131,7 @@ const controller = {
                     adress: req.body.adress,
                     location: req.body.location,
                     state: req.body.state,
-                    avatarIMG: req.file.filename
+                    avatarIMG: "/img/users/" + req.file.filename
 
                 });
 
@@ -210,11 +210,9 @@ const controller = {
 
         const idUser = req.params.id;
 
+    
         db.users.findByPk(idUser)
             .then(function(user) {
-
-                const img = (!req.file) ? user.avatarIMG : req.file.filename;
-                const image = "/img/users/" + img;
 
                 db.users.update({
 
@@ -225,13 +223,14 @@ const controller = {
                     adress: req.body.adress,
                     location: req.body.location,
                     state: req.body.state,
-                    avatarIMG: image
+                    avatarIMG: req.file === undefined ? user.avatarIMG : "/img/users/"+req.file.filename
 
                 }, {
                     where: {
                         id: idUser
                     }
-                });
+                })
+                
 
 
 

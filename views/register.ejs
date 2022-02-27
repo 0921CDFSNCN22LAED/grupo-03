@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/styles-tablet.css">
     <link rel="stylesheet" href="/css/styles-desktop.css">
+    
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +21,11 @@
 
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+
+    
+    <script src="/js/userRegister.js"></script>
+    
+
 </head>
 
 <body>
@@ -33,7 +39,15 @@
 
     </header>
 
+   
+        <div class="alert-validation">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <ul>
+            </ul>
+        </div>
+
     <main class="main-form">
+          
 
         <form method="POST" action="/users/register" enctype="multipart/form-data" class="cont-form">
             <div class="titulo-form">
@@ -41,15 +55,15 @@
             </div>
             <div class="wrap-form">
                 <label for="email">
-                    <input type="email" name="email" placeholder="Ingresa tu e-mail" value= "<%= locals.oldData ? oldData.email : null %>" >
+                    <input type="email" name="email" id="email" placeholder="Ingresa tu e-mail" value= "<%= locals.oldData ? oldData.email : null %>" >
                 </label>
                 <% if(locals.errors && errors.email){ %>
                     <span><%=errors.email.msg%> </span>
-                    <% } %>
+                <% } %>
             </div>
             <div class="wrap-form">
                 <label for="contraseña">
-                    <input type="password" name="password" placeholder="Ingresa tu clave" >
+                    <input type="password" name="password" id="password" placeholder="Ingresa tu clave"  >
                 </label>
                 <% if(locals.errors && errors.password){  %>
                     <span><%= errors.password.msg %> </span>
@@ -57,7 +71,7 @@
             </div>
             <div class="wrap-form">
                 <label for="nombre">
-                    <input type="text" name="firstName" placeholder="Ingresa tu nombre" value="<%= locals.oldData ? oldData.firstName : null %>" >
+                    <input type="text" name="firstName" id="firstName" placeholder="Ingresa tu nombre" value="<%= locals.oldData ? oldData.firstName : null %>" >
                 </label>
                 <% if(locals.errors && errors.firstName){  %>
                     <span><%= errors.firstName.msg %> </span>
@@ -65,7 +79,7 @@
             </div>
             <div class="wrap-form">
                 <label for="apellido">
-                    <input type="text" name="lastName" placeholder="Ingresa tu apellido" value="<%= locals.oldData ? oldData.lastName : null %>">
+                    <input type="text" name="lastName" id="lastName" placeholder="Ingresa tu apellido" value="<%= locals.oldData ? oldData.lastName : null %>">
                 </label>
                 <% if(locals.errors && errors.lastName){ %>
                     <span><%= errors.lastName.msg %></span>
@@ -73,7 +87,7 @@
             </div>
             <div class="wrap-form">
                 <label for="telefono">
-                    <input type="text" name="phone" placeholder="Ingresa tu telefono" value= "<%= locals.oldData ? oldData.phone : null %>" >
+                    <input type="text" name="phone" id="phone" placeholder="Ingresa tu telefono" value= "<%= locals.oldData ? oldData.phone : null %>" >
                 </label>
                 <% if(locals.errors && errors.phone){ %>
                     <span><%= errors.phone.msg %> </span>
@@ -81,7 +95,7 @@
             </div>
             <div class="wrap-form">
                 <label for="direccion">
-                    <input type="text" name="adress" placeholder="Ingresa tu direccion" value="<%= locals.oldData ? oldData.adress : null  %>">
+                    <input type="text" name="adress" id="adress" placeholder="Ingresa tu direccion" value="<%= locals.oldData ? oldData.adress : null  %>">
                 </label>
                 <% if(locals.errors && errors.adress){ %>
                     <span><%= errors.adress.msg %> </span>
@@ -89,7 +103,7 @@
             </div>
             <div class="wrap-form">
                 <label for="location">
-                    <input type="text" name="location" placeholder="Ingresa tu localidad" value="<%= locals.oldData ? oldData.location : null  %>">
+                    <input type="text" name="location" id="location" placeholder="Ingresa tu localidad" value="<%= locals.oldData ? oldData.location : null  %>">
                 </label>
                 <% if(locals.errors && errors.location){ %>
                     <span><%= errors.location.msg %> </span>
@@ -97,7 +111,7 @@
             </div>
             <div class="wrap-form">
                 <label for="state">
-                    <input type="text" name="state" placeholder="Ingresa tu provincia" value="<%= locals.oldData ? oldData.state : null  %>">
+                    <input type="text" name="state" id="state" placeholder="Ingresa tu provincia" value="<%= locals.oldData ? oldData.state : null  %>">
                 </label>
                 <% if(locals.errors && errors.state){ %>
                     <span><%= errors.state.msg %> </span>
@@ -108,7 +122,7 @@
             </div>
             <div class="wrap-form">
                 <label for="avatar" class="avatar">
-                     <input type="file" name="avatar" accept=".jpg, .bmp, .webp">
+                     <input type="file" name="avatar" id="avatar" accept=".jpg, .bmp, .webp">
                 </label>
                 <% if(locals.errors && errors.avatar){  %>
                     <span><%= errors.avatar.msg %> </span>
@@ -127,6 +141,7 @@
 
     <%- include("parcials/footer") %>
 
+    
 </body>
 
 </html>
