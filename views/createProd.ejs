@@ -18,8 +18,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
 
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+
+    <script src="/js/validateProdCr.js"></script>
 
 </head>
 
@@ -35,33 +36,35 @@
     </header>
 
     <main class="main-form">
-
-        <form action="/products/createProd" method="post" enctype="multipart/form-data" class="cont-form" >
+        <div class="errorsCreateForm" style="color:orangered">
+            <ul></ul>
+        </div>
+        <form action="/products/createProd" method="post" enctype="multipart/form-data" class="cont-form createProd">
             <div class="cont-create">
                 <div class="titulo-form">
                     <h1>Crear Producto</h1>
                 </div>
-                <div class="wrap-form-create">
+                <div class="wrap-form-create name">
                     <label for="name">Nombre del producto</label>
-                    <input type="text" name="name">
+                    <input type="text" name="name" class="name">
                     <% if (locals.errors && errors.name) { %>
                         <div class="text-danger">
                             <%= errors.name.msg %>
                         </div>
-                    <% } %>
+                        <% } %>
                 </div>
-                <div class="wrap-form-create">
+                <div class="wrap-form-create desc">
                     <label for="description">Descripcion</label>
-                    <input type="text" name="desc">
+                    <input type="text" name="desc" Class="desc">
                     <% if (locals.errors && errors.description) { %>
                         <div class="text-danger">
                             <%= errors.description.msg %>
                         </div>
-                    <% } %>
+                        <% } %>
                 </div>
-                <div class="wrap-form-create">
+                <div class="wrap-form-create size">
                     <label for="size">Tamaño</label>
-                    <input type="text" name="size">
+                    <input type="text" name="size" class="size">
                     <% if (locals.errors && errors.size) { %>
                         <div class="text-danger">
                             <%= errors.size.msg %>
@@ -69,29 +72,29 @@
                         <% } %>
                 </div>
 
-                <div class="wrap-form-create">
+                <div class="wrap-form-create price">
                     <label for="price">Precio</label>
-                    <input type="text" name="price">
+                    <input type="text" name="price" class="price">
                     <% if (locals.errors && errors.price) { %>
                         <div class="text-danger">
                             <%= errors.price.msg %>
                         </div>
                         <% } %>
                 </div>
-                <div class="wrap-form-create">
+                <div class="wrap-form-create disc">
                     <label for="disc">Descuento</label>
-                    <input type="number" name="disc">
+                    <input type="number" name="disc" class="disc">
                     <% if (locals.errors && errors.disc) { %>
                         <div class="text-danger">
                             <%= errors.disc.msg %>
                         </div>
                         <% } %>
                 </div>
-               
+
                 <div class="separador"></div>
-                <div class="wrap-form">
+                <div class="wrap-form category">
                     <label for="idCategory"><b>Categoria</b></label>
-                    <select name="idCategory" id="idCategory">
+                    <select name="idCategory" id="idCategory" class="category">
                                     <option value="">Elegí</option>
                                     <option value="gaming" >Gaming</option>
                                     <option value="desktop" >Desktop</option>
@@ -104,9 +107,9 @@
                         <% } %>
                 </div>
                 <div class="separador"></div>
-                <div class="wrap-form">
+                <div class="wrap-form tipo">
                     <label for="idType"><b>Tipo</b></label>
-                    <select name="idType" id="idType">
+                    <select name="idType" id="idType" class="tipo">
                         <option value="">Elegí</option>
                         <option value="visited">Visitada</option>
                         <option value="offer" >En Oferta</option>
@@ -117,7 +120,7 @@
                         </div>
                         <% } %>
                 </div>
-                <div class="wrap-form-create">
+                <div class="wrap-form-create image">
                     <label for="image"><b>La imagen del producto</b></label>
                     <input type="file" name="image" accept=".jpg, .bmp, .webp, .png " class="img-create">
                     <% if (locals.errors && errors.image) { %>
@@ -126,9 +129,9 @@
                         </div>
                         <% } %>
                 </div>
-            <div class="boton">
-            <button type="submit" class="btn-prod">Enviar</button>
-            </div>
+                <div class="wrap-form">
+                    <button type="submit" class="btn-prod">Enviar</button>
+                </div>
         </form>
 
     </main>

@@ -18,8 +18,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
 
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+
+    <script src="/js/validateProdEd.js"></script>
+
 </head>
 
 <body>
@@ -28,26 +30,27 @@
 
         <%- include("./parcials/header") %>
 
-
             <%- include("./parcials/nav") %>
 
     </header>
 
     <main class="main-form">
-
-        <form action="/products/updateProduct/<%=prod.id%>?_method=PUT" method="POST" enctype="multipart/form-data" class="cont-form">
+        <div class="errorsCreateForm" style="color:orangered">
+            <ul></ul>
+        </div>
+        <form action="/products/updateProduct/<%=prod.id%>?_method=PUT" method="POST" enctype="multipart/form-data" class="cont-form editProd">
             <div class="titulo-form">
-                <h3>Editar el Producto</h3>
+                <h2>Editar el Producto</h2>
             </div>
             <div class="separador"></div>
 
             <div class="wrap-form">
                 <label for="name"><b>Nombre</b></label>
-                <input type="text" name="name" value=<%=prod.name%>>
+                <input type="text" name="name" value=<%=prod.name%> class="name">
             </div>
             <div class="wrap-form">
                 <label for="description"><b>Descripcion</b></label>
-                <input type="text" name="desc" value=<%=prod.description%>>
+                <input type="text" name="desc" value=<%=prod.description%> class="desc">
             </div>
             <div class="wrap-form">
                 <label for="sixe"><b>Tamaño</b></label>
@@ -55,12 +58,12 @@
             </div>
             <div class="wrap-form">
                 <label for="price"><b>Precio</b></label>
-                <input type="text" name="price" value=<%=prod.price%>>
+                <input type="text" name="price" value=<%=prod.price%> class="price">
 
             </div>
             <div class="wrap-form">
                 <label for="disc"><b>Descuento</b></label>
-                <input type="number" name="disc" value=<%=prod.disc%>>
+                <input type="number" name="disc" value=<%=prod.disc%> class="disc">
             </div>
             <div class="separador"></div>
             <div class="wrap-form">
@@ -87,9 +90,9 @@
             <div class="titulo-form">
                 <h3>La imagen es </h3>
             </div>
-            <img src="<%=prod.image%>" style="width:150px; height:150px"/>
+            <img src="<%=prod.image%>" style="width:150px; height:150px" />
             <div class="wrap-form">
-                <label for="image" class="image" ></label>
+                <label for="image" class="image"></label>
                 <input type="file" name="image" accept=".jpg, .bmp, .webp">
             </div>
             <div class="separador "></div>
