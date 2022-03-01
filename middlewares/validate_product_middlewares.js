@@ -6,9 +6,6 @@ module.exports = [
     .isLength({ min: 5, max: 250 }).withMessage('El nombre debe tener al menos 5 y un maximo de 250 caracteres'),
     body('desc').notEmpty().withMessage('Tienes que escribir una descripcion').bail()
     .isLength({ min: 5, max: 250 }).withMessage('El nombre debe tener al menos 5 y un máximo de 250 caracteres'),
-    body('caract').notEmpty().withMessage('Tienes que escribir su característica').bail()
-    .isLength({ min: 5, max: 250 }).withMessage('El nombre debe tener al menos 5 y un máximo de 250 caracteres'),
-    //body('color').notEmpty().withMessage('Tienes que escribir su color'),
     body('size').notEmpty().withMessage('Tienes que ingresar alguna dimension'),
     body('price').notEmpty().withMessage('Tienes que informar su precio').bail()
     .bail().isFloat({ min: 2, max: 200000 }).withMessage('Tienes que informar entre 2 y 6 digitos'),
