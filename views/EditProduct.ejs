@@ -70,10 +70,9 @@
                 <label for="category"><b>Categoria</b></label>
                 <select name="category" id="category">
             <option value="">Elegí</option>
-            <option value="desktop" <%=prod.idCategory== 1 ? "selected" : "" %>>Desktop</option>
-            <option value="office" <%=prod.idCategory== 2 ? "selected" : "" %>>Office</option>
-            <option value="gaming" <%=prod.idCategory== 3 ? "selected" : "" %>>Gaming</option>
-            <option value="tablet" <%=prod.idCategory== 4 ? "selected" : "" %>>Tablet</option>
+                <% for(category of categorys) {%>     
+                    <option value="<%= category.name %>" <%=prod.idCategory == category.id ? "selected" : "" %>><%= category.name %> </option>
+                <% }%>      
         </select>
             </div>
             <div class="separador"></div>
@@ -81,9 +80,9 @@
                 <label for="type"><b>Tipo</b></label>
                 <select name="type" id="type">
             <option value="">Elegí</option>
-            <option value="visited" <%=prod.idType == 1 ? "selected" : ""%>>Visitada</option>
-            <option value="offer" <%=prod.idType == 2 ? "selected" : ""%>>En Oferta</option>
-            <option value="likes" <%=prod.idType == 3 ? "selected" : ""%>>Excelencia</option>
+                <% for(type of types) {%>    
+                    <option value="<%= type.name %>" <%=prod.idType == type.id ? "selected" : ""%>><%= type.name %> </option>
+                <% }%>
         </select>
             </div>
             <div class="separador"></div>
