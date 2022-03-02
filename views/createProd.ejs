@@ -35,10 +35,12 @@
 
     </header>
 
+    <div class="errorsCreateForm" style="color:orangered">
+        <ul></ul>
+    </div>
+
     <main class="main-form">
-        <div class="errorsCreateForm" style="color:orangered">
-            <ul></ul>
-        </div>
+        
         <form action="/products/createProd" method="post" enctype="multipart/form-data" class="cont-form createProd">
             <div class="cont-create">
                 <div class="titulo-form">
@@ -95,10 +97,10 @@
                 <div class="wrap-form category">
                     <label for="idCategory"><b>Categoria</b></label>
                     <select name="idCategory" id="idCategory" class="category">
-                                    <option value="">Elegí</option>
-                                    <option value="gaming" >Gaming</option>
-                                    <option value="desktop" >Desktop</option>
-                        <option value="office" >Office</option>
+                        <option value="">Elegí</option>
+                            <% for (category of categorys){ %>
+                                <option value="<%=category.name%> "><%= category.name %> </option>
+                            <% } %>       
                     </select>
                     <% if (locals.errors && errors.idCategory) { %>
                         <div class="text-danger">
@@ -111,8 +113,10 @@
                     <label for="idType"><b>Tipo</b></label>
                     <select name="idType" id="idType" class="tipo">
                         <option value="">Elegí</option>
-                        <option value="visited">Visitada</option>
-                        <option value="offer" >En Oferta</option>
+                    <% for(type of types){ %> 
+                        <option value="<%= type.name %> "><%= type.name %></option>
+                    <% } %> 
+                        
                     </select>
                     <% if (locals.errors && errors.idType) { %>
                         <div class="text-danger">

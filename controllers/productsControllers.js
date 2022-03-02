@@ -20,7 +20,38 @@ const controller = {
         res.render("armaTuPc", { user: req.session.userLogged });
     },
     createProd: (req, res) => {
-        res.render("createProd");
+
+        const category =  db.categories_prod.findAll()
+            
+        const type =  db.typeProduct.findAll()
+            
+
+        Promise.all([category, type])
+
+            .then(function(info) {
+
+                const cat = info[0];
+
+                const typ = info[1];
+
+                const allCategory = cat.map(function(c){
+
+                    return c.dataValues;
+
+                });
+
+                const allType = typ.map(function(t){
+
+                    return t.dataValues;
+
+                });
+
+                
+
+                res.render('createProd',{categorys : allCategory,types:allType});
+
+            });
+        
     },
 
     productTotals: (req, res) => {
@@ -65,11 +96,6 @@ const controller = {
         const prodSearchCategory = req.body.category;
         const min = req.body.min;
         const max = req.body.max;
-
-
-
-
-
 
         if (prodSearchCategory != "category") {
 
@@ -121,15 +147,10 @@ const controller = {
 
         db.products.findAll()
             .then(function(products) {
-                // console.log(products);
+                
                 return res.render("tables_prod", { products: products });
             })
-
-
-
-        // res.render('tables_prod', {
-        //     products: productsService.products,
-        // });
+        
     },
 
     destroy: (req, res) => {
@@ -148,14 +169,50 @@ const controller = {
 
         const resultValidation = validationResult(req);
 
+        console.log("resultValidation");
+        console.log(resultValidation)
+        
         if (resultValidation.errors.length > 0) {
-            return res.render('createProd', {
-                errors: resultValidation.mapped(),
-                oldData: req.body
+
+            const category =  db.categories_prod.findAll()
+            
+            const type =  db.typeProduct.findAll()
+
+            Promise.all([category, type])
+
+            .then(function(info) {
+
+                const cat = info[0];
+
+                const typ = info[1];
+
+                const allCategory = cat.map(function(c){
+
+                    return c.dataValues;
+
+                });
+
+                const allType = typ.map(function(t){
+
+                    return t.dataValues;
+
+                });
+
+                return res.render('createProd', {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body,
+                    categorys : allCategory,
+                    types:allType
+                });
+
+
             });
 
-        }
 
+            
+
+        }
+        
         const category = db.categories_prod.findOne({
             where: {
                 name: req.body.idCategory
@@ -179,7 +236,7 @@ const controller = {
                     idType: info[1].dataValues.id,
                     price: req.body.price,
                     disc: req.body.disc,
-                    image: "/img/products/" + req.body.image
+                    image: "/img/products/" + req.file.filename
 
                 })
             })
@@ -198,15 +255,51 @@ const controller = {
 
         const idProd = req.params.id;
 
-        const prod = await db.products.findByPk(idProd);
-        if (prod) {
-            res.render('editProduct', {
-                prod,
-                idProd
+        const category =  db.categories_prod.findAll();
+            
+        const type =  db.typeProduct.findAll();
+
+        const product = await db.products.findByPk(idProd);
+            
+
+        Promise.all([category, type,product])
+
+            .then(function(info) {
+
+                const cat = info[0];
+
+                const typ = info[1];
+
+                const prod = info[2]
+
+                const allCategory = cat.map(function(c){
+
+                    return c.dataValues;
+
+                });
+
+                const allType = typ.map(function(t){
+
+                    return t.dataValues;
+
+                });
+
+                if (prod) {
+                    res.render('editProduct', {
+                        prod,
+                        idProd,
+                        categorys : allCategory,
+                        types:allType
+                    });
+                } else {
+                    res.render("error")
+                };
+                
+
             });
-        } else {
-            res.render("error")
-        };
+
+        
+        
     },
 
     updateProduct: function(req, res) {
