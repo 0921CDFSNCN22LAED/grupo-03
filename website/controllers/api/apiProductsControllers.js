@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 const Sequelize = require('sequelize');
 const products = require("../../services/products");
 const { response } = require("express");
+const res = require("express/lib/response");
 const Op = db.Sequelize.Op;
 
 module.exports = {
@@ -46,14 +47,46 @@ module.exports = {
 
     destroy: (req, res) => {
         db.products.destroy({
-                where: { 
-                    id: req.params.id 
-                }
+                where: {  id: req.params.id }
+            },
+            {
+                include: [
+                    { association: "products_type" },
+                    { association: "products_categories_prod" }
+                ],
             })
-            .then(response => {
-                return res.json(response)
+            .then(holis => {
+                return res.json(holis)
             })
     },
+
+    searchName:(req,res)=>{
+        db.products
+        .findAll({
+            where:{
+                name:{ [Op.like]: '%' + req.query.keyword + '%' }
+            }
+        })
+        .then(hola=>{
+          return res.status(200).json(hola);
+        })
+    },
+
+
+    searchCategory: (req, res) => {
+        db.products.findAll({
+                where: {
+                    idCategory: {
+                        [Op.like]: '%' + req.query.keyword + '%'
+                    }
+                }
+            })
+            .then(searchProducts => {
+                return res.json(searchProducts);
+            })
+
+    },
+
 
 }
 

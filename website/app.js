@@ -33,7 +33,8 @@ const productsApiRoutes = require('./routers/api/apiProducts')
 app.use(express.static(path.join(__dirname, "/public")))
 
 // Servidor
-app.listen(3000, () => {
+// se cambia local host a 3001 para no generar conflicto con React
+app.listen(3001, () => {
     console.log("Servidor encendido");
 })
 

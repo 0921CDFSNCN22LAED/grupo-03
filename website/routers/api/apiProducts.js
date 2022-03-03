@@ -9,6 +9,8 @@ const validations = require('../../middlewares/validate_product_middlewares');
 
 //endpoints
 
+router.get('/seachName', controller.searchName);
+router.get('/seachCategory', controller.searchCategory);
 router.get('/', controller.listProducts);
 router.get('/:id', controller.oneProduct);
 router.post('/', controller.createProduct);
