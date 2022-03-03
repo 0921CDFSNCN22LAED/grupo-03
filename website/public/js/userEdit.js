@@ -9,7 +9,7 @@ window.addEventListener("load",function(){
 
 
         let errores = [];
-        let ulErrors = document.querySelector(".alert-validation")
+        let ulErrors = document.querySelector(".alert-null")
         ulErrors.innerHTML = "";
         
         
@@ -66,8 +66,8 @@ window.addEventListener("load",function(){
 
             e.preventDefault();
 
-            ulErrors.classList.remove("alert-validation");
-            ulErrors.className += "alert"
+            ulErrors.classList.remove("alert-null");
+            ulErrors.classList.add ("alert");
 
             ulErrors.innerHTML += "<li>" + "<strong>"+ "Por favor revise los siguientes errores" +"</strong>" + "</li>"
             for(error of errores){
