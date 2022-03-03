@@ -44,7 +44,7 @@ module.exports = {
           })
         })
     },
-
+//revisar
     destroy: (req, res) => {
         db.products.destroy({
                 where: {  id: req.params.id }
