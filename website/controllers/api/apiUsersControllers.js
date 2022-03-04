@@ -90,18 +90,15 @@ module.exports = {
     update: function(req, res) {
         db.users.findByPk(req.params.id)
             .then(user => {
-                const img = (!req.file) ? user.avatarIMG : req.body.avatarIMG;
-                const image = "/img/users/" + img;
-                console.log(user);
+                
                 db.users.update({
                         firstName: req.body.firstName,
                         lastName: req.body.lastName,
-                        email: req.body.email,
                         idCategory: req.body.idCategory,
                         adress: req.body.adress,
                         location: req.body.location,
                         state: req.body.state,
-                        avatarIMG: image
+                        avatarIMG: req.file === undefined ? user.avatarIMG : "/img/users/"+req.file.filename
                     }, {
                         where: { id: req.params.id }
                     })

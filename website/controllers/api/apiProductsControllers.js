@@ -44,7 +44,49 @@ module.exports = {
           })
         })
     },
-//revisar
+
+    update: function(req, res) {
+
+        const idProd = req.params.id;
+
+       
+        db.products.findByPk(req.params.id)
+            .then(prod => {
+                console.log(req.body);
+
+                    db.products.update({
+
+                    name: req.body.name,
+                    description: req.body.desc,
+                    size: req.body.size,
+                    idCategory: req.body.idCategory,
+                    idType: req.body.idType,
+                    price: req.body.price,
+                    disc: req.body.disc,
+                    image: (!req.file) ? prod.image : "/img/products/" + req.file.filename
+
+                }, {
+                    where: {
+                        id: idProd
+                    }
+                })
+                
+            })
+            .then(function() {
+                
+                return res.json({ 
+    
+                    status:200,
+                    update:'ok'
+      
+                } )
+            }).
+            catch(function(error){
+                console.log(error);
+            })
+
+    },
+
     destroy: (req, res) => {
         db.products.destroy({
                 where: {  id: req.params.id }
@@ -55,8 +97,8 @@ module.exports = {
                     { association: "products_categories_prod" }
                 ],
             })
-            .then(holis => {
-                return res.json(holis)
+            .then(response => {
+                return res.json(response)
             })
     },
 

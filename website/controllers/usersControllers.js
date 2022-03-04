@@ -210,6 +210,9 @@ const controller = {
 
         const idUser = req.params.id;
 
+        console.log(req.body.avatarIMG);
+        console.log(req.file);
+
     
         db.users.findByPk(idUser)
             .then(function(user) {
@@ -218,7 +221,6 @@ const controller = {
 
                     firstName: req.body.firstName,
                     lastName: req.body.lastName,
-                    email: req.body.email,
                     idCategory: 1,
                     adress: req.body.adress,
                     location: req.body.location,

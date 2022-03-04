@@ -14,7 +14,8 @@ router.get('/seachCategory', controller.searchCategory);
 router.get('/', controller.listProducts);
 router.get('/:id', controller.oneProduct);
 router.post('/', controller.createProduct);
-router.delete('/id', controller.destroy);
+router.put('/update/:id', controller.update);
+router.delete('/:id', controller.destroy);
 
 
 
