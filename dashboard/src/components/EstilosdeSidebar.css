@@ -1,0 +1,10 @@
+.logo {
+    text-align: center;
+    padding-left: 40px;
+    display: flex;
+    align-self: right;
+    margin-top: 25px;
+    width: 100px;
+    height: 100px;
+    filter: brightness(200%);
+}
