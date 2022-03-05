@@ -6,23 +6,23 @@ import React, { useState } from 'react';
 
 function ChartRow(props){
 
-    const [listCategory,setListCategory] = useState([]);
+    // const [listCategory,setListCategory] = useState([]);
 
     
-     fetch("http://localhost:3001/api/apiProducts/allCategory")
-        .then(response => response.json())
-        .then(function (data){
+    //  fetch("http://localhost:3001/api/apiProducts/allCategory")
+    //     .then(response => response.json())
+    //     .then(function (data){
 
-            console.log(data)
+    //         console.log(data)
 
-            setListCategory([ 
-                ...data
+    //         setListCategory([ 
+    //             ...data
                 
-            ]);
+    //         ]);
 
-        })
+    //     })
 
-        console.log(listCategory);
+    //     console.log(listCategory);
     
 
 
@@ -38,13 +38,13 @@ function ChartRow(props){
                     <td>{props.description}</td>
                     <td>
                         
-                        <ul>
+                        {/* <ul>
                             {listCategory.map( (category,i) => 
                                     
                                 <li key={category.id}>{category.name}</li>
                                 
                             )}
-                        </ul>
+                        </ul> */}
                         
                     </td>
                     <td>

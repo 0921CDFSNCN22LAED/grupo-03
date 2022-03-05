@@ -7,8 +7,9 @@ function ContentRowProducts()  {
     const [listProd,setListProd] = useState([]);
 
     
+    if(listProd.length == git 0){
 
-     fetch("http://localhost:3001/api/apiProducts")
+        fetch("http://localhost:3001/api/apiProducts")
         .then(response => response.json())
         .then(function (data){
 
@@ -18,6 +19,8 @@ function ContentRowProducts()  {
             ]);
 
         })
+    
+    }
     
      
 
