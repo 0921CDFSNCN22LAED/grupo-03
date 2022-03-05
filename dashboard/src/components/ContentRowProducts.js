@@ -7,7 +7,7 @@ function ContentRowProducts()  {
     const [listProd,setListProd] = useState([]);
 
     
-    if(listProd.length == git 0){
+    if(listProd.length == 0){
 
         fetch("http://localhost:3001/api/apiProducts")
         .then(response => response.json())
