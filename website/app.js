@@ -38,6 +38,8 @@ app.listen(3001, () => {
     console.log("Servidor encendido");
 })
 
+
+
 // Routeo
 app.use("/", mainRoutes);
 app.use('/products', prodRoutes);

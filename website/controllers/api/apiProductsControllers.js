@@ -129,6 +129,16 @@ module.exports = {
 
     },
 
+    allCategory:(req,res)=>{
+
+        db.categories_prod.findAll()
+        .then(category=>{
+            return res.json(category);
+        })
+    }
+
+    
+
 
 }
 

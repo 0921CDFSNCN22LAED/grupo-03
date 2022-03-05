@@ -1,20 +1,55 @@
-import React from 'react';
+
+import React, { useState } from 'react';
+
+
 
 
 function ChartRow(props){
+
+    const [listCategory,setListCategory] = useState([]);
+
+    
+     fetch("http://localhost:3001/api/apiProducts/allCategory")
+        .then(response => response.json())
+        .then(function (data){
+
+            console.log(data)
+
+            setListCategory([ 
+                ...data
+                
+            ]);
+
+        })
+
+        console.log(listCategory);
+    
+
+
+    let contenidoUrl = "http://localhost:3001/api/apiProducts/"+props.id;
+
+
+
+    
     return (
                 <tr>
-                    <td>{props.Title}</td>
-                    <td>{props.Length}</td>
-                    <td>{props.Rating}</td>
+                    <td>{props.id}</td>
+                    <td>{props.name}</td>
+                    <td>{props.description}</td>
                     <td>
+                        
                         <ul>
-                            {props.Categories.map( (category,i) => 
-                                <li key={`category ${i}`}>{category}</li>
+                            {listCategory.map( (category,i) => 
+                                    
+                                <li key={category.id}>{category.name}</li>
+                                
                             )}
                         </ul>
+                        
                     </td>
-                    <td>{props.Awards}</td>
+                    <td>
+                        <a href={contenidoUrl}>{contenidoUrl}</a>
+                    </td>
                 </tr>
             )
     }
