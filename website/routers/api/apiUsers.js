@@ -16,6 +16,8 @@ router.get("/searchlastname", controller.searchlastname);
 
 router.get("/:id", controller.oneUser);
 
+router.get("/:id/avatar", controller.oneUserImg);
+
 router.put("/update/:id", upload.single("avatarIMG"), controller.update);
 
 router.post("/", upload.single("avatarIMG"), validationUser, controller.store);

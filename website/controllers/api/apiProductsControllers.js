@@ -9,52 +9,61 @@ const Op = db.Sequelize.Op;
 
 module.exports = {
 
-    listProducts:(req,res)=>{
+    listProducts: (req, res) => {
         db.products
-        .findAll()
-        .then(products=>{
-          return res.status(200).json({
-              total:products.length,
-              data: products,
-              status:200
-          })
-        })
+            .findAll()
+            .then(products => {
+                return res.status(200).json({
+                    total: products.length,
+                    data: products,
+                    status: 200
+                })
+            })
     },
 
-    oneProduct:(req,res)=>{
+    oneProduct: (req, res) => {
         db.products
-        .findByPk(req.params.id)
-        .then(product=>{
-          return res.status(200).json({
-              data: product,
-              status:200
-          })
-        })
+            .findByPk(req.params.id)
+            .then(product => {
+                return res.status(200).json({
+                    data: product,
+                    status: 200
+                })
+            })
     },
-
-    createProduct:(req,res)=>{
+    oneProductIMG: (req, res) => {
         db.products
-        .create(req.body)
-        .then(product=>{
-          return res.status(200).json({
-              data: product,
-              status:200,
-              created:'ok'
+            .findByPk(req.params.id)
+            .then(product => {
+                return res.status(200).json({
+                    data: product.image,
+                    status: 200
+                })
+            })
+    },
+    createProduct: (req, res) => {
+        db.products
+            .create(req.body)
+            .then(product => {
+                return res.status(200).json({
+                    data: product,
+                    status: 200,
+                    created: 'ok'
 
-          })
-        })
+                })
+            })
     },
 
     update: function(req, res) {
 
         const idProd = req.params.id;
 
-       
+
         db.products.findByPk(req.params.id)
             .then(prod => {
                 console.log(req.body);
 
-                    db.products.update({
+                db.products.update({
 
                     name: req.body.name,
                     description: req.body.desc,
@@ -70,28 +79,27 @@ module.exports = {
                         id: idProd
                     }
                 })
-                
+
             })
             .then(function() {
-                
-                return res.json({ 
-    
-                    status:200,
-                    update:'ok'
-      
-                } )
+
+                return res.json({
+
+                    status: 200,
+                    update: 'ok'
+
+                })
             }).
-            catch(function(error){
-                console.log(error);
-            })
+        catch(function(error) {
+            console.log(error);
+        })
 
     },
 
     destroy: (req, res) => {
         db.products.destroy({
-                where: {  id: req.params.id }
-            },
-            {
+                where: { id: req.params.id }
+            }, {
                 include: [
                     { association: "products_type" },
                     { association: "products_categories_prod" }
@@ -102,16 +110,17 @@ module.exports = {
             })
     },
 
-    searchName:(req,res)=>{
+    searchName: (req, res) => {
         db.products
-        .findAll({
-            where:{
-                name:{ [Op.like]: '%' + req.query.keyword + '%' }
-            }
-        })
-        .then(hola=>{
-          return res.status(200).json(hola);
-        })
+            .findAll({
+                where: {
+                    name: {
+                        [Op.like]: '%' + req.query.keyword + '%' }
+                }
+            })
+            .then(hola => {
+                return res.status(200).json(hola);
+            })
     },
 
 
@@ -129,19 +138,15 @@ module.exports = {
 
     },
 
-    allCategory:(req,res)=>{
+    allCategory: (req, res) => {
 
         db.categories_prod.findAll()
-        .then(category=>{
-            return res.json(category);
-        })
+            .then(category => {
+                return res.json(category);
+            })
     }
 
-    
+
 
 
 }
-
-
-
- 

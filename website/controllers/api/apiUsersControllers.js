@@ -27,6 +27,16 @@ module.exports = {
                 })
             })
     },
+    oneUserImg: (req, res) => {
+        const idUser = req.params.id;
+        db.users.findByPk(idUser)
+            .then(user => {
+                return res.status(200).json({
+                    data: user.avatarIMG,
+                    status: 200
+                })
+            })
+    },
 
     store: (req, res) => {
         console.log(req.body);
@@ -90,7 +100,7 @@ module.exports = {
     update: function(req, res) {
         db.users.findByPk(req.params.id)
             .then(user => {
-                
+
                 db.users.update({
                         firstName: req.body.firstName,
                         lastName: req.body.lastName,
@@ -98,7 +108,7 @@ module.exports = {
                         adress: req.body.adress,
                         location: req.body.location,
                         state: req.body.state,
-                        avatarIMG: req.file === undefined ? user.avatarIMG : "/img/users/"+req.file.filename
+                        avatarIMG: req.file === undefined ? user.avatarIMG : "/img/users/" + req.file.filename
                     }, {
                         where: { id: req.params.id }
                     })
