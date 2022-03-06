@@ -1,4 +1,4 @@
-import ChartRow from './ChartRow';
+import ChartRowP from './ChartRowP';
 import React, { useState } from 'react';
 
 
@@ -53,7 +53,7 @@ function ContentRowProducts()  {
 
                                 {
                                     listProd.map( ( row , i) => {
-                                        return <ChartRow { ...row} key={i}/>
+                                        return <ChartRowP { ...row} key={i}/>
                                     })
                                 }
 

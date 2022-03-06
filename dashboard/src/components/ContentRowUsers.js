@@ -1,55 +1,70 @@
-import React from 'react';
-import ChartRow from './ChartRow';
+import ChartRowU from './ChartRowU';
+import React, { useState } from 'react';
 
-let tableRowsData = [
-    {
-        Title: 'Billy usuario 2 ',
-        Length: '123',
-        Rating: '5',
-        Categories: ['algo'],
-        Awards: 2
-    },
-    {
-        Title: 'nombre usiario 1',
-        Length: 'apellido usiario 1',
-        Rating: 'mail usiario 1',
-        Categories: ['otro', 'algo', 'mas'],
-        Awards: 'direccion'
-    },
+
+function ContentRowUsers()  {
+
+    const [listUsers,setListUsers] = useState([]);
+
     
-]
+    if(listUsers.length == 0){
 
-function ContentRowUsers(){
+        fetch("http://localhost:3001/api/apiUsers")
+        .then(response => response.json())
+        .then(function (data){
+            setListUsers([ 
+                ...data.data,
+                
+           ]);
+	console.log(listUsers);
+        })
+    
+    }
+    
+     
+
+
     return (
-        /* <!-- DataTales Example --> */
-        <div className="card shadow mb-4">
-            <div className="card-body">
-                <div className="table-responsive">
-                    <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
-                        <thead>
-                            <tr>
-                                <th>nombre</th>
-                                <th>apellido</th>
-                                <th>mail</th>
-                                <th>otra cosa</th>
-                                <th>direccion</th>
-                            </tr>
-                        </thead>
+            
+            <div className="card shadow mb-4">
+                <div className="card-body">
+                    <div className="table-responsive">
+                        <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre del Usuario</th>
+                                    <th>Apellido del Usuario</th>
+                                    <th>Email</th>
+                                    <th>URL</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre del Usuario</th>
+                                    <th>Apellido del Usuario</th>
+                                    <th>Email</th>
+                                    <th>URL</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
 
-                        <tbody>
-                            {
-                            tableRowsData.map( ( row , i) => {
-                                return <ChartRow { ...row} key={i}/>
-                            })
-                            }
+                                {
+                                    listUsers.map( ( row , i) => {
+                                        return <ChartRowU { ...row} key={i}/>
+                                    })
+                                }
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
-
-    )
+    
+                       
+    );
+    
 }
 
 export default ContentRowUsers;
