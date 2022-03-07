@@ -144,7 +144,35 @@ module.exports = {
             .then(category => {
                 return res.json(category);
             })
-    }
+    },
+
+    listProductsCategory: (req, res) => {
+        db.products
+            .findAll({
+              
+                attributes:['id', 'name', 'description', 'idCategory', 'idType', 'price', 'disc', 
+                'image'],
+            include:[
+                {
+                    model: db.categories_prod, as:'products_categories_prod',
+                    attributes: ['name'],
+                    required: true
+                },
+                {
+                    model: db.typeProduct, as:'products_type',
+                    attributes: ['name'],
+                    required: true
+                }
+                ]
+            })
+            .then(products => {
+                return res.status(200).json({
+                    total: products.length,
+                    data: products,
+                    status: 200
+                })
+            })
+    },
 
 
 

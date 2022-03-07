@@ -9,18 +9,24 @@ function ContentRowProducts()  {
     
     if(listProd.length == 0){
 
-        fetch("http://localhost:3001/api/apiProducts")
+        fetch("http://localhost:3001/api/apiProducts/productCategory")
         .then(response => response.json())
         .then(function (data){
+            
 
             setListProd([ 
                 ...data.data,
                 
             ]);
 
+           
+
         })
     
     }
+
+    console.log("La lista es:");
+    console.log(listProd);
     
      
 

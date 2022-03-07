@@ -6,26 +6,6 @@ import React, { useState } from 'react';
 
 function ChartRow(props){
 
-    // const [listCategory,setListCategory] = useState([]);
-
-    
-    //  fetch("http://localhost:3001/api/apiProducts/allCategory")
-    //     .then(response => response.json())
-    //     .then(function (data){
-
-    //         console.log(data)
-
-    //         setListCategory([ 
-    //             ...data
-                
-    //         ]);
-
-    //     })
-
-    //     console.log(listCategory);
-    
-
-
     let contenidoUrl = "http://localhost:3001/api/apiProducts/"+props.id;
 
 
@@ -36,16 +16,11 @@ function ChartRow(props){
                     <td>{props.id}</td>
                     <td>{props.name}</td>
                     <td>{props.description}</td>
-                    <td>
-                        
-                        {/* <ul>
-                            {listCategory.map( (category,i) => 
-                                    
-                                <li key={category.id}>{category.name}</li>
-                                
-                            )}
-                        </ul> */}
-                        
+                    <td>  {
+                                    props.products_categories_prod.map( (p) => {
+                                        return p.name
+                                    })
+                          }
                     </td>
                     <td>
                         <a href={contenidoUrl}>{contenidoUrl}</a>
