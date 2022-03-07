@@ -77,7 +77,7 @@ module.exports = function(sequelize, dataTypes) {
 
         products.belongsTo(models.categories_prod, {
             as: "products_categories", //revisar todos los "as"
-            foreignKey: "id",
+            foreignKey: "idCategory",
         });
 
 
