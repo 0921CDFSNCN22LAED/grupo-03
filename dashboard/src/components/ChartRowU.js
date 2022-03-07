@@ -1,4 +1,4 @@
-
+import {Link} from 'react-router-dom';
 
 function ChartRowU(props){
 
@@ -7,8 +7,8 @@ function ChartRowU(props){
 
     let contenidoUrl = "http://localhost:3001/api/apiUsers/"+props.id;
 
-
-
+    let dir='/usuario/'+parseInt(props.id);
+    console.log(dir);
     
     return (
                 <tr>
@@ -17,7 +17,9 @@ function ChartRowU(props){
                     <td>{props.lastName}</td>
 		    <td>{props.email}</td>
                     <td>
-                        <a href={contenidoUrl}>{contenidoUrl}</a>
+                        <Link to={'/usuario/'+props.id}>
+				{contenidoUrl}
+			</Link>
                     </td>
                 </tr>
             )
