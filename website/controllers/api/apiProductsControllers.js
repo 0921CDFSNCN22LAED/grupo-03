@@ -176,6 +176,23 @@ module.exports = {
             })
     },
 
+    findLastId:(req,res)=>{
+
+        db.products.findAll({
+            where:{
+                id : [Sequelize.fn('max', Sequelize.col('id'))] 
+            }
+            
+        })
+        .then(product => {
+            return res.status(200).json({
+                total: product.length,
+                data: product,
+                status: 200
+            })
+        })
+    }
+
 
 
 

@@ -17,6 +17,8 @@ router.get('/seachCategory', controller.searchCategory);
 
 router.get('/productCategory', controller.listProductsCategory);
 
+router.get('/findLastId', controller.findLastId);
+
 router.get('/', controller.listProducts);
 
 router.get('/:id', controller.oneProduct);
