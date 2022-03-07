@@ -151,18 +151,20 @@ module.exports = {
             .findAll({
               
                 attributes:['id', 'name', 'description', 'idCategory', 'idType', 'price', 'disc', 
-                'image'],
+                'image','name'],
             include:[
                 {
-                    model: db.categories_prod, as:'products_categories_prod',
+                    model: db.categories_prod, as:'products_categories',
                     attributes: ['name'],
-                    required: true
+                                           
                 },
                 {
                     model: db.typeProduct, as:'products_type',
                     attributes: ['name'],
-                    required: true
+                    
                 }
+               
+               
                 ]
             })
             .then(products => {

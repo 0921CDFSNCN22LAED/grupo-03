@@ -22,7 +22,7 @@ module.exports = function(sequelize, dataTypes) {
             allowNull: false,
         },
         idCategory: {
-            type: dataTypes.STRING(50),
+            type: dataTypes.INTEGER,
             allowNull: false,
         },
 
@@ -75,8 +75,8 @@ module.exports = function(sequelize, dataTypes) {
             foreignKey: "idType",
         });
 
-        products.hasMany(models.categories_prod, {
-            as: "products_categories_prod", //revisar todos los "as"
+        products.belongsTo(models.categories_prod, {
+            as: "products_categories", //revisar todos los "as"
             foreignKey: "id",
         });
 

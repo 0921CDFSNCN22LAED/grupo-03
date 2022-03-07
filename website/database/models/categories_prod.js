@@ -25,9 +25,8 @@ module.exports = function (sequelize , dataTypes){
 
     categories_prod.associate = function(models){   
 
-
-        categories_prod.belongsTo(models.products,{
-            as: "categories_prod_products" ,  //revisar todos los "as"
+        categories_prod.hasMany(models.products,{
+            as: "categories_prod_products" ,  
             foreignKey:"id" ,
         }); 
 
