@@ -178,10 +178,10 @@ module.exports = {
 
     findLastId:(req,res)=>{
 
-        db.products.findAll({
-            where:{
-                id : [Sequelize.fn('max', Sequelize.col('id'))] 
-            }
+        db.products.findOne({
+            attributes:[
+                [Sequelize.fn('max', Sequelize.col('id')),'maxid'] 
+            ]
             
         })
         .then(product => {
