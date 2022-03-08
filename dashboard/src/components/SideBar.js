@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import image from '../assets/images/logo.svg';
 import './EstilosdeSidebar.css'
 
@@ -30,36 +31,28 @@ function SideBar(){
                 {/*<!-- Heading -->*/}
                 <div className="sidebar-heading">menu</div>
 
-                {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
-                    <a className="nav-link collapsed" href="/">
+                    <Link className="nav-link" to="/">
+                        <i className="fas fa-fw fa-table"></i>
+                        <span>Home</span>
+                    </Link>
+                </li>
+
+
+                <li className="nav-item">
+                    <Link className="nav-link collapsed" to="/product">
                         <i className="fas fa-fw fa-chart-area"></i>
                         <span>Todos los Productos</span>
-                    </a>
+                    </Link>
                 </li>
 
-                {/*<!-- Nav Item - Charts -->*/}
+
                 <li className="nav-item">
-                    <a className="nav-link" href="/">
+                    <Link className="nav-link" to="/user">
                         <i className="fas fa-fw fa-folder"></i>
-                        <span>Todos los usuarios</span></a>
+                        <span>Todos los usuarios</span>
+                    </Link>
                 </li>
-
-
-		{/*<!-- Nav Item - Charts -->*/}
-                <li className="nav-item">
-                    <a className="nav-link" href="/">
-                        <i className="fas fa-fw fa-folder"></i>
-                        <span>Totales</span></a>
-                </li>
-
-                {/*<!-- Nav Item - Tables -->*/}
-                <li className="nav-item">
-                    <a className="nav-link" href="/">
-                        <i className="fas fa-fw fa-table"></i>
-                        <span>Home</span></a>
-                </li>
-
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider d-none d-md-block"/>
             </ul>

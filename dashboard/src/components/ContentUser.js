@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom'
 
-function ContenUser()  {
+function ContentUser()  {
  let {id} = useParams();
  let url = 'http://localhost:3001/api/apiUsers/'+id;
  let imagenUrl = url+"/avatar";

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-mport { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
-function ContenProduct(props)  {
+function ContentProduct(props)  {
  let {id} = useParams();
  let url = 'http://localhost:3001/api/apiProducts/'+id;
- let imageUrl = url+'/image';
+ let imageURL = url+'/image';
 
  const [listProd,setListProd] = useState([]);
     
