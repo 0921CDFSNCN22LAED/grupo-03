@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 
-function ContenUser()  {
- let id = prop.match.params.id;
+function ContenUser(props)  {
+ let id = props.match.params.id;
  let url = "http://localhost:3001/api/apiUsers/"+id;
  let imagenUrl = url+"/avatar";
 
@@ -37,7 +37,7 @@ function ContenUser()  {
                		<p><b>Direccion: </b> {listUser.adress} </p>
                		<p><b>Localidad: </b> {listUser.location} </p>
                		<p><b>Pais: </b> {listUser.state} </p>
-	       		<p><b>La url de avatar: </b> {imagenURL} </p>
+	       		<p><b>La url de avatar es: </b> {imagenUrl} </p>
 
             		</article>
 		</div>

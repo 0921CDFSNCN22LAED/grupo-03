@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 
 function ContenProduct(props)  {
- let id = prop.match.params.id;
+ let id = props.match.params.id;
  let url = "http://localhost:3001/api/apiProducts/"+id;
  let imageUrl = url+"/avatar";
 

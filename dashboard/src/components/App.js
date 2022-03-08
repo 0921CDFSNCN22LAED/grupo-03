@@ -1,7 +1,7 @@
 import React from 'react';
 import SideBar from './SideBar';
 import ContentWrapper from './ContentWrapper';
-import {BrowserRouter, Link, Route, Switch} from 'react-router-dom';
+import { Link, Route, Switch} from 'react-router-dom';
 function App() {
   return (
     <React.Fragment>
