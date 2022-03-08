@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-mport { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 function ContenProduct(props)  {
  let {id} = useParams();
