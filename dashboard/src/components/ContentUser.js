@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 
 
-function ContenUser(props)  {
+function ContenUser()  {
+ let id = prop.match.params.id;
+ let url = "http://localhost:3001/api/apiUsers/"+id;
+ let imagenUrl = url+"/avatar";
+
 
  const [listUser,setListUser] = useState([]);
     
     if(listUser.length == 0){
 
-        fetch(prop)
+        fetch(url)
         .then(response => response.json())
         .then(function (data){
             setListUser([ 
@@ -19,26 +23,21 @@ function ContenUser(props)  {
     
     }
     
-    let imagenUrl = props+"/avatar";
-
-
     return (
             
             <div className="card shadow mb-4">
                 <div className="card-body">
 	  	 <h1>El usuario solicitado</h1>
             		<article>
-	       		<h2>la url es: </h2>+ prop
-	       		<h2>id: </h2>+ listUser.id
-               		<h2>Nombre: </h2>+ listUser.firstName
-               		<h2>Apellido: </h2>+ listUser.lastName
-               		<h2>Email: </h2>+ listUser.email
-               		<h2>Telefono: </h2>+ listUser.phone
-               		<h2>Direccion: </h2>+ listUser.adress
-               		<h2>Localidad: </h2>+ listUser.location
-               		<h2>Pais: </h2>+ listUser.state
-	       		<h2>Avatar: </h2>+ imaageURL
-			<h2>Categoria: </h2>+
+	       		<p><b>La url es: </b> {url} </p>
+               		<p><b>Nombre: </b> {listUser.firstName} </p>
+               		<p><b>Apellido: </b> {listUser.lastName} </p>
+               		<p><b>Email: </b> {listUser.email} </p>
+               		<p><b>Telefono: </b> {listUser.phone} </p>
+               		<p><b>Direccion: </b> {listUser.adress} </p>
+               		<p><b>Localidad: </b> {listUser.location} </p>
+               		<p><b>Pais: </b> {listUser.state} </p>
+	       		<p><b>La url de avatar: </b> {imagenURL} </p>
 
             		</article>
 		</div>
