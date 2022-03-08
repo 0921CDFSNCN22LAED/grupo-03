@@ -70,7 +70,7 @@ const controller = {
         db.products.findByPk(req.params.id, {
                 include: [
                     { association: "products_type" },
-                    { association: "products_categories_prod" }
+                    { association: "products_categories" }
                 ],
             })
             .then(function(product) {

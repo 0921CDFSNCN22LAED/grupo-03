@@ -201,7 +201,7 @@ module.exports = {
                 'image','name'],
             include:[
                 {
-                    model: db.categories_prod, as:'products_categories',
+                    model: db.categories_prod, as:'products_categories_prod',
                     attributes: ['name'],
                     where: {
                         name: {
