@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom'
 
-
-function ContenUser(props)  {
- let id = props.match.params.id;
- let url = "http://localhost:3001/api/apiUsers/"+id;
+function ContenUser()  {
+ let {id} = useParams();
+ let url = 'http://localhost:3001/api/apiUsers/'+id;
  let imagenUrl = url+"/avatar";
 
 

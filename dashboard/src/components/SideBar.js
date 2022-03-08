@@ -46,6 +46,13 @@ function SideBar(){
                 </li>
 
 
+		{/*<!-- Nav Item - Charts -->*/}
+                <li className="nav-item">
+                    <a className="nav-link" href="/">
+                        <i className="fas fa-fw fa-folder"></i>
+                        <span>Totales</span></a>
+                </li>
+
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item">
                     <a className="nav-link" href="/">
