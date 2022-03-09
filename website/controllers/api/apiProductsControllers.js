@@ -185,12 +185,20 @@ module.exports = {
             
         })
         .then(product => {
-            return res.status(200).json({
-                total: product.length,
-                data: product,
-                status: 200
+            
+            let id = product.dataValues.maxid;
+            
+            db.products.findByPk(id)
+            .then(prod => {
+                return res.status(200).json({
+                    total: prod.length,
+                    data: prod,
+                    status: 200
+                })
             })
+            
         })
+        
     },
 
     categoryProducts: (req, res) => {
