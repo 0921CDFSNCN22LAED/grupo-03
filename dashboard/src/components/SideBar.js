@@ -10,19 +10,19 @@ function SideBar(){
             <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 {/*<!-- Sidebar - Brand -->*/}
-                <a href="/">
+                <Link to="/">
                     <div className="logo">
                         <img  src={image} alt="quiero mi compu"/>
                     </div>
-                </a>
+                </Link>
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider my-0"/>
 
                 {/*<!-- Nav Item - Dashboard -->*/}
                 <li className="nav-item active">
-                    <a className="nav-link" href="/">
-                        <span>Quiero Mi Compu</span></a>
+                    <Link className="nav-link" to="/">
+                        <span>Quiero Mi Compu</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
@@ -51,6 +51,13 @@ function SideBar(){
                     <Link className="nav-link" to="/user">
                         <i className="fas fa-fw fa-folder"></i>
                         <span>Todos los usuarios</span>
+                    </Link>
+                </li>
+
+                <li className="nav-item">
+                    <Link className="nav-link" to="/lastProduct">
+                        <i className="fas fa-fw fa-folder"></i>
+                        <span>Ultimo Producto Creado</span>
                     </Link>
                 </li>
                 {/*<!-- Divider -->*/}
