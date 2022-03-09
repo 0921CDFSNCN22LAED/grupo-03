@@ -191,7 +191,36 @@ module.exports = {
                 status: 200
             })
         })
-    }
+    },
+
+    categoryProducts: (req, res) => {
+        db.products
+            .findAll({
+              
+                attributes:['id', 'name', 'description', 'idCategory', 'idType', 'price', 'disc', 
+                'image','name'],
+            include:[
+                {
+                    model: db.categories_prod, as:'products_categories_prod',
+                    attributes: ['name'],
+                    where: {
+                        name: {
+                            [Op.like]: '%' + req.query.keyword + '%'
+                        }
+                        }
+                                           
+                }
+               
+                ]
+            })
+            .then(products => {
+                return res.status(200).json({
+                    total: products.length,
+                    data: products,
+                    status: 200
+                })
+            })
+    },
 
 
 

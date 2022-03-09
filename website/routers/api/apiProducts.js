@@ -21,6 +21,8 @@ router.get('/findLastId', controller.findLastId);
 
 router.get('/', controller.listProducts);
 
+router.get('/categoryProducts', controller.categoryProducts);
+
 router.get('/:id', controller.oneProduct);
 
 router.get('/:id/image', controller.oneProductIMG);
