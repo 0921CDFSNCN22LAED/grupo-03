@@ -3,6 +3,7 @@ import SideBar from './SideBar';
 import ContentWrapper from './ContentWrapper';
 import ContentRowUsers from './ContentRowUsers';
 import ContentRowProducts from './ContentRowProducts';
+import ContentLastProductCreate from './ContentLastProductCreate';
 import NotFound from './NotFound';
 
 import {Route,Routes, Switch} from 'react-router-dom';
@@ -28,6 +29,12 @@ function App() {
 	    <SideBar />
 	    <ContentRowProducts/>
 	 </Route>
+
+	 <Route path="/lastProduct/">
+	    <SideBar />
+	    <ContentLastProductCreate/>
+	 </Route>
+
    <Route>
         <SideBar />
         <NotFound/>
