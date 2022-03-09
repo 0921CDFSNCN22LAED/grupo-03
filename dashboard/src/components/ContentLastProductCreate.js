@@ -5,29 +5,17 @@ import React, { useState } from 'react';
 function ContentLastProductCreate()  {
 
         const [lastProd,setLastProd] = useState([]);
+        let lastProductCreate = "";
 
         if(lastProd.length == 0){   
             fetch("http://localhost:3001/api/apiProducts/findLastId")
             .then(response => response.json())
             .then(function (data){
-                setLastProd([ 
-                    data,
-                ]);  
-                console.log(lastProd) 
+                lastProductCreate = data
             })
-        }
-        const [oneProd,setOneProd] = useState([]);
-  
-        if(lastProd.length > 0){   
-            fetch("http://localhost:3001/api/apiProducts/"+ {lastProd})
-            .then(response => response.json())
-            .then(function (data){
-                setOneProd([ 
-                    data,
-                ]);   
-            })
-        }
+            console.log(lastProductCreate)
 
+        }
 
 return ( 
     <div className="card shadow mb-4">
@@ -45,11 +33,8 @@ return (
                     </tr>
                 </thead>
                 <tbody>
-                    {
-                        lastProd.map( ( row , i) => {
-                            return <ChartRowP { ...row} key={i}/>
-                        })
-                    }
+                        <ChartRowP key={lastProd[0].data.id} /> {lastProd[0].data} <ChartRowP/> 
+
                 </tbody>
             </table>
         </div>
