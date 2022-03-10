@@ -191,7 +191,6 @@ module.exports = {
             db.products.findByPk(id)
             .then(prod => {
                 return res.status(200).json({
-                    total: prod.length,
                     data: prod,
                     status: 200
                 })
@@ -230,7 +229,33 @@ module.exports = {
             })
     },
 
+    
+    productTotalCategory: (req, res) => {
+
+        db.products
+        .findAll({
+          
+            attributes: ['idCategory', 
+               sequelize.fn('count', sequelize.col('idCategory'))], 
+                group: ["products.idCategory"]
+
+        })
+        .then(products => {
+            return res.status(200).json({
+                total: products.length,
+                data: products,
+                status: 200
+            })
+        })
+
+        
 
 
-
+    }
 }
+
+// Table.findAll({
+        //     attributes: ['column1', 
+        //       sequelize.fn('count', sequelize.col('column2'))], 
+        //     group: ["Table.column1"]
+        //   }).success(function (result) { });

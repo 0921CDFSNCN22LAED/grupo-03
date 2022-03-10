@@ -26,7 +26,12 @@ const ContentProduct = () => {
         
     let prueba = Object.values(listProd);
 
+<<<<<<< HEAD
+    
+
+=======
   
+>>>>>>> ed11d09579c9b9fdc7b20c8a8f9c7db48cff401a
     return (
             
             <div className="card shadow mb-4">

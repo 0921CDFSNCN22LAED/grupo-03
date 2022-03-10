@@ -25,12 +25,12 @@ app.use(express.json());
 // Template Engine
 app.set('view engine', 'ejs');
 
-app.use(
-    cors({
-        origin:'*'   
+// app.use(
+//     cors({
+//         origin:'*'   
 
-    })
-)
+//     })
+// )
 
 
 // Routers constantes
