@@ -18,12 +18,12 @@ function App() {
       	<div id="wrapper">
           
           <Switch>
-    <Route path="/product/:id" exact>
+    <Route path="/product/:id" >
 	    <SideBar />
 	    <ContentProduct />
 
 	  </Route>
-				  <Route path="/user/:id" exact>
+				  <Route path="/user/:id" >
 					  <SideBar />
 					  <ContentUser />
 
