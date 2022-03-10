@@ -23,11 +23,35 @@ const ContentProduct = () => {
 
     let contenido ; 
     if(listProd == null){
-        return contenido = null;
+        return contenido = <div>
+                
+    <p><b>La url es: </b>  </p>
+    <p><b>Nombre del producto: </b>  </p>
+    <p><b>Descripcion: </b>  </p>
+    <p><b>Tamaño: </b>  </p>
+    <p><b>Precio: </b>  </p>
+    <p><b>Descuento: </b>  </p>
+    <p><b>Categoria: </b>   </p>
+    <p><b>Tipo: </b> </p>
+    <p><b>la url de la imagen es: </b> </p>
+     
+</div>
         
     }
     else{
-        return contenido = listProd
+        return contenido = <div>
+            		
+        <p><b>La url es: </b> <a href={url}> {url} </a> </p>
+        <p><b>Nombre del producto: </b> {listProd.name} </p>
+        <p><b>Descripcion: </b> {listProd.description} </p>
+        <p><b>Tamaño: </b> {listProd.size} </p>
+        <p><b>Precio: </b> {listProd.price} </p>
+        <p><b>Descuento: </b> {listProd.disc} </p>
+        <p><b>Categoria: </b>  {listProd.idCategory} </p>
+        <p><b>Tipo: </b>  {listProd.idType}</p>
+        <p><b>la url de la imagen es: </b> <a href={imageURL} > {imageURL}  </a> </p>
+         
+    </div>
         
           
     }
@@ -40,15 +64,7 @@ const ContentProduct = () => {
                 <div className="card-body">
 	  	 <h1>El Producto solicitado</h1>
             		
-                <p><b>La url es: </b> <a href={url}> {url} </a> </p>
-                <p><b>Nombre del producto: </b> {contenido.name} </p>
-                <p><b>Descripcion: </b> {contenido.description} </p>
-                <p><b>Tamaño: </b> {contenido.size} </p>
-                <p><b>Precio: </b> {contenido.price} </p>
-                <p><b>Descuento: </b> {contenido.disc} </p>
-                <p><b>Categoria: </b>  {contenido.idCategory} </p>
-                <p><b>Tipo: </b>  {contenido.idType}</p>
-                <p><b>la url de la imagen es: </b> <a href={imageURL} > {imageURL}  </a> </p>
+                {contenido}
             	 
 		</div>
 	</div>
