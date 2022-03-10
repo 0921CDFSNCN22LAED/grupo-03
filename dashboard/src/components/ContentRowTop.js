@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ContentRowCategory from './ContentRowCategory';
 import ContentRowProducts from './ContentRowProducts';
 import ContentRowUsers from './ContentRowUsers';
 import ContentTotals from './ContentTotals';
@@ -14,6 +15,7 @@ function ContentRowTop(){
 			<ContentRowProducts />
 			<ContentRowUsers />
 			<ContentTotals />
+			<ContentRowCategory />
 			</div>
         </React.Fragment>
     )

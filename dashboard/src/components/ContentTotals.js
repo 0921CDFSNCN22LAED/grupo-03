@@ -11,7 +11,7 @@ let [totUsers,setTotUsers] = useState([]);
         .then(function (data){
 	console.log(data);
             setTotUsers([ 
-                data.data,
+                data.total,
                 
            ]);
         })
@@ -23,12 +23,12 @@ let [totProd,setTotProd] = useState([]);
     
     if(totProd.length == 0){
 
-        fetch('http://localhost:3001/api/apiProducts/')
+        fetch('http://localhost:3001/api/apiProducts')
         .then(response => response.json())
         .then(function (data){
 	console.log(data);
             setTotProd([ 
-                data.data,
+                data.total,
                 
            ]);
         })
@@ -40,10 +40,14 @@ return (
             <div className="card shadow mb-4">
                 <div className="card-body">
 	  	 <h1>Los totales son</h1>
-            	  <p><b>Total de productos: </b> </p>
-		  <p><b>Total de usuarios: </b>  </p>
+
+            	  
+                <p><b>Total de productos: </b> {totProd} </p>
+
+                <p><b>Total de usuarios: </b> {totUsers} </p>
+
 		  <p><b>Total de catedorias de productos: </b>  </p>
-		  <p><b>Total de catedorias de usuarios: </b>  </p>
+		
 	       	</div>
 	    </div>
 </React.Fragment>

@@ -1,43 +1,53 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import SideBar from './SideBar';
 import ContentWrapper from './ContentWrapper';
 import ContentRowUsers from './ContentRowUsers';
 import ContentRowProducts from './ContentRowProducts';
+import ContentTotals from './ContentTotals';
 import NotFound from './NotFound';
+import ContentProduct from './ContentProduct';
+import ContentUser from './ContentUser';
 
-import {Route,Routes, Switch} from 'react-router-dom';
+
 
 function App() {
   return (
-    <div>
-
+	  <Router >
       	<div id="wrapper">
           
           <Switch>
-    <Route path="/" exact>
-	    <SideBar />
-	    <ContentWrapper />
-	  </Route>
-
-	 <Route path="/user/">
-	    <SideBar />
-	    <ContentRowUsers/>
-	 </Route>
-
-	 <Route path="/product/">
-	    <SideBar />
-	    <ContentRowProducts/>
-	 </Route>
-   <Route>
-        <SideBar />
-        <NotFound/>
-  </Route>
-
-      </Switch>
-
+		  <Route path="/product/:id">
+			  <SideBar />
+			  < ContentProduct />
+		  </Route>
+		  <Route path="/user/:id">
+			  <SideBar />
+			< ContentUser />
+		  </Route>
+				  <Route path="/user">
+					  <SideBar />
+					  <ContentRowUsers />
+				  </Route>
+				  <Route path="/product">
+					  <SideBar />
+					  <ContentRowProducts />
+				  </Route>
+				  <Route path="/totals">
+					  <SideBar />
+					  <ContentTotals />
+				  </Route>
+    			<Route path="/" exact>
+	  				  <SideBar />
+	    			<ContentWrapper />
+	 			 </Route>
+ 			  <Route>
+     			   <SideBar />
+     			   <NotFound />
+  			</Route>
+	      </Switch>
         </div>
-
-    </div>
+	  </Router>
   );
 }
 export default App;
