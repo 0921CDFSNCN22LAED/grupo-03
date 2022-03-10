@@ -39,21 +39,15 @@ function ContentRowCategory() {
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
-                                <th>id</th>
                                 <th>Categoria</th>
-                                <th>Nombre del producto</th>
-                                <th>Descripcion</th>
-                                <th>Tipo</th>
+                                <th>Cant. total del producto</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>id</th>
                                 <th>Categoria</th>
-                                <th>Nombre del producto</th>
-                                <th>Descripcion</th>
-                                <th>Tipo</th>
-                            </tr>
+                                <th>Cant. total del producto</th>
+                            </tr>     
                         </tfoot>
                         <tbody>
 

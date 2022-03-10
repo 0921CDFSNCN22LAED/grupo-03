@@ -7,11 +7,9 @@ function ChartRowC(props) {
 
     return (
         <tr>
-            <td>{props.id}</td>
             <td>{props.products_categories.name}</td>
-            <td>{props.name}</td>
-            <td>{props.description}</td>
-            <td>{props.products_type.name}</td>
+            <td>2
+            </td>
         </tr>
     )
 }

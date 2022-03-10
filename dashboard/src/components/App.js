@@ -4,11 +4,12 @@ import SideBar from './SideBar';
 import ContentWrapper from './ContentWrapper';
 import ContentRowUsers from './ContentRowUsers';
 import ContentRowProducts from './ContentRowProducts';
-import ContentTotals from './ContentTotals';
 import ContentLastProductCreate from './ContentLastProductCreate';
 import NotFound from './NotFound';
 import ContentProduct from './ContentProduct';
 import ContentUser from './ContentUser';
+import ContentTotals from './ContentTotals';
+import ContentRowCategory from './ContentRowCategory';
 
 
 
@@ -23,11 +24,11 @@ function App() {
 	    <ContentProduct />
 
 	  </Route>
-				  <Route path="/user/:id" >
-					  <SideBar />
-					  <ContentUser />
+	 <Route path="/user/:id" >
+		 <SideBar />
+		  <ContentUser />
 
-				  </Route>
+	  </Route>
 
 
 
@@ -50,6 +51,15 @@ function App() {
 	    <SideBar />
 	    <ContentLastProductCreate/>
 	 </Route>
+	  <Route path="/totals">
+			  <SideBar />
+			  <ContentTotals />
+	  </Route>
+	 <Route path="/category">
+		 <SideBar />
+		  <ContentRowCategory />
+	  </Route>
+
 
    <Route>
         <SideBar />

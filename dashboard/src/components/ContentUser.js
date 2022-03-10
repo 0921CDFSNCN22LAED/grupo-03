@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 
 const ContentUser = () => {
@@ -10,33 +10,52 @@ const ContentUser = () => {
     const [listUser, setListUser] = useState([]);
 
 
-    if (listUser.length == 0) {
+    useEffect(() => {
         fetch(url)
             .then(response => response.json())
             .then(function (data) {
-                setListUser([
-                    data,
-                ]);
+                setListUser(data.data);
             })
+    }, [])
+
+    let contenido;
+    if (listUser == null) {
+        return contenido = <div>
+            <p><b>La url es: </b>   </p>
+            <p><b>Nombre: </b>   </p>
+            <p><b>Apellido: </b>   </p>
+            <p><b>Email: </b>  </p>
+            <p><b>Telefono: </b>   </p>
+            <p><b>Direccion: </b>   </p>
+            <p><b>Localidad: </b>   </p>
+            <p><b>Pais: </b> </p>
+            <p><b>La url de avatar es: </b>  </p> 
+
+        </div>
+    }
+    else {
+        return contenido = <div>
+            <p><b>La url es: </b> {url} </p>
+            <p><b>Nombre: </b> {listUser.firstName} </p>
+            <p><b>Apellido: </b> {listUser.lastName} </p>
+            <p><b>Email: </b> {listUser.email} </p>
+            <p><b>Telefono: </b> {listUser.phone} </p>
+            <p><b>Direccion: </b> {listUser.adress} </p>
+            <p><b>Localidad: </b> {listUser.location} </p>
+            <p><b>Pais: </b> {listUser.state} </p>
+            <p><b>La url de avatar es: </b> {imagenUrl} </p> 
+        </div>
     }
 
-    let us = Object.values(listUser)
+
+
     return (
 
         <div className="card shadow mb-4">
             <div className="card-body">
                 <h1>El usuario solicitado es</h1>
 
-                 <p><b>La url es: </b> {url} </p>
-                <p><b>Nombre: </b> {us[0].firstName} </p>
-                <p><b>Apellido: </b> {us[0].lastName} </p>
-                <p><b>Email: </b> {us[0].email} </p>
-                <p><b>Telefono: </b> {us[0].phone} </p>
-                <p><b>Direccion: </b> {us[0].adress} </p>
-                <p><b>Localidad: </b> {us[0].location} </p>
-                <p><b>Pais: </b> {us[0].state} </p>
-                <p><b>La url de avatar es: </b> {imagenUrl} </p> 
-
+                {contenido}
 
             </div>
         </div>
