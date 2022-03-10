@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 
-function ChartRow(props){
+function ChartRowLp(props){
 
     let contenidoUrl = "http://localhost:3001/api/apiProducts/"+props.id;
 
@@ -13,8 +13,6 @@ function ChartRow(props){
                     <td>{props.id}</td>
                     <td>{props.name}</td>
                     <td>{props.description}</td>
-                    <td>{props.products_categories.name}</td> 
-                    <td>{props.products_type.name}</td> 
                     <td>
                         <Link to={'/product/'+props.id}>
 				{contenidoUrl}
@@ -26,4 +24,4 @@ function ChartRow(props){
     
         
 
-export default ChartRow;
+export default ChartRowLp;
