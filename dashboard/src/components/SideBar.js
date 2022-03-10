@@ -54,10 +54,16 @@ function SideBar(){
                     </Link>
                 </li>
 
-                <li className="nav-item">
-                    <Link className="nav-link" to="/lastProduct">
-                        <i className="fas fa-fw fa-folder"></i>
-                        <span>Ultimo Producto Creado</span>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/totals">
+                                <i className="fas fa-fw fa-table"></i>
+                                <span>Totales</span>        
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/lastProduct">
+                                <i className="fas fa-fw fa-folder"></i>
+                                <span>Ultimo Producto Creado</span>
                     </Link>
                 </li>
                 {/*<!-- Divider -->*/}
