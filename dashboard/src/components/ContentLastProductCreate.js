@@ -5,16 +5,16 @@ import React, { useState } from 'react';
 function ContentLastProductCreate()  {
 
         const [lastProd,setLastProd] = useState([]);
-        let lastProductCreate = "";
 
         if(lastProd.length == 0){   
             fetch("http://localhost:3001/api/apiProducts/findLastId")
             .then(response => response.json())
             .then(function (data){
-                lastProductCreate = data
+                setLastProd([ 
+                    data,
+                ]);  
+                console.log(lastProd) 
             })
-            console.log(lastProductCreate)
-
         }
 
 return ( 
@@ -33,8 +33,7 @@ return (
                     </tr>
                 </thead>
                 <tbody>
-                        <ChartRowP key={lastProd[0].data.id} /> {lastProd[0].data} <ChartRowP/> 
-
+                <ChartRowP key={lastProd[0].data.id} /> {lastProd[0]} <ChartRowP/>
                 </tbody>
             </table>
         </div>
