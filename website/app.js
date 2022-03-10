@@ -5,6 +5,7 @@ const path = require("path");
 const methodOverride = require('method-override');
 const app = express();
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+var cors = require('cors');
 
 //Configuracion
 app.use(session({
@@ -12,6 +13,8 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
 }));
+
+
 
 app.use(methodOverride('_method'));
 app.use(cookies());
@@ -21,6 +24,13 @@ app.use(express.json());
 
 // Template Engine
 app.set('view engine', 'ejs');
+
+app.use(
+    cors({
+        origin:'*'   
+
+    })
+)
 
 
 // Routers constantes

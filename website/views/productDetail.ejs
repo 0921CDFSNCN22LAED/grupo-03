@@ -113,9 +113,15 @@
 
                                     <div class="row">
                                         <!--Botones-->
-                                        <button type="button" class="btn btn-outline-success col-12">Comprar</button>
-                                        <button type="button" class="btn btn-outline-primary col-12">Agregar <i
-                                                                class="fas fa-shopping-cart"></i></button>
+                                        <a href="/products/productCart/<%=product.id%>">
+                                            <button type="button" class="btn btn-outline-success col-12">Comprar</button>
+                                        </a>
+                                        <a href="/products/productCart/<%=product.id%>">
+                                            <button type="button" class="btn btn-outline-primary col-12">
+                                                Agregar 
+                                                <i class="fas fa-shopping-cart"></i>    
+                                            </button>
+                                        </a>
 
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-outline-success col-12" data-bs-toggle="modal" data-bs-target="#exampleModal">

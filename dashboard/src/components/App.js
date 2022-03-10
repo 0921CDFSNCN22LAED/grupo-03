@@ -5,6 +5,7 @@ import ContentWrapper from './ContentWrapper';
 import ContentRowUsers from './ContentRowUsers';
 import ContentRowProducts from './ContentRowProducts';
 import ContentTotals from './ContentTotals';
+import ContentLastProductCreate from './ContentLastProductCreate';
 import NotFound from './NotFound';
 import ContentProduct from './ContentProduct';
 import ContentUser from './ContentUser';
@@ -17,35 +18,46 @@ function App() {
       	<div id="wrapper">
           
           <Switch>
-		  <Route path="/product/:id">
-			  <SideBar />
-			  < ContentProduct />
-		  </Route>
-		  <Route path="/user/:id">
-			  <SideBar />
-			< ContentUser />
-		  </Route>
-				  <Route path="/user">
+    <Route path="/product/:id" exact>
+	    <SideBar />
+	    <ContentProduct />
+
+	  </Route>
+				  <Route path="/user/:id" exact>
 					  <SideBar />
-					  <ContentRowUsers />
+					  <ContentUser />
+
 				  </Route>
-				  <Route path="/product">
-					  <SideBar />
-					  <ContentRowProducts />
-				  </Route>
-				  <Route path="/totals">
-					  <SideBar />
-					  <ContentTotals />
-				  </Route>
-    			<Route path="/" exact>
-	  				  <SideBar />
-	    			<ContentWrapper />
-	 			 </Route>
- 			  <Route>
-     			   <SideBar />
-     			   <NotFound />
-  			</Route>
-	      </Switch>
+
+
+
+    <Route path="/" exact>
+	    <SideBar />
+	    <ContentWrapper />
+	  </Route>
+
+	 <Route path="/user/">
+	    <SideBar />
+	    <ContentRowUsers/>
+	 </Route>
+
+	 <Route path="/product/">
+	    <SideBar />
+	    <ContentRowProducts/>
+	 </Route>
+
+	 <Route path="/lastProduct/">
+	    <SideBar />
+	    <ContentLastProductCreate/>
+	 </Route>
+
+   <Route>
+        <SideBar />
+        <NotFound/>
+  </Route>
+
+      </Switch>
+
         </div>
 	  </Router>
   );
