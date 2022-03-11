@@ -12,20 +12,12 @@ header {
     background-color: black;
 }
 
-img.zoom {
-    width: 350px;
-    height: 200px;
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    -o-transition: all .2s ease-in-out;
-    -ms-transition: all .2s ease-in-out;
+.zoom{
+    transition: transform .5s;
 }
- 
-.transition {
-    -webkit-transform: scale(1.8); 
-    -moz-transform: scale(1.8);
-    -o-transform: scale(1.8);
-    transform: scale(1.8);
+
+.zoom:hover{
+    transform: scale(1.04);
 }
 
 .logo {
