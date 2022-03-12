@@ -1,8 +1,8 @@
 function adminAuthMiddleware(req, res, next) {
-    if (!req.session.userLogged && req.session.userLogged.dataValues.idCategory!=2) {
+   
+    if (req.session.userLogged.idCategory == 1) {
         return res.redirect('/');
     }
     next();
 }
-
 module.exports = adminAuthMiddleware;

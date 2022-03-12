@@ -85,13 +85,11 @@ const controller = {
 
     budget: (req, res) => {
 
-        res.render("cotizaTuPc");
+        res.render("cotizaTuPc",{user:req.session.userLogged});
 
     },
 
     budgetSearch: async function(req, res) {
-
-
 
         const prodSearchCategory = req.body.category;
         const min = req.body.min;

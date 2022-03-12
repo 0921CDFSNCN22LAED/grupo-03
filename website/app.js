@@ -12,6 +12,7 @@ app.use(session({
     secret: "It's the secret",
     resave: false,
     saveUninitialized: false,
+    duration: 30 * 60 * 1000,
 }));
 
 
@@ -25,12 +26,12 @@ app.use(express.json());
 // Template Engine
 app.set('view engine', 'ejs');
 
-// app.use(
-//     cors({
-//         origin:'*'   
+ app.use(
+     cors({
+        origin:'*' 
 
-//     })
-// )
+     })
+ )
 
 
 // Routers constantes

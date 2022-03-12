@@ -43,17 +43,18 @@ const controller = {
 
 
                     let comparePassword = bcrypt.compareSync(req.body.password, userToLogin.password);
-
-                    
-
-
                     if (comparePassword) {
 
-                        delete userToLogin.password;
+
+                        userToLogin.password = "";
+
 
 
                         req.session.userLogged = userToLogin;
-                        console.log(req.session.userLogged);
+
+                         //console.log("userToLogin");
+                         console.log(req.session.userLogged);
+                        
                         return res.redirect("/");
                     } else {
 
@@ -252,21 +253,7 @@ const controller = {
             }
         })
 
-        req.session.destroy();
-        res.redirect("/users/login");
-        /*
-        const user = userService.getData().find((user) => {
-            return idUser == user.id;
-        });
-        if (user) {
-            res.render('userDelete', {
-                user,
-                idUser,
-            });
-        } else {
-            res.render("error")
-        }
-        */
+     
     },
 
     profile: function(req, res) {
