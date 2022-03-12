@@ -117,5 +117,28 @@ module.exports = {
                     })
             });
 
-    }
+    },
+    findLastId:(req,res)=>{
+
+        db.users.findOne({
+            attributes:[
+                [Sequelize.fn('max', Sequelize.col('id')),'maxid'] 
+            ]
+            
+        })
+        .then(user => {
+            
+            let id = user.dataValues.maxid;
+            
+            db.users.findByPk(id)
+            .then(user => {
+                return res.status(200).json({
+                    data: user,
+                    status: 200
+                })
+            })
+            
+        })
+        
+    },
 }

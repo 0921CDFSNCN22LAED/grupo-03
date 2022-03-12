@@ -232,13 +232,16 @@ module.exports = {
     
     productTotalCategory: (req, res) => {
 
-        db.products
-        .findAll({
-          
-            attributes: ['idCategory', 
-               sequelize.fn('count', sequelize.col('idCategory'))], 
-                group: ["products.idCategory"]
-
+        db.products.findAll({
+            attributes: [ [Sequelize.fn('COUNT', Sequelize.col('idCategory')), 'Total']],
+            include: [
+                {
+                    model: db.categories_prod, as:'products_categories',
+                    attributes: ['name'],
+                    
+                }
+            ],
+            group: "products.idCategory"
         })
         .then(products => {
             return res.status(200).json({
@@ -254,8 +257,3 @@ module.exports = {
     }
 }
 
-// Table.findAll({
-        //     attributes: ['column1', 
-        //       sequelize.fn('count', sequelize.col('column2'))], 
-        //     group: ["Table.column1"]
-        //   }).success(function (result) { });

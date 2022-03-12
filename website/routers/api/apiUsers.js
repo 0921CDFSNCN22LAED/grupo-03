@@ -10,6 +10,8 @@ const validationUser = require("../../middlewares/validate_user_middlewares");
 
 router.get("/", controller.listUsers);
 
+router.get('/findLastId', controller.findLastId);
+
 router.get("/searchmail", controller.searchmail);
 
 router.get("/searchlastname", controller.searchlastname);

@@ -23,6 +23,8 @@ router.get('/', controller.listProducts);
 
 router.get('/categoryProducts', controller.categoryProducts);
 
+router.get('/productTotalCategory', controller.productTotalCategory);
+
 router.get('/:id', controller.oneProduct);
 
 router.get('/:id/image', controller.oneProductIMG);
