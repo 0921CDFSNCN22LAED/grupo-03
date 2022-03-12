@@ -9,6 +9,7 @@ const upload = require('../middlewares/multer_middlewares.js');
 
 const validations = require('../middlewares/validate_product_middlewares.js');
 
+const admin = require('../middlewares/admin_auth_midleware');
 
 router.get("/productCart", controller.productCart);
 
@@ -24,13 +25,13 @@ router.get("/cotizaTuPc", controller.budget);
 
 router.post("/cotizaTuPc", controller.budgetSearch);
 
-router.get("/tabla-prod", controller.tablet_prod);
+router.get("/tabla-prod", admin, controller.tablet_prod);
 
-router.delete("/tabla-prod/:id", controller.destroy);
+router.delete("/tabla-prod/:id", admin, controller.destroy);
 
-router.get("/editProduct/:id", controller.editProduct);
+router.get("/editProduct/:id", admin, controller.editProduct);
 
-router.put("/updateProduct/:id", upload.single("image"), controller.updateProduct);
+router.put("/updateProduct/:id", admin, upload.single("image"), controller.updateProduct);
 
 router.get("/productDetail/:id", controller.productDetail);
 
