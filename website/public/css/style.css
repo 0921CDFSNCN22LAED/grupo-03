@@ -12,6 +12,14 @@ header {
     background-color: black;
 }
 
+.zoom{
+    transition: transform .5s;
+}
+
+.zoom:hover{
+    transform: scale(1.04);
+}
+
 .logo {
     text-align: left;
     padding-left: 20px;
