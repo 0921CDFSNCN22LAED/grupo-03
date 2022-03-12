@@ -53,7 +53,12 @@ function SideBar(){
                         <span>Todos los usuarios</span>
                     </Link>
                 </li>
-
+                <li className="nav-item">
+                    <Link className="nav-link" to="/category">
+                        <i className="fas fa-fw fa-table"></i>
+                        <span>Categoria</span>
+                    </Link>
+                </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/totals">
                                 <i className="fas fa-fw fa-table"></i>

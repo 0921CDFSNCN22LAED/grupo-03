@@ -25,36 +25,28 @@ function ContentLastProductCreate()  {
     }
     else{
         return contenido =
-        <ChartRowLp key={lastProd.id} {...lastProd}/>   
+            <div>
+
+                <p><b>Id: </b> {lastProd.id} </p>
+                <p><b>Nombre del producto: </b> {lastProd.name} </p>
+                <p><b>Descripcion: </b> {lastProd.description} </p>
+                <p><b>ID_Category: </b> {lastProd.idCategory} </p>
+                <p><b>ID_Tipe </b> {lastProd.idType} </p>
+                <p><b>Descuento: </b> {lastProd.disc} </p>
+                </div>  
+                
     }
-    
    
  
     return ( 
-        <div className="card shadow mb-4">
-        <div className="card-body">
-            <div className="table-responsive">
-                <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
-                    <thead>
-                        <tr>
-                            <th>id</th>
-                            <th>Nombre del producto</th>
-                            <th>Descripcion</th>
-                            <th>Categoria</th>
-                            <th>Tipo</th>
-                            <th>URL</th>
-                        
-                        </tr>
-                    </thead>
- 
-                      <tbody>
-                            {contenido}
+                <div className="card shadow mb-4">
+                    <div className="card-body">
+                        <h1>El Utimo Producto solicitado</h1>
 
-                    </tbody>     
-                </table>
-            </div>
-        </div>
-    </div>
+                        {contenido}
+
+                    </div>
+                </div>
         );
                 
 

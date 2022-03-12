@@ -9,10 +9,8 @@ const { body } = require("express-validator");
 const upload = require('../middlewares/multer_user_middlewares.js');
 const guest = require('../middlewares/guest_middleware');
 const auth = require('../middlewares/auth_middleware');
+
 const validationUser = require("../middlewares/validate_user_middlewares");
-
-
-
 
 router.get("/login", guest, controller.login);
 

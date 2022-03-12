@@ -53,7 +53,7 @@ const controller = {
 
 
                         req.session.userLogged = userToLogin;
-
+                        console.log(req.session.userLogged);
                         return res.redirect("/");
                     } else {
 
