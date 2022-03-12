@@ -9,8 +9,10 @@ const upload = require('../middlewares/multer_middlewares.js');
 
 const validations = require('../middlewares/validate_product_middlewares.js');
 
+const auth = require('../middlewares/auth_middleware');
 
-router.get("/productCart", controller.productCart);
+
+router.get("/productCart", auth,controller.productCart);
 
 router.get("/armaTuPc", controller.armaTuPc);
 
