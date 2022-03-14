@@ -8,7 +8,7 @@ function ChartRowC(props) {
     return (
         <tr>
             <td>{props.products_categories.name}</td>
-            <td>{props.products_categories.name}
+            <td>{props.Total}
             </td>
         </tr>
     )

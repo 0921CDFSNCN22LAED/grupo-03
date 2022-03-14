@@ -9,7 +9,7 @@ function ContentRowCategory() {
 
     if (listProd.length == 0) {
 
-        fetch("http://localhost:3001/api/apiProducts/productCategory")
+        fetch("http://localhost:3001/api/apiProducts/productTotalCategory")
             .then(response => response.json())
             .then(function (data) {
 
