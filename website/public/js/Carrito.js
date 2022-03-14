@@ -2,26 +2,59 @@ window.addEventListener("load", function() {
 
 //variables
 let allContainerCart = document.querySelectorAll('.cont-art');
-let buyThings =[];
 let containerBuyCart = document.querySelector('.card-items');
+let amountProduct = document.querySelector('.count-product');
+let priceTotal = document.querySelector('.price-total')
+
+
+let buyThings =[];
+let totalCard = 0;
+let countProduct = 0;
 
 
 
 //funciones
+loadEventListenrs();
+function loadEventListenrs(){
+    for (var i = 0 ; i < allContainerCart.length; i++) {
+        allContainerCart[i].addEventListener('click',addProduct);
+    }
 
-for (var i = 0 ; i < allContainerCart.length; i++) {
-    allContainerCart[i].addEventListener('click',addProduct);
+    containerBuyCart.addEventListener('click', deleteProduct);
 
-}
+    
+    
+    }
 
 
 function addProduct(e){
     e.preventDefault();
-    if(e.target.classList.contains('botonCarrito')){
+    if (e.target.classList.contains('botonCarrito')) {
     const selectProduct = e.target.parentElement
          readTheContent(selectProduct);
     } 
 }
+
+function deleteProduct(e) {
+    if (e.target.classList.contains('delete-product')) {
+        const deleteId = e.target.getAttribute('data-id');
+
+        buyThings.forEach(value => {
+            if (value.id == deleteId) {
+                let priceReduce = parseFloat(value.price) * parseFloat(value.amount);
+                totalCard =  totalCard - priceReduce;
+                totalCard = totalCard.toFixed(2);
+            }
+        });
+        buyThings = buyThings.filter(product => product.id !== deleteId);
+        
+        countProduct--;
+    }
+    loadHtml();
+}
+
+
+
 
 function readTheContent(productos){
     const infoProduct = {
@@ -31,8 +64,29 @@ function readTheContent(productos){
         id:productos.querySelector('.botonCarrito').getAttribute('type'),
         amount: 1
     }
-    buyThings=[...buyThings,infoProduct]
-    loadHtml
+
+    totalCard = parseFloat(totalCard) + parseFloat(infoProduct.price);
+    totalCard = totalCard.toFixed(2);
+
+
+    const exist = buyThings.some(product => product.id === infoProduct.id);
+    if(exist){
+        const pro = buyThings.map(product => {
+            if(product.id === infoProduct.id){
+                product.amount++
+                return product;
+            }else{
+                return product
+            }
+        });
+        buyThings = [...pro];
+    }else{
+        buyThings=[...buyThings,infoProduct]
+        countProduct++;
+
+    }
+
+    loadHtml();
     console.log(infoProduct);
 
 }
@@ -53,6 +107,8 @@ function loadHtml(){
         `;
 
         containerBuyCart.appendChild(row);
+        priceTotal.innerHTML = totalCard;
+        amountProduct.innerHTML = countProduct;
 
     });
 }
