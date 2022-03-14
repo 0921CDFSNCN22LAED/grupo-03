@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
-
+const { Op } = require("sequelize");
+const { query } = require("express");
 
 
 //const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");  revisar funcionamiento
@@ -69,6 +70,17 @@ const controller = {
             })
             
     
+    },
+    search: async function (req, res) {
+        console.log('aca');
+        console.log(req.query.prod);
+        const search = await db.Products.findAll({
+            where: {
+                name: { [Op.like]: "%" + req.query.prod + "%" },
+            },
+        });
+
+        return res.render("results", { search: search });
     },
     error: (req, res) => {
         res.render("error");
