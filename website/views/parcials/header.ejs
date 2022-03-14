@@ -40,8 +40,44 @@
         <div class="usuario">
             <a href="/users/login"><i class="fas fa-user"></i></a>
         </div>
+
         <div class="carrito">
-            <a href="/products/productCart"><i class="fas fa-shopping-cart"></i></a>
+            <a href="/products/productCart" onmouseover="showCart(this)"><i class="fas fa-shopping-cart"></i></a>
+            <p class="count-product">0</p>
         </div>
+
+
+
+        <!-- ----------------------------------- -->
+
+        <div class="cart-products" id="products-id">
+            <p class="close-btn" onclick="closeBtn()">X</p>
+            <h3>Mi carrito</h3>
+            <div class="card-items">
+                <div class="item">
+                    <!-- <img src="./img/products/rx5600xt.jpg" alt="" style="max-width:300px; max-height:300px">
+                    <div class="item-content">
+                        <h5>name of product name of product name of product</h5>
+                        <h5 class="cart-price">45.50$</h5>
+                        <h6>Amount: 3</h6>
+                    </div>
+                    <span>X</span> -->
+                </div>
+            </div>
+            <h2>Total: <strong class="price-total">0</strong> $</h2>
+        </div>
+         <!-- ----------------------------------- -->
+         <script>
+            function showCart(x){
+                document.getElementById("products-id").style.display = "block";
+            }
+            function closeBtn(){
+                 document.getElementById("products-id").style.display = "none";
+            }
+    
+        </script>
+
+
+        <script src="/js/Carrito.js" ></script>
 
 </section>

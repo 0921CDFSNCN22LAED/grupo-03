@@ -56,19 +56,19 @@ function SideBar(){
                 <li className="nav-item">
                     <Link className="nav-link" to="/category">
                         <i className="fas fa-fw fa-table"></i>
-                        <span>Categoria</span>
+                        <span>Total Categorias</span>
                     </Link>
                 </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/totals">
                                 <i className="fas fa-fw fa-table"></i>
-                                <span>Totales</span>        
+                                <span>Total de usuarios y productos</span>        
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/lastProduct">
                                 <i className="fas fa-fw fa-folder"></i>
-                                <span>Ultimo Producto Creado</span>
+                                <span>Ultimo Producto y Ultimo Usuario Creado</span>
                     </Link>
                 </li>
                 {/*<!-- Divider -->*/}

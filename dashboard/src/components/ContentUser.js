@@ -21,6 +21,9 @@ const ContentUser = () => {
     let contenido;
     if (listUser == null) {
         return contenido = <div>
+            <div className="d-sm-flex aligns-items-center justify-content-between mb-4">
+                <h2 className="h3 mb-0 text-blue-800">El usuario consultado</h2>
+            </div>  
             <p><b>La url es: </b>   </p>
             <p><b>Nombre: </b>   </p>
             <p><b>Apellido: </b>   </p>
@@ -35,6 +38,9 @@ const ContentUser = () => {
     }
     else {
         return contenido = <div>
+            <div className="d-sm-flex aligns-items-center justify-content-between mb-4">
+                <h2 className="h3 mb-0 text-blue-800">El usuario consultado</h2>
+            </div>  
             <p><b>La url es: </b> {url} </p>
             <p><b>Nombre: </b> {listUser.firstName} </p>
             <p><b>Apellido: </b> {listUser.lastName} </p>

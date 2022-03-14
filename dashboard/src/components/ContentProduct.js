@@ -24,7 +24,9 @@ const ContentProduct = () => {
     let contenido ; 
     if(listProd == null){
         return contenido = <div>
-                
+    <div className="d-sm-flex aligns-items-center justify-content-between mb-4">
+        <h2 className="h3 mb-0 text-blue-800">El producto consultado</h2>
+     </div>                
     <p><b>La url es: </b>  </p>
     <p><b>Nombre del producto: </b>  </p>
     <p><b>Descripcion: </b>  </p>
@@ -40,7 +42,9 @@ const ContentProduct = () => {
     }
     else{
         return contenido = <div>
-            		
+            <div className="d-sm-flex aligns-items-center justify-content-between mb-4">
+                <h2 className="h3 mb-0 text-blue-800">El producto consultado</h2>
+            </div>  
         <p><b>La url es: </b> <a href={url}> {url} </a> </p>
         <p><b>Nombre del producto: </b> {listProd.name} </p>
         <p><b>Descripcion: </b> {listProd.description} </p>

@@ -24,7 +24,7 @@
 
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-
+    
 </head>
 
 <body>
@@ -36,7 +36,7 @@
 
     </header>
 
-    <%- include("./parcials/carousel") %>
+     <%- include("./parcials/carousel") %> 
 
         <main>
 
@@ -50,28 +50,24 @@
                         <article class ="zoom">
                             <div class="car-prod-tot ">
                                 <div>
-                                    <a href="<%= prod.image %> "><img src="<%= prod.image %>" class="d-block w-100" style="max-width:300px; height:300px"
-                                                alt="<%= prod.name %>"></a>
+                                    <a href="/products/productDetail/<%= prod.id %> ">
+                                        <img src="<%= prod.image %>" class="d-block w-100" style="max-width:300px; height:300px" alt="<%= prod.name %>">
+                                    </a>
                                 </div>
-
                             </div>
                             <div class="wrap-art">
                                 <h4 class="cuotas">18 cuotas sin interes</h4>
-                                <h4 class="descrip">
-                                    <%= prod.name %>
-                                </h4>
-                                <h3 class="precio">$
-                                    <%= prod.price %>
-                                </h3>
-                                <div class="boton">
+                                <h4 class="descrip" data-id="<%= prod.name %>" ><%= prod.name %></h4>
+                                <h3 class="precio" data-id="<%= prod.price %>" >$ <%= prod.price %></h3>
+                                <div class="botonCompra">
                                     <a href="/products/productDetail/<%= prod.id %> ">
                                         <button type="button" class="btn-prod">
                                         Ver producto
                                     </button>
                                     </a>
-
                                 </div>
                             </div>
+            <a href="" class="botonCarrito" type="<%= prod.id %>">Añadir al carrito</a>
 
                         </article>
                         
@@ -86,14 +82,12 @@
             <section class="cont-art">
 
                 <% for(prod of productShowOffer.slice(0,8)){ %>
-
                         <article class="discount-container zoom">
                             <div class="car-prod-tot">
                                 <div>
                                     <a href="<%= prod.image %>"><img src="<%= prod.image %>" class="d-block w-100" style="max-width:300px; max-height:300px"
                                                 alt="<%= prod.name %>"></a>
                                 </div>
-
                             </div>
                             <div class="discount-badge">
                                 <h6><%= prod.disc %>%</h6>
@@ -106,16 +100,16 @@
                                 <h3 class="precio">$
                                     <%= prod.price %>
                                 </h3>
-                                <div class="boton">
+                                <div class="botonCompra">
                                     <a href="/products/productDetail/<%=prod.id%>">
                                         <button type="button" class="btn-prod">
                                         Ver producto
                                     </button>
                                     </a>
-
                                 </div>
+                         
                             </div>
-
+                            <a href="" class="botonCarrito" type="<%= prod.id %>">Añadir al carrito</a>
                         </article>
                         
                 <% } %>
@@ -127,9 +121,10 @@
         <%- include("parcials/footer") %>
 
 
-
+       
             <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+            <script src="/js/Carrito.js" ></script>
 </body>
 
 </html>

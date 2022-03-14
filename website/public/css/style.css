@@ -127,6 +127,7 @@ header {
 
 .carrito a {
     color: blueviolet;
+    
 }
 
 .carrito {
@@ -138,14 +139,11 @@ header {
     font-size: 16px;
     padding-left: 20px;
     padding-right: 30px;
+    padding-top:15px;
 }
 
 
-/*.bordeEliminado {  se elimina borde para implementar barra rgb lo dejo por las dudas ATT : Nicolas Garcia :D
-    background-color: purple;
-    width: 100%;
-    height: 5px;
-    opacity: 100%;
+/*.bordeRBG
 }*/
 
 .glow-on-hover {
@@ -169,7 +167,6 @@ header {
     left: -2px;
     background-size: 400%;
     z-index: -1;
-    /*filter: blur(1px);*/
     width: calc(100% + 4px);
     height: calc(100% + 4px);
     animation: glowing 20s linear infinite;
@@ -230,6 +227,7 @@ main article {
     margin-top: 10px;
     margin-bottom: 10px;
     display: flex;
+    border-top: solid silver 1px;
 }
 
 article {
@@ -237,9 +235,6 @@ article {
     font-size: 10px;
 }
 
-.cont-art .wrap-art {
-    border-top: solid silver 1px;
-}
 
 .cuotas {
     padding: 5px;
@@ -257,13 +252,14 @@ article {
     text-align: center;
 }
 
-.wrap-art .boton {
+
+.botonCompra {
     display: flex;
     justify-content: center;
     padding: 5px;
 }
 
-.boton a .btn-prod {
+.botonCompra a .btn-prod {
     border: 1px #cc23cf solid;
     padding: 10px;
     background-color: #cc23cf;
@@ -272,16 +268,212 @@ article {
     transition: all 450ms
 }
 
-.boton a .btn-prod {
+.botonCompra a .btn-prod {
     text-decoration: none;
     color: white;
     font-size: 16px;
 }
 
-.boton button:hover {
+.botonCompra button:hover {
     background-color: #7200ff;
     border: 1px solid #7200ff;
 }
+
+/* ---------------------- */
+
+/* ---------------------- *//* ---------------------- *//* ---------------------- *//* ---------------------- *//* ---------------------- */
+/* clases carrito header */
+.container{
+    max-width: 1200px;
+    text-align: center;
+    margin: auto;
+ }
+.cart{
+    position: absolute;
+    width: 39px;
+    height: 38px;
+    /* cursor: pointer; */
+}
+.cart-products{
+    position: absolute!important;
+    top: 70%;
+    right: 17px;
+    background-color: #f9fafb;
+    padding: 0px 16px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
+    display: none;
+    min-width: 290px;
+}
+ 
+.cart:hover{
+    margin-bottom: 16px;
+    transition-duration: .5s;
+    
+}
+/*end header*/
+
+.products{
+    /* margin-top: 60px; */
+    padding-top: 170px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.carts{
+    max-width: 250px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
+    padding-bottom: 34px;
+    margin-bottom: 40px;
+}
+.carts img{
+    width: 100%;
+}
+.carts p{
+    font-family: system-ui;
+    font-weight: 500;
+    padding: 0 20px;
+    margin-bottom: 24px;
+}
+.carts div p{
+    position: absolute;
+    top: 0;
+    right: 0px;
+    background-color: red;
+    color: #fff;
+    padding: 2px 7px 4px 21px;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
+.carts div{
+    position: relative;
+}
+.carts a{
+    font-family: system-ui;
+    text-decoration: none;
+    background: red;
+    padding: 9px 23px;
+    color: #fff;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.carts a:hover{
+    background: #fff;
+    color: red;
+    border: solid 2px red;
+    transition-duration: .3s;
+}
+/* .carts a:hover + .cart-products{
+    display: block;
+} */
+/*float cart*/
+.cart-products .item img{
+    width: 115px;
+}
+
+.cart-products .item{
+    display: flex;
+    align-items: center;
+    border-bottom: solid 2px rgb(119, 11, 182);
+}
+.cart-products .item .item-content{
+    margin: 0 19px;
+    width: 201px;
+}
+.cart-products .item .item-content h5{
+    margin: 0;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: system-ui;
+}
+.cart-products .item .item-content h6{
+    margin: 0;
+    font-size: 13px;
+    font-weight: 400;
+    font-family: system-ui;
+}
+.cart-products .item span{
+    background-color: #b34eb5;
+    padding: 0px 6px;
+    border-radius: 50%;
+    color: #fff;
+    font-family: system-ui;
+    cursor: pointer;
+}
+.cart-products h3{
+    margin-bottom: 0;
+}
+.cart-products .item .item-content h5.cart-price{
+    font-weight: 700;
+}
+
+/*stye to btn close*/
+p.close-btn{
+    top: -4px;
+    right: 6px;
+    cursor: pointer;
+    color: #000;
+}
+
+
+
+
+/* ---------------------- *//* ---------------------- *//* ---------------------- *//* ---------------------- *//* ---------------------- */
+.zoom a{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 10px;
+    width: 100%;
+    transition: all 450ms;
+    font-size: 16px;
+    color: white;
+}
+.botonCarrito{
+    background-color: #cc23cf;
+
+}
+
+.zoom a:hover .botonCarrito{
+   
+    color: rgb(255, 255, 255);
+   
+    transition-duration: .3s;
+    background-color: #7200ff;
+}
+
+
+
+
+
+.botonCarrito {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    
+}
+
+.botonCarrito a .btn-prod {
+    border: 1px #cc23cf solid;
+    padding: 10px;
+    background-color: #cc23cf;
+    border-radius: 10px;
+    width: 100%;
+    transition: all 450ms
+}
+
+.botonCarrito a .btn-prod {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.zoom a .zoom a:hover {
+    background-color: #7200ff;
+    border: 1px solid #7200ff;
+}
+/* -------------------- */
 
 .wrap-footer {
     display: none;

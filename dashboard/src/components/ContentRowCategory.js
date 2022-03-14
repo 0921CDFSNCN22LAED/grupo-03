@@ -9,7 +9,7 @@ function ContentRowCategory() {
 
     if (listProd.length == 0) {
 
-        fetch("http://localhost:3001/api/apiProducts/productCategory")
+        fetch("http://localhost:3001/api/apiProducts/productTotalCategory")
             .then(response => response.json())
             .then(function (data) {
 
@@ -32,7 +32,10 @@ function ContentRowCategory() {
 
 
     return (
-
+        <div>
+            <div className="d-sm-flex aligns-items-center justify-content-between mb-4">
+                <h2 className="h3 mb-0 text-blue-800">Nuestros Catedorias de productos</h2>
+            </div>
         <div className="card shadow mb-4">
             <div className="card-body">
                 <div className="table-responsive">
@@ -62,7 +65,7 @@ function ContentRowCategory() {
                 </div>
             </div>
         </div>
-
+        </div>
 
     );
 

@@ -46,7 +46,6 @@ return (
 
                 <p><b>Total de usuarios: </b> {totUsers} </p>
 
-		  <p><b>Total de catedorias de productos: </b>  </p>
 		
 	       	</div>
 	    </div>
