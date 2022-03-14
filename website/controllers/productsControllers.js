@@ -344,6 +344,12 @@ const controller = {
                 return res.redirect("/products/tabla-prod");
             })
 
+    },
+    searchAll:(req,res)=>{
+
+        res.render("productTotals");
+
     }
+
 }
 module.exports = controller;
