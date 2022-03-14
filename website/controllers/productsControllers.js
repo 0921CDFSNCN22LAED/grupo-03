@@ -59,7 +59,7 @@ const controller = {
         db.products.findAll()
             .then(function(products) {
 
-                return res.render("productTotals", { products: products, user: req.session.userLogged });
+                return res.render("productTotals", { products: products, user: req.session.userLogged , title:"Nuestros Productos"});
             })
 
 

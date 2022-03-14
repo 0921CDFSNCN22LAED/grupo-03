@@ -72,15 +72,15 @@ const controller = {
     
     },
     search: async function (req, res) {
-        console.log('aca');
-        console.log(req.query.prod);
-        const search = await db.Products.findAll({
+        
+        const prodSearch = req.query.prod;
+        const products = await db.products.findAll({
             where: {
-                name: { [Op.like]: "%" + req.query.prod + "%" },
+                name: { [Op.like]: "%" + prodSearch + "%" },
             },
         });
 
-        return res.render("results", { search: search });
+        return res.render("productTotals", { products,title:"Producto buscado" });
     },
     error: (req, res) => {
         res.render("error");
