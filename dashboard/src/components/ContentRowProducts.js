@@ -29,7 +29,7 @@ function ContentRowProducts()  {
     return (
             <div>
     		<div className="d-sm-flex aligns-items-center justify-content-between mb-4">
-			<h3 className="h3 mb-0 text-gray-800">Nuestros productos</h3>
+                <h3 className="h3 mb-0 text-gray-800" >Nuestros productos</h3>
 			</div>
             <div className="card shadow mb-4">
                 <div className="card-body">
