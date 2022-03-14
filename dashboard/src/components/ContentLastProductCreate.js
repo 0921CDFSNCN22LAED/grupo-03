@@ -26,7 +26,10 @@ function ContentLastProductCreate()  {
     else{
         return contenido =
             <div>
-
+               
+                    <div className="d-sm-flex aligns-items-center justify-content-between mb-4">
+                        <h2 className="h3 mb-0 text-blue-800">Nuestros último producto creado</h2>
+                    </div>
                 <p><b>Id: </b> {lastProd.id} </p>
                 <p><b>Nombre del producto: </b> {lastProd.name} </p>
                 <p><b>Descripcion: </b> {lastProd.description} </p>

@@ -2,16 +2,14 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import SideBar from './SideBar';
 import ContentWrapper from './ContentWrapper';
-import ContentRowUsers from './ContentRowUsers';
-import ContentRowProducts from './ContentRowProducts';
-import ContentLastProductCreate from './ContentLastProductCreate';
+import ContentWrapperP from './ContentWrapperP';
+import ContentWrapperU from './ContentWrapperU';
+import ContentWrapperLC from './ContentWrapperLC';
 import NotFound from './NotFound';
-import ContentProduct from './ContentProduct';
-import ContentUser from './ContentUser';
-import ContentTotals from './ContentTotals';
-import ContentRowCategory from './ContentRowCategory';
-
-
+import ContentWrapperOP from './ContentWrapperOP';
+import ContentWrapperOU from './ContentWrapperOU';
+import ContentWrapperC from './ContentWrapperC';
+import ContentWrapperT from './ContentWrapperT';
 
 function App() {
   return (
@@ -21,16 +19,13 @@ function App() {
           <Switch>
     <Route path="/product/:id" >
 	    <SideBar />
-	    <ContentProduct />
-
+	    <ContentWrapperOP />
 	  </Route>
+
 	 <Route path="/user/:id" >
 		 <SideBar />
-		  <ContentUser />
-
+		 <ContentWrapperOU />
 	  </Route>
-
-
 
     <Route path="/" exact>
 	    <SideBar />
@@ -39,27 +34,28 @@ function App() {
 
 	 <Route path="/user/">
 	    <SideBar />
-	    <ContentRowUsers/>
+	  <ContentWrapperU/>
 	 </Route>
 
 	 <Route path="/product/">
 	    <SideBar />
-	    <ContentRowProducts/>
+	    <ContentWrapperP/>
 	 </Route>
 
 	 <Route path="/lastProduct/">
 	    <SideBar />
-	    <ContentLastProductCreate/>
+	    <ContentWrapperLC/>
 	 </Route>
+
 	  <Route path="/totals">
 			  <SideBar />
-			  <ContentTotals />
-	  </Route>
-	 <Route path="/category">
-		 <SideBar />
-		  <ContentRowCategory />
+			 <ContentWrapperT />
 	  </Route>
 
+	 <Route path="/category">
+		 <SideBar />
+		  <ContentWrapperC />
+	  </Route>
 
    <Route>
         <SideBar />

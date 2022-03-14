@@ -1,13 +1,14 @@
 
-    import React, { useState } from 'react';
-    import {Link} from 'react-router-dom';
+import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
+
 
     function ChartRowP(props){
-
         let contenidoUrl = "http://localhost:3001/api/apiProducts/"+props.id;
+    
 
         return (
-                    <tr>
+                    <tr>              
                         <td>{props.id}</td>
                         <td>{props.name}</td>
                         <td>{props.description}</td>

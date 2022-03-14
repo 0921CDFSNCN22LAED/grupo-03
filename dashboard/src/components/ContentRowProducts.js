@@ -25,20 +25,18 @@ function ContentRowProducts()  {
     
     }
 
-    console.log("La lista es:");
-    console.log(listProd);
-    
-     
-
 
     return (
-            
+            <div>
+    		<div className="d-sm-flex aligns-items-center justify-content-between mb-4">
+			<h3 className="h3 mb-0 text-gray-800">Nuestros productos</h3>
+			</div>
             <div className="card shadow mb-4">
                 <div className="card-body">
                     <div className="table-responsive">
                         <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
                             <thead>
-                                <tr>
+                                <tr>                                   
                                     <th>id</th>
                                     <th>Nombre del producto</th>
                                     <th>Descripcion</th>
@@ -70,7 +68,7 @@ function ContentRowProducts()  {
                     </div>
                 </div>
             </div>
-    
+        </div>
                        
     );
     

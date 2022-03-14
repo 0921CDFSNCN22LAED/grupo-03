@@ -68,7 +68,7 @@ function SideBar(){
                         <li className="nav-item">
                             <Link className="nav-link" to="/lastProduct">
                                 <i className="fas fa-fw fa-folder"></i>
-                                <span>Ultimo Producto Creado</span>
+                                <span>Ultimo Producto y Ultimo Usuario Creado</span>
                     </Link>
                 </li>
                 {/*<!-- Divider -->*/}
