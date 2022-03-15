@@ -24,15 +24,20 @@ function ContentLastProductCreate()  {
         return contenido = <p>cargando</p>;
     }
     else{
+        const img = "http://localhost:3001" + lastProd.image
         return contenido =
             <div>
                
                     <div className="d-sm-flex aligns-items-center justify-content-between mb-4">
                         <h2 className="h3 mb-0 text-blue-800">Nuestros último producto creado</h2>
                     </div>
-                <p><b>Id: </b> {lastProd.id} </p>
+                
                 <p><b>Nombre del producto: </b> {lastProd.name} </p>
+                <div className="img-prod">
+                    <img src={img} />
+                </div> 
                 <p><b>Descripcion: </b> {lastProd.description} </p>
+                <p><b>Id: </b> {lastProd.id} </p>
                 <p><b>ID_Category: </b> {lastProd.idCategory} </p>
                 <p><b>ID_Tipe </b> {lastProd.idType} </p>
                 <p><b>Descuento: </b> {lastProd.disc} </p>

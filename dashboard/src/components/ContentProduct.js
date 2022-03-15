@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react';
 import { useParams } from 'react-router-dom';
-
+import './EstilosdeProduct-User.css'
 
 
 const ContentProduct = () => {
@@ -60,10 +60,12 @@ const ContentProduct = () => {
             <div className="d-sm-flex aligns-items-center justify-content-between mb-4">
                 <h2 className="h3 mb-0 text-blue-800">El producto consultado</h2>
             </div>  
+            
         <p><b>La url es: </b> <a href={url}> {url} </a> </p>
-         <div>
+        <div className="img-prod">
         <img src={img}/>
         </div> 
+        <p><b>Id del producto: </b> {listProd.id} </p>
         <p><b>Nombre del producto: </b> {listProd.name} </p>
         <p><b>Descripcion: </b> {listProd.description} </p>
         <p><b>Tamaño: </b> {listProd.size} </p>
@@ -71,7 +73,7 @@ const ContentProduct = () => {
         <p><b>Descuento: </b> {listProd.disc} </p>
         <p><b>Categoria: </b>  {listProd.idCategory} </p>
         <p><b>Tipo: </b>  {listProd.idType}</p>
-        <p><b>la url de la imagen es: </b> <a href={imageURL} > {imageURL}  </a> </p>
+        <p><b>la url de la imagen es: </b> <a href={img} > {img}  </a> </p>
          
     </div>
         

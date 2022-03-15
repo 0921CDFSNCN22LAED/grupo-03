@@ -24,15 +24,20 @@ function ContentLastProductCreate() {
         return contenido = <p>cargando</p>;
     }
     else {
+        const img = "http://localhost:3001" + lastUser.avatarIMG
         return contenido =
             <div>
 
                 <div className="d-sm-flex aligns-items-center justify-content-between mb-4">
                     <h2 className="h3 mb-0 text-blue-800">Nuestros último usuario creado</h2>
                 </div>
-                <p><b>Id: </b> {lastUser.id} </p>
+                
                 <p><b>Nombre: </b> {lastUser.firstName} </p>
-                <p><b>area: </b> {lastUser.lastName} </p>
+                <p><b>Apellido: </b> {lastUser.lastName} </p>
+                <div className="img-user">
+                    <img src={img} />
+                </div>
+                <p><b>Id: </b> {lastUser.id} </p>
                 <p><b>Email: </b> {lastUser.email} </p>
                 <p><b>Telefono: </b> {lastUser.phone} </p>
                 <p><b>Direccion: </b> {lastUser.adress} </p>

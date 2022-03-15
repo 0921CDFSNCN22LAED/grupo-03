@@ -38,6 +38,7 @@ function ContentRowProducts()  {
                             <thead>
                                 <tr>                                   
                                     <th>id</th>
+                                    <th>Imagen</th>
                                     <th>Nombre del producto</th>
                                     <th>Descripcion</th>
                                     <th>Categoria</th>
@@ -48,6 +49,7 @@ function ContentRowProducts()  {
                             <tfoot>
                                 <tr>
                                     <th>id</th>
+                                    <th>Imagen</th>
                                     <th>Nombre del producto</th>
                                     <th>Descripcion</th>
                                     <th>Categoria</th>

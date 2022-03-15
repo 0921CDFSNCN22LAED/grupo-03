@@ -36,6 +36,7 @@ function ContentRowUsers()  {
                             <thead>
                                 <tr>
                                     <th>Id</th>
+                                    <th>Avatar</th>
                                     <th>Nombre del Usuario</th>
                                     <th>Apellido del Usuario</th>
                                     <th>Email</th>
@@ -45,6 +46,7 @@ function ContentRowUsers()  {
                             <tfoot>
                                 <tr>
                                     <th>Id</th>
+                                    <th>Avatar</th>
                                     <th>Nombre del Usuario</th>
                                     <th>Apellido del Usuario</th>
                                     <th>Email</th>

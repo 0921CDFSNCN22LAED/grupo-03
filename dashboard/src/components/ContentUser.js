@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
+import './EstilosdeProduct-User.css'
 
 const ContentUser = () => {
 
@@ -37,11 +38,16 @@ const ContentUser = () => {
         </div>
     }
     else {
+        const img = "http://localhost:3001" + listUser.avatarIMG
         return contenido = <div>
             <div className="d-sm-flex aligns-items-center justify-content-between mb-4">
                 <h2 className="h3 mb-0 text-blue-800">El usuario consultado</h2>
             </div>  
-            <p><b>La url es: </b> {url} </p>
+            <p><b>La url es: </b> <a href={url}> {url} </a> </p>
+            <div className="img-user">
+                <img src={img} />
+            </div> 
+            <p><b>Id: </b> {listUser.id} </p>
             <p><b>Nombre: </b> {listUser.firstName} </p>
             <p><b>Apellido: </b> {listUser.lastName} </p>
             <p><b>Email: </b> {listUser.email} </p>
@@ -49,7 +55,8 @@ const ContentUser = () => {
             <p><b>Direccion: </b> {listUser.adress} </p>
             <p><b>Localidad: </b> {listUser.location} </p>
             <p><b>Pais: </b> {listUser.state} </p>
-            <p><b>La url de avatar es: </b> {imagenUrl} </p> 
+            <p><b>La url de avatar es: </b> <a href={img} > {img}  </a> </p> 
+
         </div>
     }
 
