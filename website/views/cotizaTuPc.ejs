@@ -88,40 +88,35 @@
         </section>
 
 
-        <section class="cont-prod-totals">
+        <section class="cont-prod-totals cont-art">
 
             <% if(locals.products) {%> 
 
-                <% for(product of products) { %>
-                    <article class="wrap-prod-totals zoom">
-
+                <% for(prod of products) { %>
+                    <article class="discount-container zoom">
                         <div class="car-prod-tot">
-                            <img src="<%=product.image%> " class="d-block w-100" class="d-block w-100" style="max-width:300px; height:300px">
+                            <div>
+                                <a href="<%= prod.image %>"><img src="<%= prod.image %>" class="d-block w-100" style="max-width:300px; height:300px"
+                                            alt="<%= prod.name %>"></a>
+                            </div>
                         </div>
-
-                        <div class="name-prod-totals">
-                            <h3>
-                                <%=product.name%>
-                            </h3>
+                        <div class="discount-badge">
+                            <h6><%= prod.disc %>%</h6>
                         </div>
-                        <div class="caract-prod-totals">
-                            <p>
-                                <%= product.description %>
-                            </p>
+                        <div class="wrap-art">
+                            <h4 class="cuotas">18 cuotas sin interes</h4>
+                            <h4 class="descrip" data-id="<%= prod.name %>"><%= prod.name %></h4>
+                            <h3 class="precio" data-id="<%= prod.price %>">$<%= prod.price %></h3>
+                            <div class="botonCompra">
+                                <a href="/products/productDetail/<%=prod.id%>">
+                                    <button type="button" class="btn-prod">
+                                    Ver producto
+                                </button>
+                                </a>
+                            </div>
+                     
                         </div>
-                        <div class="precio-prod-totals">
-                            <h3>
-                                <%= product.price %>
-                            </h3>
-                        </div>
-
-                        <a href="/products/productDetail/<%= product.id %>">
-                            <button type="button" class="btn btn-primary">
-                            Ver producto
-                        </button>
-                        </a>
-                            </a>
-                        </div>
+                        <a href="" class="botonCarrito" type="<%= prod.id %>">Añadir al carrito</a>
                     </article>
                     <% } %>
             <% }%> 
