@@ -44,7 +44,7 @@
 
             <h2 class="titulo">Productos mas buscados</h2>
 
-            <section class="cont-art ">
+            <section class="cont-art">
 
                 <% for(prod of productShowVisited.slice(0,8)){ %>
                         <article class ="zoom">
@@ -62,14 +62,15 @@
                                 <div class="botonCompra">
                                     <a href="/products/productDetail/<%= prod.id %> ">
                                         <button type="button" class="btn-prod">
-                                            Ver producto
-                                        </button>
+                                        Ver producto
+                                    </button>
                                     </a>
                                 </div>
                             </div>
-            
-
-                        </article>
+                            
+                                <a href="" class="botonCarrito" type="<%= prod.id %>">Añadir al carrito</a>
+                           
+                            </article>
                         
                 <% } %>
 
@@ -109,7 +110,7 @@
                                 </div>
                          
                             </div>
-
+                            <a href="" class="botonCarrito" type="<%= prod.id %>">Añadir al carrito</a>
                         </article>
                         
                 <% } %>

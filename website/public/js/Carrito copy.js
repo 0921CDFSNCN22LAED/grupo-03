@@ -1,7 +1,7 @@
 window.addEventListener("load", function() {
 
     //variables
-    let allContainerCart = document.querySelectorAll('.botonCarrito');
+    let allContainerCart = document.querySelectorAll('.cont-art');
     let containerBuyCart = document.querySelector('.card-items');
     let amountProduct = document.querySelector('.count-product');
     let priceTotal = document.querySelector('.price-total')
