@@ -13,8 +13,8 @@ import './EstilosdeProduct-User.css'
                         <td>
                             <div>   
                             <Link to={'/product/' + props.id}>
-                               <div className="imgprod">
-                                <img src={img} />
+                               <div className="">
+                                <img  className="ImgTablaAllProducts zoom" src={img} />
                                 </div>
                             </Link>
                             </div> 

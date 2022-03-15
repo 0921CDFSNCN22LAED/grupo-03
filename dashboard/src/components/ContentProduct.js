@@ -62,8 +62,8 @@ const ContentProduct = () => {
             </div>  
             
         <p><b>La url es: </b> <a href={url}> {url} </a> </p>
-        <div className="img-prod">
-        <img src={img}/>
+        <div >
+        <img className="imgTablaAllUsers zoom" src={img}/>
         </div> 
         <p><b>Id del producto: </b> {listProd.id} </p>
         <p><b>Nombre del producto: </b> {listProd.name} </p>

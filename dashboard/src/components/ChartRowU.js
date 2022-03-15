@@ -13,8 +13,8 @@ function ChartRowU(props){
                       <td>
                          <div>
                            <Link to={'/user/' + props.id}>
-                               <div className="imguser">
-                                  <img src={img} />
+                               <div >
+                                  <img className="imgTablaAllUsers zoom" src={img} />
                               </div>
                           </Link>
                 </div>

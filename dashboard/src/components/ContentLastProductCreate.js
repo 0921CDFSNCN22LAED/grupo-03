@@ -33,8 +33,8 @@ function ContentLastProductCreate()  {
                     </div>
                 
                 <p><b>Nombre del producto: </b> {lastProd.name} </p>
-                <div className="img-prod">
-                    <img src={img} />
+                <div >
+                    <img className="img-prod zoom" src={img} />
                 </div> 
                 <p><b>Descripcion: </b> {lastProd.description} </p>
                 <p><b>Id: </b> {lastProd.id} </p>

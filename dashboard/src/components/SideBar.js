@@ -7,11 +7,12 @@ function SideBar(){
     return(
         <React.Fragment>
             {/*<!-- Sidebar -->*/}
-            <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
-
+            
+            <ul className="glow-on-hover navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+    
                 {/*<!-- Sidebar - Brand -->*/}
                 <Link to="/">
-                    <div className="logo">
+                    <div className="logo zoom ">
                         <img  src={image} alt="quiero mi compu"/>
                     </div>
                 </Link>
@@ -21,7 +22,7 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Dashboard -->*/}
                 <li className="nav-item active">
-                    <Link className="nav-link" to="/">
+                    <Link className="nav-link zoom" to="/">
                         <span>Quiero Mi Compu</span></Link>
                 </li>
 
@@ -71,6 +72,7 @@ function SideBar(){
                                 <span>Ultimo Producto y Ultimo Usuario Creado</span>
                     </Link>
                 </li>
+                
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider d-none d-md-block"/>
             </ul>

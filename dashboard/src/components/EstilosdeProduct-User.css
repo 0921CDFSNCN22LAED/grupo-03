@@ -1,51 +1,80 @@
 .img-prod {
-    text-align: center;
-    padding-left: 40px;
+    border: 1px solid silver;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    margin: 20px;
+    margin-top: 10px;
+    padding-left: 0px;
     display: flex;
-    align-self: right;
-    margin-top: 25px;
-    width: 350px;
-    height: 350px;
-    filter: brightness(200%);
+
+
+    box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.75);
 }
 
-.img-user {
-    text-align: center;
-    padding-left: 40px;
-    display: flex;
-    align-self: right;
-    margin-top: 25px;
-    width: 200px;
-    height: 200px;
-    filter: brightness(200%);
+.zoom{
+    transition: transform .5s;
 }
-.img-user {
-    text-align: center;
-    padding-left: 40px;
-    display: flex;
-    align-self: right;
-    margin-top: 25px;
-    width: 200px;
-    height: 200px;
-    filter: brightness(200%);
+
+.zoom:hover{
+    transform: scale(1.04);
 }
-.imgprod {
-    text-align: center;
-    padding-left: 5px;
-    display: flex;
-    align-self: center;
+.zoomletras{
+    transition: transform .5s;
+}
+
+.zoomletras:hover{
+    transform: scale(1.04);
+}
+
+
+
+.lastUserCreate{
+    border: 1px solid silver;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    margin: 20px;
     margin-top: 10px;
-    width: 75px;
-    height: 75px;
-    filter: brightness(75%);
-}
-.imguser {
-    text-align: center;
-    padding-left: 5px;
+    padding-left: 0px;
     display: flex;
-    align-self: center;
-    margin-top: 10px;
-    width: 50px;
-    height: 50px;
-    filter: brightness(75%);
+
+
+    box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.75);
 }
+.ImgTablaAllProducts {
+    border: 1px solid silver;
+    width: 150px;
+    border-radius: 50%;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    margin: 20px;
+    margin-top: 10px;
+    padding-left: 0px;
+    display: flex;
+
+
+    box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.75);
+}
+
+.imgTablaAllUsers {
+
+    border: 1px solid silver;
+    width: 150px;
+    border-radius: 50%;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    margin: 20px;
+    margin-top: 10px;
+    padding-left: 0px;
+    display: flex;
+
+
+    box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.75);
+
+}
+

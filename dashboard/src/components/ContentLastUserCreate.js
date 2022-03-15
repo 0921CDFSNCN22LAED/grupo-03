@@ -34,8 +34,8 @@ function ContentLastProductCreate() {
                 
                 <p><b>Nombre: </b> {lastUser.firstName} </p>
                 <p><b>Apellido: </b> {lastUser.lastName} </p>
-                <div className="img-user">
-                    <img src={img} />
+                <div >
+                    <img className="lastUserCreate zoom" src={img} />
                 </div>
                 <p><b>Id: </b> {lastUser.id} </p>
                 <p><b>Email: </b> {lastUser.email} </p>
