@@ -107,6 +107,7 @@ header {
 
 .buscador {
     display: none;
+    
 }
 
 .menu {
@@ -484,6 +485,7 @@ p.close-btn{
 }
 .botonCarrito{
     background-color: #cc23cf;
+    
 
 }
 
@@ -502,8 +504,15 @@ p.close-btn{
 .botonCarrito {
     display: flex;
     justify-content: center;
-    padding: 5px;
+    padding: 10px;
     
+    
+}
+
+.btn-carrito-index{
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 5px;
 }
 
 .botonCarrito a .btn-prod {

@@ -20,14 +20,20 @@
     .buscador .barra-buscador {
         width: 70%;
         border: 1px solid white;
-        border-radius: 10px 0px 0px 10px;
+        border-radius: 2px 0px 0px 2px;
+        height: 30px;
 
+    }
+
+    .buscador form{
+
+        width: 90%;
     }
 
     .btn-buscar{
 
         background-color: blueviolet;
-        border-radius: 0px 10px 10px 0px;
+        border-radius: 0px 2px 2px 0px;
         border:1px solid blueviolet;
 
     }
@@ -35,11 +41,15 @@
     .btn-buscar .fa-search{
 
         color: white;
-        font-size: 14px;
+        font-size: 17px;
         align-self: center;
-        padding-left: 2px;
+        padding-left: 1px;
         color: white;
-        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 7px;
+        padding-bottom: 6px;
+        
         
 
     }
