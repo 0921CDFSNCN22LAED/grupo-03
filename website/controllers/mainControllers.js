@@ -15,6 +15,8 @@ const db = require("../database/models");
 const controller = {
     home: (req, res) => {
 
+        console.log(path.resolve());
+
         const productVisited = db.products.findAll({
 
             where:{
@@ -41,13 +43,7 @@ const controller = {
                 
 
                 const offer = info[1];
-                 /*
-                for(vist of visited){
-
-                    console.log(vist.dataValues);
-                }
-
-                */
+                
 
                 const productShowVisited = visited.map(function(v){
 
@@ -62,6 +58,7 @@ const controller = {
 
                 });
 
+                
                
                 
                 res.render("index", { productShowVisited, productShowOffer, user:req.session.userLogged });

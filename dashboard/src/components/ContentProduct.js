@@ -1,5 +1,7 @@
 import React, {useState,useEffect} from 'react';
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
+
+
 
 const ContentProduct = () => {
     
@@ -13,13 +15,20 @@ const ContentProduct = () => {
         fetch(url)
         .then(response => response.json())
         .then((data) =>{
-            
+             
             setListProd(data.data)
             
             } )
+
+            console.log(listProd)
         
     },[])
 
+    
+
+
+
+    
 
     let contenido ; 
     if(listProd == null){
@@ -36,16 +45,25 @@ const ContentProduct = () => {
     <p><b>Categoria: </b>   </p>
     <p><b>Tipo: </b> </p>
     <p><b>la url de la imagen es: </b> </p>
+    
      
 </div>
         
     }
     else{
+        console.log(listProd)
+        const img = "http://localhost:3001"+listProd.image
+       
         return contenido = <div>
+
+            
             <div className="d-sm-flex aligns-items-center justify-content-between mb-4">
                 <h2 className="h3 mb-0 text-blue-800">El producto consultado</h2>
             </div>  
         <p><b>La url es: </b> <a href={url}> {url} </a> </p>
+         <div>
+        <img src={img}/>
+        </div> 
         <p><b>Nombre del producto: </b> {listProd.name} </p>
         <p><b>Descripcion: </b> {listProd.description} </p>
         <p><b>Tamaño: </b> {listProd.size} </p>

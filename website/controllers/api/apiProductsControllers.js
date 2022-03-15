@@ -6,6 +6,7 @@ const products = require("../../services/products");
 const { response } = require("express");
 const res = require("express/lib/response");
 const Op = db.Sequelize.Op;
+const path = require("path");
 
 module.exports = {
 
@@ -35,8 +36,10 @@ module.exports = {
         db.products
             .findByPk(req.params.id)
             .then(product => {
+                newRoute = path.join(__dirname,product.image)
+                console.log(newRoute)
                 return res.status(200).json({
-                    data: product.image,
+                    data: newRoute,
                     status: 200
                 })
             })
