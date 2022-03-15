@@ -61,7 +61,7 @@
                                 <h3 class="precio" data-id="<%= prod.price %>" >$ <%= prod.price %></h3>
                                 <div class="botonCompra">
                                     <a href="/products/productDetail/<%= prod.id %> ">
-                                        <button type="button" class="btn-prod">
+                                        <button type="button" class="btn-prod ">
                                         Ver producto
                                     </button>
                                     </a>
@@ -95,12 +95,8 @@
                             </div>
                             <div class="wrap-art">
                                 <h4 class="cuotas">18 cuotas sin interes</h4>
-                                <h4 class="descrip">
-                                    <%= prod.name %>
-                                </h4>
-                                <h3 class="precio">$
-                                    <%= prod.price %>
-                                </h3>
+                                <h4 class="descrip" data-id="<%= prod.name %>"><%= prod.name %></h4>
+                                <h3 class="precio" data-id="<%= prod.price %>">$<%= prod.price %></h3>
                                 <div class="botonCompra">
                                     <a href="/products/productDetail/<%=prod.id%>">
                                         <button type="button" class="btn-prod">

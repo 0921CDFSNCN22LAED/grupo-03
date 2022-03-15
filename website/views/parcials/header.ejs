@@ -28,20 +28,20 @@
             <i class="fas fa-search"></i>
         </div>
         <% if(locals.user){ %> 
-            <div class="usuario">
+            <div class="usuario colorGradiant">
                 <a href="/users/logout"><i class="fas fa-times"></i></a>
             </div>
         <% } %> 
         <% if(locals.user) { %> 
             <div class="usuario">
-                <p class="nombre-usuario"><%= user.firstName %> </p>
+                <p class="nombre-usuario textousuario"><%= user.firstName %> </p>
             </div>
         <% } %> 
-        <div class="usuario">
+        <div class="usuario textousuario">
             <a href="/users/login"><i class="fas fa-user"></i></a>
         </div>
 
-        <div class="carrito">
+        <div class="carrito textousuario">
             <a href="/products/productCart" onmouseover="showCart(this)"><i class="fas fa-shopping-cart"></i></a>
             <p class="count-product">0</p>
         </div>
